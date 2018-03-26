@@ -1,0 +1,73 @@
+[user]
+  name = bangn
+  email = thebangnguyen@gmail.com
+
+[core]
+  excludesfile = ~/.gitignore
+  editor = nvim -f
+
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+  ui = auto
+
+[push]
+  default = current
+
+[rerere]
+  enabled = false
+
+[url "https://github.com/"]
+  insteadOf = git://github.com/
+
+[branch]
+  autosetupmerge = true
+  autosetuprebase = remote
+
+[merge]
+  ff = only # Fast forward only.
+  defaultToUpstream = true
+  tool = kdiff3
+
+[alias]
+  p = pull
+  c = commit
+  st = status
+  bd = branch -D
+  rh = reset --hard
+  edit = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; $EDITOR `f`"
+  cb = checkout -b
+  ps = push -u
+  pl = !git fetch -p && git rebase
+  pr = "!f() { git remote -v | grep origin -m 1 | cut -d":" -f2 | cut -d"/" -f1 ; }; g() { git symbolic-ref --short HEAD ; }; hub pull-request -h `f`:`g`"
+  um = !git branch -r --no-merged | grep -v HEAD | xargs -L1 git --no-pager log --abbrev-commit --pretty=tformat:'%Cgreen%d%Creset | %h | %an | %Cred%ar%Creset' -1 | column -t -s '|'
+  tree = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  dds  = diff --stat
+  ds   = "!f() { n=${1:-0}; git diff stash@{$n}~1..stash@{$n}; }; f"
+  stu  = status --untracked-files=no
+  root = !pwd
+  ls   = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset'
+  lsa  = log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset' --all
+  save = !sh -c 'export PREV=$(git symbolic-ref HEAD|cut -d/ -f3-) && git checkout -b "$1" && git commit -am "$1" && git checkout "$PREV"' -
+  squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \"${1:-Initial commit}\");};f"
+
+[pull]
+  rebase = true
+
+[credential]
+  helper = store
+
+[diff]
+  algorithm = patience
+
+[filter "media"]
+  clean = git media clean %f
+  smudge = git media smudge %f
+  required = true
+
+[status]
+  showUntrackedFiles = all
+
+[commit]
+  template = ~/.gitmessage

@@ -1,0 +1,18 @@
+# Ignored files
+tags
+.env
+*.tags
+.smithrc
+npm-debug.log
+*.beam
+*.vimfuzzyfinder
+tmuxinator/.tmuxinator/working.yml
+
+# Ignore directories
+tmp
+node_modules
+bundle
+*/.vim/swap
+*/.vim/undo
+*/.vim/bakup
+.netrwhist
