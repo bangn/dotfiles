@@ -90,3 +90,7 @@ export TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 # asdf
 source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
+# BEGIN ANSIBLE MANAGED BLOCK
+# source autojump
+source /usr/share/autojump/autojump.zsh
+# END ANSIBLE MANAGED BLOCK
