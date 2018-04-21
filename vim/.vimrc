@@ -216,6 +216,7 @@ if has('nvim')
 elseif has("gui_macvim")
   let test#strategy = "iterm"
 end
+let test#python#runner = 'pytest'
 "End vim-test settings
 
 "vim-rubocop settings
