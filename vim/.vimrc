@@ -227,6 +227,7 @@ nmap <Leader>rc :RuboCop<CR>
 
 "deoplete settings
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#num_processes = 1
 "End deoplete settings
 
 "vim-commentary mappings
