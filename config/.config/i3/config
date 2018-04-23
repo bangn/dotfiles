@@ -262,4 +262,7 @@ exec --no-startup-id clipit &
 # Check Battery
 exec --no-startup-id i3-battery-popup
 
+# start ibus
+exec --no-startup-id ibus-daemon
+
 # END AUTOSTART
