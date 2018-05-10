@@ -1,5 +1,5 @@
 export BINSTUBS_PATH="./bin:./.bundle/bin:./.bundle/binstubs"
-export LOCAL_BIN="/usr/local/bin"
+export LOCAL_BIN="/usr/local/bin:$HOME/.local/bin"
 export LOCAL_SBIN="/usr/local/sbin"
 export BCC_TOOLS_BIN="/usr/share/bcc/tools"
 export DOTFILES_TOOLS_BIN="$HOME/dotfiles/tools/bin"
