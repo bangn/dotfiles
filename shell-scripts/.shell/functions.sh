@@ -119,6 +119,15 @@ dashify() {
   fi
 }
 
+underscorify() {
+  if [ -e "$1" ]; then
+    echo Moved "$1" to "$(echo "$1" | tr '\-| ' '_' | awk '{print tolower($0)}')"
+    mv "$1" "$(echo "$1" | tr '\-| ' '_' | awk '{print tolower($0)}')"
+  else
+    echo "Usage: underscorify file/directory"
+  fi
+}
+
 exclude_patterns() {
   exclude="-false" # need to start the list somewhere so we have the right number of "-or"
 
