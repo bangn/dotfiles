@@ -332,5 +332,12 @@ au BufRead,BufNewFile *.exs setfiletype elixir
 "End Set file type to elixir for .exs file
 
 "Functions
+"" Format JSON file
 com! FormatJSON %!python -m json.tool
+""
+
+"" Insert line number
+com! -range InsertLineNumber <line1>,<line2>!nl -s '. ' -w 1
+""
+
 "End Functions
