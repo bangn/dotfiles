@@ -107,6 +107,7 @@ let NERDTreeShowHidden=1
 let g:NERDTreeMapOpenSplit='s'
 let g:NERDTreeMapOpenVSplit='v'
 let g:NERDSpaceDelims = 1 " add spaces after comment delimiters by default.
+let g:NERDTreeShowLineNumbers = 1
 map <Leader>nt :NERDTreeToggle<CR>
 "End NerdTree settings
 
