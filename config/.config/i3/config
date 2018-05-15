@@ -236,7 +236,7 @@ exec synclient VertScrollDelta=-114
 exec synclient HorizScrollDelta=-114
 
 # Start Network Manager
-exec --no-startup-id nm-applet &
+exec --no-startup-id nm-applet
 
 # Disable touchpad when typing
 exec syndaemon -i 0.5 -t -K -R -d
@@ -251,6 +251,15 @@ exec xautolock -time 3 -locker screenlock
 # Decrease key delay. Alternatively this can be put under ~/.xinitrc.
 exec xset r rate 200 0
 
+# start ibus in order to run alacritty
+exec --no-startup-id ibus-daemon
+
+# start im-config in order to run alacritty
+# exec --no-startup-id im-config
+
+# start im-config in order to run alacritty
+exec --no-startup-id fcitx
+
 # Start terminal in workspace 1.
 exec --no-startup-id i3-msg 'workspace 1; exec alacritty'
 
@@ -261,8 +270,5 @@ exec --no-startup-id clipit &
 
 # Check Battery
 exec --no-startup-id i3-battery-popup
-
-# start ibus
-exec --no-startup-id ibus-daemon
 
 # END AUTOSTART
