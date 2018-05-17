@@ -180,6 +180,7 @@ let g:ale_pattern_options = {
 let g:ale_fixers = {
 \   'javascript': ['eslint', 'prettier'],
 \   'sh': ['shfmt'],
+\   'haskell': ['hfmt'],
 \}
 let g:ale_open_list = 1
 let g:ale_set_loclist = 0
