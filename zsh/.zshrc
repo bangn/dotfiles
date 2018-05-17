@@ -3,7 +3,8 @@ export LOCAL_BIN="/usr/local/bin:$HOME/.local/bin"
 export LOCAL_SBIN="/usr/local/sbin"
 export BCC_TOOLS_BIN="/usr/share/bcc/tools"
 export DOTFILES_TOOLS_BIN="$HOME/dotfiles/tools/bin"
-export PATH="$BINSTUBS_PATH:$LOCAL_BIN:$LOCAL_SBIN:$BCC_TOOLS_BIN:$DOTFILES_TOOLS_BIN:$PATH"
+export CABAL_BIN="$HOME/.cabal/bin"
+export PATH="$BINSTUBS_PATH:$LOCAL_BIN:$LOCAL_SBIN:$CABAL_BIN:$BCC_TOOLS_BIN:$DOTFILES_TOOLS_BIN:$PATH"
 
 export DOTFILES="$HOME/dotfiles"
 
