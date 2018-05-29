@@ -1,0 +1,5 @@
+#! /bin/bash
+
+ncdu -1xo- / | gzip > export.gz
+zcat export.gz | ncdu -f -
+rm export.gz
