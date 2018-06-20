@@ -1,0 +1,7 @@
+# /home/bangn/.tmuxinator/working.yml
+
+name: working
+root: ~/dev/dius
+
+windows:
+  - working: cd ~/dev/dius
