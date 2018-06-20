@@ -241,10 +241,6 @@ exec --no-startup-id nm-applet
 # Disable touchpad when typing
 exec syndaemon -i 0.5 -t -K -R -d
 
-# Wallpaper
-set $wallpaper ~/Pictures/background.jpeg
-exec --no-startup-id feh --bg-scale $wallpaper
-
 # Autolock screen
 exec xautolock -time 3 -locker screenlock
 
