@@ -30,7 +30,7 @@ font pango:Source Code Pro 12, Awesome 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -257,7 +257,7 @@ exec --no-startup-id ibus-daemon
 exec --no-startup-id fcitx
 
 # Start terminal in workspace 1.
-exec --no-startup-id i3-msg 'workspace 1; exec alacritty'
+exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal'
 
 # Start chrome in workspace 2.
 exec --no-startup-id i3-msg 'workspace 2; exec google-chrome'
