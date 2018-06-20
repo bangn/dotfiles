@@ -35,7 +35,7 @@ export ASDFINSTALLS=$HOME/.asdf/installs
 export GOPATH="$HOME/src/golang"
 GOV=$(asdf current golang | sed 's/\s*(set by .*)//g')
 export GOROOT=$ASDFINSTALLS/golang/$GOV/go/
-export PATH="$PATH:$GOROOT/bin"
+export PATH="$PATH:$GOPATH/bin"
 export GOROOT_BOOTSTRAP=$GOROOT
 # End Golang path
 
