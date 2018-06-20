@@ -135,7 +135,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
 # Lock screen
-set $Locker i3lock -i ~/Pictures/lock-screen.png && sleep 1
+set $Locker i3lock-blur
 bindsym Mod1+l exec --no-startup-id $Locker, mode "default"
 
 # Suspend
