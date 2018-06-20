@@ -22,7 +22,7 @@ fi
 echo -e "\nInstalling packages"
 for i in  */; do
   echo "Stowing $i ..."
-  stow "$i"
+  stow -R "$i"
 done
 
 # Install vim Plug
