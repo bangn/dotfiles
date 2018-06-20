@@ -30,9 +30,11 @@ export PGHOST='localhost'
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # Add Golang path
-export GOROOT="/usr/local/go"
+export ASDFROOT=$HOME/.asdf
+export ASDFINSTALLS=$HOME/.asdf/installs
 export GOPATH="$HOME/src/golang"
-export PATH="$PATH:$GOPATH/bin"
+GOV=$(asdf current golang | sed 's/\s*(set by .*)//g')
+export GOROOT=$ASDFINSTALLS/golang/$GOV/go/
 export PATH="$PATH:$GOROOT/bin"
 export GOROOT_BOOTSTRAP=$GOROOT
 # End Golang path
