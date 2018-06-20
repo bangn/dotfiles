@@ -4,7 +4,8 @@ export LOCAL_SBIN="/usr/local/sbin"
 export BCC_TOOLS_BIN="/usr/share/bcc/tools"
 export DOTFILES_TOOLS_BIN="$HOME/dotfiles/tools/bin"
 export CABAL_BIN="$HOME/.cabal/bin"
-export PATH="$BINSTUBS_PATH:$LOCAL_BIN:$LOCAL_SBIN:$CABAL_BIN:$BCC_TOOLS_BIN:$DOTFILES_TOOLS_BIN:$PATH"
+export CARGO_BIN="$HOME/.cargo/bin"
+export PATH="$BINSTUBS_PATH:$LOCAL_BIN:$LOCAL_SBIN:$CARGO_BIN:$CABAL_BIN:$BCC_TOOLS_BIN:$DOTFILES_TOOLS_BIN:$PATH"
 
 export DOTFILES="$HOME/dotfiles"
 
@@ -41,11 +42,6 @@ for file in $HOME/.shell/*; do
   source $file
 done
 # End Source all of the .sh files in $HOME/.shell
-
-# chruby
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-# End chruby
 
 # zsh syntax highlighting.
 source $DOTFILES/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
