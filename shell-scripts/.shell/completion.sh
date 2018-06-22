@@ -38,6 +38,3 @@ cds() {
 cdg() {
   cd "$GEM_HOME/gems/$1"
 }
-
-# aws
-source "$HOME/.local/bin/aws_zsh_completer.sh"
