@@ -39,7 +39,7 @@ alias rbde='rabbitmq_delete_all_exchanges'
 # GREP_OPTIONS is deprecated
 GREP_OPTIONS='--color=auto --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=dist --exclude-dir=deps --exclude-dir=_build --exclude-dir=tmp --exclude=tags'
 # shellcheck disable=SC2139
-alias grep="/bin/grep $GREP_OPTIONS"
+alias grep="grep $GREP_OPTIONS"
 unset GREP_OPTIONS
 
 # pbcopy and pbpatse for Linux.
