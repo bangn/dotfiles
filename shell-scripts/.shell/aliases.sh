@@ -2,8 +2,13 @@
 # Edit Shell Profile, Source Shell Profile
 alias ssp='source ~/.zshrc'
 
-alias ll='ls --color=auto -Glah'
-alias l='ls --color=auto -Glah'
+if [[ "$(uname)" == "Darwin" ]]; then
+  alias ll='ls -Glah'
+  alias l='ls -Glah'
+else
+  alias ll='ls --color=auto -Glah'
+  alias l='ls --color=auto -Glah'
+fi
 
 alias rake='noglob rake'
 alias fix-enter-key='stty sane'
