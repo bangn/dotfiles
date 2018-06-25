@@ -91,5 +91,9 @@ source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
 # BEGIN ANSIBLE MANAGED BLOCK
 # source autojump
-source /usr/share/autojump/autojump.zsh
+if [[ "$(uname)" == "Darwin" ]]; then
+  source "/usr/local/share/autojump/autojump.zsh"
+else
+  source /usr/share/autojump/autojump.zsh
+fi
 # END ANSIBLE MANAGED BLOCK
