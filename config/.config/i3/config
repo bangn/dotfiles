@@ -233,7 +233,7 @@ exec setxkbmap -option ctrl:nocaps,altwin:swap_lalt_lwin
 
 # Set natural scrolling
 exec synclient VertScrollDelta=-114
-exec synclient HorizScrollDelta=-114
+exec synclient HorizScrollDelta=114
 
 # Start Network Manager
 exec --no-startup-id nm-applet
