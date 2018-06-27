@@ -194,6 +194,20 @@ let g:ale_sign_warning = '⚠'
 let g:ale_sh_shfmt_options = '-i 2 -ci'
 nmap <silent> <leader>al :ALEToggle<CR>
 nmap <silent> <leader>af :ALEFix<CR>
+"" For haskell
+function CheckIfFileExists(filename)
+  if filereadable(a:filename)
+    return 1
+  endif
+
+  return 0
+endfunction
+""" Disable GHC linter if in a Haskell Stack project
+if (CheckIfFileExists("./stack.yaml") == 1)
+  let g:ale_linters = {
+  \   'haskell': ['stack-build', 'hlinter', 'hdevtools'],
+  \}
+endif
 " End ALE linters
 
 " ESlint for react settings
