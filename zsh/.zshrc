@@ -29,6 +29,16 @@ export PGHOST='localhost'
 # Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# Source all of the .sh files in $HOME/.shell
+for file in $HOME/.shell/*; do
+  source $file
+done
+# End Source all of the .sh files in $HOME/.shell
+
+# asdf
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
+
 # Add Golang path
 export ASDFROOT=$HOME/.asdf
 export ASDFINSTALLS=$HOME/.asdf/installs
@@ -38,12 +48,6 @@ export GOROOT=$ASDFINSTALLS/golang/$GOV/go/
 export PATH="$PATH:$GOPATH/bin"
 export GOROOT_BOOTSTRAP=$GOROOT
 # End Golang path
-
-# Source all of the .sh files in $HOME/.shell
-for file in $HOME/.shell/*; do
-  source $file
-done
-# End Source all of the .sh files in $HOME/.shell
 
 # zsh syntax highlighting.
 source $DOTFILES/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -86,9 +90,6 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore deps --ignore _bu
 # Change output of `time` command format(make it same as bash output).
 export TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 
-# asdf
-source $HOME/.asdf/asdf.sh
-source $HOME/.asdf/completions/asdf.bash
 # BEGIN ANSIBLE MANAGED BLOCK
 # source autojump
 if [[ "$(uname)" == "Darwin" ]]; then
