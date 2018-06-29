@@ -31,8 +31,8 @@ rules:
     - never
   prefer-arrow-callback: error
   prefer-const: error
-  react/no-deprecated: false
-  react/prop-types: false
+  react/no-deprecated: error
+  react/prop-types: error
   strict: error
   symbol-description: error
   yoda:
