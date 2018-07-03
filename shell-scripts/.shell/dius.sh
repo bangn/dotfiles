@@ -12,7 +12,7 @@ cdn() {
 update_git_user_config() {
   config_file="./.git/config"
 
-  if [[ -f "$config_file" ]] && ! grep -q "\[user\]" "$config_file"; then
+  if [[ -f "$config_file" && "$PWD" =~ dius ]] && ! grep -q "\[user\]" "$config_file"; then
     cat << EOF | tee -a "$config_file"
 [user]
   name = bangn
