@@ -1,0 +1,11 @@
+eslint
+prettier
+
+babel-eslint
+eslint-config-prettier
+eslint-plugin-babel
+eslint-plugin-import
+eslint-plugin-jsx-a11y
+eslint-plugin-prettier
+eslint-plugin-react
+prettier-eslint
