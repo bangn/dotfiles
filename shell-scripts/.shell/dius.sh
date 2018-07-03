@@ -6,7 +6,7 @@ cdd() {
 }
 
 cdn() {
-  cd "$HOME/dev/dius/nib/$1"
+  cd "$HOME/dev/dius/nib/$1" && update_local_git_config
 }
 
 update_git_user_config() {
