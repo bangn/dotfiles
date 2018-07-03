@@ -3,8 +3,8 @@
 alias ssp='source ~/.zshrc'
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  alias ll='ls -Glah'
-  alias l='ls -Glah'
+  alias ll='/usr/local/bin/gls --color=auto -Glah'
+  alias l='/usr/local/bin/gls --color=auto -Glah'
 else
   alias ll='ls --color=auto -Glah'
   alias l='ls --color=auto -Glah'

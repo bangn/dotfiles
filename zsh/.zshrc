@@ -20,7 +20,11 @@ case $EDITOR in
 esac
 
 # Use solarized dark for terminal color
-eval $(dircolors "$HOME"/dircolors.solarized.256.dark)
+if [[ $(uname) == "Linux" ]]; then
+  eval $(dircolors "$HOME"/dircolors.solarized.256.dark)
+else
+  eval $(gdircolors "$HOME"/dircolors.solarized.256.dark)
+fi
 
 # For postgres docker
 export PGUSER='postgres'
