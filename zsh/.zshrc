@@ -4,8 +4,9 @@ export LOCAL_SBIN="/usr/local/sbin"
 export BCC_TOOLS_BIN="/usr/share/bcc/tools"
 export DOTFILES_TOOLS_BIN="$HOME/dotfiles/tools/bin"
 export CABAL_BIN="$HOME/.cabal/bin"
+export HASKELL_BIN="$HOME/Library/Haskell/bin" # For macos
 export CARGO_BIN="$HOME/.cargo/bin"
-export PATH="$PATH:$BINSTUBS_PATH:$LOCAL_BIN:$LOCAL_SBIN:$CARGO_BIN:$CABAL_BIN:$BCC_TOOLS_BIN:$DOTFILES_TOOLS_BIN"
+export PATH="$LOCAL_BIN:$LOCAL_SBIN:$CARGO_BIN:$CABAL_BIN:$HASKELL_BIN:$BINSTUBS_PATH:$BCC_TOOLS_BIN:$DOTFILES_TOOLS_BIN:$PATH"
 
 export DOTFILES="$HOME/dotfiles"
 
