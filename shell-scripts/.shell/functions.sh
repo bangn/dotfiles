@@ -177,3 +177,9 @@ asdf_reshim() {
     asdf plugin-list | xargs -Ip asdf reshim p
   fi
 }
+
+# Remove node_modules recursively
+rm_node_modules() {
+  dir="${1:-.}"
+  find "$dir" -name "node_modules" -exec rm -rf {} +
+}
