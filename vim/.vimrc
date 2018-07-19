@@ -33,7 +33,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
 Plug 'eagletmt/ghcmod-vim'
-Plug 'Shougo/vimproc'
+Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
