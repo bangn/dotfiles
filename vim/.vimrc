@@ -4,8 +4,11 @@ filetype off
 
 call plug#begin('~/.vim/bundle')
 
+Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'altercation/vim-colors-solarized'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
+Plug 'eagletmt/neco-ghc', {'for': 'haskell'}
 Plug 'fatih/vim-go'
 Plug 'godlygeek/tabular'
 Plug 'itchyny/lightline.vim'
@@ -32,8 +35,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
-Plug 'eagletmt/ghcmod-vim'
-Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -49,6 +50,7 @@ behave xterm
 autocmd BufLeave,FocusLost * silent! wall " autosave.
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType markdown set tabstop=4|set shiftwidth=4|set expandtab|set spell
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc " Use neco-ghc for completion
 syntax on
 set t_Co=256 " tell the term has 256 colors.
 set showmode " show current mode.
