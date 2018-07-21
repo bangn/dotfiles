@@ -3,9 +3,6 @@ export LOCAL_BIN="/usr/local/bin:$HOME/.local/bin"
 export LOCAL_SBIN="/usr/local/sbin"
 export BCC_TOOLS_BIN="/usr/share/bcc/tools"
 export DOTFILES_TOOLS_BIN="$HOME/dotfiles/tools/bin"
-export CABAL_BIN="$HOME/.cabal/bin"
-export HASKELL_BIN="$HOME/Library/Haskell/bin" # For macos
-export CARGO_BIN="$HOME/.cargo/bin"
 export PATH="$LOCAL_BIN:$LOCAL_SBIN:$CARGO_BIN:$CABAL_BIN:$HASKELL_BIN:$BINSTUBS_PATH:$BCC_TOOLS_BIN:$DOTFILES_TOOLS_BIN:$PATH"
 
 export DOTFILES="$HOME/dotfiles"
@@ -20,20 +17,6 @@ case $EDITOR in
        *) export MANPAGER='less' ;;
 esac
 
-# Use solarized dark for terminal color
-if [[ $(uname) == "Linux" ]]; then
-  eval $(dircolors "$HOME"/dircolors.solarized.256.dark)
-else
-  eval $(gdircolors "$HOME"/dircolors.solarized.256.dark)
-fi
-
-# For postgres docker
-export PGUSER='postgres'
-export PGHOST='localhost'
-
-# Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 # Source all of the .sh files in $HOME/.shell
 for file in $HOME/.shell/*; do
   source $file
@@ -43,16 +26,6 @@ done
 # asdf
 source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
-
-# Add Golang path
-export ASDFROOT=$HOME/.asdf
-export ASDFINSTALLS=$HOME/.asdf/installs
-export GOPATH="$HOME/src/golang"
-GOV=$(asdf current golang | sed 's/\s*(set by .*)//g')
-export GOROOT=$ASDFINSTALLS/golang/$GOV/go/
-export PATH="$PATH:$GOPATH/bin"
-export GOROOT_BOOTSTRAP=$GOROOT
-# End Golang path
 
 # zsh syntax highlighting.
 source $DOTFILES/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -66,25 +39,8 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=59' # Make suggestion more visible wi
 # zsh substring search
 source $DOTFILES/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-# Updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then
-  source "$HOME/google-cloud-sdk/path.zsh.inc";
-fi
-
-# Enables shell command completion for gcloud.
-if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then
-  source "$HOME/google-cloud-sdk/completion.zsh.inc";
-fi
-
 # Allow ssh key/identity to be reloaded.
 ssh-add -K 2>/dev/null
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

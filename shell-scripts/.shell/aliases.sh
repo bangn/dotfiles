@@ -23,7 +23,7 @@ alias hmdb='heroku run rake db:migrate'
 alias hrdb='heroku pg:reset'
 
 # git=hub
-alias git=hub
+# alias git=hub
 
 # smith
 alias agency='bundle exec agency'

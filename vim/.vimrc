@@ -4,21 +4,12 @@ filetype off
 
 call plug#begin('~/.vim/bundle')
 
-Plug 'Shougo/vimproc.vim', {'do': 'make'}
-Plug 'SirVer/ultisnips'
-Plug 'altercation/vim-colors-solarized'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
-Plug 'eagletmt/neco-ghc', {'for': 'haskell'}
-Plug 'fatih/vim-go'
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'mattn/vim-sqlfmt'
-Plug 'mhinz/vim-mix-format'
 Plug 'mileszs/ack.vim'
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'ntpeters/vim-better-whitespace'
@@ -28,7 +19,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'rewrite' }
 Plug 'szw/vim-maximizer'
 Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
@@ -223,7 +213,6 @@ let g:javascript_plugin_flow = 1
 set background=dark
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
-colorscheme solarized
 "End Solarized colors settings
 
 "vim-test settings
