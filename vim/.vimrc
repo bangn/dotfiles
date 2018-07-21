@@ -5,12 +5,14 @@ filetype off
 call plug#begin('~/.vim/bundle')
 
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
+Plug 'SirVer/ultisnips'
 Plug 'altercation/vim-colors-solarized'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
 Plug 'eagletmt/neco-ghc', {'for': 'haskell'}
 Plug 'fatih/vim-go'
 Plug 'godlygeek/tabular'
+Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -197,7 +199,7 @@ let g:ale_sh_shfmt_options = '-i 2 -ci'
 nmap <silent> <leader>al :ALEToggle<CR>
 nmap <silent> <leader>af :ALEFix<CR>
 "" For haskell
-function CheckIfFileExists(filename)
+function! CheckIfFileExists(filename)
   if filereadable(a:filename)
     return 1
   endif
@@ -292,6 +294,13 @@ au FileType go set tabstop=4
 au FileType go set nolist
 
 "End vim-go
+
+" vim snippets settings
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" vim snippets settings
 
 "Mapping
 map <Leader><space> @q " run macro q
