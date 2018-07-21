@@ -50,12 +50,3 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore deps --ignore _bu
 
 # Change output of `time` command format(make it same as bash output).
 export TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
-
-# BEGIN ANSIBLE MANAGED BLOCK
-# source autojump
-if [[ "$(uname)" == "Darwin" ]]; then
-  source "/usr/local/share/autojump/autojump.zsh"
-else
-  source /usr/share/autojump/autojump.zsh
-fi
-# END ANSIBLE MANAGED BLOCK
