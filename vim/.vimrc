@@ -38,7 +38,6 @@ call plug#end()
 "Generic settings
 let mapleader = "," " remap leader to comma.
 filetype indent plugin on
-behave xterm
 autocmd BufLeave,FocusLost * silent! wall " autosave.
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType markdown set tabstop=4|set shiftwidth=4|set expandtab|set spell
@@ -75,9 +74,6 @@ set synmaxcol=80
 set ttyfast " improve smoothness of redrawing.
 set lazyredraw
 set re=1
-if !has('nvim')
-  set ttymouse=xterm2 " enable mouse mode.
-endif
 "backup and undo dir
 set backupdir=~/.vim/bakup
 set undofile
@@ -87,7 +83,6 @@ set undodir=~/.vim/undo
 set dir=~/.vim/swap
 "display tabs and trailing spaces
 set list
-set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 set clipboard=unnamedplus " exchange clipboard
 let g:rubycomplete_rails = 1
 set autoread " set to auto read when a file is changed from the outside
@@ -129,12 +124,9 @@ endif
 set laststatus=2 " always display the statusline in all windows.
 set encoding=utf8
 if has("gui_running")
-  set guifont=Source\ Code\ Pro\ for\ Powerline\ Regular\ 12 " using Source Code Pro.
+  set guifont=Source\ Code\ Pro\ for\ Powerline\ 14 " using Source Code Pro.
 endif
 set fillchars+=stl:\ ,stlnc:\
-if !has('nvim') && !has("gui_macvim") && !has("gui_running")
-  set term=xterm-256color
-endif
 set termencoding=utf-8
 "End Powerline settings
 
