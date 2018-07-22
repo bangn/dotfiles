@@ -27,6 +27,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'kien/ctrlp.vim'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -100,10 +102,6 @@ let g:NERDSpaceDelims = 1 " add spaces after comment delimiters by default.
 let g:NERDTreeShowLineNumbers = 1
 map <Leader>nt :NERDTreeToggle<CR>
 "End NerdTree settings
-
-"FZF settings
-noremap <c-p> :FZF<CR>
-"End FZF settings
 
 "Use ag with ack.vim
 cnoreabbrev Ack Ack! " Dont jump to the first result.
