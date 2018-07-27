@@ -81,7 +81,7 @@ set undoreload=10000 " number of lines to save for undo
 set undodir=~/.vim/undo
 set dir=~/.vim/swap
 "display tabs and trailing spaces
-set list
+set nolist
 set clipboard=unnamed" exchange clipboard
 let g:rubycomplete_rails = 1
 set autoread " set to auto read when a file is changed from the outside
