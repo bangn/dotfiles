@@ -28,7 +28,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'kien/ctrlp.vim'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -53,8 +52,6 @@ set textwidth=80
 set nobackup
 set ignorecase " ignore case when searching.
 set scrolloff=3 " always keep N lines above or below cursor.
-set cursorline " highlight current line.
-set cursorcolumn " highlight current column.
 set smartcase " be smart when searching.
 set incsearch " incremental search.
 set nu " set number.
@@ -85,7 +82,7 @@ set undodir=~/.vim/undo
 set dir=~/.vim/swap
 "display tabs and trailing spaces
 set list
-set clipboard=unnamedplus " exchange clipboard
+set clipboard=unnamed" exchange clipboard
 let g:rubycomplete_rails = 1
 set autoread " set to auto read when a file is changed from the outside
 set iskeyword+=- " treat words with dash as a word.
@@ -303,6 +300,10 @@ nnoremap <leader>rt :!ripper-tags -R .<cr> " generate ripper tags.
 nnoremap <leader>ct :!ctags -R .<cr> " generate ctags
 nnoremap <leader>sl O# frozen_string_literal: true<cr><esc> " fix rubocop string literal error.
 nnoremap <leader>sq :!sqlfmt %
+
+"FZF settings
+noremap <c-p> :FZF<CR>
+"End FZF settings
 
 ""Mapping to choose tab
 nmap <D-1> 1gt
