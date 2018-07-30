@@ -4,6 +4,7 @@ filetype off
 
 call plug#begin('~/.vim/bundle')
 
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
@@ -27,7 +28,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
-Plug 'christoomey/vim-tmux-navigator'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -82,7 +82,12 @@ set undodir=~/.vim/undo
 set dir=~/.vim/swap
 "display tabs and trailing spaces
 set nolist
-set clipboard=unnamed" exchange clipboard
+if (has('win_32'))
+  set clipboard=unnamed" exchange clipboard
+else
+  set clipboard=unnamedplus" exchange clipboard
+endif
+
 let g:rubycomplete_rails = 1
 set autoread " set to auto read when a file is changed from the outside
 set iskeyword+=- " treat words with dash as a word.
