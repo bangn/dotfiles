@@ -13,6 +13,7 @@ zstyle :compinstall filename "$HOME/.zshrc"
 zstyle ':completion:*' menu select=0
 
 source "$HOME/completions/_tmuxinator"
+source "$HOME/completions/_exercism"
 
 # cd to projects
 cdp() {
