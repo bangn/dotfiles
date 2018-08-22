@@ -52,7 +52,6 @@ behave xterm
 autocmd BufLeave,FocusLost * silent! wall " autosave.
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType markdown set tabstop=4|set shiftwidth=4|set expandtab|set spell
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc " Use neco-ghc for completion
 syntax on
 set t_Co=256 " tell the term has 256 colors.
 set showmode " show current mode.
@@ -301,6 +300,14 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " vim snippets settings
+
+" vim haskell settings
+"" Disable haskell-vim omnifunc
+let g:haskellmode_completion_ghc = 0
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc " Use neco-ghc for completion
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
+let g:necoghc_use_stack = 1
+" End vim haskell settings
 
 "Mapping
 map <Leader><space> @q " run macro q
