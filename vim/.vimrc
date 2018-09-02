@@ -209,7 +209,7 @@ endfunction
 """ Disable GHC linter if in a Haskell Stack project
 if (CheckIfFileExists("./stack.yaml") == 1)
   let g:ale_linters = {
-  \   'haskell': ['stack-build', 'hlinter', 'hdevtools'],
+  \   'haskell': ['stack-build', 'hlint', 'hdevtools'],
   \}
 endif
 " End ALE linters
