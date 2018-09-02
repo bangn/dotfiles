@@ -10,6 +10,8 @@ rules:
 
   colons:
     level: warning
+    max-spaces-before: 0
+    max-spaces-after: -1
 
   commas:
     level: warning
