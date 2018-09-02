@@ -175,7 +175,7 @@ let g:lightline = {
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'sh': ['shellcheck'],
-\   'ruby': ['rubocop'],
+\   'ruby': ['rubocop', 'reek'],
 \   'elixir': ['credo'],
 \}
 let g:ale_pattern_options = {
@@ -183,9 +183,10 @@ let g:ale_pattern_options = {
 \   '.*\.erb$': {'ale_enabled': 0},
 \}
 let g:ale_fixers = {
-\   'javascript': ['eslint', 'prettier'],
+\   'javascript': ['prettier', 'eslint'],
 \   'sh': ['shfmt'],
 \   'haskell': ['hfmt'],
+\   'ruby': ['rubocop'],
 \}
 let g:ale_open_list = 1
 let g:ale_set_loclist = 0
