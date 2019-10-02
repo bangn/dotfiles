@@ -131,15 +131,17 @@ if v:version > 703 || v:version == 703 && has('patch541')
   set formatoptions+=j
 endif
 
-" Set file type to toml for .smithrc file
-au BufRead,BufNewFile *.smithrc setfiletype toml
+augroup FileTypeGroup
+  " Set file type to toml for .smithrc file
+  au BufRead,BufNewFile *.smithrc setfiletype toml
 
-" Hack to fix exs file loading.
-" Set file type to elixir for .exs file
-au BufRead,BufNewFile *.exs setfiletype elixir
+  " Hack to fix exs file loading.
+  " Set file type to elixir for .exs file
+  au BufRead,BufNewFile *.exs setfiletype elixir
 
-" Set .envrc as bash file
-au BufRead,BufNewFile *.envrc setfiletype sh
+  " Set .envrc as bash file
+  au BufRead,BufNewFile *.envrc setfiletype sh
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""
 " Mapping
