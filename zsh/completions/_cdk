@@ -1,0 +1,4 @@
+#compdef cdk
+
+_description files expl 'kowainik projects dir'
+_files -W ~/dev/projects/kowainik -/ && return

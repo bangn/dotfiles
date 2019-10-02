@@ -1,0 +1,14 @@
+[Unit]
+Description=Lock screen before suspending
+Before=sleep.target
+Before=suspend.target
+
+[Service]
+User=bangn
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/i3lock -i /home/bangn/dotfiles/background/universe.jpg && sleep 1
+
+[Install]
+WantedBy=sleep.target
+WantedBy=suspend.target

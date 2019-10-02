@@ -1,0 +1,27 @@
+owner    = "bangn"
+fullName = "bangn"
+email    = "thebangnguyen@gmail.com"
+license  = "MIT"
+lib      = true
+test     = true
+github   = true
+travis   = true
+
+ghcVersions = ["8.6.4"]
+stylish.url = "https://raw.githubusercontent.com/kowainik/org/master/.stylish-haskell.yaml"
+contributing.url = "https://raw.githubusercontent.com/kowainik/org/master/CONTRIBUTING.md"
+
+extensions = [ "ConstraintKinds"
+             , "DeriveGeneric"
+             , "GeneralizedNewtypeDeriving"
+             , "InstanceSigs"
+             , "KindSignatures"
+             , "LambdaCase"
+             , "OverloadedStrings"
+             , "RecordWildCards"
+             , "ScopedTypeVariables"
+             , "StandaloneDeriving"
+             , "TupleSections"
+             , "TypeApplications"
+             , "ViewPatterns"
+             ]

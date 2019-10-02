@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+set -eu
+
+# Update submodules.
+echo -e "Update submodules"
+git submodule update --init
+
+# Install brew
+if ! command -v brew && [[ $(uname) == "Darwin" ]]; then
+  echo "Installing brew..."
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+# Install nix
+# if ! command -v nix; then
+#   echo "Installing nix..."
+#   curl https://nixos.org/nix/install | sh
+# fi
+# Use unstable channel
+# nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+# nix-channel --update
+# nix-env -f nix-packages.nix -i --remove-all
+
+# Install stow if it does not exist.
+if ! command -v stow && [[ $(uname) == "Darwin" ]]; then
+  echo -e "\nInstalling stow..."
+  brew install stow
+fi
+
+# Use stow to populate dotfiles
+echo -e "Populating dotfiles...\n"
+for i in  */; do
+  echo "Stowing $i ..."
+  stow -R "$i"
+done
+
+# Install vim Plug
+echo -e "\nInstalling vim Plug ..."
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Install docker completion
+completion_dir="./zsh/completions"
+
+echo -e "\nInstall github hub completion"
+curl -L\
+  https://raw.githubusercontent.com/github/hub/master/etc/hub.zsh_completion \
+  -o $completion_dir/_hub
+
+echo -e "\nDone!"
