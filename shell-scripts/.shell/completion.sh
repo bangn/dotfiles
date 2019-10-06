@@ -42,5 +42,5 @@ cdg() {
 
 # cd to kowainik projects
 cdk() {
-  cd "$HOME/dev/projects/kowainik/$1"
+  cd "$HOME/dev/projects/haskell/kowainik/$1"
 }
