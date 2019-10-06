@@ -9,6 +9,7 @@
 npm-debug.log
 tags
 tags.*
+.talismanrc
 
 # Ignore directories
 */.vim/bakup
