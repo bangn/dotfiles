@@ -25,6 +25,7 @@ tmp
 
 # Haskell/stack compiler output
 .stack-work
+.stack
 
 # bakup directory
 bakup
