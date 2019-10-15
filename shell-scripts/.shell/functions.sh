@@ -198,5 +198,5 @@ mkcd() {
 
 # find and replace all
 fara() {
-  grep "$1" -rl . | xargs -I file sed -i "s/$1/$2/g" file
+  grep "$1" -rl "${1:-.}" | xargs -I file sed -i "s/$1/$2/g" file
 }
