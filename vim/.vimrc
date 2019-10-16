@@ -24,7 +24,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mattn/vim-sqlfmt'
-Plug 'mhinz/vim-mix-format'
 Plug 'mileszs/ack.vim'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'neovimhaskell/haskell-vim'
