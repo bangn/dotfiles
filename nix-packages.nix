@@ -18,7 +18,7 @@ let
       nixpkgs.hlint
       nixpkgs.htop
       nixpkgs.jq
-      # nixpkgs.neovim # It does not play well in postgres client with \e
+      nixpkgs.neovim
       nixpkgs.nix
       nixpkgs.nixops
       nixpkgs.stow
