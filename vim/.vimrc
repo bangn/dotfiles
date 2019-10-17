@@ -83,7 +83,6 @@ set nobackup
 set nofoldenable " dont fold by default.
 set nowrap " wrapping preferences.
 set nu " set number.
-set re=1
 set ruler " show current position.
 set scrolloff=3 " always keep N lines above or below cursor.
 set shiftwidth=2
