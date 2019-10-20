@@ -39,14 +39,15 @@ alias mmv='noglob zmv -W'
 GREP_OPTIONS=$(cat <<EOF
   --color=auto \
   --exclude-dir="*snapshots*" \
+  --exclude-dir="dist*" \
   --exclude-dir=.git \
+  --exclude-dir=.stack-work \
+  --exclude-dir=.stack \
   --exclude-dir=_build \
   --exclude-dir=coverage \
   --exclude-dir=deps \
-  --exclude-dir="dist*" \
   --exclude-dir=node_modules \
   --exclude-dir=tmp \
-  --exclude-dir=.stack-work \
   --exclude=tags
 EOF
 )
