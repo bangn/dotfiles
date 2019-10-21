@@ -82,7 +82,7 @@ set ignorecase " ignore case when searching.
 set incsearch " incremental search.
 set lazyredraw
 set linebreak " wrap lines at convenient points.
-set mouse=a " enable mouse use in all modes.
+set mouse=c " enable mouse use in command-line mode.
 set nobackup
 set nofoldenable " dont fold by default.
 set nowrap " wrapping preferences.
