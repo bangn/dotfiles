@@ -164,6 +164,12 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>ts :%s/\s\+$//<cr> " remove trailing whitespace.
 nnoremap <leader>w :set nowrap!<cr> " no wrap.
 
+"" Terminal mode
+""" Enter
+nnoremap te :term<cr>
+""" Escape terminal mode
+tnoremap <Esc> <C-\><C-n>
+
 nnoremap <silent> sp <C-w>s
 nnoremap <silent> vs <C-w>v
 
@@ -319,7 +325,7 @@ nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>c :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR><Paste>
+nmap <silent> <leader>g :TestVisit<CR>
 if has('nvim')
   let test#strategy = "neovim"
   tmap <C-o> <C-\><C-n>
