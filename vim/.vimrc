@@ -40,7 +40,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-ragtag'
 Plug 'w0rp/ale'
+Plug 'wellle/targets.vim'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'Yggdroot/indentLine'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -492,6 +497,12 @@ let g:sqlfmt_command = "sqlformat"
 let g:sqlfmt_options = "-r -k upper"
 let g:sqlfmt_auto = 1
 nnoremap <Leader>sqlf :SQLFmt<CR>
+
+""""""""""""""""""""""""""""""""""""""""
+" Yggdroot/indentLine
+""""""""""""""""""""""""""""""""""""""""
+let g:indentLine_faster     = 1
+let g:indentLine_setConceal = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
