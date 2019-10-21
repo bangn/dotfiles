@@ -5,5 +5,5 @@ root: ~/dev/projects/kowainik
 
 windows:
   - kowainik:
-      root: ~/dev/projects/kowainik
+      root: ~/dev/projects/haskell/kowainik
       layout: main-vertical
