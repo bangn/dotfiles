@@ -253,6 +253,7 @@ let g:ale_linters = {
 \   'sh': ['shellcheck'],
 \   'ruby': ['rubocop', 'rufo', 'standardrb'],
 \   'elixir': ['credo'],
+\   'haskell': ['hlint'],
 \}
 let g:ale_pattern_options = {
 \   '.*\.erb$': {'ale_enabled': 0},
@@ -297,13 +298,6 @@ function! CheckIfFileExists(filename)
 
   return 0
 endfunction
-
-""" Disable GHC linter if in a Haskell Stack project
-if (CheckIfFileExists("./stack.yaml") == 1)
-  let g:ale_linters = {
-  \   'haskell': ['stack-build', 'hlint', 'hdevtools'],
-  \}
-endif
 
 """"""""""""""""""""""""""""""""""""""""
 " ESlint for react
