@@ -7,6 +7,7 @@ let
   packages =
     [
       # Sourced directly from nixpkgs
+      nixpkgs.alacritty
       nixpkgs.autojump
       nixpkgs.bat
       nixpkgs.ctags
