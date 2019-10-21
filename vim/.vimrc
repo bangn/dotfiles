@@ -194,10 +194,10 @@ vnoremap > >gv
 """"""""""""""""""""""""""""""""""""""""
 " NerdTree
 """"""""""""""""""""""""""""""""""""""""
-let NERDTreeShowHidden=1
-let g:NERDTreeMapOpenSplit='s'
-let g:NERDTreeMapOpenVSplit='v'
-let g:NERDSpaceDelims = 1 " add spaces after comment delimiters by default.
+let NERDTreeShowHidden        = 1
+let g:NERDTreeMapOpenSplit    = 's'
+let g:NERDTreeMapOpenVSplit   = 'v'
+let g:NERDSpaceDelims         = 1 " add spaces after comment delimiters by default.
 let g:NERDTreeShowLineNumbers = 1
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 
@@ -265,21 +265,21 @@ let g:ale_fixers = {
 \   'haskell': ['brittany', 'floskell', 'stylish-haskell'],
 \   'ruby': ['rufo', 'standardrb', 'rubocop'],
 \}
-let g:ale_completion_enabled=1
+let g:ale_completion_enabled             = 1
 let g:ale_completion_tsserver_autoimport = 1
-let g:ale_echo_msg_format = '[%linter%] %s'
-let g:ale_fix_on_save = 1
-let g:ale_keep_list_window_open = 0 " do not keep list if there is no error/warning
-let g:ale_lint_on_enter = 0 " don't want linters to run on opening a file
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_open_list = 'on_save'
-let g:ale_set_highlights = 1
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
-let g:ale_sh_shfmt_options = '-i 2 -ci'
-let g:ale_sign_error = '⤫'
-let g:ale_sign_warning = '⚠'
+let g:ale_echo_msg_format                = '[%linter%] %s'
+let g:ale_fix_on_save                    = 1
+let g:ale_keep_list_window_open          = 0 " do not keep list if there is no error/warning
+let g:ale_lint_on_enter                  = 0 " don't want linters to run on opening a file
+let g:ale_lint_on_save                   = 1
+let g:ale_lint_on_text_changed           = 'never'
+let g:ale_open_list                      = 'on_save'
+let g:ale_set_highlights                 = 1
+let g:ale_set_loclist                    = 0
+let g:ale_set_quickfix                   = 1
+let g:ale_sh_shfmt_options               = '-i 2 -ci'
+let g:ale_sign_error                     = '⤫'
+let g:ale_sign_warning                   = '⚠'
 nmap <silent> <leader>al :ALEToggle<CR>
 nmap <silent> <leader>af :ALEFix<CR>
 
@@ -316,7 +316,7 @@ let g:javascript_plugin_flow = 1
 """"""""""""""""""""""""""""""""""""""""
 set background=dark
 let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
+let g:solarized_contrast   = "high"
 colorscheme solarized
 
 """"""""""""""""""""""""""""""""""""""""
@@ -362,17 +362,17 @@ nnoremap <Leader>gdm :Gdiff origin/master<CR>
 """"""""""""""""""""""""""""""""""""""""
 " vim-go
 """"""""""""""""""""""""""""""""""""""""
-let g:go_auto_type_info = 0
-let g:go_code_completion_enabled = 1
-let g:go_disable_autoinstall = 0
+let g:go_auto_type_info              = 0
+let g:go_code_completion_enabled     = 1
+let g:go_disable_autoinstall         = 0
 let g:go_highlight_build_constraints = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_types = 1
+let g:go_highlight_extra_types       = 1
+let g:go_highlight_fields            = 1
+let g:go_highlight_functions         = 1
+let g:go_highlight_methods           = 1
+let g:go_highlight_operators         = 1
+let g:go_highlight_structs           = 1
+let g:go_highlight_types             = 1
 
 "" For Test
 au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)
@@ -398,24 +398,24 @@ augroup haskell
   autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc "Use neco-ghc for completion
 augroup END
 let g:haskellmode_completion_ghc = 0
-let g:necoghc_use_stack = 1
-let g:ycm_semantic_triggers = {'haskell' : ['.']}
+let g:necoghc_use_stack          = 1
+let g:ycm_semantic_triggers      = {'haskell' : ['.']}
 "" haskell-vim
-let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
-let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
-let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_quantification   = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo      = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax      = 1      " to enable highlighting of `proc`
 let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
-let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
-let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
-let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
+let g:haskell_enable_typeroles        = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers  = 1  " to enable highlighting of `static`
+let g:haskell_backpack                = 1                " to enable highlighting of backpack keywords
 
 """"""""""""""""""""""""""""""""""""""""
 " vim snippets
 """"""""""""""""""""""""""""""""""""""""
 "" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger       = "<tab>"
+let g:UltiSnipsJumpForwardTrigger  = "<c-b>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
 
 """"""""""""""""""""""""""""""""""""""""
 " neosnippet
@@ -468,9 +468,9 @@ endif
 " vim-gutentags
 """"""""""""""""""""""""""""""""""""""""
 let g:gutentags_generate_on_empty_buffer = 0
-let g:gutentags_generate_on_missing = 1
-let g:gutentags_generate_on_new = 1
-let g:gutentags_generate_on_write = 1
+let g:gutentags_generate_on_missing      = 1
+let g:gutentags_generate_on_new          = 1
+let g:gutentags_generate_on_write        = 1
 
 """"""""""""""""""""""""""""""""""""""""
 " plantuml-syntax
@@ -495,7 +495,7 @@ autocmd Filetype plantuml let &l:makeprg=s:makecommand
 """"""""""""""""""""""""""""""""""""""""
 let g:sqlfmt_command = "sqlformat"
 let g:sqlfmt_options = "-r -k upper"
-let g:sqlfmt_auto = 1
+let g:sqlfmt_auto    = 1
 nnoremap <Leader>sqlf :SQLFmt<CR>
 
 """"""""""""""""""""""""""""""""""""""""
