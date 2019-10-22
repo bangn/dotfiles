@@ -166,7 +166,8 @@ nnoremap <leader>w :set nowrap!<cr> " no wrap.
 
 "" Terminal mode
 """ Enter
-nnoremap te :term<cr>
+nnoremap st :sp<CR>:term<CR>A
+nnoremap vt :vs<CR>:term<CR>A
 """ Escape terminal mode
 tnoremap <Esc> <C-\><C-n>
 
