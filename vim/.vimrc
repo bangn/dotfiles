@@ -193,6 +193,8 @@ nnoremap <D-9> :tablast<CR>
 vnoremap < <gv
 vnoremap > >gv
 
+nnoremap <Leader>rf :checktime<CR> " Refresh all buffers
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
