@@ -9,11 +9,13 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'SirVer/ultisnips'
+Plug 'Yggdroot/indentLine'
 Plug 'aklt/plantuml-syntax'
 Plug 'altercation/vim-colors-solarized'
 Plug 'chreekat/vim-paren-crosshairs'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'fatih/vim-go'
+Plug 'glacambre/firenvim', { 'do': function('firenvim#install') } " Vim in firefox textarea
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
@@ -23,6 +25,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mattn/vim-sqlfmt'
+Plug 'michaeljsmith/vim-indent-object'
 Plug 'mileszs/ack.vim'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'neovimhaskell/haskell-vim'
@@ -36,15 +39,13 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-ragtag'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
-Plug 'michaeljsmith/vim-indent-object'
-Plug 'Yggdroot/indentLine'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -505,6 +506,19 @@ nnoremap <Leader>sqlf :SQLFmt<CR>
 """"""""""""""""""""""""""""""""""""""""
 let g:indentLine_faster     = 1
 let g:indentLine_setConceal = 0
+
+
+""""""""""""""""""""""""""""""""""""""""
+" glacambre/firenvim
+""""""""""""""""""""""""""""""""""""""""
+let g:firenvim_config = {
+    \ 'localSettings': {
+        \ '.*': {
+            \ 'selector': 'textarea,input[type="text"]',
+            \ 'priority': 0,
+        \ }
+    \ }
+\ }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
