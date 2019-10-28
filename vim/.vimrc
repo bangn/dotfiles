@@ -154,16 +154,19 @@ nnoremap <C-e> <C-w>= " make all panes equal size.
 
 nnoremap <leader><space> @q " run macro q
 nnoremap <leader>co <C-w><C-o> " close other opened panes.
-nnoremap <leader>ct :!ctags -R .<cr> " generate ctags
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>pt :setlocal paste!<cr> " toggle paste mode on/off.
-nnoremap <leader>q <C-w>q
-nnoremap <leader>rd :syntax sync fromstart<cr>:redraw!<cr>
-nnoremap <leader>rt :!ripper-tags -R .<cr> " generate ripper tags.
+nnoremap <leader>ct :!ctags -R .<CR> " generate ctags
+nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <leader>pt :setlocal paste!<CR> " toggle paste mode on/off.
+nnoremap <leader>rd :syntax sync fromstart<CR>:redraw!<CR>
+nnoremap <leader>rt :!ripper-tags -R .<CR> " generate ripper tags.
 nnoremap <leader>sl O# frozen_string_literal: true<esc> " fix rubocop string literal error.
-nnoremap <leader>sv :source $MYVIMRC<cr>
-nnoremap <leader>ts :%s/\s\+$//<cr> " remove trailing whitespace.
-nnoremap <leader>w :set nowrap!<cr> " no wrap.
+nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>ts :%s/\s\+$//<CR> " remove trailing whitespace.
+nnoremap <leader>w :set nowrap!<CR> " no wrap.
+
+""" Closing pane/window
+nnoremap <leader>x :x<CR>
+nnoremap <leader>q <C-w>q
 
 "" Terminal mode
 """ Enter
@@ -381,7 +384,7 @@ let g:go_highlight_types             = 1
 au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)
 au Filetype go nmap <leader>gah <Plug>(go-alternate-split)
 au Filetype go nmap <leader>gav <Plug>(go-alternate-vertical)
-au FileType go nmap <leader>gt :GoTest -short<cr>
+au FileType go nmap <leader>gt :GoTest -short<CR>
 
 "" indentation
 au FileType go set noexpandtab
