@@ -168,6 +168,9 @@ nnoremap <leader>w :set nowrap!<CR> " no wrap.
 nnoremap <leader>x :x<CR>
 nnoremap <leader>q <C-w>q
 
+""" Folding
+nnoremap <leader>f $zf%
+
 "" Terminal mode
 """ Enter
 nnoremap st :sp<CR>:term<CR>A
