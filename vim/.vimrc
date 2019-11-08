@@ -176,7 +176,7 @@ nnoremap <leader>f $zf%
 nnoremap st :sp<CR>:term<CR>A
 nnoremap vt :vs<CR>:term<CR>A
 """ Escape terminal mode
-tnoremap <Esc> <C-\><C-n>
+" tnoremap <Esc> <C-\><C-n>:q!<CR>
 
 nnoremap <silent> sp <C-w>s
 nnoremap <silent> vs <C-w>v
