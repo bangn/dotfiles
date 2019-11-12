@@ -65,8 +65,9 @@ augroup autosave
 augroup END
 
 augroup autoSetTab
-  autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
-  autocmd FileType markdown set conceallevel=0|set expandtab|set spell
+  autocmd FileType python setlocal tabstop=4|setlocal shiftwidth=4|setlocal expandtab
+  autocmd FileType markdown setlocal conceallevel=0|setlocal expandtab|setlocal spell
+  autocmd FileType text setlocal spell
 augroup END
 
 syntax on
