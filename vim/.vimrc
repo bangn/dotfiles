@@ -23,6 +23,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mattn/vim-sqlfmt'
 Plug 'michaeljsmith/vim-indent-object'
@@ -174,8 +176,8 @@ nnoremap <leader>f $zf%
 
 "" Terminal mode
 """ Enter
-nnoremap st :sp<CR>:term<CR>A
-nnoremap vt :vs<CR>:term<CR>A
+" nnoremap st :sp<CR>:term<CR>A
+" nnoremap vt :vs<CR>:term<CR>A
 """ Escape terminal mode
 " tnoremap <Esc> <C-\><C-n>:q!<CR>
 
@@ -526,6 +528,49 @@ let g:firenvim_config = {
         \ }
     \ }
 \ }
+
+""""""""""""""""""""""""""""""""""""""""
+" junegunn/goyo
+""""""""""""""""""""""""""""""""""""""""
+nmap <leader>yo :Goyo 100<CR>
+nmap <leader>yf :Goyo!<CR>
+
+function! s:goyoEnter()
+  if executable('tmux') && strlen($TMUX)
+    silent !tmux set status off
+    silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+  endif
+  set number
+  set noshowmode
+  set noshowcmd
+  set scrolloff=999
+  Limelight
+endfunction
+
+function! s:goyoLeave()
+  if executable('tmux') && strlen($TMUX)
+    silent !tmux set status on
+    silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+  endif
+  set showmode
+  set showcmd
+  set scrolloff=5
+  Limelight!
+endfunction
+
+augroup Goyo
+  autocmd! User GoyoEnter nested call <SID>goyoEnter()
+  autocmd! User GoyoLeave nested call <SID>goyoLeave()
+augroup END
+
+""""""""""""""""""""""""""""""""""""""""
+" junegunn/limelight
+""""""""""""""""""""""""""""""""""""""""
+nmap <leader>jl :Limelight<CR>
+nmap <leader>jlo :Limelight!<CR>
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
