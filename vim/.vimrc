@@ -15,7 +15,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'chreekat/vim-paren-crosshairs'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'fatih/vim-go'
-Plug 'glacambre/firenvim', { 'do': function('firenvim#install') } " Vim in firefox textarea
+Plug 'glacambre/firenvim', { 'do': function('firenvim#install(0)') } " Vim in firefox textarea
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
