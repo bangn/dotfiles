@@ -393,14 +393,14 @@ au Filetype go nmap <leader>gav <Plug>(go-alternate-vertical)
 au FileType go nmap <leader>gt :GoTest -short<CR>
 
 "" indentation
-au FileType go set noexpandtab
-au FileType go set shiftwidth=4
-au FileType go set softtabstop=4
-au FileType go set tabstop=4
+au FileType go setlocal noexpandtab
+au FileType go setlocal shiftwidth=4
+au FileType go setlocal softtabstop=4
+au FileType go setlocal tabstop=4
 
 "" Do not set list for go type.
 "" As it will display big red block before any indented line.
-au FileType go set nolist
+au FileType go setlocal nolist
 
 """"""""""""""""""""""""""""""""""""""""
 " vim haskell
@@ -540,10 +540,10 @@ function! s:goyoEnter()
     silent !tmux set status off
     silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
   endif
-  set number
-  set noshowmode
-  set noshowcmd
-  set scrolloff=999
+  setlocal number
+  setlocal noshowmode
+  setlocal noshowcmd
+  setlocal scrolloff=999
   Limelight
 endfunction
 
@@ -552,9 +552,9 @@ function! s:goyoLeave()
     silent !tmux set status on
     silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
   endif
-  set showmode
-  set showcmd
-  set scrolloff=5
+  setlocal showmode
+  setlocal showcmd
+  setlocal scrolloff=5
   Limelight!
 endfunction
 
