@@ -176,10 +176,11 @@ nnoremap <leader>f $zf%
 
 "" Terminal mode
 """ Enter
-" nnoremap st :sp<CR>:term<CR>A
-" nnoremap vt :vs<CR>:term<CR>A
+nnoremap st :sp<CR>:term<CR>A
+nnoremap vt :vs<CR>:term<CR>A
 """ Escape terminal mode
-" tnoremap <Esc> <C-\><C-n>:q!<CR>
+tnoremap <Esc> <C-\><C-n>
+tnoremap <Leader>x <C-\><C-n>:q!<CR>
 
 nnoremap <silent> sp <C-w>s
 nnoremap <silent> vs <C-w>v
@@ -341,7 +342,6 @@ nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 if has('nvim')
   let test#strategy = "neovim"
-  tmap <C-o> <C-\><C-n>
 elseif has("gui_macvim")
   let test#strategy = "iterm"
 end
