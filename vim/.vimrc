@@ -95,7 +95,7 @@ set ruler " show current position.
 set scrolloff=3 " always keep N lines above or below cursor.
 set shiftwidth=2
 set showcmd " display incomplete commands.
-set showmode " show current mode.
+set noshowmode " do not show current mode. lightline already has it
 set smartcase " be smart when searching.
 set smarttab
 set softtabstop=2
