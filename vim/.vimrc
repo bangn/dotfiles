@@ -15,7 +15,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'chreekat/vim-paren-crosshairs'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'fatih/vim-go'
-Plug 'glacambre/firenvim', { 'do': function('firenvim#install(0)') } " Vim in firefox textarea
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Vim in firefox textarea
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
@@ -552,7 +552,6 @@ function! s:goyoLeave()
     silent !tmux set status on
     silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
   endif
-  setlocal showmode
   setlocal showcmd
   setlocal scrolloff=5
   Limelight!
