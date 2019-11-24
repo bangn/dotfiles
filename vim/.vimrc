@@ -528,6 +528,11 @@ let g:firenvim_config = {
         \ }
     \ }
 \ }
+if exists('g:started_by_firenvim')
+  setlocal laststatus=0
+  setlocal noruler
+  setlocal noshowcmd
+endif
 
 """"""""""""""""""""""""""""""""""""""""
 " junegunn/goyo
