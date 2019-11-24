@@ -508,7 +508,7 @@ autocmd Filetype plantuml let &l:makeprg=s:makecommand
 let g:sqlfmt_command = "sqlformat"
 let g:sqlfmt_options = "-r -k upper"
 let g:sqlfmt_auto    = 1
-nnoremap <Leader>sqlf :SQLFmt<CR>
+nnoremap <Leader>sf :SQLFmt<CR>
 
 """"""""""""""""""""""""""""""""""""""""
 " Yggdroot/indentLine
