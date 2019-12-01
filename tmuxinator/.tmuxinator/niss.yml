@@ -8,7 +8,7 @@ windows:
       root: ~/dev/dius/nib/rqp-proxy
       layout: main-vertical
       panes:
-        - npm start
+        -
   - niss:
       root: ~/dev/dius/nib
       layout: tiles
