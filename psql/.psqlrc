@@ -1,1 +1,2 @@
 \setenv PSQL_EDITOR /usr/bin/vim
+\x auto
