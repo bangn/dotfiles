@@ -523,7 +523,7 @@ let g:indentLine_setConceal = 0
 let g:firenvim_config = {
     \ 'localSettings': {
         \ '.*': {
-            \ 'selector': 'textarea,input[type="text"]',
+            \ 'selector': 'textarea',
             \ 'priority': 0,
         \ }
     \ }
