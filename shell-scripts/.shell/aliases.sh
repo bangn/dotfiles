@@ -14,9 +14,6 @@ fi
 alias rake='noglob rake'
 alias fix-enter-key='stty sane'
 
-# alias server='python -m SimpleHTTPServer'
-alias server='ruby -run -e httpd . -b127.0.0.1 -p3000'
-
 # heroku
 alias hra='heroku restart --app'
 alias hlt='heroku logs --tail'
