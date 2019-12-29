@@ -1,13 +1,22 @@
-export CABAL_BIN="$HOME/.cabal/bin"
-export CARGO_BIN="$HOME/.cargo/bin"
-export DOTFILES_TOOLS_BIN="$HOME/dotfiles/tools/bin"
-export GHCUP_BIN="$HOME/.ghcup/bin"
-export GHC_BIN="/opt/ghc/bin"
-export HASKELL_BIN_MAC="$HOME/Library/Haskell/bin" # For macos
-export LOCAL_BIN="/usr/local/bin:$HOME/.local/bin"
-export LOCAL_SBIN="/usr/local/sbin"
-export TALISTMAN_BIN="$HOME/.talisman/bin"
-export PATH="$LOCAL_BIN:$LOCAL_SBIN:$GHCUP_BIN:$GHC_BIN:$CABAL_BIN:$HASKELL_BIN_MAC:$CARGO_BIN:$DOTFILES_TOOLS_BIN:$TALISTMAN_BIN:$PATH"
+function export_path() {
+  if [[ ! "$PATH" == *"$1"* ]]; then
+    export PATH="${PATH:+${PATH}:}/$1"
+  fi
+}
+
+local PATHS="$HOME/.cabal/bin
+$HOME/.cargo/bin
+$HOME/.ghcup/bin
+$HOME/.local/bin
+$HOME/.talisman/bin
+$HOME/Library/Haskell/bin
+$HOME/dotfiles/tools/bin
+/opt/ghc/bin
+/usr/local/bin"
+
+for p in "$PATHS"; do
+  export_path "$p"
+done
 
 export DOTFILES="$HOME/dotfiles"
 
@@ -33,10 +42,12 @@ export PGUSER='postgres'
 export PGHOST='localhost'
 
 # Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export_path "/usr/local/heroku/bin"
 
 # Source nix package manager and fix perl locale warning
-source ~/.nix-profile/etc/profile.d/nix.sh
+if [[ ! "$PATH" == *$HOME/.nix-profile/bin* ]]; then
+  source ~/.nix-profile/etc/profile.d/nix.sh
+fi
 export LOCALE_ARCHIVE="$(readlink ~/.nix-profile/lib/locale)/locale-archive"
 
 # Source all of the .sh files in $HOME/.shell
@@ -55,7 +66,7 @@ export ASDFINSTALLS=$HOME/.asdf/installs
 export GOPATH="$HOME/src/golang"
 GOV=$(asdf current golang | sed 's/\s*(set by .*)//g')
 export GOROOT=$ASDFINSTALLS/golang/$GOV/go/
-export PATH="$PATH:$GOPATH/bin"
+export_path "$GOPATH/bin"
 export GOROOT_BOOTSTRAP=$GOROOT
 # End Golang path
 
