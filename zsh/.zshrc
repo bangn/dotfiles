@@ -104,9 +104,10 @@ ssh-add -K 2>/dev/null
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# Setting ag as the default source for fzf
+# Setting fd as the default source for fzf
 # fzf find hidden files.
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore deps --ignore _build -g ""'
+export FZF_DEFAULT_COMMAND='fd --type f --ignore-case --hidden --exclude .git --exclude deps --exclude _build'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Change output of `time` command format(make it same as bash output).
 export TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
