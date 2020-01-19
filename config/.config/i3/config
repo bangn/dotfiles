@@ -262,10 +262,7 @@ exec xset r rate 200 0
 # start ibus in order to run alacritty
 exec --no-startup-id ibus-daemon
 
-# start im-config in order to run alacritty
-# exec --no-startup-id im-config
-
-# start im-config in order to run alacritty
+# start fcitx
 exec --no-startup-id fcitx
 
 # Start terminal in workspace 1.
