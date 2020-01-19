@@ -149,6 +149,9 @@ augroup FileTypeGroup
   au BufRead,BufNewFile *.envrc setfiletype sh
 augroup END
 
+" Do not show line number in terminal
+au TermOpen * setlocal nonumber norelativenumber
+
 """"""""""""""""""""""""""""""""""""""""
 " Mapping
 """"""""""""""""""""""""""""""""""""""""
