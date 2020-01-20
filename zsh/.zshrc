@@ -1,6 +1,6 @@
 function export_path() {
   if [[ ! "$PATH" == *"$1"* ]]; then
-    export PATH="${PATH:+${PATH}:}/$1"
+    export PATH="${PATH:+${PATH}:}$1"
   fi
 }
 
@@ -14,7 +14,7 @@ $HOME/dotfiles/tools/bin
 /opt/ghc/bin
 /usr/local/bin"
 
-for p in "$PATHS"; do
+for p in $(echo "$PATHS" | sed 's/\n/ /g'); do
   export_path "$p"
 done
 
