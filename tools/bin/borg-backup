@@ -11,16 +11,16 @@ trap 'echo $( date ) Backup interrupted >&2; exit 2' INT TERM
 
 info "Starting backup"
 
-borg create                         \
-    --verbose                       \
-    --filter AME                    \
-    --list                          \
-    --stats                         \
-    --show-rc                       \
-    --compression lz4               \
-    --exclude-caches                \
-    --exclude '*node_modules*'      \
-    --exclude '*[C|c]ache*'         \
-                                    \
-    ::'{hostname}-{now}'            \
+sudo borg create                        \
+    --verbose                           \
+    --filter AME                        \
+    --list                              \
+    --stats                             \
+    --show-rc                           \
+    --compression lz4                   \
+    --exclude-caches                    \
+    --exclude '*node_modules*'          \
+    --exclude '*[C|c]ache*'             \
+                                        \
+    "$BORG_REPO"::'{hostname}-{now}'    \
     /home
