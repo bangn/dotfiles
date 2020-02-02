@@ -67,6 +67,10 @@ augroup autosave
   autocmd BufLeave,FocusLost * silent! wall " autosave.
 augroup END
 
+augroup setFileType
+  au BufRead,BufNewFile *.md set filetype=markdown
+augroup END
+
 augroup autoSetTab
   autocmd FileType python setlocal tabstop=4|setlocal shiftwidth=4|setlocal expandtab
   autocmd FileType markdown setlocal conceallevel=0|setlocal expandtab|setlocal spell
