@@ -13,6 +13,7 @@ let
       nixpkgs.ctags
       nixpkgs.curlFull
       nixpkgs.direnv
+      nixpkgs.entr
       nixpkgs.fd
       nixpkgs.ghcid
       nixpkgs.gitAndTools.gitFull
