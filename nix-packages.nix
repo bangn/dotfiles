@@ -27,7 +27,6 @@ let
       nixpkgs.nixops
       nixpkgs.stow
       nixpkgs.stylish-haskell
-      nixpkgs.stylish-haskell
       nixpkgs.tmux
       nixpkgs.travis
       nixpkgs.yq
