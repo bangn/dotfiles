@@ -7,6 +7,8 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neco-syntax'
+Plug 'eagletmt/neco-ghc'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'SirVer/ultisnips'
 Plug 'Yggdroot/indentLine'
