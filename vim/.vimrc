@@ -162,7 +162,6 @@ au TermOpen * setlocal nonumber norelativenumber
 nnoremap - orequire 'pry'; binding.pry<esc> " insert binding.pry after current line.
 nnoremap <C-e> <C-w>= " make all panes equal size.
 
-nnoremap <leader><space> @q " run macro q
 nnoremap <leader>co <C-w><C-o> " close other opened panes.
 nnoremap <leader>ct :!ctags -R .<CR> " generate ctags
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
@@ -173,6 +172,7 @@ nnoremap <leader>sl O# frozen_string_literal: true<esc> " fix rubocop string lit
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>ts :%s/\s\+$//<CR> " remove trailing whitespace.
 nnoremap <leader>w :set nowrap!<CR> " no wrap.
+noremap <leader><space> @q " run macro q
 
 """ Closing pane/window
 nnoremap <leader>x :x<CR>
@@ -212,6 +212,81 @@ vnoremap < <gv
 vnoremap > >gv
 
 nnoremap <Leader>rf :checktime<CR> " Refresh all buffers
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Source:
+" https://sharats.me/posts/automating-the-vim-workplace/
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""
+"" CTRL-U in insert mode deletes a lot. Put an undo-point before it.
+""""""""""""""""""""""""""""""""""""""""
+inoremap <C-u> <C-g>u<C-u>
+
+""""""""""""""""""""""""""""""""""""""""
+"" Sort lines over motion
+""""""""""""""""""""""""""""""""""""""""
+xnoremap <silent> gs :sort i<CR>
+nnoremap <silent> gs :set opfunc=SortLines<CR>g@
+fun! SortLines(type) abort
+    '[,']sort i
+endfun
+
+""""""""""""""""""""""""""""""""""""""""
+"" Easier Alternative to :
+""""""""""""""""""""""""""""""""""""""""
+noremap <Space> :
+
+""""""""""""""""""""""""""""""""""""""""
+"" Simple mappings for buffer switching.
+""""""""""""""""""""""""""""""""""""""""
+nnoremap <Leader>d :b *
+nnoremap <Leader>ls :ls<CR>
+
+""""""""""""""""""""""""""""""""""""""""
+"" Vertical line selection
+""""""""""""""""""""""""""""""""""""""""
+nnoremap <expr> vm <SID>VisualVLine()
+fun! s:VisualVLine() abort
+  let [_, lnum, col; _] = getcurpos()
+  let line = getline('.')
+  let col += strdisplaywidth(line) - strwidth(line)
+
+  let [from, to] = [lnum, lnum]
+  while strdisplaywidth(getline(from - 1)) >= col
+      let from -= 1
+  endwhile
+
+  while strdisplaywidth(getline(to + 1)) >= col
+      let to += 1
+  endwhile
+
+  return "\<C-v>" .
+              \ (to == lnum ? '' : (to - lnum . 'jo')) .
+              \ (from == lnum ? '' : (lnum - from . 'k'))
+endfun
+
+""""""""""""""""""""""""""""""""""""""""
+"" Map to change pwd to the repo-root-directory of the current buffer.
+""""""""""""""""""""""""""""""""""""""""
+nnoremap cu :call <SID>CdToRepoRoot()<CR>
+let g:markers = split('.git .hg .svn .project .idea manage.py pom.xml')
+fun s:CdToRepoRoot() abort
+  for marker in g:markers
+    let root = finddir(marker, expand('%:p:h') . ';')
+    if !empty(root)
+      let root = fnamemodify(root, ':h')
+      exe "chdir" . root
+      echo 'cd ' . root . ' (found ' . marker . ')'
+      return
+    endif
+  endfor
+  echoerr 'No repo root found.'
+endfun
+
+""""""""""""""""""""""""""""""""""""""""
+"" Mapping to change pwd to the directory of the current buffer.
+""""""""""""""""""""""""""""""""""""""""
+nnoremap cm :tcd %:p:h<cr>:pwd<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin settings
@@ -537,6 +612,18 @@ endif
 " Insert line number
 com! -range InsertLineNumber <line1>,<line2>!nl -s '. ' -w 1
 ""
+
+" Create file's directory before saving, if it doesn't exist.
+" Original: https://stackoverflow.com/a/4294176/151048
+augroup BWCCreateDir
+  autocmd!
+  autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+augroup END
+fun! s:MkNonExDir(file, buf)
+  if empty(getbufvar(a:buf, '&buftype')) && a:file !~# '\v^\w+\:\/'
+    call mkdir(fnamemodify(a:file, ':h'), 'p')
+  endif
+endfun
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " End Functions
