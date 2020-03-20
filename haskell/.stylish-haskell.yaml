@@ -14,9 +14,9 @@ steps:
       list_padding: 4
       separate_lists: true
       space_surround: false
-
   - language_pragmas:
       style: vertical
+      align: false
       remove_redundant: true
 
   # Remove trailing whitespace
