@@ -23,6 +23,7 @@ let
       nixpkgs.htop
       nixpkgs.jq
       nixpkgs.neovim
+      nixpkgs.niv
       nixpkgs.nix
       nixpkgs.nixops
       nixpkgs.stow
