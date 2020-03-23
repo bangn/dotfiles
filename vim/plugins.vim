@@ -3,6 +3,14 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/bundle')
 
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'thomasfaingnaert/vim-lsp-snippets'
+Plug 'thomasfaingnaert/vim-lsp-neosnippet'
+
 Plug 'aklt/plantuml-syntax'
 Plug 'majutsushi/tagbar'
 Plug 'altercation/vim-colors-solarized'
@@ -12,7 +20,6 @@ Plug 'eagletmt/neco-ghc'
 Plug 'fatih/vim-go'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Vim in firefox textarea
 Plug 'godlygeek/tabular'
-Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'itchyny/lightline.vim'
 Plug 'janko-m/vim-test'
@@ -28,10 +35,9 @@ Plug 'romainl/vim-cool'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/neco-syntax'
-Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
-Plug 'SirVer/ultisnips'
 Plug 'szw/vim-maximizer'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-bundler'
@@ -240,35 +246,19 @@ let g:haskell_enable_static_pointers  = 1  " to enable highlighting of `static`
 let g:haskell_backpack                = 1                " to enable highlighting of backpack keywords
 
 """"""""""""""""""""""""""""""""""""""""
-" vim snippets
-""""""""""""""""""""""""""""""""""""""""
-"" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger       = "<tab>"
-let g:UltiSnipsJumpForwardTrigger  = "<c-b>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
-
-""""""""""""""""""""""""""""""""""""""""
 " neosnippet
 """"""""""""""""""""""""""""""""""""""""
 "" Plugin key-mappings.
 "" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-c> <Plug>(neosnippet_expand_or_jump)
-smap <C-c> <Plug>(neosnippet_expand_or_jump)
-xmap <C-c> <Plug>(neosnippet_expand_target)
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 
-"" SuperTab like snippets behavior.
-"" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-""imap <expr><TAB>
-"" \ pumvisible() ? "\<C-n>" :
-"" \ neosnippet#expandable_or_jumpable() ?
-"" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-"" For conceal markers.
+" For conceal markers.
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
+set completeopt+=menuone
 
 """"""""""""""""""""""""""""""""""""""""
 " markdown-preview
