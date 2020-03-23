@@ -3,17 +3,11 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/bundle')
 
-Plug 'Shougo/neosnippet-snippets'
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neco-syntax'
-Plug 'eagletmt/neco-ghc'
-Plug 'Shougo/vimproc.vim', {'do': 'make'}
-Plug 'SirVer/ultisnips'
-Plug 'Yggdroot/indentLine'
 Plug 'aklt/plantuml-syntax'
 Plug 'altercation/vim-colors-solarized'
 Plug 'chreekat/vim-paren-crosshairs'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'eagletmt/neco-ghc'
 Plug 'fatih/vim-go'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Vim in firefox textarea
 Plug 'godlygeek/tabular'
@@ -32,6 +26,11 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'romainl/vim-cool'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
+Plug 'Shougo/neco-syntax'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/vimproc.vim', {'do': 'make'}
+Plug 'SirVer/ultisnips'
 Plug 'szw/vim-maximizer'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-bundler'
@@ -46,6 +45,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
+Plug 'Yggdroot/indentLine'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
