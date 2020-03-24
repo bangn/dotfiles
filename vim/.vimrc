@@ -58,9 +58,8 @@ set t_Co=256 " tell the term has 256 colors.
 set tabstop=2
 set textwidth=80
 set ttyfast " improve smoothness of redrawing.
-if !has('nvim')
-  set ttymouse=xterm2 " enable mouse mode.
-endif
+set autoread " set to auto read when a file is changed from the outside
+set iskeyword+=- " treat words with dash as a word.
 "backup and undo dir
 set backupdir=~/.vim/bakup
 set dir=~/.vim/swap
@@ -72,6 +71,11 @@ set undoreload=10000 " number of lines to save for undo
 set list
 set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 set clipboard=unnamedplus " exchange clipboard
+
+if !has('nvim')
+  set ttymouse=xterm2 " enable mouse mode.
+endif
+
 " copy current file name (relative/absolute) to system clipboard (Mac version)
 " See :help let :help expand :help registers for details
 if has("mac")
@@ -84,9 +88,7 @@ if has("gui_gtk") || has("gui_gtk2") || has("gui_gnome") || has("unix")
   " absolute path (/something/src/foo.txt)
   nnoremap <leader>fn :let @+=expand("%:p")<CR>
 endif
-let g:rubycomplete_rails = 1
-set autoread " set to auto read when a file is changed from the outside
-set iskeyword+=- " treat words with dash as a word.
+
 if v:version > 703 || v:version == 703 && has('patch541')
   set formatoptions+=j
 endif
@@ -125,6 +127,7 @@ nnoremap <leader>ts :%s/\s\+$//<CR> " remove trailing whitespace.
 nnoremap <leader>w :set nowrap!<CR> " no wrap.
 nnoremap <silent> sp <C-w>s
 nnoremap <silent> vs <C-w>v
+nnoremap <silent> ya :1,$y<CR>
 
 """ Closing pane/window
 nnoremap <leader>x :x<CR>
