@@ -181,7 +181,6 @@ vmap <Leader>cc gcc
 """"""""""""""""""""""""""""""""""""""""
 " vim-fugitive mappings
 """"""""""""""""""""""""""""""""""""""""
-nnoremap <Leader>fo :foldopen<CR>
 nnoremap <Leader>gd :Gvdiff<CR>
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gps :!git push<CR>

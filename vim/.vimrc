@@ -114,6 +114,7 @@ au TermOpen * setlocal nonumber norelativenumber
 nnoremap - orequire 'pry'; binding.pry<esc> " insert binding.pry after current line.
 nnoremap <C-e> <C-w>= " make all panes equal size.
 nnoremap <leader><space> @q " run macro q
+nnoremap <leader>fo :foldopen<CR>
 nnoremap <leader>co <C-w><C-o> " close other opened panes.
 nnoremap <leader>ct :!ctags -R .<CR> " generate ctags
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
