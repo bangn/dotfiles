@@ -27,53 +27,50 @@ augroup autoSetTab
 augroup END
 
 syntax on
-set ai " auto indent.
-set backspace=indent,eol,start " allow backspacing over everything in insert mode.
+set autoindent
+set autoread
+set backspace=indent,eol,start
+set backupdir=~/.vim/bakup
+set clipboard=unnamedplus
 set colorcolumn=80
-set cursorcolumn " highlight current column.
-set cursorline " highlight current line.
-set expandtab " use spaces instead of tabs.
-set foldmethod=manual " fold manually
-set foldnestmax=10 " deepest fold is 10 levels.
-set hlsearch " highlight search.
-set ignorecase " ignore case when searching.
-set incsearch " incremental search.
+set cursorcolumn
+set cursorline
+set dir=~/.vim/swap
+set expandtab
+set foldmethod=manual
+set foldnestmax=10
+set hlsearch
+set ignorecase
+set incsearch
+set iskeyword+=-
 set lazyredraw
-set linebreak " wrap lines at convenient points.
-set mouse=c " enable mouse use in command-line mode.
+set linebreak
+set list
+set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+set mouse=c
 set nobackup
-set nofoldenable " dont fold by default.
-set nowrap " wrapping preferences.
-set nu " set number.
-set ruler " show current position.
-set scrolloff=3 " always keep N lines above or below cursor.
+set nofoldenable
+set noshowmode
+set nowrap
+set number
+set ruler
+set scrolloff=3
 set shiftwidth=2
-set showcmd " display incomplete commands.
-set noshowmode " do not show current mode. lightline already has it
-set smartcase " be smart when searching.
+set showcmd
+set smartcase
 set smarttab
 set softtabstop=2
 set synmaxcol=160
-set t_Co=256 " tell the term has 256 colors.
 set tabstop=2
 set textwidth=80
-set ttyfast " improve smoothness of redrawing.
-set autoread " set to auto read when a file is changed from the outside
-set iskeyword+=- " treat words with dash as a word.
-"backup and undo dir
-set backupdir=~/.vim/bakup
-set dir=~/.vim/swap
+set ttyfast
 set undodir=~/.vim/undo
 set undofile
-set undolevels=1000 " how many undos
-set undoreload=10000 " number of lines to save for undo
-"display tabs and trailing spaces
-set list
-set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
-set clipboard=unnamedplus " exchange clipboard
+set undolevels=1000
+set undoreload=10000
 
 if !has('nvim')
-  set ttymouse=xterm2 " enable mouse mode.
+  set ttymouse=xterm2
 endif
 
 " copy current file name (relative/absolute) to system clipboard (Mac version)
@@ -87,10 +84,6 @@ endif
 if has("gui_gtk") || has("gui_gtk2") || has("gui_gnome") || has("unix")
   " absolute path (/something/src/foo.txt)
   nnoremap <leader>fn :let @+=expand("%:p")<CR>
-endif
-
-if v:version > 703 || v:version == 703 && has('patch541')
-  set formatoptions+=j
 endif
 
 augroup FileTypeGroup
