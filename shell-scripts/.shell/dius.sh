@@ -32,15 +32,11 @@ git_update_hub_config() {
   config_file="./.git/config"
   host="github.com"
 
-  if [[ "$PWD" =~ nib ]]; then
-    host="git.nib.com.au"
-  fi
-
   if [[ -f "$config_file" ]] && ! grep -q "\\[hub\\]" "$config_file"; then
     cat << EOF | tee -a "$config_file"
 [hub]
-  host = "$host"
-  protocal = ssh
+  host = $host
+  protocol = ssh
 EOF
   fi
 }
