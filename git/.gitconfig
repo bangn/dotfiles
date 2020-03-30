@@ -7,12 +7,13 @@
   excludesfile = ~/.gitignore
   editor = nvim -f
   commentChar = ,
+  pager = diff-so-fancy | less --tabs=4 -RFX
 
 [color]
   branch = auto
   diff = auto
   status = auto
-  ui = auto
+  ui = true
 
 [push]
   default = current
@@ -69,3 +70,15 @@
   template = ~/.gitmessage
 [init]
   templatedir = /home/bangn/.git-template
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+[color "diff"]
+  meta = 11
+  frag = magenta bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse

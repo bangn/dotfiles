@@ -16,6 +16,8 @@ let
       nixpkgs.entr
       nixpkgs.fd
       nixpkgs.ghcid
+      nixpkgs.gitAndTools.delta
+      nixpkgs.gitAndTools.diff-so-fancy
       nixpkgs.gitAndTools.gitFull
       nixpkgs.gitAndTools.hub
       nixpkgs.graphviz
