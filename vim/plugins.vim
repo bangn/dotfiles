@@ -4,6 +4,7 @@
 call plug#begin('~/.vim/bundle')
 
 Plug 'aklt/plantuml-syntax'
+Plug 'majutsushi/tagbar'
 Plug 'altercation/vim-colors-solarized'
 Plug 'chreekat/vim-paren-crosshairs'
 Plug 'christoomey/vim-tmux-navigator'
@@ -61,7 +62,7 @@ let g:NERDTreeMapOpenSplit    = 's'
 let g:NERDTreeMapOpenVSplit   = 'v'
 let g:NERDSpaceDelims         = 1 " add spaces after comment delimiters by default.
 let g:NERDTreeShowLineNumbers = 1
-nnoremap <Leader>nt :NERDTreeToggle<CR>
+nnoremap <leader>nt :NERDTreeToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""
 " FZF
@@ -175,18 +176,18 @@ let g:deoplete#num_processes = 1
 """"""""""""""""""""""""""""""""""""""""
 " vim-commentary
 """"""""""""""""""""""""""""""""""""""""
-nmap <Leader>cc gcc
-vmap <Leader>cc gcc
+nmap <leader>cc gcc
+vmap <leader>cc gcc
 
 """"""""""""""""""""""""""""""""""""""""
 " vim-fugitive mappings
 """"""""""""""""""""""""""""""""""""""""
-nnoremap <Leader>gd :Gvdiff<CR>
-nnoremap <Leader>gb :Gblame<CR>
-nnoremap <Leader>gps :!git push<CR>
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gw :Gwrite<CR>
-nnoremap <Leader>gdm :Gdiff origin/master<CR>
+nnoremap <leader>gd :Gvdiff<CR>
+nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gps :!git push<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gw :Gwrite<CR>
+nnoremap <leader>gdm :Gdiff origin/master<CR>
 
 """"""""""""""""""""""""""""""""""""""""
 " vim-go
@@ -296,7 +297,7 @@ if !exists("g:plantuml_executable_script")
 endif
 let s:makecommand=g:plantuml_executable_script." %"
 
-nnoremap <Leader>pu :w<CR> :silent make<CR>
+nnoremap <leader>pu :w<CR> :silent make<CR>
 
 " define a sensible makeprg for plantuml files
 autocmd Filetype plantuml let &l:makeprg=s:makecommand
@@ -307,7 +308,7 @@ autocmd Filetype plantuml let &l:makeprg=s:makecommand
 let g:sqlfmt_command = "sqlformat"
 let g:sqlfmt_options = "-r -k upper"
 let g:sqlfmt_auto    = 1
-nnoremap <Leader>sf :SQLFmt<CR>
+nnoremap <leader>sf :SQLFmt<CR>
 
 """"""""""""""""""""""""""""""""""""""""
 " Yggdroot/indentLine
@@ -331,5 +332,34 @@ if exists('g:started_by_firenvim')
   setlocal noruler
   setlocal noshowcmd
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-lsp
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable preview window
+set completeopt+=preview
+set omnifunc=lsp#complete
+
+" Auto close preview when completion is done
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+let g:lsp_signs_enabled = 1
+let g:lsp_signs_error   = { 'text': '⤫' }
+let g:lsp_signs_warning = { 'text': '⚠' }
+
+nmap gd <Plug>(lsp-definition)
+nmap mv <Plug>(lsp-rename)
+
+imap <expr><Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+imap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+imap <expr><C-k>   neosnippet#expandable_or_jumpable() ?
+\ ("\<Plug>(neosnippet_expand_or_jump)")
+\ :
+\ ('pumvisible() ? "\<C-y>" : "\<cr>"')
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tagbar
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <leader>tt :TagbarToggle<CR>
 
 " vi: ft=vim
