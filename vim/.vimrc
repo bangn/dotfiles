@@ -27,6 +27,7 @@ augroup autoSetTab
 augroup END
 
 syntax on
+
 set autoindent
 set autoread
 set backspace=indent,eol,start
@@ -68,6 +69,7 @@ set undodir=~/.vim/undo
 set undofile
 set undolevels=1000
 set undoreload=10000
+set wildmenu
 
 if !has('nvim')
   set ttymouse=xterm2
