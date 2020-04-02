@@ -140,18 +140,27 @@ fi
 ################################################################################
 source ~/.zplug/init.zsh
 
+zplug "wfxr/forgit"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting"
 
+########################################
 # zsh autosuggestions
+########################################
 bindkey '^ ' autosuggest-accept
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=59' # Make suggestion more visible with solarized dark.
-# End zsh-autosuggestions
+
+########################################
+# forgit
+########################################
+forgit_add=gadd
+forgit_diff=gdiff
+forgit_restore=grestore
 
 if ! zplug check --verbose; then
-  echo; zplug clean && zplug install
+  zplug clean && zplug install
 fi
 zplug load
 
