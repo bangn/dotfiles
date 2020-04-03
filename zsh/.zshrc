@@ -53,6 +53,21 @@ export PGHOST='localhost'
 export_path "/usr/local/heroku/bin"
 
 ################################################################################
+# nix
+################################################################################
+# Source nix package manager and fix perl locale warning
+if [[ ! "$PATH" == *$HOME/.nix-profile/bin* ]]; then
+  source ~/.nix-profile/etc/profile.d/nix.sh
+fi
+# Fix nix setlocale problems
+# https://qiita.com/kimagure/items/4449ceb0bda5c10ca50f
+if [[ -z "$LOCALE_ARCHIVE_2_27" && ! "$(uname)" == "Darwin" ]]; then
+  glibcLocales=$(nix-build --no-out-link "<nixpkgs>" -A glibcLocales)
+  export LOCALE_ARCHIVE_2_27="${glibcLocales}/lib/locale/locale-archive"
+fi
+export LOCALE_ARCHIVE="$(readlink ~/.nix-profile/lib/locale)/locale-archive"
+
+################################################################################
 # Source all of the .sh files in $HOME/.shell
 ################################################################################
 for file in $HOME/.shell/*; do
@@ -106,22 +121,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # Change output of `time` command format(make it same as bash output).
 ################################################################################
 export TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
-
-################################################################################
-# nix
-################################################################################
-# Fix nix setlocale problems
-# https://qiita.com/kimagure/items/4449ceb0bda5c10ca50f
-if [[ -z "$LOCALE_ARCHIVE_2_27" && ! "$(uname)" == "Darwin" ]]; then
-  glibcLocales=$(nix-build --no-out-link "<nixpkgs>" -A glibcLocales)
-  export LOCALE_ARCHIVE_2_27="${glibcLocales}/lib/locale/locale-archive"
-fi
-
-# Source nix package manager and fix perl locale warning
-if [[ ! "$PATH" == *$HOME/.nix-profile/bin* ]]; then
-  source ~/.nix-profile/etc/profile.d/nix.sh
-fi
-export LOCALE_ARCHIVE="$(readlink ~/.nix-profile/lib/locale)/locale-archive"
 
 ################################################################################
 # direnv
