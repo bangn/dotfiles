@@ -38,7 +38,7 @@ set cursorcolumn
 set cursorline
 set dir=~/.vim/swap
 set expandtab
-set foldmethod=manual
+set foldmethod=indent
 set foldnestmax=10
 set hlsearch
 set ignorecase
@@ -108,8 +108,7 @@ au TermOpen * setlocal nonumber norelativenumber
 """"""""""""""""""""""""""""""""""""""""
 nnoremap - orequire 'pry'; binding.pry<esc> " insert binding.pry after current line.
 nnoremap <C-e> <C-w>= " make all panes equal size.
-nnoremap <leader><space> @q " run macro q
-nnoremap <leader>fo :foldopen<CR>
+nnoremap <leader><space> @q
 nnoremap <leader>co <C-w><C-o> " close other opened panes.
 nnoremap <leader>ct :!ctags -R .<CR> " generate ctags
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
@@ -128,9 +127,6 @@ nnoremap <silent> ya :1,$y<CR>
 """ Closing pane/window
 nnoremap <leader>x :x<CR>
 nnoremap <leader>q <C-w>q
-
-""" Folding
-nnoremap <leader>f $zf%
 
 "" Terminal mode
 """ Enter
