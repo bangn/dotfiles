@@ -69,6 +69,7 @@ set undodir=~/.vim/undo
 set undofile
 set undolevels=1000
 set undoreload=10000
+set updatetime=300
 set wildmenu
 
 if !has('nvim')
@@ -120,9 +121,9 @@ nnoremap <leader>sl O# frozen_string_literal: true<esc> " fix rubocop string lit
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>ts :%s/\s\+$//<CR> " remove trailing whitespace.
 nnoremap <leader>w :set nowrap!<CR> " no wrap.
-nnoremap <silent> sp <C-w>s
-nnoremap <silent> vs <C-w>v
-nnoremap <silent> ya :1,$y<CR>
+nnoremap <silent>sp <C-w>s
+nnoremap <silent>vs <C-w>v
+nnoremap <silent>ya :1,$y<CR>
 
 """ Closing pane/window
 nnoremap <leader>x :x<CR>
