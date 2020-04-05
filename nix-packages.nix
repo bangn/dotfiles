@@ -29,6 +29,7 @@ let
       nixpkgs.nix
       nixpkgs.nixops
       nixpkgs.postgresql_12
+      nixpkgs.shfmt
       nixpkgs.stow
       nixpkgs.stylish-haskell
       nixpkgs.tmux
