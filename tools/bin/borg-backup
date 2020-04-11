@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-export BORG_REPO=/mnt/backup
+export BORG_REPO=/media/bangn/backup
 
 # or this to ask an external program to supply the passphrase:
 export BORG_PASSCOMMAND='lpass show --password borg-backup'
