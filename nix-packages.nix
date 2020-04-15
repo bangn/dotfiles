@@ -9,10 +9,12 @@ let
       # Sourced directly from nixpkgs
       nixpkgs.alacritty
       nixpkgs.autojump
+      nixpkgs.awscli
       nixpkgs.bat
       nixpkgs.ctags
       nixpkgs.curlFull
       nixpkgs.direnv
+      nixpkgs.docker-compose
       nixpkgs.entr
       nixpkgs.fd
       nixpkgs.ghcid
