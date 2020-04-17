@@ -124,7 +124,7 @@ nnoremap <leader>w :set nowrap!<CR> " no wrap.
 nnoremap <silent>sp <C-w>s
 nnoremap <silent>vs <C-w>v
 nnoremap <silent>ya :1,$y<CR>
-
+nnoremap <silent>y. :1,.y<CR>
 """ Closing pane/window
 nnoremap <leader>x :x<CR>
 nnoremap <leader>q <C-w>q
