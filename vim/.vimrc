@@ -109,22 +109,24 @@ au TermOpen * setlocal nonumber norelativenumber
 """"""""""""""""""""""""""""""""""""""""
 nnoremap - orequire 'pry'; binding.pry<esc> " insert binding.pry after current line.
 nnoremap <C-e> <C-w>= " make all panes equal size.
+nnoremap <Leader>rf :checktime<CR> " Refresh all buffers
 nnoremap <leader><space> @q
 nnoremap <leader>co <C-w><C-o> " close other opened panes.
 nnoremap <leader>ct :!ctags -R .<CR> " generate ctags
+nnoremap <leader>d. :1,.d<CR>
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>pt :setlocal paste!<CR> " toggle paste mode on/off.
 nnoremap <leader>rd :syntax sync fromstart<CR>:redraw!<CR>
-nnoremap <Leader>rf :checktime<CR> " Refresh all buffers
 nnoremap <leader>rt :!ripper-tags -R .<CR> " generate ripper tags.
 nnoremap <leader>sl O# frozen_string_literal: true<esc> " fix rubocop string literal error.
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>ts :%s/\s\+$//<CR> " remove trailing whitespace.
 nnoremap <leader>w :set nowrap!<CR> " no wrap.
+nnoremap <silent>Y y$
 nnoremap <silent>sp <C-w>s
 nnoremap <silent>vs <C-w>v
-nnoremap <silent>ya :1,$y<CR>
 nnoremap <silent>y. :1,.y<CR>
+nnoremap <silent>ya :1,$y<CR>
 """ Closing pane/window
 nnoremap <leader>x :x<CR>
 nnoremap <leader>q <C-w>q
