@@ -108,8 +108,8 @@ au TermOpen * setlocal nonumber norelativenumber
 " Mapping
 """"""""""""""""""""""""""""""""""""""""
 nnoremap - orequire 'pry'; binding.pry<esc> " insert binding.pry after current line.
-nnoremap <C-e> <C-w>= " make all panes equal size.
-nnoremap <Leader>rf :checktime<CR> " Refresh all buffers
+nnoremap <leader>e <C-w>= " make all panes equal size.
+nnoremap <leader>rf :checktime<CR> " Refresh all buffers
 nnoremap <leader><space> @q
 nnoremap <leader>co <C-w><C-o> " close other opened panes.
 nnoremap <leader>ct :!ctags -R .<CR> " generate ctags
