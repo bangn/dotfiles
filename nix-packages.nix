@@ -10,6 +10,7 @@ let
       nixpkgs.alacritty
       nixpkgs.autojump
       nixpkgs.awscli
+      nixpkgs.awslogs
       nixpkgs.bat
       nixpkgs.ctags
       nixpkgs.curlFull
