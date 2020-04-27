@@ -54,6 +54,7 @@ set nofoldenable
 set noshowmode
 set nowrap
 set number
+set relativenumber
 set ruler
 set scrolloff=3
 set shiftwidth=2
@@ -107,16 +108,16 @@ au TermOpen * setlocal nonumber norelativenumber
 """"""""""""""""""""""""""""""""""""""""
 " Mapping
 """"""""""""""""""""""""""""""""""""""""
-nnoremap - orequire 'pry'; binding.pry<esc> " insert binding.pry after current line.
-nnoremap <leader>e <C-w>= " make all panes equal size.
-nnoremap <leader>rf :checktime<CR> " Refresh all buffers
+nnoremap <leader>bp orequire 'pry'; binding.pry<esc> " insert binding.pry after current line.
 nnoremap <leader><space> @q
 nnoremap <leader>co <C-w><C-o> " close other opened panes.
 nnoremap <leader>ct :!ctags -R .<CR> " generate ctags
 nnoremap <leader>d. :1,.d<CR>
+nnoremap <leader>e <C-w>= " make all panes equal size.
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>pt :setlocal paste!<CR> " toggle paste mode on/off.
 nnoremap <leader>rd :syntax sync fromstart<CR>:redraw!<CR>
+nnoremap <leader>rf :checktime<CR> " Refresh all buffers
 nnoremap <leader>rt :!ripper-tags -R .<CR> " generate ripper tags.
 nnoremap <leader>sl O# frozen_string_literal: true<esc> " fix rubocop string literal error.
 nnoremap <leader>sv :source $MYVIMRC<CR>
