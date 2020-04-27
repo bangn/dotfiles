@@ -72,6 +72,7 @@ set undolevels=1000
 set undoreload=10000
 set updatetime=300
 set wildmenu
+set grepprg=rg\ --vimgrep
 
 if !has('nvim')
   set ttymouse=xterm2

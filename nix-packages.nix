@@ -32,6 +32,7 @@ let
       nixpkgs.nix
       nixpkgs.nixops
       nixpkgs.postgresql_12
+      nixpkgs.ripgrep
       nixpkgs.shfmt
       nixpkgs.stow
       nixpkgs.stylish-haskell
