@@ -1,4 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plug settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -176,8 +176,9 @@ let test#python#runner = 'pytest'
 " deoplete
 """"""""""""""""""""""""""""""""""""""""
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#num_processes = 1
+
+call deoplete#custom#option('num_processes', 1)
+call deoplete#custom#option('smart_case', v:true)
 
 """"""""""""""""""""""""""""""""""""""""
 " vim-commentary
