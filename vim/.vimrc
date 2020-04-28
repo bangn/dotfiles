@@ -16,10 +16,6 @@ augroup autosave
   autocmd BufLeave,FocusLost * silent! wall " autosave.
 augroup END
 
-augroup setFileType
-  au BufRead,BufNewFile *.md set filetype=markdown
-augroup END
-
 augroup autoSetTab
   autocmd FileType python setlocal tabstop=4|setlocal shiftwidth=4|setlocal expandtab
   autocmd FileType markdown setlocal conceallevel=0|setlocal expandtab|setlocal spell
@@ -94,6 +90,9 @@ endif
 augroup FileTypeGroup
   " Set file type to toml for .smithrc file
   au BufRead,BufNewFile *.smithrc setfiletype toml
+
+  au BufRead,BufNewFile *.md set setfiletypeset ft=markdown
+  au BufRead,BufNewFile *.eslintrc setfiletype json
 
   " Hack to fix exs file loading.
   " Set file type to elixir for .exs file
