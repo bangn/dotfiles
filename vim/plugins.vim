@@ -263,7 +263,7 @@ set completeopt+=menuone
 """"""""""""""""""""""""""""""""""""""""
 " markdown-preview
 """"""""""""""""""""""""""""""""""""""""
-nmap <C-m> <Plug>MarkdownPreview
+nmap <leader>mp <Plug>MarkdownPreview
 let g:mkdp_port = '9999'
 
 """"""""""""""""""""""""""""""""""""""""
