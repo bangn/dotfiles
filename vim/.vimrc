@@ -91,7 +91,7 @@ augroup FileTypeGroup
   " Set file type to toml for .smithrc file
   au BufRead,BufNewFile *.smithrc setfiletype toml
 
-  au BufRead,BufNewFile *.md set setfiletypeset ft=markdown
+  au BufRead,BufNewFile *.md setfiletype markdown
   au BufRead,BufNewFile *.eslintrc setfiletype json
 
   " Hack to fix exs file loading.
