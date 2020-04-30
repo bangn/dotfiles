@@ -120,7 +120,7 @@ let g:ale_pattern_options = {
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier-eslint'],
-\   'typescript': ['prettier-eslint'],
+\   'typescript': ['prettier', 'eslint', 'prettier-eslint'],
 \   'sh': ['shfmt'],
 \   'haskell': ['brittany', 'floskell', 'stylish-haskell'],
 \   'ruby': ['rufo', 'standardrb', 'rubocop'],
