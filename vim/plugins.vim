@@ -328,5 +328,6 @@ endif
 " tagbar
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>tt :TagbarToggle<CR>
+let g:tagbar_show_linenumbers=1
 
 " vi: ft=vim
