@@ -43,7 +43,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # Install vim plugins and quit
 vim +PlugInstall +qa
 
-# Install docker completion
+# Install completions
 completion_dir="./zsh/completions"
 
 echo -e "\\nInstall github hub completion"
