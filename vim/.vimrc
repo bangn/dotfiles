@@ -128,6 +128,7 @@ nnoremap <silent>sp <C-w>s
 nnoremap <silent>vs <C-w>v
 nnoremap <silent>y. :1,.y<CR>
 nnoremap <silent>ya :1,$y<CR>
+
 """ Closing pane/window
 nnoremap <leader>x :x<CR>
 nnoremap <leader>q <C-w>q
@@ -257,6 +258,17 @@ if has('nvim')
   " infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
   " tic $TERM.ti
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Source http://karolis.koncevicius.lt/posts/porn_zen_and_vimrc/
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" make n always search forward and N backward
+nnoremap <expr> n 'Nn'[v:searchforward]
+nnoremap <expr> N 'nN'[v:searchforward]
+
+" make ; always "find" forward and , backward
+nnoremap <expr> ; getcharsearch().forward ? ';' : ','
+nnoremap <expr> , getcharsearch().forward ? ',' : ';'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
