@@ -12,16 +12,6 @@ source ~/dotfiles/vim/plugins.vim
 filetype indent plugin on
 behave xterm
 
-augroup autosave
-  autocmd BufLeave,FocusLost * silent! wall " autosave.
-augroup END
-
-augroup autoSetTab
-  autocmd FileType python setlocal tabstop=4|setlocal shiftwidth=4|setlocal expandtab
-  autocmd FileType markdown setlocal conceallevel=0|setlocal expandtab|setlocal spell
-  autocmd FileType text setlocal spell
-augroup END
-
 syntax on
 
 set autoindent
@@ -70,10 +60,6 @@ set updatetime=300
 set wildmenu
 set grepprg=rg\ --vimgrep
 
-if !has('nvim')
-  set ttymouse=xterm2
-endif
-
 " copy current file name (relative/absolute) to system clipboard (Mac version)
 " See :help let :help expand :help registers for details
 if has("mac")
@@ -105,47 +91,19 @@ augroup END
 " Do not show line number in terminal
 au TermOpen * setlocal nonumber norelativenumber
 
+augroup autosave
+  autocmd BufLeave,FocusLost * silent! wall " autosave.
+augroup END
+
+augroup autoSetTab
+  autocmd FileType markdown setlocal conceallevel=0|setlocal expandtab|setlocal spell
+  autocmd FileType text setlocal spell
+augroup END
+
 """"""""""""""""""""""""""""""""""""""""
 " Mapping
 """"""""""""""""""""""""""""""""""""""""
-nnoremap <leader>bp orequire 'pry'; binding.pry<esc> " insert binding.pry after current line.
-nnoremap <leader><space> @q
-nnoremap <leader>co <C-w><C-o> " close other opened panes.
-nnoremap <leader>ct :!ctags -R .<CR> " generate ctags
-nnoremap <leader>d. :1,.d<CR>
-nnoremap <leader>ep <C-w>= " make all panes equal size.
-nnoremap <leader>ev :vsplit $MYVIMRC<CR>
-nnoremap <leader>pt :setlocal paste!<CR> " toggle paste mode on/off.
-nnoremap <leader>rd :syntax sync fromstart<CR>:redraw!<CR>
-nnoremap <leader>rf :checktime<CR> " Refresh all buffers
-nnoremap <leader>rt :!ripper-tags -R .<CR> " generate ripper tags.
-nnoremap <leader>sl O# frozen_string_literal: true<esc> " fix rubocop string literal error.
-nnoremap <leader>sv :source $MYVIMRC<CR>
-nnoremap <leader>ts :%s/\s\+$//<CR> " remove trailing whitespace.
-nnoremap <leader>w :set nowrap!<CR> " no wrap.
-nnoremap <silent>Y y$
-nnoremap <silent>sp <C-w>s
-nnoremap <silent>vs <C-w>v
-nnoremap <silent>y. :1,.y<CR>
-nnoremap <silent>ya :1,$y<CR>
 
-""" Closing pane/window
-nnoremap <leader>x :x<CR>
-nnoremap <leader>q <C-w>q
-
-"" Terminal mode
-""" Enter
-nnoremap st :sp<CR>:term<CR>A
-nnoremap vt :vs<CR>:term<CR>A
-""" Escape terminal mode
-tnoremap <Esc> <C-\><C-n>
-tnoremap <Leader>x <C-\><C-n>:q!<CR>
-
-"" Mapping to format JSON file
-nnoremap <leader>jq :%!jq<CR>
-vnoremap <leader>jq :!jq<CR>
-
-"" Mapping to choose tab
 nnoremap <D-1> 1gt
 nnoremap <D-2> 2gt
 nnoremap <D-3> 3gt
@@ -155,98 +113,36 @@ nnoremap <D-6> 6gt
 nnoremap <D-7> 7gt
 nnoremap <D-8> 8gt
 nnoremap <D-9> :tablast<CR>
-
-" Make < > shifts keep selection
+nnoremap <leader><space> @q
+nnoremap <leader>bp orequire 'pry'; binding.pry<esc> " insert binding.pry after current line.
+nnoremap <leader>co <C-w><C-o> " close other opened panes.
+nnoremap <leader>ct :!ctags -R .<CR> " generate ctags
+nnoremap <leader>d. :1,.d<CR>
+nnoremap <leader>ep <C-w>= " make all panes equal size.
+nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <leader>jq :%!jq<CR>
+nnoremap <leader>pt :setlocal paste!<CR> " toggle paste mode on/off.
+nnoremap <leader>q <C-w>q
+nnoremap <leader>rd :syntax sync fromstart<CR>:redraw!<CR>
+nnoremap <leader>rf :checktime<CR> " Refresh all buffers
+nnoremap <leader>rt :!ripper-tags -R .<CR> " generate ripper tags.
+nnoremap <leader>sl O# frozen_string_literal: true<esc> " fix rubocop string literal error.
+nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>ts :%s/\s\+$//<CR> " remove trailing whitespace.
+nnoremap <leader>w :set nowrap!<CR> " no wrap.
+nnoremap <leader>x :x<CR>
+nnoremap <silent>sp <C-w>s
+nnoremap <silent>vs <C-w>v
+nnoremap <silent>Y y$
+nnoremap <silent>y. :1,.y<CR>
+nnoremap <silent>ya :1,$y<CR>
+nnoremap st :sp<CR>:term<CR>A
+nnoremap vt :vs<CR>:term<CR>A
+tnoremap <Esc> <C-\><C-n>
+tnoremap <Leader>x <C-\><C-n>:q!<CR>
 vnoremap < <gv
+vnoremap <leader>jq :!jq<CR>
 vnoremap > >gv
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Source:
-" https://sharats.me/posts/automating-the-vim-workplace/
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""
-"" CTRL-U in insert mode deletes a lot. Put an undo-point before it.
-""""""""""""""""""""""""""""""""""""""""
-inoremap <C-u> <C-g>u<C-u>
-
-""""""""""""""""""""""""""""""""""""""""
-"" Sort lines over motion
-""""""""""""""""""""""""""""""""""""""""
-xnoremap <silent> gs :sort i<CR>
-nnoremap <silent> gs :set opfunc=SortLines<CR>g@
-fun! SortLines(type) abort
-    '[,']sort i
-endfun
-
-""""""""""""""""""""""""""""""""""""""""
-"" Easier Alternative to :
-""""""""""""""""""""""""""""""""""""""""
-noremap <Space> :
-
-""""""""""""""""""""""""""""""""""""""""
-"" Simple mappings for buffer switching.
-""""""""""""""""""""""""""""""""""""""""
-nnoremap <Leader>d :b *
-nnoremap <Leader>ls :ls<CR>
-
-""""""""""""""""""""""""""""""""""""""""
-"" Vertical line selection
-""""""""""""""""""""""""""""""""""""""""
-nnoremap <expr> vm <SID>VisualVLine()
-fun! s:VisualVLine() abort
-  let [_, lnum, col; _] = getcurpos()
-  let line = getline('.')
-  let col += strdisplaywidth(line) - strwidth(line)
-
-  let [from, to] = [lnum, lnum]
-  while strdisplaywidth(getline(from - 1)) >= col
-      let from -= 1
-  endwhile
-
-  while strdisplaywidth(getline(to + 1)) >= col
-      let to += 1
-  endwhile
-
-  return "\<C-v>" .
-              \ (to == lnum ? '' : (to - lnum . 'jo')) .
-              \ (from == lnum ? '' : (lnum - from . 'k'))
-endfun
-
-""""""""""""""""""""""""""""""""""""""""
-"" Map to change pwd to the repo-root-directory of the current buffer.
-""""""""""""""""""""""""""""""""""""""""
-nnoremap cu :call <SID>CdToRepoRoot()<CR>
-let g:markers = split('.git .hg .svn .project .idea manage.py pom.xml')
-fun s:CdToRepoRoot() abort
-  for marker in g:markers
-    let root = finddir(marker, expand('%:p:h') . ';')
-    if !empty(root)
-      let root = fnamemodify(root, ':h')
-      exe "chdir" . root
-      echo 'cd ' . root . ' (found ' . marker . ')'
-      return
-    endif
-  endfor
-  echoerr 'No repo root found.'
-endfun
-
-""""""""""""""""""""""""""""""""""""""""
-"" Mapping to change pwd to the directory of the current buffer.
-""""""""""""""""""""""""""""""""""""""""
-nnoremap cm :tcd %:p:h<cr>:pwd<cr>
-
-"" Close the loclist/quickfix window automatically when the buffer is closed
-augroup CloseLocQuickFixlistWindowGroup
-  autocmd!
-  autocmd QuitPre * if empty(&buftype) | lclose | cclose | endif
-augroup END
-
-""""""""""""""""""""""""""""""""""""""""
-"" Maximize split pane mapping
-""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>z :MaximizerToggle<CR>
-vnoremap <leader>z :MaximizerToggle<CR>gv
-nnoremap <C-W>o :MaximizerToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""
 " Easy window navigation
@@ -259,16 +155,13 @@ if has('nvim')
   " tic $TERM.ti
 endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Source http://karolis.koncevicius.lt/posts/porn_zen_and_vimrc/
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" make n always search forward and N backward
-nnoremap <expr> n 'Nn'[v:searchforward]
-nnoremap <expr> N 'nN'[v:searchforward]
-
-" make ; always "find" forward and , backward
-nnoremap <expr> ; getcharsearch().forward ? ';' : ','
-nnoremap <expr> , getcharsearch().forward ? ',' : ';'
+""""""""""""""""""""""""""""""""""""""""
+" Close the loclist/quickfix window automatically when the buffer is closed
+""""""""""""""""""""""""""""""""""""""""
+augroup CloseLocQuickFixlistWindowGroup
+  autocmd!
+  autocmd QuitPre * if empty(&buftype) | lclose | cclose | endif
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
@@ -300,3 +193,60 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " End Functions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Source:
+" https://sharats.me/posts/automating-the-vim-workplace/
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""
+"" CTRL-U in insert mode deletes a lot. Put an undo-point before it.
+""""""""""""""""""""""""""""""""""""""""
+inoremap <C-u> <C-g>u<C-u>
+
+""""""""""""""""""""""""""""""""""""""""
+"" Sort lines over motion
+""""""""""""""""""""""""""""""""""""""""
+xnoremap <silent> gs :sort i<CR>
+nnoremap <silent> gs :set opfunc=SortLines<CR>g@
+fun! SortLines(type) abort
+    '[,']sort i
+endfun
+
+""""""""""""""""""""""""""""""""""""""""
+"" Easier Alternative to :
+""""""""""""""""""""""""""""""""""""""""
+noremap <Space> :
+
+""""""""""""""""""""""""""""""""""""""""
+"" Map to change pwd to the repo-root-directory of the current buffer.
+""""""""""""""""""""""""""""""""""""""""
+nnoremap cu :call <SID>CdToRepoRoot()<CR>
+let g:markers = split('.git .hg .svn .project .idea manage.py pom.xml')
+fun s:CdToRepoRoot() abort
+  for marker in g:markers
+    let root = finddir(marker, expand('%:p:h') . ';')
+    if !empty(root)
+      let root = fnamemodify(root, ':h')
+      exe "chdir" . root
+      echo 'cd ' . root . ' (found ' . marker . ')'
+      return
+    endif
+  endfor
+  echoerr 'No repo root found.'
+endfun
+
+""""""""""""""""""""""""""""""""""""""""
+"" Mapping to change pwd to the directory of the current buffer.
+""""""""""""""""""""""""""""""""""""""""
+nnoremap cm :tcd %:p:h<cr>:pwd<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Source http://karolis.koncevicius.lt/posts/porn_zen_and_vimrc/
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" make n always search forward and N backward
+nnoremap <expr> n 'Nn'[v:searchforward]
+nnoremap <expr> N 'nN'[v:searchforward]
+
+" make ; always "find" forward and , backward
+nnoremap <expr> ; getcharsearch().forward ? ';' : ','
+nnoremap <expr> , getcharsearch().forward ? ',' : ';'

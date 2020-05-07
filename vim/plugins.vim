@@ -330,4 +330,12 @@ endif
 nmap <leader>tt :TagbarToggle<CR>
 let g:tagbar_show_linenumbers=1
 
+""""""""""""""""""""""""""""""""""""""""
+" vim-maximizer
+""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>z :MaximizerToggle<CR>
+vnoremap <leader>z :MaximizerToggle<CR>gv
+nnoremap <C-W>o :MaximizerToggle<CR>
+
+
 " vi: ft=vim
