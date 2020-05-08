@@ -1,6 +1,6 @@
 #! /bin/bash
 
 DIR=${1:-/}
-ncdu -1xo- "$DIR" | gzip > export.gz
+ncdu -1xo- "$DIR" | gzip >export.gz
 zcat export.gz | ncdu -f -
 rm export.gz

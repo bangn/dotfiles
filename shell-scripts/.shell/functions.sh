@@ -10,14 +10,6 @@ o() {
   fi
 }
 
-# pass specified files/folders to your editor, fallback to current directory
-# usage:
-# $ e ~/.zshrc .shell/
-# $ e
-e() {
-  $EDITOR "${@:-.}"
-}
-
 rmfiles() {
   find . -type f -name "$1" -delete
 }
@@ -31,12 +23,6 @@ remove_spaces_in_filenames() {
   find "$1" -type f -name "* *" | while read -r FILE; do
     mv -v "$FILE" "$(echo "$FILE" | tr ' ' '-')"
   done
-}
-
-# reset development database
-resetdb() {
-  bundle exec rake db:drop db:create db:migrate db:seed
-  bundle exec rake db:test:prepare
 }
 
 # reset sequel database
@@ -72,7 +58,7 @@ export_env() {
   env=${1:-.env}
   while IFS='' read -r line || [ -n "$line" ]; do
     # shellcheck disable=SC2039
-    if [[ ! "$line" == \#* ]] && [[ ! -z "$line" ]]; then
+    if [[ ! "$line" == \#* ]] && [[ -n "$line" ]]; then
       echo export "$line"
       # shellcheck disable=SC2163
       export "$line"
@@ -87,7 +73,7 @@ unset_env() {
   env=${1:-.env}
   while IFS='' read -r line || [ -n "$line" ]; do
     # shellcheck disable=SC2039
-    if [[ ! "$line" == \#* ]] && [[ ! -z "$line" ]]; then
+    if [[ ! "$line" == \#* ]] && [[ -n "$line" ]]; then
       ENV_VAR=$(echo "$line" | cut -f1 -d'=')
       echo "unset $ENV_VAR"
       unset "$ENV_VAR"
@@ -104,7 +90,7 @@ unload_envrc() {
   envrc=${1:-.envrc}
   while IFS='' read -r line || [ -n "$line" ]; do
     # shellcheck disable=SC2039
-    if [[ ! "$line" == \#* ]] && [[ ! -z "$line" ]]; then
+    if [[ ! "$line" == \#* ]] && [[ -n "$line" ]]; then
       ENV_VAR=$(echo "$line" | cut -f1 -d'=' | sed 's/export //g')
       echo "unset $ENV_VAR"
       unset "$ENV_VAR"
@@ -159,18 +145,6 @@ dbsize() {
   psql -d postgres -c "SELECT pg_database.datname as dbname, pg_size_pretty(pg_database_size(pg_database.datname)) AS size FROM pg_database ORDER BY dbname DESC"
 }
 
-# Check ssl info
-# @param cert.pem
-sslinfo() {
-  openssl x509 -text -noout -in "$1"
-}
-
-# Clear purgeable disk space
-# Need to add tmutil command to sudo list.
-clear_purgeable() {
-  sudo tmutil disable && sudo tmutil enable
-}
-
 # public ip address
 public_ip() {
   dig +short myip.opendns.com @resolver1.opendns.com.
@@ -178,7 +152,7 @@ public_ip() {
 
 # asdf reshim plugin
 asdf_reshim() {
-  if ! [[ -z "$1" ]]; then
+  if [[ -n "$1" ]]; then
     asdf reshim "$1"
   else
     asdf plugin-list | xargs -Ip asdf reshim p
