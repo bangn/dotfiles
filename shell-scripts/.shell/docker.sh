@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# Use docker buildkit as default to improve build performance
+export DOCKER_BUILDKIT=1
+
 # Start docker daemon
 if [[ $(uname) == "Darwin" ]]; then
   alias dkon='source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh'
