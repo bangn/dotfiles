@@ -31,6 +31,7 @@ let
       nixpkgs.niv
       nixpkgs.nix
       nixpkgs.nixops
+      nixpkgs.pinta
       nixpkgs.postgresql_12
       nixpkgs.ripgrep
       nixpkgs.shfmt
