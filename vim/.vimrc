@@ -125,6 +125,7 @@ nnoremap <leader>pt :setlocal paste!<CR> " toggle paste mode on/off.
 nnoremap <leader>q <C-w>q
 nnoremap <leader>rd :syntax sync fromstart<CR>:redraw!<CR>
 nnoremap <leader>rf :checktime<CR> " Refresh all buffers
+nnoremap <leader>rn :set relativenumber!<CR>
 nnoremap <leader>rt :!ripper-tags -R .<CR> " generate ripper tags.
 nnoremap <leader>sl O# frozen_string_literal: true<esc> " fix rubocop string literal error.
 nnoremap <leader>sv :source $MYVIMRC<CR>
@@ -139,7 +140,7 @@ nnoremap <silent>ya :1,$y<CR>
 nnoremap st :sp<CR>:term<CR>A
 nnoremap vt :vs<CR>:term<CR>A
 tnoremap <Esc> <C-\><C-n>
-tnoremap <Leader>x <C-\><C-n>:q!<CR>
+tnoremap <leader>x <C-\><C-n>:q!<CR>
 vnoremap < <gv
 vnoremap <leader>jq :!jq<CR>
 vnoremap > >gv
