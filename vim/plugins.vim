@@ -94,6 +94,7 @@ autocmd BufRead * call SyncTree()
 " FZF
 """"""""""""""""""""""""""""""""""""""""
 noremap <c-p> :FZF<CR>
+nnoremap <leader>bf :Buffers
 
 """""""""""""""""""""""""""""""""""""""""
 " Lightline
