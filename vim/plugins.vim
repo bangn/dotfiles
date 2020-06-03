@@ -12,7 +12,6 @@ endif
 call plug#begin('~/.vim/bundle')
 
 Plug 'aklt/plantuml-syntax'
-Plug 'majutsushi/tagbar'
 Plug 'altercation/vim-colors-solarized'
 Plug 'chreekat/vim-paren-crosshairs'
 Plug 'christoomey/vim-tmux-navigator'
@@ -26,6 +25,7 @@ Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
 Plug 'mattn/vim-sqlfmt'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'mzlogin/vim-markdown-toc'
@@ -35,8 +35,8 @@ Plug 'romainl/vim-cool'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/neco-syntax'
-Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'szw/vim-maximizer'
 Plug 'tpope/vim-abolish'
