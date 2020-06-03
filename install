@@ -12,16 +12,6 @@ if ! command -v brew && [[ $(uname) == "Darwin" ]]; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-# Install nix
-# if ! command -v nix; then
-#   echo "Installing nix..."
-#   curl https://nixos.org/nix/install | sh
-# fi
-# Use unstable channel
-# nix-channel --add https://nixos.org/channels/nixpkgs-unstable
-# nix-channel --update
-# nix-env -f nix-packages.nix -i --remove-all
-
 # Install stow if it does not exist.
 if ! command -v stow && [[ $(uname) == "Darwin" ]]; then
   echo -e "\\nInstalling stow..."
@@ -30,7 +20,7 @@ fi
 
 # Use stow to populate dotfiles
 echo -e "Populating dotfiles...\\n"
-for i in  */; do
+for i in */; do
   echo "Stowing $i ..."
   stow -R "$i"
 done
@@ -38,7 +28,7 @@ done
 # Install vim Plug
 echo -e "\\nInstalling vim Plug ..."
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Install vim plugins and quit
 nvim +PlugInstall +qa
@@ -47,8 +37,22 @@ nvim +PlugInstall +qa
 completion_dir="./zsh/completions"
 
 echo -e "\\nInstall github hub completion"
-curl -L\
-  https://raw.githubusercontent.com/github/hub/master/etc/hub.zsh_completion \
+curl -L https://raw.githubusercontent.com/github/hub/master/etc/hub.zsh_completion \
   -o $completion_dir/_hub
 
 echo -e "\\nDone!"
+
+# Install nix; home-manager
+# if ! command -v nix; then
+#   echo "Installing nix..."
+#   curl https://nixos.org/nix/install | sh
+# fi
+# Use unstable channel
+# nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+# nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
+# nix-channel --update
+# if ! command -v home-manager; then
+#   echo "Installing home-manager..."
+#   nix-shell '<home-manager>' -A install
+# fi
+# nix-env -f nix-packages.nix -i --remove-all
