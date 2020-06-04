@@ -1,4 +1,8 @@
-{ config, pkgs, ... }:
+{ pkgs, config, ... }:
+
+let
+  pkgsUnstable = import <nixpkgs> {};
+in
 
 {
   # Let Home Manager install and manage itself.
@@ -16,4 +20,39 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "20.09";
+
+  home.packages = [
+    pkgsUnstable.alacritty
+    pkgsUnstable.autojump
+    pkgsUnstable.awscli
+    pkgsUnstable.awslogs
+    pkgsUnstable.bat
+    pkgsUnstable.ctags
+    pkgsUnstable.curlFull
+    pkgsUnstable.direnv
+    pkgsUnstable.docker-compose
+    pkgsUnstable.entr
+    pkgsUnstable.fd
+    pkgsUnstable.ghcid
+    pkgsUnstable.gitAndTools.delta
+    pkgsUnstable.gitAndTools.diff-so-fancy
+    pkgsUnstable.gitAndTools.gitFull
+    pkgsUnstable.gitAndTools.hub
+    pkgsUnstable.graphviz
+    pkgsUnstable.hlint
+    pkgsUnstable.htop
+    pkgsUnstable.jq
+    pkgsUnstable.neovim
+    pkgsUnstable.niv
+    pkgsUnstable.nixops
+    pkgsUnstable.pinta
+    pkgsUnstable.postgresql_12
+    pkgsUnstable.ripgrep
+    pkgsUnstable.shfmt
+    pkgsUnstable.stow
+    pkgsUnstable.stylish-haskell
+    pkgsUnstable.tmux
+    pkgsUnstable.travis
+    pkgsUnstable.yq
+  ];
 }
