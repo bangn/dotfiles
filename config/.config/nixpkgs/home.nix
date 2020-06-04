@@ -38,22 +38,28 @@ in
     pkgsUnstable.gitAndTools.diff-so-fancy
     pkgsUnstable.gitAndTools.gitFull
     pkgsUnstable.gitAndTools.hub
-    pkgsUnstable.graphviz
     pkgsUnstable.hlint
     pkgsUnstable.htop
+    pkgsUnstable.graphviz
     pkgsUnstable.jq
+    pkgsUnstable.kdiff3
+    pkgsUnstable.ncdu
     pkgsUnstable.neovim
     pkgsUnstable.niv
     pkgsUnstable.nixops
+    pkgsUnstable.pandoc
     pkgsUnstable.pinta
     pkgsUnstable.postgresql_12
+    pkgsUnstable.python38Packages.yamllint
     pkgsUnstable.ripgrep
     pkgsUnstable.rofi
+    pkgsUnstable.shellcheck
     pkgsUnstable.shfmt
     pkgsUnstable.stow
     pkgsUnstable.stylish-haskell
     pkgsUnstable.tmux
     pkgsUnstable.travis
+    pkgsUnstable.tree
     pkgsUnstable.yq
   ];
 }
