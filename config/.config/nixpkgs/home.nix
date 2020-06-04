@@ -8,9 +8,6 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  home.username = "bangn";
-  home.homeDirectory = "/home/bangn";
-
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
@@ -20,8 +17,11 @@ in
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "20.09";
+  home.username = "bangn";
+  home.homeDirectory = "/home/bangn";
 
   home.packages = [
+    pkgs.glibcLocales
     pkgsUnstable.alacritty
     pkgsUnstable.autojump
     pkgsUnstable.awscli
@@ -48,6 +48,7 @@ in
     pkgsUnstable.pinta
     pkgsUnstable.postgresql_12
     pkgsUnstable.ripgrep
+    pkgsUnstable.rofi
     pkgsUnstable.shfmt
     pkgsUnstable.stow
     pkgsUnstable.stylish-haskell
