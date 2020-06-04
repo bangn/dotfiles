@@ -37,7 +37,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start rofi
-bindsym Mod1+space exec --no-startup-id "rofi -combi-modi run,drun,window -show combi"
+bindsym Mod1+space exec --no-startup-id "rofi -show combi"
 
 # change focus
 bindsym $mod+h focus left
