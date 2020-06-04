@@ -1,0 +1,11 @@
+configuration {
+  disable-history: false;
+  font: "hack 9";
+  lines: 10;
+  modi: "combi,drun,run,window";
+  show-icons: true;
+  show-match: true;
+  terminal: "alacritty";
+  theme: "solarized" ;
+  width: 50;
+}
