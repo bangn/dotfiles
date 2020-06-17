@@ -120,6 +120,8 @@ nnoremap <leader>ct :!ctags -R .<CR> " generate ctags
 nnoremap <leader>d. :1,.d<CR>
 nnoremap <leader>ep <C-w>= " make all panes equal size.
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <leader>sp <C-w>s
+nnoremap <leader>st :sp<CR>:term<CR>A
 nnoremap <leader>jq :%!jq<CR>
 nnoremap <leader>pt :setlocal paste!<CR> " toggle paste mode on/off.
 nnoremap <leader>q <C-w>q
@@ -132,13 +134,13 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>ts :%s/\s\+$//<CR> " remove trailing whitespace.
 nnoremap <leader>w :set nowrap!<CR> " no wrap.
 nnoremap <leader>x :x<CR>
-nnoremap <silent>sp <C-w>s
-nnoremap <silent>vs <C-w>v
+nnoremap <leader>hp <C-w>s
+nnoremap <leader>vp <C-w>v
 nnoremap <silent>Y y$
 nnoremap <silent>y. :1,.y<CR>
 nnoremap <silent>ya :1,$y<CR>
-nnoremap st :sp<CR>:term<CR>A
-nnoremap vt :vs<CR>:term<CR>A
+nnoremap <leader>ht :sp<CR>:term<CR>A
+nnoremap <leader>vt :vs<CR>:term<CR>A
 tnoremap <Esc> <C-\><C-n>
 tnoremap <leader>x <C-\><C-n>:q!<CR>
 vnoremap < <gv
@@ -247,7 +249,3 @@ nnoremap cm :tcd %:p:h<cr>:pwd<cr>
 " make n always search forward and N backward
 nnoremap <expr> n 'Nn'[v:searchforward]
 nnoremap <expr> N 'nN'[v:searchforward]
-
-" make ; always "find" forward and , backward
-nnoremap <expr> ; getcharsearch().forward ? ';' : ','
-nnoremap <expr> , getcharsearch().forward ? ',' : ';'
