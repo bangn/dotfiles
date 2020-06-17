@@ -18,10 +18,17 @@ for p in $(echo "$PATHS" | sed 's/\n/ /g'); do
   export_path "$p"
 done
 
+################################################################################
+# ENV vars
+################################################################################
 export DOTFILES="$HOME/dotfiles"
-
 export EDITOR='nvim'
 export VISUAL='nvim'
+########################################
+# For postgres
+########################################
+export PGUSER='postgres'
+export PGHOST='localhost'
 
 ################################################################################
 # Use nvim/vim to open man page.
@@ -40,12 +47,6 @@ if [[ $(uname) == "Linux" ]]; then
 else
   eval $(gdircolors "$HOME"/dircolors.solarized.256.dark)
 fi
-
-################################################################################
-# For postgres docker
-################################################################################
-export PGUSER='postgres'
-export PGHOST='localhost'
 
 ################################################################################
 # Added by the Heroku Toolbelt
@@ -90,7 +91,6 @@ GOV=$(asdf current golang | sed 's/\s*(set by .*)//g')
 export GOROOT=$ASDFINSTALLS/golang/$GOV/go/
 export_path "$GOPATH/bin"
 export GOROOT_BOOTSTRAP=$GOROOT
-# End Golang path
 
 ################################################################################
 # Updates PATH for the Google Cloud SDK.
