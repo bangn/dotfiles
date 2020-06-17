@@ -132,15 +132,13 @@ nnoremap <leader>rt :!ripper-tags -R .<CR> " generate ripper tags.
 nnoremap <leader>sl O# frozen_string_literal: true<esc> " fix rubocop string literal error.
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>ts :%s/\s\+$//<CR> " remove trailing whitespace.
+nnoremap <leader>vp <C-w>v
+nnoremap <leader>vt :vs<CR>:term<CR>A
 nnoremap <leader>w :set nowrap!<CR> " no wrap.
 nnoremap <leader>x :x<CR>
-nnoremap <leader>hp <C-w>s
-nnoremap <leader>vp <C-w>v
+nnoremap <leader>y. :1,.y<CR>
+nnoremap <leader>ya :1,$y<CR>
 nnoremap <silent>Y y$
-nnoremap <silent>y. :1,.y<CR>
-nnoremap <silent>ya :1,$y<CR>
-nnoremap <leader>ht :sp<CR>:term<CR>A
-nnoremap <leader>vt :vs<CR>:term<CR>A
 tnoremap <Esc> <C-\><C-n>
 tnoremap <leader>x <C-\><C-n>:q!<CR>
 vnoremap < <gv

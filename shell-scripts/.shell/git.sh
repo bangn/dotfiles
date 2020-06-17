@@ -14,6 +14,7 @@ alias gcb='git checkout -b'
 alias gcis='git ci-status'
 alias gcm='git commit -m'
 alias gco='git checkout'
+alias gcoh='git checkout HEAD --'
 alias gcom='git checkout master'
 alias gcp='git cherry-pick'
 alias gd='git diff'
@@ -31,8 +32,8 @@ alias gds='git ds'
 alias gdw='git diff --word-diff'
 alias ge='git edit' # edit function in ~/.gitconfig
 alias gf='git fetch -p'
-alias gils='git issue'
 alias gic='git issue create'
+alias gils='git issue'
 alias gis='git issue show'
 alias gl='git log'
 alias glog='git log --branches --remotes --graph --oneline --decorate'
@@ -46,7 +47,6 @@ alias gprls='git pr list -f "%pC%U%Creset  %t (%au)%n"'
 alias gprlsa='git pr list -f "%sH %pC%U%Creset  %t (%au)%n"'
 alias gprom='git pull --rebase origin master'
 alias gps='git push'
-alias gpsf='git push --force-with-lease'
 alias gr='git reset'
 alias gra='git rebase --abort'
 alias grc='git rebase --continue'
@@ -58,9 +58,7 @@ alias gshn='git show HEAD --name-only'
 alias gstl='git stash list'
 alias gsts='git stash save -u'
 alias gx='gitx'
-
-alias gcoh='git checkout HEAD --' # reverts changes for whatever file is passed
-                                  # usage: $ gcoh lib/example.rb
+alias gpsf='git push --force-with-lease'
 
 # Alias git to hub
 eval "$(hub alias -s)"
@@ -91,9 +89,6 @@ gitme() {
   git commit -m 'Initial commit'
 }
 
-alias gblame='git gui blame 2>/dev/null' # tried newer tcl-tk; no dice. /dev/null it is!
-                                         # usage: $ gblame lib/example.rb
-
 # Purge branch or all branches except master
 gbp() {
   if [[ -z "$1" ]]; then
@@ -122,10 +117,10 @@ update_git_message_template() {
   KOWAINIK_WORKFLOW_PATTERN="$GIT_USER/[0-9]+"
 
   # Current branch name does not match Jira format. Use sample git message.
-  if [[ $PREFIX_MESSAGE =~ $JIRA_WORKFLOW_PATTERN ]] ; then
-    echo "$PREFIX_MESSAGE" | awk -F'-' '{ print toupper($1)"-"$2": " }' > "$HOME/.gitmessage"
-  elif [[ $PREFIX_MESSAGE =~ $KOWAINIK_WORKFLOW_PATTERN ]] ; then
-    echo "$PREFIX_MESSAGE" | awk -F'/' '{ print "[#"$2"]: " }' > "$HOME/.gitmessage"
+  if [[ $PREFIX_MESSAGE =~ $JIRA_WORKFLOW_PATTERN ]]; then
+    echo "$PREFIX_MESSAGE" | awk -F'-' '{ print toupper($1)"-"$2": " }' >"$HOME/.gitmessage"
+  elif [[ $PREFIX_MESSAGE =~ $KOWAINIK_WORKFLOW_PATTERN ]]; then
+    echo "$PREFIX_MESSAGE" | awk -F'/' '{ print "[#"$2"]: " }' >"$HOME/.gitmessage"
   else
     cp "$HOME/.gitmessage.sample" "$HOME/.gitmessage"
   fi
@@ -144,8 +139,7 @@ gcf() {
 
 gbrpr() {
   local pr
-  if [[ -z "$1" ]];
-  then
+  if [[ -z "$1" ]]; then
     pr="pulls"
   else
     pr="pull/$1"
