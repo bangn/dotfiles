@@ -153,5 +153,5 @@ gbri() {
 }
 
 gpsu() {
-  git push -u origin "$(git rev-parse --abbrev-ref)"
+  git push -u origin "$(git rev-parse --abbrev-ref)" "$@"
 }
