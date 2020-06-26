@@ -29,6 +29,7 @@ export VISUAL='nvim'
 ########################################
 export PGUSER='postgres'
 export PGHOST='localhost'
+export SUDO_ASKPASS='/usr/bin/ssh-askpass'
 
 ################################################################################
 # Use nvim/vim to open man page.
