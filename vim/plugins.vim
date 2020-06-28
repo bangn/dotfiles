@@ -132,6 +132,7 @@ endfunction
 let g:ale_linters = {
 \   'sh': ['shellcheck'],
 \   'ruby': ['rubocop', 'rufo'],
+\   'rspec': ['rubocop', 'rufo'],
 \   'elixir': ['credo'],
 \   'haskell': ['hlint'],
 \}
@@ -145,6 +146,7 @@ let g:ale_fixers = {
 \   'sh': ['shfmt'],
 \   'haskell': ['brittany', 'floskell', 'stylish-haskell'],
 \   'ruby': ['rufo', 'rubocop'],
+\   'rspec': ['rufo', 'rubocop'],
 \}
 let g:ale_completion_enabled             = 1
 let g:ale_completion_tsserver_autoimport = 1
