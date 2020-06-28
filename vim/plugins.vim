@@ -131,7 +131,7 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""
 let g:ale_linters = {
 \   'sh': ['shellcheck'],
-\   'ruby': ['rubocop', 'rufo', 'standardrb'],
+\   'ruby': ['rubocop', 'rufo'],
 \   'elixir': ['credo'],
 \   'haskell': ['hlint'],
 \}
@@ -144,7 +144,7 @@ let g:ale_fixers = {
 \   'typescript': ['prettier', 'eslint', 'prettier-eslint'],
 \   'sh': ['shfmt'],
 \   'haskell': ['brittany', 'floskell', 'stylish-haskell'],
-\   'ruby': ['rufo', 'standardrb', 'rubocop'],
+\   'ruby': ['rufo', 'rubocop'],
 \}
 let g:ale_completion_enabled             = 1
 let g:ale_completion_tsserver_autoimport = 1
