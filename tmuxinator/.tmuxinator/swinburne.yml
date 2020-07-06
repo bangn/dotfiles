@@ -1,0 +1,11 @@
+# ~/.tmuxinator/swinburne.yml
+
+name: swinburne
+root: ~/dev/dius/swinburne/
+
+windows:
+  - ct:
+      root: ~/dev/dius/swinburne
+      layout: tiles
+      panes:
+        - ct:
