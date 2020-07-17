@@ -54,7 +54,7 @@ curl -L https://raw.githubusercontent.com/github/hub/master/etc/hub.zsh_completi
 # Install nix; home-manager
 if ! command -v nix; then
   echo "Installing nix..."
-  curl https://nixos.org/nix/install | sh
+  curl -L https://nixos.org/nix/install | sh
 fi
 
 # Use unstable channel
