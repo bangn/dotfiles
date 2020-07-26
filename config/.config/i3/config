@@ -268,6 +268,9 @@ exec --no-startup-id i3-msg 'workspace 2; exec firefox'
 # Start slack in workspace 3.
 exec --no-startup-id i3-msg 'workspace 3; exec slack'
 
+# Start thunderbird in workspace 4.
+exec --no-startup-id i3-msg 'workspace 4; exec thunderbird'
+
 exec --no-startup-id xfce4-clipman &
 bindsym $mod+Shift+v exec xfce4-popup-clipman
 
