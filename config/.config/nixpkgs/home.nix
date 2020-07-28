@@ -38,9 +38,9 @@ in
     pkgsUnstable.gitAndTools.diff-so-fancy
     pkgsUnstable.gitAndTools.gitFull
     pkgsUnstable.gitAndTools.hub
+    pkgsUnstable.graphviz
     pkgsUnstable.hlint
     pkgsUnstable.htop
-    pkgsUnstable.graphviz
     pkgsUnstable.jq
     pkgsUnstable.kdiff3
     pkgsUnstable.ncdu
@@ -49,6 +49,7 @@ in
     pkgsUnstable.nixops
     pkgsUnstable.pandoc
     pkgsUnstable.pinta
+    pkgsUnstable.plantuml
     pkgsUnstable.postgresql_12
     pkgsUnstable.python38Packages.yamllint
     pkgsUnstable.ripgrep

@@ -307,7 +307,7 @@ endif
 let g:loaded_plantuml_plugin = 1
 
 if !exists("g:plantuml_executable_script")
-  let g:plantuml_executable_script='java -jar /home/bangn/sources/plantuml-jar/plantuml.jar'
+  let g:plantuml_executable_script='plantuml'
 endif
 let s:makecommand=g:plantuml_executable_script." %"
 
