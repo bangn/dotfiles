@@ -85,6 +85,7 @@ gstd() {
 
 gitme() {
   git init
+  touch README.md
   git add --all
   git commit -m 'Initial commit'
 }
