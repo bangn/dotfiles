@@ -48,6 +48,7 @@ in
     pkgsUnstable.niv
     pkgsUnstable.nixops
     pkgsUnstable.pandoc
+    pkgsUnstable.pdftk
     pkgsUnstable.pinta
     pkgsUnstable.plantuml
     pkgsUnstable.postgresql_12
