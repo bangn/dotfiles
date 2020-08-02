@@ -95,7 +95,7 @@ augroup autosave
   autocmd BufLeave,FocusLost * silent! wall " autosave.
 augroup END
 
-augroup autoSetTab
+augroup autoSet
   autocmd FileType markdown setlocal conceallevel=0|setlocal expandtab|setlocal spell
   autocmd FileType text setlocal spell
 augroup END
