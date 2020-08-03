@@ -24,6 +24,7 @@ in
     pkgs.glibcLocales
     pkgsUnstable.alacritty
     pkgsUnstable.autojump
+    pkgsUnstable.aws-sam-cli
     pkgsUnstable.awscli
     pkgsUnstable.awslogs
     pkgsUnstable.bat
@@ -55,6 +56,7 @@ in
     pkgsUnstable.python38Packages.yamllint
     pkgsUnstable.ripgrep
     pkgsUnstable.rofi
+    pkgsUnstable.saml2aws
     pkgsUnstable.shellcheck
     pkgsUnstable.shfmt
     pkgsUnstable.stow
