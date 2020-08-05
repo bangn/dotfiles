@@ -122,8 +122,10 @@ update_git_message_template() {
     echo "$PREFIX_MESSAGE" | awk -F'-' '{ print toupper($1)"-"$2": " }' >"$HOME/.gitmessage"
   elif [[ $PREFIX_MESSAGE =~ $KOWAINIK_WORKFLOW_PATTERN ]]; then
     echo "$PREFIX_MESSAGE" | awk -F'/' '{ print "[#"$2"]: " }' >"$HOME/.gitmessage"
-  else
+  elif [[ $CURRENT_BRANCH == master ]]; then
     cp "$HOME/.gitmessage.sample" "$HOME/.gitmessage"
+  else
+    echo "$CURRENT_BRANCH:" >"$HOME/.gitmessage"
   fi
 }
 
