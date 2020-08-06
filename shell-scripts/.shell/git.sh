@@ -125,7 +125,7 @@ update_git_message_template() {
   elif [[ $CURRENT_BRANCH == master ]]; then
     cp "$HOME/.gitmessage.sample" "$HOME/.gitmessage"
   else
-    echo "$CURRENT_BRANCH:" >"$HOME/.gitmessage"
+    echo "$CURRENT_BRANCH: " >"$HOME/.gitmessage"
   fi
 }
 
