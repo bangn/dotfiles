@@ -21,7 +21,7 @@ sudo borg create \
   --exclude-caches \
   --exclude '*node_modules*' \
   --exclude '*[C|c]ache*' \
-  --exclude 'tags' \
-  \
+  --exclude '*/tags' \
+  --exclude '*.log' \
   "$BORG_REPO"::'{hostname}-{now}' \
   /home
