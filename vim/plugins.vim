@@ -25,7 +25,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
-Plug 'mattn/vim-sqlfmt'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'neovimhaskell/haskell-vim'
@@ -140,12 +139,13 @@ let g:ale_pattern_options = {
 \}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['prettier', 'eslint', 'prettier-eslint'],
-\   'typescript': ['prettier', 'eslint', 'prettier-eslint'],
-\   'sh': ['shfmt'],
 \   'haskell': ['brittany', 'floskell', 'stylish-haskell'],
-\   'ruby': ['rufo', 'rubocop'],
+\   'javascript': ['prettier', 'eslint', 'prettier-eslint'],
 \   'rspec': ['rufo', 'rubocop'],
+\   'ruby': ['rufo', 'rubocop'],
+\   'sh': ['shfmt'],
+\   'sql': ['sqlformat'],
+\   'typescript': ['prettier', 'eslint', 'prettier-eslint'],
 \}
 let g:ale_completion_enabled             = 1
 let g:ale_completion_tsserver_autoimport = 1
@@ -162,6 +162,9 @@ let g:ale_set_quickfix                   = 1
 let g:ale_sh_shfmt_options               = '-i 2 -ci'
 let g:ale_sign_error                     = '⤫'
 let g:ale_sign_warning                   = '⚠'
+
+" sqlformat options
+let g:ale_sql_sqlformat_options = '-r -k upper'
 nmap <silent> <leader>al :ALEToggle<CR>
 nmap <silent> <leader>af :ALEFix<CR>
 
@@ -314,14 +317,6 @@ nnoremap <leader>pu :w<CR> :silent make<CR>
 
 " define a sensible makeprg for plantuml files
 autocmd Filetype plantuml let &l:makeprg=s:makecommand
-
-""""""""""""""""""""""""""""""""""""""""
-" vim-sqlfmt
-""""""""""""""""""""""""""""""""""""""""
-let g:sqlfmt_command = "sqlformat"
-let g:sqlfmt_options = "-r -k upper"
-let g:sqlfmt_auto    = 1
-nnoremap <leader>sf :SQLFmt<CR>
 
 """"""""""""""""""""""""""""""""""""""""
 " Yggdroot/indentLine
