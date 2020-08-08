@@ -22,7 +22,6 @@ in
 
   home.packages = [
     pkgs.glibcLocales
-    pkgsUnstable.neuron-notes
     pkgsUnstable.alacritty
     pkgsUnstable.autojump
     pkgsUnstable.aws-sam-cli
@@ -47,6 +46,7 @@ in
     pkgsUnstable.kdiff3
     pkgsUnstable.ncdu
     pkgsUnstable.neovim
+    pkgsUnstable.neuron-notes
     pkgsUnstable.niv
     pkgsUnstable.nixops
     pkgsUnstable.pandoc
@@ -54,6 +54,7 @@ in
     pkgsUnstable.pinta
     pkgsUnstable.plantuml
     pkgsUnstable.postgresql_12
+    pkgsUnstable.python38Packages.sqlparse
     pkgsUnstable.python38Packages.yamllint
     pkgsUnstable.ripgrep
     pkgsUnstable.rofi
