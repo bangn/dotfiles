@@ -29,3 +29,6 @@ tmp
 
 # bakup directory
 bakup
+
+# neuron dir
+.neuron
