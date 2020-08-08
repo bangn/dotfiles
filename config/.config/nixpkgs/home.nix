@@ -22,7 +22,7 @@ in
 
   home.packages = [
     pkgs.glibcLocales
-    pkgs.neuron
+    pkgsUnstable.neuron-notes
     pkgsUnstable.alacritty
     pkgsUnstable.autojump
     pkgsUnstable.aws-sam-cli
