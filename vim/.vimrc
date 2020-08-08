@@ -60,34 +60,6 @@ set updatetime=300
 set wildmenu
 set grepprg=rg\ --vimgrep
 
-" copy current file name (relative/absolute) to system clipboard (Mac version)
-" See :help let :help expand :help registers for details
-if has("mac")
-  " absolute path  (/something/src/foo.txt)
-  nnoremap <leader>fn :let @*=expand("%:p")<CR>
-endif
-
-" copy current file name (relative/absolute) to system clipboard (Linux version)
-if has("gui_gtk") || has("gui_gtk2") || has("gui_gnome") || has("unix")
-  " absolute path (/something/src/foo.txt)
-  nnoremap <leader>fn :let @+=expand("%:p")<CR>
-endif
-
-augroup FileTypeGroup
-  " Set file type to toml for .smithrc file
-  au BufRead,BufNewFile *.smithrc setfiletype toml
-
-  au BufRead,BufNewFile *.md setfiletype markdown
-  au BufRead,BufNewFile *.eslintrc setfiletype json
-
-  " Hack to fix exs file loading.
-  " Set file type to elixir for .exs file
-  au BufRead,BufNewFile *.exs setfiletype elixir
-
-  " Set .envrc as bash file
-  au BufRead,BufNewFile *.envrc setfiletype sh
-augroup END
-
 " Do not show line number in terminal
 au TermOpen * setlocal nonumber norelativenumber
 
@@ -140,6 +112,19 @@ vnoremap < <gv
 vnoremap <leader>jq :!jq<CR>
 vnoremap > >gv
 
+" copy current file name (relative/absolute) to system clipboard (Mac version)
+" See :help let :help expand :help registers for details
+if has("mac")
+  " absolute path  (/something/src/foo.txt)
+  nnoremap <leader>fn :let @*=expand("%:p")<CR>
+endif
+
+" copy current file name (relative/absolute) to system clipboard (Linux version)
+if has("gui_gtk") || has("gui_gtk2") || has("gui_gnome") || has("unix")
+  " absolute path (/something/src/foo.txt)
+  nnoremap <leader>fn :let @+=expand("%:p")<CR>
+endif
+
 """"""""""""""""""""""""""""""""""""""""
 " Easy window navigation
 """"""""""""""""""""""""""""""""""""""""
@@ -178,14 +163,6 @@ fun! s:MkNonExDir(file, buf)
   endif
 endfun
 
-"" For haskell
-function! CheckIfFileExists(filename)
-  if filereadable(a:filename)
-    return 1
-  endif
-
-  return 0
-endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " End Functions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
