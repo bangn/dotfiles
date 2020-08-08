@@ -15,7 +15,6 @@ Plug 'aklt/plantuml-syntax'
 Plug 'altercation/vim-colors-solarized'
 Plug 'chreekat/vim-paren-crosshairs'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'eagletmt/neco-ghc'
 Plug 'fatih/vim-go'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Vim in firefox textarea
 Plug 'godlygeek/tabular'
