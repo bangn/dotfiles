@@ -1,11 +1,16 @@
 configuration {
+  color-enabled: true;
   disable-history: false;
   font: "hack 9";
+  hide-scrollbar: true;
+  line-padding: 2;
   lines: 10;
   modi: "combi,drun,run,window";
+  padding: 20;
+  separator-style: "solid";
   show-icons: true;
   show-match: true;
   terminal: "alacritty";
-  theme: "solarized" ;
-  width: 50;
+  width: 30;
+  theme: "./custom-nord.rasi";
 }

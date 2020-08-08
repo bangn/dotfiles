@@ -12,7 +12,7 @@ endif
 call plug#begin('~/.vim/bundle')
 
 Plug 'aklt/plantuml-syntax'
-Plug 'altercation/vim-colors-solarized'
+Plug 'arcticicestudio/nord-vim'
 Plug 'chreekat/vim-paren-crosshairs'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'fatih/vim-go'
@@ -98,7 +98,7 @@ nnoremap <leader>bf :Buffers
 " Lightline
 """""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-\ 'colorscheme': 'solarized',
+\ 'colorscheme': 'nord',
 \ 'active': {
 \   'left': [['mode', 'paste'], [ 'gitbranch', 'readonly', 'filename', 'modified' ]],
 \   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
@@ -175,12 +175,10 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 let g:javascript_plugin_flow = 1
 
 """"""""""""""""""""""""""""""""""""""""
-" Solarized colors
+" Nord color
 """"""""""""""""""""""""""""""""""""""""
 set background=dark
-let g:solarized_visibility = "high"
-let g:solarized_contrast   = "high"
-colorscheme solarized
+colorscheme nord
 
 """"""""""""""""""""""""""""""""""""""""
 " vim-test

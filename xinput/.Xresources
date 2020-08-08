@@ -1,41 +1,44 @@
-!! solarized
+!! Nord
 
-XTerm*background:            #1c1c1c
-XTerm*foreground:            #626262
-XTerm*fading:                40
-XTerm*fadeColor:             #1c1c1c
-XTerm*cursorColor:           #8a8a8a
-XTerm*pointerColorBackground:#585858
-XTerm*pointerColorForeground:#8a8a8a
+#define nord0 #2E3440
+#define nord1 #3B4252
+#define nord2 #434C5E
+#define nord3 #4C566A
+#define nord4 #D8DEE9
+#define nord5 #E5E9F0
+#define nord6 #ECEFF4
+#define nord7 #8FBCBB
+#define nord8 #88C0D0
+#define nord9 #81A1C1
+#define nord10 #5E81AC
+#define nord11 #BF616A
+#define nord12 #D08770
+#define nord13 #EBCB8B
+#define nord14 #A3BE8C
+#define nord15 #B48EAD
 
-!! black dark/light
-XTerm*color0:                #262626
-XTerm*color8:                #1c1c1c
+*.font: Source Code Pro:pixelsize=11:antialias=true:autohint=true;
+*.alpha: 0.95
 
-!! red dark/light
-XTerm*color1:                #d70000
-XTerm*color9:                #d75f00
+*.foreground:   nord4
+*.background:   nord0
+*.cursorColor:  nord4
+*fading: 35
+*fadeColor: nord3
 
-!! green dark/light
-XTerm*color2:                #5f8700
-XTerm*color10:               #585858
-
-!! yellow dark/light
-XTerm*color3:                #af8700
-XTerm*color11:               #626262
-
-!! blue dark/light
-XTerm*color4:                #0087ff
-XTerm*color12:               #808080
-
-!! magenta dark/light
-XTerm*color5:                #af005f
-XTerm*color13:               #5f5faf
-
-!! cyan dark/light
-XTerm*color6:                #00afaf
-XTerm*color14:               #8a8a8a
-
-!! white dark/light
-XTerm*color7:                #e4e4e4
-XTerm*color15:               #ffffd7
+*.color0: nord1
+*.color1: nord11
+*.color2: nord14
+*.color3: nord13
+*.color4: nord9
+*.color5: nord15
+*.color6: nord8
+*.color7: nord5
+*.color8: nord3
+*.color9: nord11
+*.color10: nord14
+*.color11: nord13
+*.color12: nord9
+*.color13: nord15
+*.color14: nord7
+*.color15: nord6

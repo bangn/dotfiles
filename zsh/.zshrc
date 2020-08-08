@@ -41,12 +41,12 @@ case $EDITOR in
 esac
 
 ################################################################################
-# Use solarized dark for terminal color
+# Use nord for terminal color
 ################################################################################
 if [[ $(uname) == "Linux" ]]; then
-  eval $(dircolors "$HOME"/dircolors.solarized.256.dark)
+  test "$HOME/dircolors.nord" && eval $(dircolors "$HOME/dircolors.nord")
 else
-  eval $(gdircolors "$HOME"/dircolors.solarized.256.dark)
+  test "$HOME/dircolors.nord" && eval $(gdircolors "$HOME/dircolors.nord")
 fi
 
 ################################################################################
