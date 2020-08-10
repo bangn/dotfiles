@@ -198,10 +198,11 @@ let test#python#runner = 'pytest'
 """"""""""""""""""""""""""""""""""""""""
 " deoplete
 """"""""""""""""""""""""""""""""""""""""
-let g:deoplete#enable_at_startup = 1
-
-call deoplete#custom#option('num_processes', 1)
-call deoplete#custom#option('smart_case', v:true)
+if has('nvim')
+  let g:deoplete#enable_at_startup = 1
+  call deoplete#custom#option('num_processes', 1)
+  call deoplete#custom#option('smart_case', v:true)
+endif
 
 """"""""""""""""""""""""""""""""""""""""
 " vim-commentary
