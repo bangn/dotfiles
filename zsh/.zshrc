@@ -21,15 +21,14 @@ done
 ################################################################################
 # ENV vars
 ################################################################################
-export DOTFILES="$HOME/dotfiles"
 export EDITOR='nvim'
 export VISUAL='nvim'
+export SUDO_ASKPASS='/usr/bin/ssh-askpass'
 ########################################
 # For postgres
 ########################################
 export PGUSER='postgres'
 export PGHOST='localhost'
-export SUDO_ASKPASS='/usr/bin/ssh-askpass'
 
 ################################################################################
 # Use nvim/vim to open man page.
