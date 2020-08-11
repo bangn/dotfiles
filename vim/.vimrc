@@ -61,7 +61,9 @@ set wildmenu
 set grepprg=rg\ --vimgrep
 
 " Do not show line number in terminal
-au TermOpen * setlocal nonumber norelativenumber
+if has('nvim')
+  au TermOpen * setlocal nonumber norelativenumber
+endif
 
 augroup autosave
   autocmd BufLeave,FocusLost * silent! wall " autosave.
