@@ -4,7 +4,9 @@ let mapleader = "," " remap leader to comma.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-plug plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source ~/dotfiles/vim/plugins.vim
+if has('nvim')
+  source ~/dotfiles/vim/plugins.vim
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Generic settings
