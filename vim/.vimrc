@@ -85,7 +85,6 @@ nnoremap <D-7> 7gt
 nnoremap <D-8> 8gt
 nnoremap <D-9> :tablast<CR>
 nnoremap <leader><space> @q
-nnoremap <leader>bp orequire 'pry'; binding.pry<esc> " insert binding.pry after current line.
 nnoremap <leader>co <C-w><C-o> " close other opened panes.
 nnoremap <leader>ct :!ctags -R .<CR> " generate ctags
 nnoremap <leader>d. :1,.d<CR>
@@ -100,7 +99,6 @@ nnoremap <leader>rd :syntax sync fromstart<CR>:redraw!<CR>
 nnoremap <leader>rf :checktime<CR> " Refresh all buffers
 nnoremap <leader>rn :set relativenumber!<CR>
 nnoremap <leader>rt :!ripper-tags -R .<CR> " generate ripper tags.
-nnoremap <leader>sl O# frozen_string_literal: true<esc> " fix rubocop string literal error.
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>ts :%s/\s\+$//<CR> " remove trailing whitespace.
 nnoremap <leader>vp <C-w>v
