@@ -129,7 +129,6 @@ endfunction
 let g:ale_linters = {
 \   'sh': ['shellcheck'],
 \   'ruby': ['rubocop', 'rufo'],
-\   'rspec': ['rubocop', 'rufo'],
 \   'elixir': ['credo'],
 \   'haskell': ['hlint'],
 \}
@@ -140,7 +139,6 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'haskell': ['brittany', 'floskell', 'stylish-haskell'],
 \   'javascript': ['prettier', 'eslint', 'prettier-eslint'],
-\   'rspec': ['rufo', 'rubocop'],
 \   'ruby': ['rufo', 'rubocop'],
 \   'sh': ['shfmt'],
 \   'sql': ['sqlformat'],
