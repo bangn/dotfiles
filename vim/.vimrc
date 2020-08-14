@@ -28,6 +28,7 @@ set dir=~/.vim/swap
 set expandtab
 set foldmethod=indent
 set foldnestmax=10
+set grepprg=rg\ --vimgrep
 set hlsearch
 set ignorecase
 set incsearch
@@ -60,7 +61,6 @@ set undolevels=1000
 set undoreload=10000
 set updatetime=300
 set wildmenu
-set grepprg=rg\ --vimgrep
 
 " Do not show line number in terminal
 if has('nvim')
@@ -90,8 +90,6 @@ nnoremap <leader>ct :!ctags -R .<CR> " generate ctags
 nnoremap <leader>d. :1,.d<CR>
 nnoremap <leader>ep <C-w>= " make all panes equal size.
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
-nnoremap <leader>sp <C-w>s
-nnoremap <leader>st :sp<CR>:term<CR>A
 nnoremap <leader>jq :%!jq<CR>
 nnoremap <leader>pt :setlocal paste!<CR> " toggle paste mode on/off.
 nnoremap <leader>q <C-w>q
@@ -99,6 +97,8 @@ nnoremap <leader>rd :syntax sync fromstart<CR>:redraw!<CR>
 nnoremap <leader>rf :checktime<CR> " Refresh all buffers
 nnoremap <leader>rn :set relativenumber!<CR>
 nnoremap <leader>rt :!ripper-tags -R .<CR> " generate ripper tags.
+nnoremap <leader>sp <C-w>s
+nnoremap <leader>st :sp<CR>:term<CR>A
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>ts :%s/\s\+$//<CR> " remove trailing whitespace.
 nnoremap <leader>vp <C-w>v
@@ -108,11 +108,14 @@ nnoremap <leader>x :x<CR>
 nnoremap <leader>y. :1,.y<CR>
 nnoremap <leader>ya :1,$y<CR>
 nnoremap <silent>Y y$
-tnoremap <Esc> <C-\><C-n>
-tnoremap <leader>x <C-\><C-n>:q!<CR>
 vnoremap < <gv
 vnoremap <leader>jq :!jq<CR>
 vnoremap > >gv
+
+if has('nvim')
+  tnoremap <Esc> <C-\><C-n>
+  tnoremap <leader>x <C-\><C-n>:q!<CR>
+endif
 
 " copy current file name (relative/absolute) to system clipboard (Mac version)
 " See :help let :help expand :help registers for details
