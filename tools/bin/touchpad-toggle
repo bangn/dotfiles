@@ -3,8 +3,9 @@
 #
 # Toggle the touchpad on/off.
 
-# Get the id number of the touchpad.
-tp_id=$(xinput list | grep -i touchpad | awk '{ print $6 }' | sed 's/id=//')
+# Get the id number of the touchpad
+#   - Thinkpad: Synaptics
+tp_id=$(xinput list | grep -i Synaptics | awk '{ print $5 }' | sed 's/id=//')
 
 # Find out whether the touchpad is enabled or not.
 tp_enabled=$(xinput list-props "$tp_id" | grep Device\ Enabled | awk '{ print $4 }')
