@@ -62,6 +62,7 @@ in
     pkgsUnstable.saml2aws
     pkgsUnstable.shellcheck
     pkgsUnstable.shfmt
+    pkgsUnstable.slack-dark
     pkgsUnstable.stow
     pkgsUnstable.stylish-haskell
     pkgsUnstable.tmux
@@ -69,5 +70,7 @@ in
     pkgsUnstable.travis
     pkgsUnstable.tree
     pkgsUnstable.yq
+    pkgsUnstable.zoom-us
+    pkgsUnstable.faac # required for zoom
   ];
 }
