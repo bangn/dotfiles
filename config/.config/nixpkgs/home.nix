@@ -44,6 +44,7 @@ in
     pkgsUnstable.htop
     pkgsUnstable.jq
     pkgsUnstable.kdiff3
+    pkgsUnstable.mdl
     pkgsUnstable.ncdu
     pkgsUnstable.neovim
     pkgsUnstable.neuron-notes
@@ -64,6 +65,7 @@ in
     pkgsUnstable.stow
     pkgsUnstable.stylish-haskell
     pkgsUnstable.tmux
+    pkgsUnstable.tmuxinator
     pkgsUnstable.travis
     pkgsUnstable.tree
     pkgsUnstable.yq
