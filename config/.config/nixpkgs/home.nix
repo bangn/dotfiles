@@ -73,4 +73,8 @@ in
     pkgsUnstable.zoom-us
     pkgsUnstable.faac # required for zoom
   ];
+
+  programs.firefox = {
+    enable = true;
+  };
 }
