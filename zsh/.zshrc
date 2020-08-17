@@ -112,8 +112,9 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # Setting fd as the default source for fzf
 # fzf find hidden files.
-export FZF_DEFAULT_COMMAND='fd --type f --ignore-case --hidden --exclude .git --exclude deps --exclude _build'
+export FZF_DEFAULT_COMMAND='fd --type f --ignore-case --hidden --exclude .git --exclude deps --exclude _build --exclude node_modules'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND='fd --type d --ignore-case --hidden --exclude .git --exclude deps --exclude _build --exclude node_modules'
 
 ################################################################################
 # Change output of `time` command format(make it same as bash output).
