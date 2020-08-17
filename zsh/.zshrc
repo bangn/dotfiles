@@ -113,9 +113,9 @@ fi
 # Setting fd as the default source for fzf
 # fzf find hidden files.
 export FZF_DEFAULT_COMMAND='fd --type f --ignore-case --hidden --exclude .git --exclude deps --exclude _build --exclude node_modules'
-export FZF_DEFAULT_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
+export FZF_DEFAULT_COMMAND_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS"
+export FZF_CTRL_T_OPTS="$FZF_DEFAULT_COMMAND_OPTS"
 export FZF_ALT_C_COMMAND='fd --type d --ignore-case --hidden --exclude .git --exclude deps --exclude _build --exclude node_modules'
 export FZF_ALT_C_OPTS=""
 
