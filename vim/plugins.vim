@@ -90,7 +90,7 @@ autocmd BufRead * call SyncTree()
 """"""""""""""""""""""""""""""""""""""""
 " FZF
 """"""""""""""""""""""""""""""""""""""""
-noremap <c-p> :Files<CR>
+noremap <c-p> :FZF<CR>
 nnoremap <leader>bf :Buffers<CR>
 
 """""""""""""""""""""""""""""""""""""""""
