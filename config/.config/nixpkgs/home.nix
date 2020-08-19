@@ -33,6 +33,7 @@ in
     pkgsUnstable.direnv
     pkgsUnstable.docker-compose
     pkgsUnstable.entr
+    pkgsUnstable.faac # required for zoom
     pkgsUnstable.fd
     pkgsUnstable.ghcid
     pkgsUnstable.gitAndTools.delta
@@ -65,13 +66,13 @@ in
     pkgsUnstable.slack-dark
     pkgsUnstable.stow
     pkgsUnstable.stylish-haskell
+    pkgsUnstable.thunderbird-78
     pkgsUnstable.tmux
     pkgsUnstable.tmuxinator
     pkgsUnstable.travis
     pkgsUnstable.tree
     pkgsUnstable.yq
     pkgsUnstable.zoom-us
-    pkgsUnstable.faac # required for zoom
   ];
 
   programs.firefox = {
