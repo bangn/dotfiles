@@ -281,7 +281,7 @@ exec --no-startup-id i3-battery-popup
 
 # Start xcompmgr
 # It fixes zoom annotation issue
-exec --no-startup-id xcompmgr
+exec --no-startup-id xcompmgr &
 
 # END AUTOSTART
 
