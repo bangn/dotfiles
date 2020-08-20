@@ -40,6 +40,8 @@ in
     pkgsUnstable.gitAndTools.diff-so-fancy
     pkgsUnstable.gitAndTools.gitFull
     pkgsUnstable.gitAndTools.hub
+    pkgsUnstable.google-chrome-dev
+    pkgsUnstable.google-cloud-sdk
     pkgsUnstable.graphviz
     pkgsUnstable.hlint
     pkgsUnstable.htop
@@ -71,6 +73,7 @@ in
     pkgsUnstable.tmuxinator
     pkgsUnstable.travis
     pkgsUnstable.tree
+    pkgsUnstable.yamllint
     pkgsUnstable.yq
     pkgsUnstable.zoom-us
   ];
