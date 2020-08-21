@@ -117,11 +117,15 @@ update_git_message_template() {
   GIT_USER=$(git config user.login)
   KOWAINIK_WORKFLOW_PATTERN="$GIT_USER/[0-9]+"
 
+  COMMITIZEN_PATTERN="[A-Za-z]+/$JIRA_WORKFLOW_PATTERN"
+
   # Current branch name does not match Jira format. Use sample git message.
   if [[ $PREFIX_MESSAGE =~ $JIRA_WORKFLOW_PATTERN ]]; then
     echo "$PREFIX_MESSAGE" | awk -F'-' '{ print toupper($1)"-"$2": " }' >"$HOME/.gitmessage"
   elif [[ $PREFIX_MESSAGE =~ $KOWAINIK_WORKFLOW_PATTERN ]]; then
     echo "$PREFIX_MESSAGE" | awk -F'/' '{ print "[#"$2"]: " }' >"$HOME/.gitmessage"
+  elif [[ $CURRENT_BRANCH =~ $COMMITIZEN_PATTERN ]]; then
+    echo "$CURRENT_BRANCH" | awk -F'/' '{ print ""$2" - "$1"(impact component)" }' >"$HOME/.gitmessage"
   elif [[ $CURRENT_BRANCH == master ]]; then
     cp "$HOME/.gitmessage.sample" "$HOME/.gitmessage"
   else
