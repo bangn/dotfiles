@@ -53,6 +53,7 @@ in
     pkgsUnstable.neuron-notes
     pkgsUnstable.niv
     pkgsUnstable.nixops
+    pkgsUnstable.nnn
     pkgsUnstable.pandoc
     pkgsUnstable.pdftk
     pkgsUnstable.pinta
@@ -68,9 +69,11 @@ in
     pkgsUnstable.slack-dark
     pkgsUnstable.stow
     pkgsUnstable.stylish-haskell
+    pkgsUnstable.sxiv
     pkgsUnstable.thunderbird-78
     pkgsUnstable.tmux
     pkgsUnstable.tmuxinator
+    pkgsUnstable.trash-cli
     pkgsUnstable.travis
     pkgsUnstable.tree
     pkgsUnstable.xcompmgr

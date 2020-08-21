@@ -169,6 +169,14 @@ if ! zplug check --verbose; then
 fi
 zplug load
 
+################################################################################
+# nnn settings
+################################################################################
+alias n='nnn -Hax'
+export NNN_BMS='d:~/dev;D:~/Downloads/'
+export NNN_PLUG="j:autojump;f:fzcd;o:fzopen;p:preview-tui"
+export NNN_TRASH=1
+
 # BEGIN ANSIBLE MANAGED BLOCK
 # source autojump
 if [[ "$(uname)" == "Darwin" ]]; then

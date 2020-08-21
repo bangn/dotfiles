@@ -25,12 +25,12 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
+Plug 'mcchrish/nnn.vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'romainl/vim-cool'
-Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neosnippet-snippets'
@@ -56,36 +56,6 @@ if has('nvim')
 endif
 
 call plug#end()
-
-""""""""""""""""""""""""""""""""""""""""
-" NerdTree
-""""""""""""""""""""""""""""""""""""""""
-let NERDTreeShowHidden        = 1
-let g:NERDTreeMapOpenSplit    = 's'
-let g:NERDTreeMapOpenVSplit   = 'v'
-let g:NERDSpaceDelims         = 1 " add spaces after comment delimiters by default.
-let g:NERDTreeShowLineNumbers = 1
-nnoremap <leader>nt :NERDTreeToggle<CR>
-
-""""""""""""""""""""
-" Sync with current opened file
-""""""""""""""""""""
-" Check if NERDTree is open or active
-function! IsNERDTreeOpen()
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
-
-" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
-" file, and we're not in vimdiff
-function! SyncTree()
-  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-    wincmd p
-  endif
-endfunction
-
-" Highlight currently open buffer in NERDTree
-autocmd BufRead * call SyncTree()
 
 """"""""""""""""""""""""""""""""""""""""
 " FZF
@@ -337,9 +307,9 @@ if exists('g:started_by_firenvim')
   setlocal noshowcmd
 endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""
 " tagbar
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""
 nmap <leader>tt :TagbarToggle<CR>
 let g:tagbar_show_linenumbers=1
 
@@ -350,5 +320,14 @@ nnoremap <leader>z :MaximizerToggle<CR>
 vnoremap <leader>z :MaximizerToggle<CR>gv
 nnoremap <C-W>o :MaximizerToggle<CR>
 
+""""""""""""""""""""""""""""""""""""""""
+" nnn.vim
+""""""""""""""""""""""""""""""""""""""""
+let g:nnn#command='nnn -H'
+let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
+let g:nnn#action = {
+  \ '<c-x>': 'split',
+  \ '<c-v>': 'vsplit',
+\}
 
 " vi: ft=vim

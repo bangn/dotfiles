@@ -67,6 +67,11 @@ if ! command -v home-manager; then
   nix-shell '<home-manager>' -A install
 fi
 
+########################################
+# Install nnn plugins
+########################################
+curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
+
 ################################################################################
 # DONE
 ################################################################################
