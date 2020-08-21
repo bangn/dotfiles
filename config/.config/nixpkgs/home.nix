@@ -73,6 +73,7 @@ in
     pkgsUnstable.tmuxinator
     pkgsUnstable.travis
     pkgsUnstable.tree
+    pkgsUnstable.xcompmgr
     pkgsUnstable.yamllint
     pkgsUnstable.yq
     pkgsUnstable.zoom-us
