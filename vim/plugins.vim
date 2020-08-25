@@ -60,8 +60,9 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""
 " FZF
 """"""""""""""""""""""""""""""""""""""""
-noremap <c-p> :FZF<CR>
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 nnoremap <leader>bf :Buffers<CR>
+noremap <c-p> :FZF<CR>
 
 """""""""""""""""""""""""""""""""""""""""
 " Lightline
