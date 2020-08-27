@@ -69,7 +69,7 @@
 [commit]
   template = ~/.gitmessage
 [init]
-  templatedir = /home/bangn/.git-template
+  templatedir = ~/.git-template
 [color "diff-highlight"]
   oldNormal = red bold
   oldHighlight = red bold 52
