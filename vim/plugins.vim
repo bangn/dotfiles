@@ -64,6 +64,12 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 nnoremap <leader>bf :Buffers<CR>
 noremap <c-p> :FZF<CR>
 
+""""""""""""""""""""""""""""""""""""""""
+" Nord color
+""""""""""""""""""""""""""""""""""""""""
+set background=dark
+colorscheme nord
+
 """""""""""""""""""""""""""""""""""""""""
 " Lightline
 """""""""""""""""""""""""""""""""""""""""
@@ -141,12 +147,6 @@ nmap <silent> <leader>af :ALEFix<CR>
 """"""""""""""""""""""""""""""""""""""""
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 let g:javascript_plugin_flow = 1
-
-""""""""""""""""""""""""""""""""""""""""
-" Nord color
-""""""""""""""""""""""""""""""""""""""""
-set background=dark
-colorscheme nord
 
 """"""""""""""""""""""""""""""""""""""""
 " vim-test
