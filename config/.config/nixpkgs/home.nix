@@ -47,6 +47,7 @@ in
     pkgsUnstable.htop
     pkgsUnstable.jq
     pkgsUnstable.kdiff3
+    pkgsUnstable.lastpass-cli
     pkgsUnstable.mdl
     pkgsUnstable.ncdu
     pkgsUnstable.neovim
