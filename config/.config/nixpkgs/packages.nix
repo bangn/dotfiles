@@ -54,7 +54,9 @@ with pkgs;
   thunderbird-78
   trash-cli
   tree
+  xclip
   xcompmgr
+  xorg.xinput
   yamllint
   yq
   zoom-us
