@@ -116,6 +116,7 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'haskell': ['brittany', 'floskell', 'stylish-haskell'],
 \   'javascript': ['prettier', 'eslint', 'prettier-eslint'],
+\   'nix': ['nixpkgs-fmt'],
 \   'ruby': ['rufo', 'rubocop'],
 \   'sh': ['shfmt'],
 \   'sql': ['sqlformat'],

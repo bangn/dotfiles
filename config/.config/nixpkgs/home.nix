@@ -1,9 +1,8 @@
 { ... }:
-
 let
-  pkgsUnstable = import <nixpkgs> {};
+  pkgsUnstable = import <nixpkgs> { };
 in
-  with pkgsUnstable;
+with pkgsUnstable;
 
 {
   # Let Home Manager install and manage itself.
@@ -54,6 +53,7 @@ in
     neuron-notes
     niv
     nixops
+    nixpkgs-fmt
     nnn
     pandoc
     pdftk

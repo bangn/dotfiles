@@ -46,7 +46,7 @@
 
   url = {
     "https://github.com" = {
-    insteadOf = "git://github.com";
+      insteadOf = "git://github.com";
     };
-    };
-    }
+  };
+}
