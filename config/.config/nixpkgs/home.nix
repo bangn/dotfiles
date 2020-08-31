@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ ... }:
 
 let
   pkgsUnstable = import <nixpkgs> {};
@@ -39,6 +39,7 @@ in
     gitAndTools.delta
     gitAndTools.diff-so-fancy
     gitAndTools.hub
+    glibcLocales
     google-chrome-dev
     google-cloud-sdk
     graphviz
@@ -57,7 +58,6 @@ in
     pandoc
     pdftk
     pinta
-    pkgs.glibcLocales
     plantuml
     postgresql_12
     python38Packages.sqlparse
@@ -87,5 +87,5 @@ in
     enable = true;
   };
 
-  programs.git = import ./programs/git.nix { pkgs = pkgsUnstable; };
+  programs.git = import ./programs/git { pkgs = pkgsUnstable; };
 }
