@@ -19,71 +19,9 @@ with pkgsUnstable;
   home.stateVersion = "20.09";
   home.username = "bangn";
   home.homeDirectory = "/home/bangn";
+  home.packages = import ./packages.nix { pkgs = pkgsUnstable; };
 
-  home.packages = [
-    alacritty
-    autojump
-    aws-sam-cli
-    awscli
-    awslogs
-    bat
-    ctags
-    curlFull
-    direnv
-    docker-compose
-    entr
-    faac # required for zoom
-    fd
-    ghcid
-    gitAndTools.delta
-    gitAndTools.diff-so-fancy
-    gitAndTools.hub
-    glibcLocales
-    google-chrome-dev
-    google-cloud-sdk
-    graphviz
-    hlint
-    htop
-    jq
-    kdiff3
-    lastpass-cli
-    mdl
-    ncdu
-    neovim
-    neuron-notes
-    niv
-    nixops
-    nixpkgs-fmt
-    nnn
-    pandoc
-    pdftk
-    pinta
-    plantuml
-    postgresql_12
-    python38Packages.sqlparse
-    python38Packages.yamllint
-    ripgrep
-    rofi
-    saml2aws
-    shellcheck
-    shfmt
-    slack-dark
-    stow
-    stylish-haskell
-    sxiv
-    thunderbird-78
-    trash-cli
-    tree
-    xcompmgr
-    yamllint
-    yq
-    zoom-us
-  ];
-
-  programs.firefox = {
-    enable = true;
-  };
-
+  programs.firefox = { enable = true; };
   programs.git = import ./programs/git { pkgs = pkgsUnstable; };
   programs.tmux = import ./programs/tmux { pkgs = pkgsUnstable; };
 }
