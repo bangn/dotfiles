@@ -3,6 +3,7 @@
 let
   pkgsUnstable = import <nixpkgs> {};
 in
+  with pkgsUnstable;
 
 {
   # Let Home Manager install and manage itself.
@@ -20,7 +21,7 @@ in
   home.username = "bangn";
   home.homeDirectory = "/home/bangn";
 
-  home.packages = with pkgsUnstable; [
+  home.packages = [
     alacritty
     autojump
     aws-sam-cli
@@ -37,7 +38,6 @@ in
     ghcid
     gitAndTools.delta
     gitAndTools.diff-so-fancy
-    gitAndTools.gitFull
     gitAndTools.hub
     google-chrome-dev
     google-cloud-sdk
@@ -86,4 +86,6 @@ in
   programs.firefox = {
     enable = true;
   };
+
+  programs.git = import ./programs/git.nix { pkgs = pkgsUnstable; };
 }
