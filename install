@@ -16,21 +16,6 @@ if ! command -v brew && [[ $(uname) == "Darwin" ]]; then
 fi
 
 ################################################################################
-# Stow dotfiles
-################################################################################
-if ! command -v stow && [[ $(uname) == "Darwin" ]]; then
-  echo -e "\\nInstalling stow..."
-  brew install stow
-fi
-
-# Use stow to populate dotfiles
-echo -e "Populating dotfiles...\\n"
-for i in */; do
-  echo "Stowing $i ..."
-  stow -R "$i"
-done
-
-################################################################################
 # Install vim Plug
 ################################################################################
 echo -e "\\nInstalling vim Plug ..."
@@ -76,6 +61,15 @@ curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | s
 # Install tpm
 ########################################
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+################################################################################
+# Use stow to populate dotfiles
+################################################################################
+echo -e "Populating dotfiles...\\n"
+for i in */; do
+  echo "Stowing $i ..."
+  stow -R "$i"
+done
 
 ################################################################################
 # DONE
