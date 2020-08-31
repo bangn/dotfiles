@@ -20,67 +20,67 @@ in
   home.username = "bangn";
   home.homeDirectory = "/home/bangn";
 
-  home.packages = [
+  home.packages = with pkgsUnstable; [
+    alacritty
+    autojump
+    aws-sam-cli
+    awscli
+    awslogs
+    bat
+    ctags
+    curlFull
+    direnv
+    docker-compose
+    entr
+    faac # required for zoom
+    fd
+    ghcid
+    gitAndTools.delta
+    gitAndTools.diff-so-fancy
+    gitAndTools.gitFull
+    gitAndTools.hub
+    google-chrome-dev
+    google-cloud-sdk
+    graphviz
+    hlint
+    htop
+    jq
+    kdiff3
+    lastpass-cli
+    mdl
+    ncdu
+    neovim
+    neuron-notes
+    niv
+    nixops
+    nnn
+    pandoc
+    pdftk
+    pinta
     pkgs.glibcLocales
-    pkgsUnstable.alacritty
-    pkgsUnstable.autojump
-    pkgsUnstable.aws-sam-cli
-    pkgsUnstable.awscli
-    pkgsUnstable.awslogs
-    pkgsUnstable.bat
-    pkgsUnstable.ctags
-    pkgsUnstable.curlFull
-    pkgsUnstable.direnv
-    pkgsUnstable.docker-compose
-    pkgsUnstable.entr
-    pkgsUnstable.faac # required for zoom
-    pkgsUnstable.fd
-    pkgsUnstable.ghcid
-    pkgsUnstable.gitAndTools.delta
-    pkgsUnstable.gitAndTools.diff-so-fancy
-    pkgsUnstable.gitAndTools.gitFull
-    pkgsUnstable.gitAndTools.hub
-    pkgsUnstable.google-chrome-dev
-    pkgsUnstable.google-cloud-sdk
-    pkgsUnstable.graphviz
-    pkgsUnstable.hlint
-    pkgsUnstable.htop
-    pkgsUnstable.jq
-    pkgsUnstable.kdiff3
-    pkgsUnstable.lastpass-cli
-    pkgsUnstable.mdl
-    pkgsUnstable.ncdu
-    pkgsUnstable.neovim
-    pkgsUnstable.neuron-notes
-    pkgsUnstable.niv
-    pkgsUnstable.nixops
-    pkgsUnstable.nnn
-    pkgsUnstable.pandoc
-    pkgsUnstable.pdftk
-    pkgsUnstable.pinta
-    pkgsUnstable.plantuml
-    pkgsUnstable.postgresql_12
-    pkgsUnstable.python38Packages.sqlparse
-    pkgsUnstable.python38Packages.yamllint
-    pkgsUnstable.ripgrep
-    pkgsUnstable.rofi
-    pkgsUnstable.saml2aws
-    pkgsUnstable.shellcheck
-    pkgsUnstable.shfmt
-    pkgsUnstable.slack-dark
-    pkgsUnstable.stow
-    pkgsUnstable.stylish-haskell
-    pkgsUnstable.sxiv
-    pkgsUnstable.thunderbird-78
-    pkgsUnstable.tmux
-    pkgsUnstable.tmuxinator
-    pkgsUnstable.trash-cli
-    pkgsUnstable.travis
-    pkgsUnstable.tree
-    pkgsUnstable.xcompmgr
-    pkgsUnstable.yamllint
-    pkgsUnstable.yq
-    pkgsUnstable.zoom-us
+    plantuml
+    postgresql_12
+    python38Packages.sqlparse
+    python38Packages.yamllint
+    ripgrep
+    rofi
+    saml2aws
+    shellcheck
+    shfmt
+    slack-dark
+    stow
+    stylish-haskell
+    sxiv
+    thunderbird-78
+    tmux
+    tmuxinator
+    trash-cli
+    travis
+    tree
+    xcompmgr
+    yamllint
+    yq
+    zoom-us
   ];
 
   programs.firefox = {
