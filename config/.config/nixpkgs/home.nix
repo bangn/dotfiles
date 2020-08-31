@@ -1,9 +1,8 @@
-{ ... }:
+{ pkgs, ... }:
 let
   pkgsUnstable = import <nixpkgs> { };
 in
 with pkgsUnstable;
-
 {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -20,8 +19,20 @@ with pkgsUnstable;
   home.username = "bangn";
   home.homeDirectory = "/home/bangn";
   home.packages = import ./packages.nix { pkgs = pkgsUnstable; };
+  home.file = import ./dotfiles { inherit pkgs; };
 
   programs.firefox = { enable = true; };
   programs.git = import ./programs/git { pkgs = pkgsUnstable; };
   programs.tmux = import ./programs/tmux { pkgs = pkgsUnstable; };
+
+  xresources.extraConfig = builtins.readFile
+    (
+      pkgs.fetchFromGitHub
+        {
+          owner = "arcticicestudio";
+          repo = "nord-xresources";
+          rev = "36fadf13c00ac08913ee8f297f038fa2733fd5ed";
+          sha256 = "1bhlhlk5axiqpm6l2qaij0cz4a53i9hcfsvc3hw9ayn75034xr93";
+        } + "/src/nord"
+    );
 }
