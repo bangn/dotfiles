@@ -1,72 +1,50 @@
-# Remap prefix to Control + a
-set -g prefix C-a
-unbind C-b
-bind C-a send-prefix
+''
+################################################################################
+# Plugins
+################################################################################
+set -g @plugin "arcticicestudio/nord-tmux"
 
-# Bind 'C-a C-a' to type 'C-a'
-bind a send-prefix
+################################################################################
+# Config
+################################################################################
 
-# Go to previous window
-bind-key C-a last-window
-
-# vi mode
-set-window-option -g mode-keys vi # vi key
-set-option -g status-keys vi
-set-window-option -g mouse off # disable mouse
-
+########################################
 # Reload the config.
+########################################
 bind r source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf"
 
+########################################
 # Saner splitting.
+########################################
 bind | split-window -h -c "#{pane_current_path}" # horizontal split
 unbind '"'
 bind - split-window -v -c "#{pane_current_path}" # vertical split
 
+########################################
 # Renumber windows
+########################################
 set-option -g renumber-windows on
 
-# Set scrollback history to 10000 (10k)
-set -g history-limit 10000
-
-# Look nice
-set -g default-terminal "screen-256color"
-
+########################################
 # Don't allow the terminal to rename windows
+########################################
 set-window-option -g allow-rename off
 
+########################################
 # Status bar
+########################################
 set -g status-interval 60
 set-option -g status-interval 1
-set -g status-left-length 60
-set -g status-left "#{pane_current_path}"
-set -g status-left-style fg=yellow
-set -g status-right "#[fg=cyan] %d %b %R "
-set -g status-justify centre
 
-# Automatic tmux titles (Current path)
-set -g window-status-format '#I:#(pwd="#{pane_current_path}"; echo ${pwd####*/})#F'
-set -g window-status-current-format '#I:#(pwd="#{pane_current_path}"; echo ${pwd####*/})#F'
-
-# Status bar colors
-set -g status-style fg=colour247
-set -g status-style bg=black
-
+########################################
 # Display activity from other windows
+########################################
 setw -g monitor-activity off
 set -g visual-activity off
 
-# Regular window colors
-setw -g window-status-style fg=cyan
-setw -g window-status-style bg=default
-setw -g window-status-style dim
-
-# Current window colors
-setw -g window-status-current-style fg=colour250
-setw -g window-status-current-style bg=black
-setw -g window-status-current-style bold
-setw -g window-status-current-format ' #I#[fg=red]:#[fg=red]#W#[fg=red]#F '
-
+########################################
 # Copy/paste interop
+########################################
 bind-key -T copy-mode-vi 'v' send -X begin-selection
 bind-key -T copy-mode-vi 'V' send -X select-line
 bind-key -T copy-mode-vi 'r' send -X rectangle-toggle
@@ -77,27 +55,38 @@ if-shell -b 'uname | grep -q Linux' \
 if-shell -b 'uname | grep -q Darwin' \
   'bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"'
 
+########################################
 # Toggle mouse on with ^A m
+########################################
 bind m \
   set -g mouse on \;\
   display 'Mouse: ON'
+
+########################################
 # Toggle mouse off with ^A M
+########################################
 bind M \
   set -g mouse off \;\
   display 'Mouse: OFF'
 
-# Set escape delay time for vim
-set -s escape-time 0
-
+########################################
 # Allow scrolling with mouse
+########################################
 bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
 bind -n WheelDownPane select-pane -t= \; send-keys -M
 
+########################################
 # Useful stuff
+########################################
+
+####################
 # prefix + z: maximize current pane. Do it again to toggle back
+####################
 bind = select-layout even-vertical
 
+####################
 # Vim style pane selection
+####################
 is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
     | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|\.?n?vim?x?(-wrapped)?)(diff)?$'"
 
@@ -140,12 +129,8 @@ bind -n M-7 select-window -t :7
 bind -n M-8 select-window -t :8
 bind -n M-9 select-window -t :9
 
-########################################
-# On our keyboards, this is a stretch to type,
-# because -0 is in the far upper right.
-# because 1 is easier to reach on our keyboards.
-########################################
-set -g base-index 1
-
-# Source local conf
-source-file ~/.tmux.colors
+################################################################################
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+################################################################################
+run '~/.tmux/plugins/tpm/tpm'
+''

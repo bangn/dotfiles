@@ -72,10 +72,7 @@ in
     stylish-haskell
     sxiv
     thunderbird-78
-    tmux
-    tmuxinator
     trash-cli
-    travis
     tree
     xcompmgr
     yamllint
@@ -88,4 +85,5 @@ in
   };
 
   programs.git = import ./programs/git { pkgs = pkgsUnstable; };
+  programs.tmux = import ./programs/tmux { pkgs = pkgsUnstable; };
 }
