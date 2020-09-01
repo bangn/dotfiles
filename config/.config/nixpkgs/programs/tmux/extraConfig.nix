@@ -133,4 +133,11 @@
   # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
   ################################################################################
   run '~/.tmux/plugins/tpm/tpm'
+
+  ################################################################################
+  # Patch nord-tmux window-status
+  ################################################################################
+  set -g window-status-format '#[fg=black,bg=cyan,nobold,noitalics,nounderscore] #[fg=black,bg=cyan]#I  #(pwd="#{pane_current_path}"; echo ''${pwd####*/})#F #[fg=cyan,bg=black,nobold,noitalics,nounderscore]'
+
+  set -g window-status-current-format '#[fg=black,bg=cyan,nobold,noitalics,nounderscore] #[fg=black,bg=cyan]#I  #(pwd="#{pane_current_path}"; echo ''${pwd####*/})#F #[fg=cyan,bg=black,nobold,noitalics,nounderscore]'
 ''
