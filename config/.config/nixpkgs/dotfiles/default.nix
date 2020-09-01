@@ -32,7 +32,7 @@
   ".summoner.toml".source = ./haskell/summoner.toml;
   "floskell.json".source = ./haskell/floskell.json;
 
-  "dircolor.nord".source = pkgs.fetchFromGitHub
+  "dircolors.nord".source = pkgs.fetchFromGitHub
     {
       owner = "arcticicestudio";
       repo = "nord-dircolors";
