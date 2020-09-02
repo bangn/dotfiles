@@ -239,4 +239,4 @@ function! Highlighting()
   let g:highlighting = 1
   return ":silent set hlsearch\<CR>"
 endfunction
-nnoremap <silent> <expr> <CR> Highlighting()
+nnoremap <silent> <expr> <leader>h Highlighting()
