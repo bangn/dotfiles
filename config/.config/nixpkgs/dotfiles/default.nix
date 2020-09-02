@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
   ".ctags".source = ./ctags/ctags;
-  ".editrc".source = ./.editrc;
+  ".editrc".source = ./editrc;
   ".gitmessage.sample".source = ./git/gitmessage.sample;
-  ".inputrc".source = ./.inputrc;
+  ".inputrc".source = ./inputrc;
   ".psqlrc".source = ./psql/psqlrc;
   ".pylintrc".source = ./python/pylintrc;
   ".slate".source = ./slate/slate;
