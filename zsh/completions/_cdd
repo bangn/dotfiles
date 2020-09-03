@@ -1,4 +1,0 @@
-#compdef cdd
-
-_description files expl 'dius projects dir'
-_files -W ~/dev/dius -/ && return

@@ -1,4 +1,0 @@
-#compdef cdn
-
-_description files expl 'dius/nib projects dir'
-_files -W ~/dev/dius/nib -/ && return

@@ -1,4 +1,0 @@
-#compdef cdp
-
-_description files expl 'projects dir'
-_files -W ~/dev/projects -/ && return

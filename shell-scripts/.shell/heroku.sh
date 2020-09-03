@@ -1,6 +1,0 @@
-alias h='heroku'
-alias gphm='git push heroku HEAD:master'
-alias hra='heroku restart --app'
-alias hlt='heroku logs --tail'
-alias hmdb='heroku run rake db:migrate'
-alias hrdb='heroku pg:reset'

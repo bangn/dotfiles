@@ -1,8 +1,7 @@
-#! /bin/bash
 # shellcheck disable=SC2164
 
 ################################################################################
-# DiUs
+# DiUS
 ################################################################################
 cdd() {
   cd "$HOME/dev/dius/$1"
@@ -12,7 +11,7 @@ git_update_user_config() {
   config_file="./.git/config"
 
   if [[ -f "$config_file" && "$PWD" =~ dius ]] && ! grep -q "\\[user\\]" "$config_file"; then
-    cat << EOF | tee -a "$config_file"
+    cat <<EOF | tee -a "$config_file"
 [user]
   name = bangn
   email = bnguyen@dius.com.au
@@ -33,7 +32,7 @@ git_update_hub_config() {
   host="github.com"
 
   if [[ -f "$config_file" ]] && ! grep -q "\\[hub\\]" "$config_file"; then
-    cat << EOF | tee -a "$config_file"
+    cat <<EOF | tee -a "$config_file"
 [hub]
   host = $host
   protocol = ssh

@@ -1,4 +1,0 @@
-#compdef cde
-
-_description files expl 'elixir projects dir'
-_files -W ~/dev/projects/elixir -/ && return

@@ -1,21 +1,12 @@
-## Find my full .zshrc at <github.com/mislav/dotfiles/blob/master/zshrc>.
+# Find my full .zshrc at <github.com/mislav/dotfiles/blob/master/zshrc>.
 
-# setup
-
-autoload colors; colors;
-export LSCOLORS="Gxfxcxdxbxegedabagacad"
+# Setup
+autoload colors
+colors
 setopt prompt_subst
 
-HISTFILE=$HOME/.histfile
-HISTSIZE=100000
-SAVEHIST=10000000
-
 setopt HIST_FIND_NO_DUPS
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
-setopt INC_APPEND_HISTORY
-setopt SHARE_HISTORY
-setopt appendhistory autocd
+setopt appendhistory
 
 # prompt
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{${fg[blue]}%}@%{$reset_color%}%{${fg[green]}%}"
@@ -30,7 +21,7 @@ parse_git_branch() {
 
 # show red star if there are uncommitted changes
 parse_git_dirty() {
-  if command git diff-index --quiet HEAD 2> /dev/null; then
+  if command git diff-index --quiet HEAD 2>/dev/null; then
     echo "$ZSH_THEME_GIT_PROMPT_CLEAN"
   else
     echo "$ZSH_THEME_GIT_PROMPT_DIRTY"

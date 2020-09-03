@@ -9,7 +9,6 @@ with pkgs;
   bat
   ctags
   curlFull
-  direnv
   docker-compose
   entr
   faac # required for zoom

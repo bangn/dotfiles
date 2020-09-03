@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # open the specified file in the default program, or
 # fallback to opening the current directory in Finder
 o() {

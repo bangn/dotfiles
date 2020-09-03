@@ -1,0 +1,82 @@
+let
+  fdOptions = builtins.concatStringsSep " " [
+    "--ignore-case"
+    "--hidden"
+    "--exclude .git"
+    "--exclude deps"
+    "--exclude _build"
+    "--exclude node_modules"
+  ];
+  fzfDefaultCommand = builtins.concatStringsSep " " [
+    "fd"
+    "--type f"
+    fdOptions
+  ];
+
+  fzfDefaultCommandOpts = builtins.concatStringsSep " " [
+    "--preview"
+    "'bat --style=numbers --color=always --line-range :500 {}'"
+  ];
+in
+{
+  # home-manager
+  NIX_PATH = "$HOME/.nix-defexpr/channels\${NIX_PATH:+:}$NIX_PATH";
+
+  ########################################
+  # Show hidden files on top
+  ########################################
+  LC_COLLATE = "C";
+
+  ########################################
+  # Editor
+  ########################################
+  EDITOR = "nvim";
+  MANPAGER = "nvim +'set ft=man' -";
+  SUDO_ASKPASS = "/usr/bin/ssh-askpass";
+  VISUAL = "nvim";
+
+  ########################################
+  # Postgres
+  ########################################
+  PGUSER = "postgres";
+  PGHOST = "localhost";
+
+  ########################################
+  # Change output of `time` command format
+  # make it same as bash output.
+  ########################################
+  TIMEFMT = "\nreal\t%E\nuser\t%U\nsys\t%S";
+
+  ########################################
+  # Change output of `time` command format
+  # make it same as bash output.
+  ########################################
+  NNN_BMS = "d:~/dev;D:~/Downloads/";
+  NNN_PLUG = "j:autojump;f:fzcd;o:fzopen;p:preview-tui";
+  NNN_TRASH = 1;
+
+  ########################################
+  # Use docker buildkit as default to improve build performance
+  ########################################
+  DOCKER_BUILDKIT = 1;
+
+
+  ########################################
+  # Misc
+  ########################################
+  KEYTIMEOUT = 1;
+  LSCOLORS = "Gxfxcxdxbxegedabagacad";
+  ################################################################################
+  # fzf
+  ################################################################################
+  FZF_DEFAULT_COMMAND = fzfDefaultCommand;
+  FZF_DEFAULT_COMMAND_OPTS = fzfDefaultCommandOpts;
+  FZF_CTRL_T_COMMAND = fzfDefaultCommand;
+  FZF_CTRL_T_OPTS = fzfDefaultCommandOpts;
+  FZF_ALT_C_COMMAND = builtins.concatStringsSep " " [
+    "fd"
+    "--type d"
+    fdOptions
+  ];
+  FZF_ALT_C_OPTS = "";
+}

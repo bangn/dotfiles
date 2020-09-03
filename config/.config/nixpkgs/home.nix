@@ -4,9 +4,6 @@ let
 in
 with pkgsUnstable;
 {
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
@@ -21,9 +18,7 @@ with pkgsUnstable;
   home.packages = import ./packages.nix { pkgs = pkgsUnstable; };
   home.file = import ./dotfiles { inherit pkgs; };
 
-  programs.firefox = { enable = true; };
-  programs.git = import ./programs/git { pkgs = pkgsUnstable; };
-  programs.tmux = import ./programs/tmux { pkgs = pkgsUnstable; };
+  programs = import ./programs { pkgs = pkgsUnstable; };
 
   xresources.extraConfig = builtins.readFile
     (

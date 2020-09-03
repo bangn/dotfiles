@@ -1,4 +1,0 @@
-#compdef cds
-
-_description files expl 'study projects dir'
-_files -W ~/study -/ && return

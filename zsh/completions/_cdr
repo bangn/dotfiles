@@ -1,4 +1,0 @@
-#compdef cdr
-
-_description files expl 'ruby projects dir'
-_files -W ~/dev/projects/ruby -/ && return
