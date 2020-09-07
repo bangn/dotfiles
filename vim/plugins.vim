@@ -13,7 +13,6 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'aklt/plantuml-syntax'
 Plug 'arcticicestudio/nord-vim'
-Plug 'chreekat/vim-paren-crosshairs'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'fatih/vim-go'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Vim in firefox textarea
@@ -33,7 +32,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'romainl/vim-cool'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
@@ -208,9 +206,9 @@ au FileType go nmap <leader>gt :GoTest -short<CR>
 
 "" indentation
 au FileType go setlocal noexpandtab
-au FileType go setlocal shiftwidth=4
-au FileType go setlocal softtabstop=4
-au FileType go setlocal tabstop=4
+au FileType go setlocal shiftwidth  = 4
+au FileType go setlocal softtabstop = 4
+au FileType go setlocal tabstop     = 4
 
 "" Do not set list for go type.
 "" As it will display big red block before any indented line.
@@ -219,14 +217,7 @@ au FileType go setlocal nolist
 """"""""""""""""""""""""""""""""""""""""
 " vim haskell
 """"""""""""""""""""""""""""""""""""""""
-"" Disable haskell-vim omnifunc
-augroup haskell
-  autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc "Use neco-ghc for completion
-augroup END
-let g:haskellmode_completion_ghc = 0
-let g:necoghc_use_stack          = 1
-let g:ycm_semantic_triggers      = {'haskell' : ['.']}
-"" haskell-vim
+let g:haskellmode_completion_ghc      = 0
 let g:haskell_enable_quantification   = 1   " to enable highlighting of `forall`
 let g:haskell_enable_recursivedo      = 1      " to enable highlighting of `mdo` and `rec`
 let g:haskell_enable_arrowsyntax      = 1      " to enable highlighting of `proc`
