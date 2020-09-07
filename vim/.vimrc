@@ -1,11 +1,21 @@
 filetype off
 let mapleader = "," " remap leader to comma.
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-plug plugins
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('nvim')
+  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  " vim-plug plugins
+  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   source ~/dotfiles/vim/plugins.vim
+
+  au TermOpen * setlocal nonumber norelativenumber
+  tnoremap <Esc> <C-\><C-n>
+  tnoremap <leader>x <C-\><C-n>:q!<CR>
+
+  " Hack to get C-h working in NeoVim
+  nnoremap <BS> <C-W>h
+  " Or run below command in terminal
+  " infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
+  " tic $TERM.ti
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -62,11 +72,6 @@ set undoreload=10000
 set updatetime=300
 set wildmenu
 
-" Do not show line number in terminal
-if has('nvim')
-  au TermOpen * setlocal nonumber norelativenumber
-endif
-
 augroup autosave
   autocmd BufLeave,FocusLost * silent! wall " autosave.
 augroup END
@@ -112,11 +117,6 @@ vnoremap < <gv
 vnoremap <leader>jq :!jq<CR>
 vnoremap > >gv
 
-if has('nvim')
-  tnoremap <Esc> <C-\><C-n>
-  tnoremap <leader>x <C-\><C-n>:q!<CR>
-endif
-
 " copy current file name (relative/absolute) to system clipboard (Mac version)
 " See :help let :help expand :help registers for details
 if has("mac")
@@ -131,17 +131,6 @@ if has("gui_gtk") || has("gui_gtk2") || has("gui_gnome") || has("unix")
 endif
 
 """"""""""""""""""""""""""""""""""""""""
-" Easy window navigation
-""""""""""""""""""""""""""""""""""""""""
-if has('nvim')
-  " Hack to get C-h working in NeoVim
-  nnoremap <BS> <C-W>h
-  " Or run below command in terminal
-  " infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
-  " tic $TERM.ti
-endif
-
-""""""""""""""""""""""""""""""""""""""""
 " Close the loclist/quickfix window automatically when the buffer is closed
 """"""""""""""""""""""""""""""""""""""""
 augroup CloseLocQuickFixlistWindowGroup
@@ -152,10 +141,6 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Insert line number
-com! -range InsertLineNumber <line1>,<line2>!nl -s '. ' -w 1
-""
-
 " Create file's directory before saving, if it doesn't exist.
 " Original: https://stackoverflow.com/a/4294176/151048
 augroup BWCCreateDir

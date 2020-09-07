@@ -32,6 +32,7 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'romainl/vim-cool'
 Plug 'sheerun/vim-polyglot'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neosnippet.vim'
@@ -50,10 +51,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'Yggdroot/indentLine'
-
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-endif
 
 call plug#end()
 
@@ -95,9 +92,8 @@ let g:lightline = {
 \ },
 \ }
 
-"" Show full path of filename
 function! FilenameForLightline()
-  return expand('%F')
+  return expand('%:pF')
 endfunction
 
 """"""""""""""""""""""""""""""""""""""""

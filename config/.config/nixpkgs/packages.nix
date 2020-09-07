@@ -27,7 +27,7 @@ with pkgs;
   lastpass-cli
   mdl
   ncdu
-  neovim
+  neovim-nightly
   neuron-notes
   niv
   nixops
