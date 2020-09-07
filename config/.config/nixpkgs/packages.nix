@@ -3,7 +3,6 @@ with pkgs;
 [
   alacritty
   autojump
-  aws-sam-cli
   awscli
   awslogs
   bat
