@@ -1,4 +1,4 @@
-config/.config/nvim/bundle/*
-config/.config/nvim/undo/*
-config/.config/nvim/bakup/*
-config/.config/nvim/swap/*
+nvim/bundle/*
+nvim/undo/*
+nvim/bakup/*
+nvim/swap/*

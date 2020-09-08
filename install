@@ -57,11 +57,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ################################################################################
 # Use stow to populate dotfiles
 ################################################################################
-echo -e "Populating dotfiles...\\n"
-for i in */; do
-  echo "Stowing $i ..."
-  stow -R "$i"
-done
+echo -e "Populating config files...\\n"
+ln -sf "$PWD"/nixpkgs "$HOME/.config/nixpkgs"
+ln -sf "$PWD"/nvim "$HOME/.config/nvim"
 
 ################################################################################
 # DONE

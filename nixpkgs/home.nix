@@ -16,7 +16,12 @@ with pkgsUnstable;
   home.username = "bangn";
   home.homeDirectory = "/home/bangn";
   home.packages = import ./packages.nix { pkgs = pkgsUnstable; };
-  home.file = import ./dotfiles { inherit pkgs; };
+  home.file =
+    let
+      dotfiles = import ./dotfiles { inherit pkgs; };
+      configFiles = import ./config { inherit pkgs; };
+    in
+    dotfiles // configFiles;
 
   programs = import ./programs { pkgs = pkgsUnstable; };
 
