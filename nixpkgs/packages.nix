@@ -10,7 +10,6 @@ with pkgs;
   curlFull
   docker-compose
   entr
-  faac # required for zoom
   fd
   ghcid
   gitAndTools.delta
