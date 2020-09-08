@@ -26,14 +26,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 nvim +PlugInstall +qa
 
 ################################################################################
-# Install completions
-################################################################################
-completion_dir="./zsh/completions"
-echo -e "\\nInstall github hub completion"
-curl -L https://raw.githubusercontent.com/github/hub/master/etc/hub.zsh_completion \
-  -o $completion_dir/_hub
-
-################################################################################
 # home-manager
 ################################################################################
 # Install nix; home-manager
