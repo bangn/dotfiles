@@ -33,6 +33,11 @@
   ".summoner.toml".source = ./haskell/summoner.toml;
   "floskell.json".source = ./haskell/floskell.json;
 
+  # tmuxinantor
+  ".tmuxinator/kowainik.yml".source = ./tmuxinator/kowainik.yml;
+  ".tmuxinator/personal.yml".source = ./tmuxinator/personal.yml;
+  ".tmuxinator/working.yml".source = ./tmuxinator/working.yml;
+
   "dircolors.nord".source = pkgs.fetchFromGitHub
     {
       owner = "arcticicestudio";
