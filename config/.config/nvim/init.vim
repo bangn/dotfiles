@@ -1,22 +1,20 @@
 filetype off
 let mapleader = "," " remap leader to comma.
 
-if has('nvim')
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " vim-plug plugins
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  source ~/dotfiles/vim/plugins.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-plug plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+source ~/.config/nvim/plugins.vim
 
-  au TermOpen * setlocal nonumber norelativenumber
-  tnoremap <Esc> <C-\><C-n>
-  tnoremap <leader>x <C-\><C-n>:q!<CR>
+au TermOpen * setlocal nonumber norelativenumber
+tnoremap <Esc> <C-\><C-n>
+tnoremap <leader>x <C-\><C-n>:q!<CR>
 
-  " Hack to get C-h working in NeoVim
-  nnoremap <BS> <C-W>h
-  " Or run below command in terminal
-  " infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
-  " tic $TERM.ti
-endif
+" Hack to get C-h working in NeoVim
+nnoremap <BS> <C-W>h
+" Or run below command in terminal
+" infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
+" tic $TERM.ti
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Generic settings
@@ -34,7 +32,7 @@ set clipboard=unnamedplus
 set colorcolumn=80
 set cursorcolumn
 set cursorline
-set dir=~/.vim/swap
+set dir=~/.config/nvim/swap
 set expandtab
 set foldmethod=indent
 set foldnestmax=10
@@ -65,7 +63,7 @@ set synmaxcol=160
 set tabstop=2
 set textwidth=80
 set ttyfast
-set undodir=~/.vim/undo
+set undodir=~/.config/nvim/undo
 set undofile
 set undolevels=1000
 set undoreload=10000
