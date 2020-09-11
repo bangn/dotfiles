@@ -27,7 +27,6 @@ syntax on
 set autoindent
 set autoread
 set backspace=indent,eol,start
-set backupdir=~/.vim/bakup
 set clipboard=unnamedplus
 set colorcolumn=80
 set cursorcolumn

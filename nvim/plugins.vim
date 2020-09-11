@@ -22,7 +22,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'mcchrish/nnn.vim'
 Plug 'michaeljsmith/vim-indent-object'
@@ -49,6 +48,15 @@ Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'Yggdroot/indentLine'
+
+""""""""""""""""""""
+" nvim-lsp
+""""""""""""""""""""
+Plug 'neovim/nvim-lspconfig'
+Plug 'Shougo/deoplete-lsp'
+Plug 'nvim-lua/diagnostic-nvim'
+Plug 'nvim-lua/completion-nvim'
+Plug 'nvim-treesitter/nvim-treesitter'
 
 call plug#end()
 
@@ -116,21 +124,22 @@ let g:ale_fixers = {
 \   'sql': ['sqlformat'],
 \   'typescript': ['prettier', 'eslint', 'prettier-eslint'],
 \}
-let g:ale_completion_enabled             = 1
-let g:ale_completion_tsserver_autoimport = 1
-let g:ale_echo_msg_format                = '[%linter%] %s'
-let g:ale_fix_on_save                    = 1
-let g:ale_keep_list_window_open          = 0 " do not keep list if there is no error/warning
-let g:ale_lint_on_enter                  = 0 " don't want linters to run on opening a file
-let g:ale_lint_on_save                   = 1
-let g:ale_lint_on_text_changed           = 'never'
-let g:ale_open_list                      = 'on_save'
-let g:ale_set_highlights                 = 1
-let g:ale_set_loclist                    = 0
-let g:ale_set_quickfix                   = 1
-let g:ale_sh_shfmt_options               = '-i 2 -ci'
-let g:ale_sign_error                     = '⤫'
-let g:ale_sign_warning                   = '⚠'
+
+let g:ale_completion_enabled    = 0
+let g:ale_disable_lsp           = 1
+let g:ale_echo_msg_format       = '[%linter%] %s'
+let g:ale_fix_on_save           = 1
+let g:ale_keep_list_window_open = 0 " do not keep list if there is no error/warning
+let g:ale_lint_on_enter         = 0 " don't want linters to run on opening a file
+let g:ale_lint_on_save          = 1
+let g:ale_lint_on_text_changed  = 'never'
+let g:ale_open_list             = 'on_save'
+let g:ale_set_highlights        = 1
+let g:ale_set_loclist           = 0
+let g:ale_set_quickfix          = 1
+let g:ale_sh_shfmt_options      = '-i 2 -ci'
+let g:ale_sign_error            = '⤫'
+let g:ale_sign_warning          = '⚠'
 
 " sqlformat options
 let g:ale_sql_sqlformat_options = '-r -k upper'
@@ -156,7 +165,6 @@ if has('nvim')
 elseif has("gui_macvim")
   let test#strategy = "iterm"
 end
-let test#python#runner = 'pytest'
 
 """"""""""""""""""""""""""""""""""""""""
 " deoplete
@@ -249,14 +257,6 @@ nmap <leader>mp <Plug>MarkdownPreview
 let g:mkdp_port = '9999'
 
 """"""""""""""""""""""""""""""""""""""""
-" vim-gutentags
-""""""""""""""""""""""""""""""""""""""""
-let g:gutentags_generate_on_empty_buffer = 0
-let g:gutentags_generate_on_missing      = 1
-let g:gutentags_generate_on_new          = 1
-let g:gutentags_generate_on_write        = 1
-
-""""""""""""""""""""""""""""""""""""""""
 " plantuml-syntax
 """"""""""""""""""""""""""""""""""""""""
 if exists("g:loaded_plantuml_plugin")
@@ -324,5 +324,38 @@ let g:nnn#action = {
   \ '<c-x>': 'split',
   \ '<c-v>': 'vsplit',
 \}
+
+""""""""""""""""""""""""""""""""""""""""
+" nvim-lspconfig
+""""""""""""""""""""""""""""""""""""""""
+set completeopt+=menuone,noinsert,noselect
+set completeopt-=preview " Disable deoplete preview window
+
+lua << EOF
+  require('nvim_lsp_settings')
+  require('nvim_tree_sitter_settings')
+EOF
+
+""""""""""""""""""""""""""""""""""""""""
+" diagnostic-nvim
+""""""""""""""""""""""""""""""""""""""""
+call sign_define('LspDiagnosticsErrorSign'       , {'text' : 'E' , 'texthl' : 'LspDiagnosticsError'})
+call sign_define('LspDiagnosticsHintSign'        , {'text' : 'H' , 'texthl' : 'LspDiagnosticsHint'})
+call sign_define('LspDiagnosticsInformationSign' , {'text' : 'I' , 'texthl' : 'LspDiagnosticsInformation'})
+call sign_define('LspDiagnosticsWarningSign'     , {'text' : 'W' , 'texthl' : 'LspDiagnosticsWarning'})
+
+let g:diagnostic_insert_delay = 1
+let g:diagnostic_show_sign = 0
+let g:diagnostic_enable_virtual_text = 1
+
+nnoremap <leader>do :OpenDiagnostic<CR>
+
+""""""""""""""""""""""""""""""""""""""""
+" completion-nvim
+""""""""""""""""""""""""""""""""""""""""
+let g:completion_matching_ignore_case = 1
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']
+let g:completion_timer_cycle = 200
+let g:completion_enable_auto_popup = 0
 
 " vi: ft=vim

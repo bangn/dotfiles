@@ -11,3 +11,7 @@ jsonlint
 npm
 prettier
 prettier-eslint-cli
+
+typescript
+typescript-language-server
+vscode-json-languageserver

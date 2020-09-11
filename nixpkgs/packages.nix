@@ -29,7 +29,6 @@ with pkgs;
   neovim-nightly
   neuron-notes
   niv
-  nixops
   nixpkgs-fmt
   nnn
   pandoc
@@ -57,4 +56,8 @@ with pkgs;
   yamllint
   yq
   zoom-us
+
+  # Language server
+  rnix-lsp
+  yaml-language-server
 ]
