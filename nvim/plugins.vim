@@ -235,11 +235,14 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-set completeopt+=menuone
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 """"""""""""""""""""""""""""""""""""""""
 " markdown-preview
@@ -278,6 +281,11 @@ autocmd Filetype plantuml let &l:makeprg=s:makecommand
 """"""""""""""""""""""""""""""""""""""""
 let g:indentLine_faster     = 1
 let g:indentLine_setConceal = 0
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
 
 """"""""""""""""""""""""""""""""""""""""
 " glacambre/firenvim
