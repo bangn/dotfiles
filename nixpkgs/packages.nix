@@ -16,7 +16,7 @@ with pkgs;
   gitAndTools.diff-so-fancy
   gitAndTools.hub
   glibcLocales
-  google-chrome-dev
+  google-chrome
   google-cloud-sdk
   graphviz
   hlint
