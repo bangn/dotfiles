@@ -55,8 +55,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'neovim/nvim-lspconfig'
 Plug 'Shougo/deoplete-lsp'
 Plug 'nvim-lua/diagnostic-nvim'
-Plug 'nvim-lua/completion-nvim'
-Plug 'nvim-treesitter/nvim-treesitter'
 
 call plug#end()
 
@@ -333,7 +331,6 @@ set completeopt-=preview " Disable deoplete preview window
 
 lua << EOF
   require('nvim_lsp_settings')
-  require('nvim_tree_sitter_settings')
 EOF
 
 """"""""""""""""""""""""""""""""""""""""
@@ -349,13 +346,5 @@ let g:diagnostic_show_sign = 0
 let g:diagnostic_enable_virtual_text = 1
 
 nnoremap <leader>do :OpenDiagnostic<CR>
-
-""""""""""""""""""""""""""""""""""""""""
-" completion-nvim
-""""""""""""""""""""""""""""""""""""""""
-let g:completion_matching_ignore_case = 1
-let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']
-let g:completion_timer_cycle = 200
-let g:completion_enable_auto_popup = 0
 
 " vi: ft=vim

@@ -3,7 +3,6 @@ local nvim_lsp = require('nvim_lsp')
 local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
   require'diagnostic'.on_attach()
-  require'completion'.on_attach()
 
   -- Mappings.
   local opts = { noremap=true, silent=true }
