@@ -38,6 +38,10 @@
   ".tmuxinator/personal.yml".source = ./tmuxinator/personal.yml;
   ".tmuxinator/working.yml".source = ./tmuxinator/working.yml;
 
+  # mdl
+  ".mdlrc".source = ./mdl/.mdlrc;
+  "mdl/style.rb".source = ./mdl/style.rb;
+
   "dircolors.nord".source = pkgs.fetchFromGitHub
     {
       owner = "arcticicestudio";
