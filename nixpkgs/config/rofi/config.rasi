@@ -1,6 +1,6 @@
 configuration {
   color-enabled: true;
-  disable-history: false;
+  disable-history: true;
   font: "hack 9";
   hide-scrollbar: true;
   line-padding: 2;
