@@ -25,6 +25,7 @@ with pkgs;
   kdiff3
   lastpass-cli
   mdl
+  moreutils
   ncdu
   neovim-nightly
   neuron-notes
