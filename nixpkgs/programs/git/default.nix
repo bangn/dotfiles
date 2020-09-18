@@ -86,9 +86,10 @@
     "tags.*"
 
     # Ignore directories
-    "*/.vim/bakup"
-    "*/.vim/swap"
-    "*/.vim/undo"
+    "nvim/bakup"
+    "nvim/swap"
+    "nvim/undo"
+    "nvim/autoload/"
     ".netrwhist"
     "bundle"
     "node_modules"
