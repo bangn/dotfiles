@@ -6,6 +6,8 @@ with pkgs;
   awscli
   awslogs
   bat
+  buildkite-agent
+  buildkite-cli
   ctags
   curlFull
   docker-compose
