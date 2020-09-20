@@ -31,7 +31,6 @@ with pkgs;
   ncdu
   neovim-nightly
   neuron-notes
-  niv
   nixpkgs-fmt
   nnn
   pandoc
