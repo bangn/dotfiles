@@ -41,6 +41,7 @@ with pkgs;
   python38Packages.sqlparse
   python38Packages.yamllint
   ripgrep
+  rnix-lsp
   rofi
   saml2aws
   shellcheck
@@ -55,11 +56,8 @@ with pkgs;
   xclip
   xcompmgr
   xorg.xinput
+  yaml-language-server
   yamllint
   yq
   zoom-us
-
-  # Language server
-  rnix-lsp
-  yaml-language-server
 ]
