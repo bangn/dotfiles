@@ -50,6 +50,8 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo -e "Populating config files...\\n"
 ln -sf "$PWD"/nixpkgs "$HOME/.config/nixpkgs"
 
+home-manager switch
+
 ################################################################################
 # Install vim Plug
 ################################################################################
