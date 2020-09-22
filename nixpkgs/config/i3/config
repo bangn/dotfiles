@@ -200,9 +200,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Screenshot.
-bindsym --release Shift+Print exec "scrot -s '/home/bangn/Pictures/screenshots/%Y%m%d_%H%M%S.png'"
-bindsym --release Ctrl+Shift+Print exec "import png:- | xclip -selection clipboard -t image/png"
-bindsym Print exec "scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/screenshots/'"
+bindsym --release Print exec "flameshot gui"
 
 # Touchpad toggle
 bindsym $mod+t exec ~/dotfiles/tools/bin/touchpad-toggle
@@ -281,6 +279,8 @@ exec --no-startup-id i3-battery-popup
 # Start xcompmgr
 # It fixes zoom annotation issue
 exec --no-startup-id xcompmgr &
+
+exec --no-startup-id flameshot &
 
 # END AUTOSTART
 
