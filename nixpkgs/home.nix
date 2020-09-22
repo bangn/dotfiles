@@ -25,6 +25,15 @@ with pkgsUnstable;
 
   programs = import ./programs { pkgs = pkgsUnstable; };
 
+  xdg = {
+    configFile = {
+      nvim = {
+        source = ../nvim;
+        recursive = true;
+      };
+    };
+  };
+
   xresources.extraConfig = builtins.readFile
     (
       pkgs.fetchFromGitHub
