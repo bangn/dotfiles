@@ -1,5 +1,4 @@
 configuration {
-  color-enabled: true;
   disable-history: true;
   font: "hack 9";
   hide-scrollbar: true;
