@@ -47,6 +47,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
+Plug 'wsdjeg/vim-fetch'
 Plug 'Yggdroot/indentLine'
 
 """"""""""""""""""""
