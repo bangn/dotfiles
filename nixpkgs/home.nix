@@ -18,10 +18,10 @@ with pkgsUnstable;
   home.packages = import ./packages.nix { pkgs = pkgsUnstable; };
   home.file =
     let
-      dotfiles = import ./dotfiles { inherit pkgs; };
-      configFiles = import ./config { inherit pkgs; };
+      homedot = import ../homedot { inherit pkgs; };
+      configFiles = import ../config { inherit pkgs; };
     in
-    dotfiles // configFiles;
+    homedot // configFiles;
 
   programs = import ./programs { pkgs = pkgsUnstable; };
 
