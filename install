@@ -43,6 +43,7 @@ curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | s
 # Install tpm
 ########################################
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+~/.tmux/plugins/tpm/bindings/install_plugins
 
 ################################################################################
 # Use stow to populate dotfiles
