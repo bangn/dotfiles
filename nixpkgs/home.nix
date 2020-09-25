@@ -15,6 +15,13 @@ with pkgsUnstable;
   home.stateVersion = "20.09";
   home.username = "bangn";
   home.homeDirectory = "/home/bangn";
+  home.sessionVariables =
+    let
+      drivers = [ pkgs.mesa_drivers ]; in
+    {
+      LIBGL_DRIVERS_PATH = pkgs.lib.makeSearchPathOutput "lib" "lib/dri" drivers;
+      LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath drivers;
+    };
   home.packages = import ./packages.nix { pkgs = pkgsUnstable; };
   home.file =
     let

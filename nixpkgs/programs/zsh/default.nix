@@ -27,7 +27,7 @@
 
   envExtra = "";
 
-  sessionVariables = import ./sessionVars.nix;
+  sessionVariables = import ./sessionVars.nix { inherit pkgs; };
 
   plugins = [
     {

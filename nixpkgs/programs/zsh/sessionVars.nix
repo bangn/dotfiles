@@ -1,4 +1,6 @@
+{ pkgs, ... }:
 let
+  drivers = [ pkgs.mesa_drivers ];
   fdOptions = builtins.concatStringsSep " " [
     "--ignore-case"
     "--hidden"
@@ -66,9 +68,9 @@ in
   ########################################
   KEYTIMEOUT = 1;
   LSCOLORS = "Gxfxcxdxbxegedabagacad";
-  ################################################################################
+  ########################################
   # fzf
-  ################################################################################
+  ########################################
   FZF_DEFAULT_COMMAND = fzfDefaultCommand;
   FZF_DEFAULT_COMMAND_OPTS = fzfDefaultCommandOpts;
   FZF_CTRL_T_COMMAND = fzfDefaultCommand;
@@ -79,4 +81,11 @@ in
     fdOptions
   ];
   FZF_ALT_C_OPTS = "";
+
+
+  ########################################
+  # Fix glx issue in nix-shell
+  ########################################
+  LIBGL_DRIVERS_PATH = pkgs.lib.makeSearchPathOutput "lib" "lib/dri" drivers;
+  LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath drivers;
 }

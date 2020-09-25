@@ -29,6 +29,7 @@ with pkgs;
   lastpass-cli
   masterpdfeditor
   mdl
+  mesa_drivers
   moreutils
   ncdu
   neovim-nightly
