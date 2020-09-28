@@ -88,4 +88,5 @@ in
   ########################################
   LIBGL_DRIVERS_PATH = pkgs.lib.makeSearchPathOutput "lib" "lib/dri" drivers;
   LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath drivers;
+  QT_XCB_GL_INTEGRATION = "none";
 }

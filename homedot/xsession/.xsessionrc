@@ -1,2 +1,3 @@
 export NIX_PATH="nixpkgs=channel:nixpkgs-unstable"
 export PATH="$PATH:/home/bangn/.nix-profile/bin"
+export QT_XCB_GL_INTEGRATION=none
