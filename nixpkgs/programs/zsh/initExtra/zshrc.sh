@@ -34,13 +34,6 @@ fi
 if [[ ! "$PATH" == *$HOME/.nix-profile/bin* ]]; then
   source ~/.nix-profile/etc/profile.d/nix.sh
 fi
-# Fix nix setlocale problems
-# https://qiita.com/kimagure/items/4449ceb0bda5c10ca50f
-if [[ -z "$LOCALE_ARCHIVE_2_27" && ! "$(uname)" == "Darwin" ]]; then
-  glibcLocales=$(nix-build --no-out-link "<nixpkgs>" -A glibcLocales)
-  export LOCALE_ARCHIVE_2_27="${glibcLocales}/lib/locale/locale-archive"
-fi
-export LOCALE_ARCHIVE="$(readlink ~/.nix-profile/lib/locale)/locale-archive"
 
 ################################################################################
 # asdf

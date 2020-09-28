@@ -88,5 +88,19 @@ in
   ########################################
   LIBGL_DRIVERS_PATH = pkgs.lib.makeSearchPathOutput "lib" "lib/dri" drivers;
   LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath drivers;
+
+  ########################################
+  # In order to run zoom-us
+  # https://github.com/NixOS/nixpkgs/issues/82959#issuecomment-657306112
+  ########################################
   QT_XCB_GL_INTEGRATION = "none";
+
+  ########################################
+  # Fix locale
+  # https://qiita.com/kimagure/items/4449ceb0bda5c10ca50f
+  ########################################
+  LOCALE_ARCHIVE_2_27 = pkgs.lib.makeSearchPathOutput "lib"
+    "lib/locale/locale-archive" [ pkgs.glibcLocales ];
+  LOCALE_ARCHIVE = pkgs.lib.makeSearchPathOutput "lib"
+    "lib/locale/locale-archive" [ pkgs.glibcLocales ];
 }
