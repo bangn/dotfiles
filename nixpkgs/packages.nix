@@ -53,7 +53,7 @@ with pkgs;
   stow
   stylish-haskell
   sxiv
-  thunderbird-78
+  thunderbird-bin-78
   trash-cli
   tree
   xclip
