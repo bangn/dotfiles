@@ -25,6 +25,7 @@ if ! command -v nix; then
 fi
 
 # Use unstable channel
+source "$HOME/.nix-profile/etc/profile.d/nix.sh"
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable
 nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
 nix-channel --update
@@ -34,23 +35,13 @@ if ! command -v home-manager; then
   nix-shell '<home-manager>' -A install
 fi
 
-########################################
-# Install nnn plugins
-########################################
-curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
-
-########################################
-# Install tpm
-########################################
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-~/.tmux/plugins/tpm/bindings/install_plugins
-
 ################################################################################
 # Use stow to populate dotfiles
 ################################################################################
-echo -e "Populating config files...\\n"
-ln -sf "$PWD"/nixpkgs "$HOME/.config/nixpkgs"
+echo -e "Populating config files..."
+ln -sf "$PWD"/nixpkgs "$HOME/.config"
 
+echo -e "Setting up with home-manager"
 home-manager switch
 
 ################################################################################
@@ -63,7 +54,19 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 # Install vim plugins and quit
 nvim +PlugInstall +qa
 
+########################################
+# Install nnn plugins
+########################################
+curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
+
+########################################
+# Install tpm
+########################################
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+echo "Switch to zsh and run below command"
+echo "$HOME/tmux/plugins/tpm/bindings/install_plugins"
+
 ################################################################################
 # DONE
 ################################################################################
-echo -e "\\nDone!"
+echo -e "Done!"
