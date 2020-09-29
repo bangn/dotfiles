@@ -25,7 +25,9 @@ if ! command -v nix; then
 fi
 
 # Use unstable channel
+# shellcheck disable=SC1090
 source "$HOME/.nix-profile/etc/profile.d/nix.sh"
+# shellcheck disable=SC2116
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable
 nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
 nix-channel --update
@@ -57,14 +59,16 @@ nvim +PlugInstall +qa
 ########################################
 # Install nnn plugins
 ########################################
+echo "Installing nnn plugins"
 curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 
 ########################################
-# Install tpm
+# tpm
 ########################################
+echo "Installing tpm"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-echo "Switch to zsh and run below command"
-echo "$HOME/tmux/plugins/tpm/bindings/install_plugins"
+export PATH="$HOME/.nix-profile/bin:$PATH"
+zsh -c "$HOME/.tmux/plugins/tpm/bindings/install_plugins"
 
 ################################################################################
 # DONE
