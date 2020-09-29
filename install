@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 
 set -eu
-################################################################################
-# Update submodules.
-################################################################################
-echo -e "Update submodules"
-git submodule update --init
 
 ################################################################################
 # Install brew (for macos)
@@ -41,7 +36,8 @@ fi
 # Use stow to populate dotfiles
 ################################################################################
 echo -e "Populating config files..."
-ln -sf "$PWD"/nixpkgs "$HOME/.config"
+rm -rf "$HOME/.config/nixpkgs"
+ln -sfn "$PWD"/nixpkgs "$HOME/.config"
 
 echo -e "Setting up with home-manager"
 home-manager switch
