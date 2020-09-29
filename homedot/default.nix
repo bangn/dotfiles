@@ -23,7 +23,7 @@
   ".asdfrc".source = ./asdf/.asdfrc;
   ".default-gems".source = ./asdf/.default-gems;
   ".default-npm-packages".source = ./asdf/.default-npm-packages;
-  ".tool-versions".source = ./asdf/.tool-versions;
+  ".tool-versions".source = ./asdf/tool-versions;
 
   # haskell dotfiles
   ".ghci".source = ./haskell/.ghci;
