@@ -18,6 +18,7 @@ with pkgs;
   gitAndTools.delta
   gitAndTools.diff-so-fancy
   gitAndTools.hub
+  github-cli
   glibcLocales
   google-chrome
   google-cloud-sdk
@@ -40,6 +41,8 @@ with pkgs;
   pdftk
   pinta
   plantuml
+  podman
+  podman-compose
   postgresql_12
   python38Packages.sqlparse
   python38Packages.yamllint
