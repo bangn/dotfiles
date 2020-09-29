@@ -65,5 +65,4 @@ with pkgs;
   yaml-language-server
   yamllint
   yq
-  zoom-us
 ]
