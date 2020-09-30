@@ -6,6 +6,7 @@ with pkgs;
   awscli
   awslogs
   bat
+  bitwarden-cli
   buildkite-agent
   buildkite-cli
   ctags
