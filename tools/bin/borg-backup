@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-export BORG_REPO=/media/bangn/backup
+export BORG_REPO=/media/backup/backup
 
 # or this to ask an external program to supply the passphrase:
 export BORG_PASSCOMMAND='lpass show --password borg-backup'
@@ -11,7 +11,7 @@ trap 'echo $( date ) Backup interrupted >&2; exit 2' INT TERM
 
 info "Starting backup"
 
-sudo borg create \
+borg create \
   --verbose \
   --filter AME \
   --list \
