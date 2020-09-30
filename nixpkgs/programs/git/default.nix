@@ -1,10 +1,12 @@
 { pkgs, ... }:
-
+let
+  username = "bangn";
+in
 {
   enable = true;
   package = pkgs.gitAndTools.gitFull;
 
-  userName = "bangn";
+  userName = username;
   userEmail = "thebangnguyen@gmail.com";
 
   aliases = {
@@ -68,6 +70,10 @@
       "https://github.com" = {
         insteadOf = "git://github.com";
       };
+    };
+
+    user = {
+      login = username;
     };
   };
 
