@@ -10,7 +10,7 @@ in
   ssp = "source ~/.config/zsh/.zshrc";
 
   cat = "bat";
-  fix-enter-key = "stty sane";
+  fix-stty = "stty sane";
   mmv = "noglob zmv -W";
   mux = "tmuxinator";
   n = "nnn -Hax";
