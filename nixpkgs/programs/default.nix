@@ -11,7 +11,7 @@
 
   firefox = {
     enable = true;
-    package = pkgs.firefox-bin;
+    package = pkgs.firefox-beta-bin;
     profiles = {
       bangn = {
         id = 0;
