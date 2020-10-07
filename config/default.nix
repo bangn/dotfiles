@@ -7,5 +7,4 @@
   ".config/rofi/config.rasi".source = ./rofi/config.rasi;
   ".config/rofi/custom-nord.rasi".source = ./rofi/custom-nord.rasi;
   ".config/yamllint/config".source = ./yamllint/config;
-  ".config/Thunar/thunarrc".source = ./Thunar/thunarrc;
 }
