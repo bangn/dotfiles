@@ -4,20 +4,6 @@ export_path() {
   fi
 }
 
-PATHS="$HOME/.cabal/bin
-$HOME/.cargo/bin
-$HOME/.ghcup/bin
-$HOME/.local/bin
-$HOME/.talisman/bin
-$HOME/Library/Haskell/bin
-$HOME/dotfiles/tools/bin
-/opt/ghc/bin
-/usr/local/bin"
-
-for p in $(echo "$PATHS" | sed 's/\n/ /g'); do
-  export_path "$p"
-done
-
 ################################################################################
 # Use nord for terminal color
 ################################################################################

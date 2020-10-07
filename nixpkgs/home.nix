@@ -1,6 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
   pkgsUnstable = import <nixpkgs> { };
+  username = "bangn";
+  homeDir = "/home/${username}";
 in
 with pkgsUnstable;
 {
@@ -13,9 +15,19 @@ with pkgsUnstable;
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "20.09";
-  home.username = "bangn";
-  home.homeDirectory = "/home/bangn";
+  home.username = username;
+  home.homeDirectory = homeDir;
   home.packages = import ./packages.nix { pkgs = pkgsUnstable; };
+  home.sessionPath = [
+    "${config.home.homeDirectory}/.cabal/bin"
+    "${config.home.homeDirectory}/.cargo/bin"
+    "${config.home.homeDirectory}/.ghcup/bin"
+    "${config.home.homeDirectory}/.local/bin"
+    "${config.home.homeDirectory}/.talisman/bin"
+    "${config.home.homeDirectory}/dotfiles/tools/bin"
+    "/opt/ghc/bin"
+    "/usr/local/bin"
+  ];
   home.file =
     let
       homedot = import ../homedot { inherit pkgs; };
@@ -24,6 +36,7 @@ with pkgsUnstable;
     homedot // configFiles;
 
   programs = import ./programs { pkgs = pkgsUnstable; };
+  news.display = "silent";
 
   xdg = {
     configFile = {
