@@ -53,6 +53,7 @@ with pkgs;
   shellcheck
   shfmt
   slack-dark
+  spotify
   stow
   stylish-haskell
   sxiv
