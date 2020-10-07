@@ -294,8 +294,6 @@ exec --no-startup-id i3-battery-popup
 # It fixes zoom annotation issue
 exec --no-startup-id xcompmgr &
 
-exec --no-startup-id flameshot &
-
 ################################################################################
 # Scratchpad
 ################################################################################

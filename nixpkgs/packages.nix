@@ -14,7 +14,6 @@ with pkgs;
   docker-compose
   entr
   fd
-  flameshot
   ghcid
   gitAndTools.delta
   gitAndTools.diff-so-fancy

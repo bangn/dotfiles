@@ -49,6 +49,7 @@ with pkgsUnstable;
 
   services = {
     keybase = { enable = true; };
+    flameshot = { enable = true; };
   };
 
   xresources.extraConfig = builtins.readFile
