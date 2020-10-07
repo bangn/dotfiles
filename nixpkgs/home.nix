@@ -34,6 +34,10 @@ with pkgsUnstable;
     };
   };
 
+  services = {
+    keybase = { enable = true; };
+  };
+
   xresources.extraConfig = builtins.readFile
     (
       pkgs.fetchFromGitHub
