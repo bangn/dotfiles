@@ -226,7 +226,6 @@ for_window [window_type="menu"] floating enable
 bindsym Mod1+n bar mode toggle
 bar {
   position bottom
-  mode hide
   status_command i3status
   modifier Mod1
   colors {
