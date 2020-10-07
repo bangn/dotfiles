@@ -2,4 +2,4 @@ export CLICOLOR=TRUE
 
 xrdb -load ~/.Xresources
 
-exec i3
+# vi: ft=sh

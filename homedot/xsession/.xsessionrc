@@ -1,2 +1,10 @@
 export NIX_PATH="nixpkgs=channel:nixpkgs-unstable"
 export PATH="$PATH:/home/bangn/.nix-profile/bin"
+
+if command -v nix-build; then
+  MESA_DRIVER_OUTPUT=$(nix-build '<nixpkgs>' --no-build-output -A mesa_drivers)
+  export LIBGL_DRIVERS_PATH="$MESA_DRIVER_OUTPUT/lib/dri:$LIBGL_DRIVERS_PATH"
+  export LD_LIBRARY_PATH="$MESA_DRIVER_OUTPUT/lib:$LD_LIBRARY_PATH"
+fi
+
+# vi: ft=sh
