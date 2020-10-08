@@ -1,6 +1,6 @@
-# /home/bangn/.tmuxinator/working.yml
+# /home/bangn/.tmuxinator/dius.yml
 
-name: working
+name: dius
 root: ~/dev/dius
 
 windows:
