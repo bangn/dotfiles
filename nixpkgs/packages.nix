@@ -28,7 +28,6 @@ with pkgs;
   jq
   kdiff3
   lastpass-cli
-  masterpdfeditor
   mdl
   mesa_drivers
   moreutils
