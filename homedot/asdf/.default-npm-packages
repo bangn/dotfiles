@@ -11,6 +11,7 @@ jsonlint
 npm
 prettier
 prettier-eslint-cli
+yarn
 
 typescript
 typescript-language-server

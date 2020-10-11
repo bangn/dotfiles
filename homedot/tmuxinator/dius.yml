@@ -1,7 +1,0 @@
-# /home/bangn/.tmuxinator/dius.yml
-
-name: dius
-root: ~/dev/dius
-
-windows:
-  - working: cd ~/dev/dius

@@ -1,0 +1,7 @@
+# /home/bangn/.tmuxinator/shippit.yml
+
+name: shippit
+root: ~/dev/shippit
+
+windows:
+  - working: cd ~/dev/shippit

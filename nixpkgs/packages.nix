@@ -27,7 +27,9 @@ with pkgs;
   htop
   jq
   kdiff3
+  keybase-gui
   lastpass-cli
+  mcrypt
   mdl
   mesa_drivers
   moreutils
@@ -38,6 +40,7 @@ with pkgs;
   nnn
   pandoc
   pdftk
+  phantomjs
   pinta
   plantuml
   podman
@@ -53,9 +56,11 @@ with pkgs;
   shfmt
   slack-dark
   spotify
+  ssm-session-manager-plugin
   stow
   stylish-haskell
   sxiv
+  terraform-full
   thunderbird-bin-78
   trash-cli
   tree
