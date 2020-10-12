@@ -1,4 +1,4 @@
-ruby 2.7.2
+ruby 3.0.0-preview1
 golang 1.15.2
 rust 1.46.0
 nodejs 12.18.4
