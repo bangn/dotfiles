@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 # shellcheck disable=SC2164
 
 ################################################################################
@@ -36,3 +38,7 @@ git_update_local_config() {
   git_update_user_config
   git_update_hub_config
 }
+
+alias gprod="git pull --rebase origin develop"
+alias gcod="git checkout develop"
+alias gdod="git diff origin/develop"
