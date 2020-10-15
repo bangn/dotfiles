@@ -61,7 +61,6 @@ with pkgs;
   stylish-haskell
   sxiv
   terraform-full
-  thunderbird-78
   trash-cli
   tree
   xclip
