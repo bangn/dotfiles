@@ -256,7 +256,7 @@ exec --no-startup-id nm-applet
 exec syndaemon -i 0.5 -t -K -R -d
 
 # Autolock screen
-exec_always --no-startup-id xautolock -time 5  -locker "i3lock -c 272d2d && sleep 1" -detectsleep
+# exec_always --no-startup-id xautolock -time 5  -locker "i3lock -c 272d2d && sleep 1" -detectsleep
 
 # Decrease key delay. Alternatively this can be put under ~/.xinitrc.
 exec xset r rate 200 0
