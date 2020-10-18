@@ -37,7 +37,26 @@ in
     core = {
       editor = "nvim -f";
       commentChar = ",";
-      pager = "diff-so-fancy | less --tabs=4 -RFX";
+      pager = "delta";
+    };
+
+    delta = {
+      features = "side-by-side line-numbers decorations";
+      syntax-theme = "Nord";
+
+      decorations = {
+        commit-decoration-style = "bold yellow box ul";
+        file-style = "bold yellow ul";
+        file-decoration-style = "none";
+        hunk-header-decoration-style = "cyan box ul";
+      };
+
+      line-numbers = {
+        line-numbers-left-style = "cyan";
+        line-numbers-right-style = "cyan";
+        line-numbers-minus-style = 124;
+        line-numbers-plus-style = 28;
+      };
     };
 
     diff = {
