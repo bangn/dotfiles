@@ -46,6 +46,7 @@ with pkgs;
   podman
   podman-compose
   postgresql_12
+  postman
   python38Packages.sqlparse
   python38Packages.yamllint
   ripgrep
