@@ -39,6 +39,14 @@ git_update_local_config() {
   git_update_hub_config
 }
 
+backup_db() {
+  db_name=${1:-shippit_development}
+  psql -c "\
+    CREATE DATABASE ${db_name}_$(date +%Y_%m_%d) \
+    WITH TEMPLATE ${db_name} OWNER postgres \
+  "
+}
+
 alias gprod="git pull --rebase origin develop"
 alias gcod="git checkout develop"
 alias gdod="git diff origin/develop"
