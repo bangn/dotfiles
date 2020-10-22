@@ -21,22 +21,8 @@ EOF
   fi
 }
 
-git_update_hub_config() {
-  config_file="./.git/config"
-  host="github.com"
-
-  if [[ -f "$config_file" ]] && ! grep -q "\\[hub\\]" "$config_file"; then
-    cat <<EOF | tee -a "$config_file"
-[hub]
-  host = $host
-  protocol = ssh
-EOF
-  fi
-}
-
 git_update_local_config() {
   git_update_user_config
-  git_update_hub_config
 }
 
 backup_db() {

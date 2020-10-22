@@ -17,7 +17,6 @@ with pkgs;
   ghcid
   gitAndTools.delta
   gitAndTools.diff-so-fancy
-  gitAndTools.hub
   github-cli
   glibcLocales
   google-chrome

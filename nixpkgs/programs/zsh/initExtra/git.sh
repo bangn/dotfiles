@@ -1,8 +1,5 @@
 #! /usr/bin/env bash
 
-# Alias git to hub
-eval "$(hub alias -s)"
-
 gitme() {
   git init
   touch README.md
