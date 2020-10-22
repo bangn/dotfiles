@@ -47,7 +47,7 @@
 
   gps = "git push";
   gpsf = "git push --force-with-lease";
-  gpsu = "git push -u origin \"\$(git rev-parse --abbrev-ref)\" \"\$@\"";
+  gpsu = "git push -u origin \"\$(git rev-parse --abbrev-ref HEAD)\" \"\$@\"";
 
   gra = "git rebase --abort";
   grc = "git rebase --continue";
