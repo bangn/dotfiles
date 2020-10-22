@@ -41,7 +41,7 @@ update_git_message_template() {
 
   # Current branch name does not match Jira format. Use sample git message.
   if [[ $PREFIX_MESSAGE =~ $JIRA_WORKFLOW_PATTERN ]]; then
-    echo "$PREFIX_MESSAGE" | awk -F'-' '{ print toupper($1)"-"$2": " }' >"$HOME/.gitmessage"
+    echo "$PREFIX_MESSAGE" | awk -F'-' '{ print "["toupper($1)"-"$2"] " }' >"$HOME/.gitmessage"
   elif [[ $PREFIX_MESSAGE =~ $KOWAINIK_WORKFLOW_PATTERN ]]; then
     echo "$PREFIX_MESSAGE" | awk -F'/' '{ print "[#"$2"]: " }' >"$HOME/.gitmessage"
   elif [[ $CURRENT_BRANCH =~ $COMMITIZEN_JIRA_PATTERN ]]; then
