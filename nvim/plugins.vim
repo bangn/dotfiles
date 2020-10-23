@@ -127,7 +127,7 @@ let g:ale_fixers = {
 
 let g:ale_completion_enabled    = 0
 let g:ale_disable_lsp           = 1
-let g:ale_echo_msg_format       = '[%linter%] %s'
+let g:ale_echo_msg_format       = '[%linter%][%code%] %s'
 let g:ale_fix_on_save           = 1
 let g:ale_keep_list_window_open = 0 " do not keep list if there is no error/warning
 let g:ale_lint_on_enter         = 0 " don't want linters to run on opening a file
