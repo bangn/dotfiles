@@ -1,5 +1,6 @@
 bundler
-pry
+pry-byebug
 rubocop
+rubygems-bundler
 rufo
 solargraph
