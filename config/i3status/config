@@ -17,6 +17,7 @@ order += "wireless wlp58s0"
 order += "battery all"
 order += "cpu_temperature 0"
 order += "cpu_usage"
+order += "memory"
 order += "load"
 order += "tztime local"
 
@@ -81,4 +82,11 @@ run_watch VPN {
 
 tztime local {
  format = " %d-%m-%y %H:%M "
+}
+
+memory {
+  format = " %used / %total "
+  threshold_degraded = 10%
+  threshold_critical = 5%
+  format_degraded = "Memory LOW: %free"
 }
