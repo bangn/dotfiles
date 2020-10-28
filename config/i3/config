@@ -144,10 +144,10 @@ bindsym Mod1+l exec --no-startup-id $Locker, mode "default"
 
 ## Manual management of external displays
 ### Set the shortcuts and what they do
-set $mode_display Ext Screen (h) HDMI2 ON, (y) HDMI2 OFF
+set $mode_display Ext Screen (h) HDMI1 ON, (y) HDMI1 OFF
 mode "$mode_display" {
-    bindsym h exec --no-startup-id xrandr --output HDMI2 --auto --above eDP1, mode "default"
-    bindsym y exec --no-startup-id xrandr --output HDMI2 --auto --off, mode "default"
+    bindsym h exec --no-startup-id xrandr --output HDMI1 --auto --above eDP1, mode "default"
+    bindsym y exec --no-startup-id xrandr --output HDMI1 --auto --off, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -155,7 +155,7 @@ mode "$mode_display" {
 }
 
 ## Move workspace to above screen
-set $screen_up "HDMI2"
+set $screen_up "HDMI1"
 set $screen_primary "eDP1"
 bindsym Mod1+k move workspace to output $screen_up
 bindsym Mod1+j move workspace to output $screen_primary
