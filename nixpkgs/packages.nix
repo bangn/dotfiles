@@ -50,7 +50,6 @@ with pkgs;
   python38Packages.yamllint
   ripgrep
   rnix-lsp
-  rofi
   saml2aws
   shellcheck
   shfmt
