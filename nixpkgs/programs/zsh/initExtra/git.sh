@@ -28,8 +28,8 @@ update_git_message_template() {
   CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 
   # shellcheck disable=SC2001
-  PREFIX_MESSAGE=$(echo "$CURRENT_BRANCH" | sed 's/\([A-Z]*[\-|\/][0-9]*\).*/\1/')
-  JIRA_WORKFLOW_PATTERN="[A-Z]+-[0-9]+"
+  PREFIX_MESSAGE=$(echo "$CURRENT_BRANCH" | sed 's/\([A-Za-z]+[\-|\/][0-9]+\).*/\1/')
+  JIRA_WORKFLOW_PATTERN="[A-Za-z]+-[0-9]+"
 
   GIT_USER=$(git config user.login)
   KOWAINIK_WORKFLOW_PATTERN="$GIT_USER/[0-9]+"
