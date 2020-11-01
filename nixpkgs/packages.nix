@@ -1,7 +1,6 @@
 { pkgs, ... }:
 with pkgs;
 [
-  alacritty
   autojump
   awscli
   awslogs
