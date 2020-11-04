@@ -35,11 +35,10 @@
   gls = "git ls";
   glsa = "git lsa";
 
-  gprco = "git pr checkout";
-  gprls = "git pr list -f \"%pC%U%Creset  %t (%au)%n\"";
-  gprlsa = "git pr list -f \"%sH %pC%U%Creset  %t (%au)%n\"";
+  gprco = "gh pr checkout";
+  gprls = "gh pr list";
 
-  gprc = "git pull-request";
+  gprc = "gh pr create";
   gprom = "git pull --rebase origin master";
 
   gf = "git fetch -p";
