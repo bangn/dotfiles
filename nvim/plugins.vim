@@ -56,8 +56,8 @@ Plug 'Yggdroot/indentLine'
 " nvim-lsp
 """"""""""""""""""""
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'Shougo/deoplete-lsp'
-Plug 'nvim-lua/diagnostic-nvim'
 
 call plug#end()
 
@@ -340,17 +340,17 @@ lua << EOF
 EOF
 
 """"""""""""""""""""""""""""""""""""""""
-" diagnostic-nvim
+" lsp-handler aka diagnostic-nvim
 """"""""""""""""""""""""""""""""""""""""
-call sign_define('LspDiagnosticsErrorSign'       , {'text' : 'E' , 'texthl' : 'LspDiagnosticsError'})
-call sign_define('LspDiagnosticsHintSign'        , {'text' : 'H' , 'texthl' : 'LspDiagnosticsHint'})
-call sign_define('LspDiagnosticsInformationSign' , {'text' : 'I' , 'texthl' : 'LspDiagnosticsInformation'})
-call sign_define('LspDiagnosticsWarningSign'     , {'text' : 'W' , 'texthl' : 'LspDiagnosticsWarning'})
+lua << EOF
+  require('nvim_lsp_handler')
+EOF
 
-let g:diagnostic_insert_delay = 1
-let g:diagnostic_show_sign = 0
-let g:diagnostic_enable_virtual_text = 1
-
-nnoremap <leader>do :OpenDiagnostic<CR>
+""""""""""""""""""""""""""""""""""""""""
+" nvim-treesitter
+""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+  require('nvim_tree_sitter_settings')
+EOF
 
 " vi: ft=vim
