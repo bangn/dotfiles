@@ -6,7 +6,6 @@ require'nvim-treesitter.configs'.setup {
     "html",
     "javascript",
     "json",
-    "markdown",
     "nix",
     "ruby",
     "toml",

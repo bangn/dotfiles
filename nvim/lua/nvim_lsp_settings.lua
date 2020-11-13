@@ -2,7 +2,6 @@ local lspconfig = require('lspconfig')
 
 local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-  require'diagnostic'.on_attach()
 
   -- Mappings.
   local opts = { noremap=true, silent=true }
