@@ -1,4 +1,4 @@
-local nvim_lsp = require('nvim_lsp')
+local lspconfig = require('lspconfig')
 
 local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -24,12 +24,12 @@ local servers = {
 }
 
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
+  lspconfig[lsp].setup {
     on_attach = on_attach,
   }
 end
 
-nvim_lsp.yamlls.setup {
+lspconfig.yamlls.setup {
   settings = {
     yaml = {
       customTags = {
