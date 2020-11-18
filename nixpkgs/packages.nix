@@ -1,6 +1,8 @@
 { pkgs, ... }:
 with pkgs;
 [
+  # neovim-nightly
+  # neuron-notes
   autojump
   awscli
   awslogs
@@ -32,12 +34,11 @@ with pkgs;
   mesa_drivers
   moreutils
   ncdu
-  neovim-nightly
-  neuron-notes
   nixpkgs-fmt
   nnn
   pandoc
   pdftk
+  peek
   phantomjs
   pinta
   plantuml
@@ -50,6 +51,7 @@ with pkgs;
   ripgrep
   rnix-lsp
   saml2aws
+  screenkey
   shellcheck
   shfmt
   slack-dark
