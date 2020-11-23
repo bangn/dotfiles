@@ -1,2 +1,2 @@
-\setenv PSQL_EDITOR /usr/bin/vim
+\setenv PSQL_EDITOR /usr/local/bin/nvim
 \x auto
