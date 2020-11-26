@@ -33,6 +33,10 @@ backup_db() {
   "
 }
 
+new_dos() {
+  touch "$(date +"%d-%m-%Y").md"
+}
+
 alias gprod="git pull --rebase origin develop"
 alias gcod="git checkout develop"
 alias gdod="git diff origin/develop"
