@@ -2,7 +2,6 @@
 with pkgs;
 [
   # neovim-nightly
-  # neuron-notes
   autojump
   awscli
   awslogs
@@ -34,6 +33,7 @@ with pkgs;
   mesa_drivers
   moreutils
   ncdu
+  neuron-notes
   nixpkgs-fmt
   nnn
   pandoc
