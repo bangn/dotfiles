@@ -58,6 +58,8 @@ set showcmd
 set smartcase
 set smarttab
 set softtabstop=2
+set splitbelow
+set splitright
 set synmaxcol=160
 set tabstop=2
 set textwidth=80
