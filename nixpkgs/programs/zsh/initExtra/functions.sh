@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 # open the specified file in the default program, or
 # fallback to opening the current directory in Finder
 o() {
@@ -171,4 +173,8 @@ mkcd() {
 # find and replace all
 fara() {
   grep "$1" -rl "${3:-.}" | xargs -I file sed -i "s/$1/$2/g" file
+}
+
+today() {
+  date +"%d-%m-%Y"
 }
