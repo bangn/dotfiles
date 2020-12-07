@@ -61,7 +61,7 @@ with pkgs;
   stow
   stylish-haskell
   sxiv
-  terraform-full
+  terraform
   trash-cli
   tree
   xclip
