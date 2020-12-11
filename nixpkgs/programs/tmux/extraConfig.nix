@@ -111,6 +111,7 @@
 
   bind C-\\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
   bind C-l send-keys 'C-l' # Alternate mapping to clear-screen
+  bind C-R send-keys -R # Clear server screen
 
   ################################################################################
   # https://github.com/SixArm/tmux-conf/blob/master/sources/select-window-via-meta-number.conf
