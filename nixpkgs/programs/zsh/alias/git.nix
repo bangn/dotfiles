@@ -37,10 +37,10 @@
 
   gprco = "gh pr checkout";
   gprls = "gh pr list";
-
   gprc = "gh pr create";
-  gprom = "git pull --rebase origin master";
+  gprv = "gh pr view";
 
+  gprom = "git pull --rebase origin master";
   gf = "git fetch -p";
   gpl = "git fetch -p && git rebase --rebase-merges";
 
