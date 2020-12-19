@@ -17,12 +17,14 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'fatih/vim-go'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Vim in firefox textarea
 Plug 'godlygeek/tabular'
+Plug 'hashivim/vim-terraform'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'ihsanturk/neuron.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'mcchrish/nnn.vim'
 Plug 'michaeljsmith/vim-indent-object'
@@ -46,7 +48,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'wsdjeg/vim-fetch'
@@ -329,6 +330,12 @@ let g:nnn#action = {
   \ '<c-x>': 'split',
   \ '<c-v>': 'vsplit',
 \}
+
+""""""""""""""""""""""""""""""""""""""""
+" hashivim/vim-terraform
+""""""""""""""""""""""""""""""""""""""""
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
 
 """"""""""""""""""""""""""""""""""""""""
 " nvim-lspconfig
