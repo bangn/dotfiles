@@ -56,7 +56,8 @@ Plug 'Yggdroot/indentLine'
 " nvim-lsp
 """"""""""""""""""""
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'Shougo/deoplete-lsp'
 
 call plug#end()
