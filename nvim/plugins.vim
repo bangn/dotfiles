@@ -68,6 +68,7 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 nnoremap <leader>bf :Buffers<CR>
+nnoremap <leader>rg :Rg
 noremap <c-p> :FZF<CR>
 
 """"""""""""""""""""""""""""""""""""""""
