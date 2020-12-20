@@ -17,6 +17,7 @@ in
   n = "nnn -Hax";
   pbcopy = if isLinux then "xclip -selection clipboard" else "pbcopy";
   pbpaste = if isLinux then "xclip -selection clipboard -o" else "pbpaste";
+  tf = "terraform";
   vim = "nvim";
 
   l =
