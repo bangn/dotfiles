@@ -105,7 +105,7 @@ nnoremap <leader>sp <C-w>s
 nnoremap <leader>st :sp<CR>:term<CR>A
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>ts :%s/\s\+$//<CR> " remove trailing whitespace.
-nnoremap <leader>vp <C-w>v
+nnoremap <leader>vs <C-w>v
 nnoremap <leader>vt :vs<CR>:term<CR>A
 nnoremap <leader>w :set nowrap!<CR> " no wrap.
 nnoremap <leader>x :x<CR>
