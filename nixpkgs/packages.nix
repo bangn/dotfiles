@@ -4,7 +4,7 @@ with pkgs;
   # neovim-nightly
   autojump
   aws-sam-cli
-  awscli
+  awscli2
   awslogs
   bat
   bitwarden-cli
