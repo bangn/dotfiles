@@ -63,9 +63,6 @@
   gsts = "git stash save -u";
   gstsh = "git stash show -p stash@{\"\${1:-0}\"}";
 
-  gbr = "git browse";
-  gbri = "git browse -- issues/\"\$1\"";
-
   gcb = "git checkout -b";
   gcis = "git ci-status";
   gcp = "git cherry-pick";
