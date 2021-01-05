@@ -3,7 +3,6 @@ with pkgs;
 [
   # neovim-nightly
   autojump
-  aws-sam-cli
   awscli2
   awslogs
   bat
