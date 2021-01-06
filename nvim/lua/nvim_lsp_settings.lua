@@ -18,6 +18,7 @@ local servers = {
   'jsonls',
   'rnix',
   'solargraph',
+  'terraformls',
   'tsserver',
   'yamlls',
 }
