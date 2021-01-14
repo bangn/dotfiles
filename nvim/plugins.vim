@@ -19,7 +19,6 @@ Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Vim in firef
 Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-terraform'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'ihsanturk/neuron.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
