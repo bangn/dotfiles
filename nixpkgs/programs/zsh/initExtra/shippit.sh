@@ -9,6 +9,11 @@ cdsh() {
   cd "$HOME/dev/shippit/$1" && git_update_local_config
 }
 
+git_update_host_config() {
+  config_file="./.git/config"
+  sed -i 's/github.com/github-shippit/g' $config_file
+}
+
 git_update_user_config() {
   config_file="./.git/config"
 
@@ -23,6 +28,7 @@ EOF
 
 git_update_local_config() {
   git_update_user_config
+  git_update_host_config
 }
 
 backup_db() {
