@@ -41,7 +41,6 @@ with pkgs;
   pandoc
   pdftk
   peek
-  phantomjs
   pinta
   plantuml
   podman
