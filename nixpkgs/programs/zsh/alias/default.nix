@@ -4,6 +4,7 @@ let
   dockerAliases = import ./docker.nix;
   gitAliases = import ./git.nix;
   neuronAliases = import ./neuron.nix;
+  k8sAliases = import ./k8s.nix;
   isLinux = ! (isNull (match ".*linux.*" currentSystem));
 in
 {
@@ -42,4 +43,5 @@ in
     "--exclude-dir=tmp"
     "--exclude=tags"
   ];
-} // dockerAliases // bundlerAliases // gitAliases // neuronAliases
+} // dockerAliases // bundlerAliases // gitAliases // neuronAliases //
+k8sAliases

@@ -27,6 +27,8 @@ with pkgs;
   jq
   kdiff3
   keybase-gui
+  kubectl
+  kubectx
   lastpass-cli
   mcrypt
   mdl
