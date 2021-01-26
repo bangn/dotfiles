@@ -18,6 +18,7 @@ Plug 'fatih/vim-go'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Vim in firefox textarea
 Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-terraform'
+Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'itchyny/lightline.vim'
 Plug 'janko-m/vim-test'
@@ -33,10 +34,8 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'romainl/vim-cool'
 Plug 'sheerun/vim-polyglot'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neosnippet-snippets'
-Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
+Plug 'SirVer/ultisnips'
 Plug 'szw/vim-maximizer'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-bundler'
@@ -56,6 +55,7 @@ Plug 'Yggdroot/indentLine'
 """"""""""""""""""""
 " nvim-lsp
 """"""""""""""""""""
+Plug 'hrsh7th/nvim-compe'
 Plug 'neovim/nvim-lspconfig'
 
 call plug#end()
@@ -170,14 +170,6 @@ elseif has("gui_macvim")
 end
 
 """"""""""""""""""""""""""""""""""""""""
-" deoplete
-""""""""""""""""""""""""""""""""""""""""
-if has('nvim')
-  let g:deoplete#enable_at_startup = 1
-  let g:python3_host_prog          = '/usr/bin/python3'
-endif
-
-""""""""""""""""""""""""""""""""""""""""
 " vim-commentary
 """"""""""""""""""""""""""""""""""""""""
 nmap <leader>cc gcc
@@ -235,24 +227,6 @@ let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
 let g:haskell_enable_typeroles        = 1        " to enable highlighting of type roles
 let g:haskell_enable_static_pointers  = 1  " to enable highlighting of `static`
 let g:haskell_backpack                = 1                " to enable highlighting of backpack keywords
-
-""""""""""""""""""""""""""""""""""""""""
-" neosnippet
-""""""""""""""""""""""""""""""""""""""""
-"" Plugin key-mappings.
-"" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 """"""""""""""""""""""""""""""""""""""""
 " markdown-preview
@@ -338,9 +312,6 @@ let g:terraform_fmt_on_save=1
 """"""""""""""""""""""""""""""""""""""""
 " nvim-lspconfig
 """"""""""""""""""""""""""""""""""""""""
-set completeopt+=menuone,noinsert,noselect
-set completeopt-=preview " Disable deoplete preview window
-
 lua << EOF
   require('nvim_lsp_settings')
 EOF
@@ -353,31 +324,28 @@ lua << EOF
 EOF
 
 """"""""""""""""""""""""""""""""""""""""
-<<<<<<< HEAD
-" nvim-treesitter
-""""""""""""""""""""""""""""""""""""""""
-lua << EOF
-  require('nvim_tree_sitter_settings')
-EOF
-=======
 " nvim-compe
 """"""""""""""""""""""""""""""""""""""""
-let g:compe = {}
-let g:compe.enabled = v:true
-let g:compe.debug = v:false
-let g:compe.min_length = 1
-let g:compe.preselect = 'enable' || 'disable' || 'always'
-let g:compe.allow_prefix_unmatch = v:false
-
-let g:compe.source = {}
-let g:compe.source.buffer = v:true
-let g:compe.source.nvim_lsp = v:true
-let g:compe.source.path = v:true
-let g:compe.source.ultisnips = v:true
-
+set completeopt+=menu,menuone,noselect
 inoremap <silent><expr> <C-Space> compe#complete()
-inoremap <silent><expr> <CR>      compe#confirm('<C-y>')
+inoremap <silent><expr> <C-y>     compe#confirm('<C-y>')
 inoremap <silent><expr> <C-e>     compe#close('<C-e>')
->>>>>>> 98eb893 (vim: Remove tree-sitter)
+
+lua << EOF
+  require'compe'.setup {
+    allow_prefix_unmatch = false;
+    debug                = false;
+    enabled              = true;
+    min_length           = 1;
+    preselect            = 'always';
+
+    source = {
+      buffer    = true;
+      nvim_lsp  = true;
+      path      = true;
+      ultisnips = true;
+    };
+  };
+EOF
 
 " vi: ft=vim
