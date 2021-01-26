@@ -57,9 +57,6 @@ Plug 'Yggdroot/indentLine'
 " nvim-lsp
 """"""""""""""""""""
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-Plug 'Shougo/deoplete-lsp'
 
 call plug#end()
 
@@ -356,10 +353,31 @@ lua << EOF
 EOF
 
 """"""""""""""""""""""""""""""""""""""""
+<<<<<<< HEAD
 " nvim-treesitter
 """"""""""""""""""""""""""""""""""""""""
 lua << EOF
   require('nvim_tree_sitter_settings')
 EOF
+=======
+" nvim-compe
+""""""""""""""""""""""""""""""""""""""""
+let g:compe = {}
+let g:compe.enabled = v:true
+let g:compe.debug = v:false
+let g:compe.min_length = 1
+let g:compe.preselect = 'enable' || 'disable' || 'always'
+let g:compe.allow_prefix_unmatch = v:false
+
+let g:compe.source = {}
+let g:compe.source.buffer = v:true
+let g:compe.source.nvim_lsp = v:true
+let g:compe.source.path = v:true
+let g:compe.source.ultisnips = v:true
+
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm('<C-y>')
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+>>>>>>> 98eb893 (vim: Remove tree-sitter)
 
 " vi: ft=vim
