@@ -123,7 +123,7 @@ let g:ale_fixers = {
 \   'ruby': ['rufo', 'rubocop'],
 \   'sh': ['shfmt'],
 \   'sql': ['sqlformat'],
-\   'typescript': ['prettier', 'eslint', 'prettier-eslint'],
+\   'typescript': ['prettier', 'eslint'],
 \}
 
 let g:ale_completion_enabled    = 0
