@@ -18,7 +18,6 @@ Plug 'fatih/vim-go'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Vim in firefox textarea
 Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-terraform'
-Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'itchyny/lightline.vim'
 Plug 'janko-m/vim-test'
@@ -35,7 +34,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'romainl/vim-cool'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
-Plug 'SirVer/ultisnips'
 Plug 'szw/vim-maximizer'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-bundler'
@@ -55,8 +53,11 @@ Plug 'Yggdroot/indentLine'
 """"""""""""""""""""
 " nvim-lsp
 """"""""""""""""""""
+Plug 'anott03/nvim-lspinstall'
+Plug 'honza/vim-snippets'
 Plug 'hrsh7th/nvim-compe'
 Plug 'neovim/nvim-lspconfig'
+Plug 'SirVer/ultisnips'
 
 call plug#end()
 
