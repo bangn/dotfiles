@@ -209,9 +209,9 @@ au FileType go nmap <leader>gt :GoTest -short<CR>
 
 "" indentation
 au FileType go setlocal noexpandtab
-au FileType go setlocal shiftwidth  = 4
-au FileType go setlocal softtabstop = 4
-au FileType go setlocal tabstop     = 4
+au FileType go setlocal shiftwidth=4
+au FileType go setlocal softtabstop=4
+au FileType go setlocal tabstop=4
 
 "" Do not set list for go type.
 "" As it will display big red block before any indented line.

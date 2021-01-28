@@ -37,8 +37,8 @@ compinit
 export ASDFROOT=$HOME/.asdf
 export ASDFINSTALLS=$HOME/.asdf/installs
 export GOPATH="$HOME/src/golang"
-GOV=$(asdf current golang | sed 's/\s*(set by .*)//g')
-export GOROOT=$ASDFINSTALLS/golang/$GOV/go/
+GOVERSION=$(asdf current golang | sed 's/\s*(set by .*)//g' | awk '{print $2}')
+export GOROOT=$ASDFINSTALLS/golang/$GOVERSION/go/
 export_path "$GOPATH/bin"
 export GOROOT_BOOTSTRAP=$GOROOT
 
