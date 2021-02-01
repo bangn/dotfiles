@@ -297,6 +297,9 @@ nnoremap <C-W>o :MaximizerToggle<CR>
 """"""""""""""""""""""""""""""""""""""""
 " nnn.vim
 """"""""""""""""""""""""""""""""""""""""
+let g:nnn#set_default_mappings = 0
+nnoremap <silent> <leader>nn :NnnPicker<CR>
+
 let g:nnn#command='nnn -H'
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
 let g:nnn#action = {
@@ -333,7 +336,7 @@ inoremap <silent><expr> <C-y>     compe#confirm('<C-y>')
 inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 
 lua << EOF
-  require'compe'.setup {
+  require'compe'.setup({
     allow_prefix_unmatch = false;
     debug                = false;
     enabled              = true;
@@ -341,12 +344,12 @@ lua << EOF
     preselect            = 'always';
 
     source = {
-      buffer    = true;
-      nvim_lsp  = true;
-      path      = true;
-      ultisnips = true;
+      buffer        = { enable = true };
+      nvim_lsp      = { enable = true };
+      path          = { enable = true };
+      ultisnips     = { enable = true };
     };
-  };
+  });
 EOF
 
 " vi: ft=vim
