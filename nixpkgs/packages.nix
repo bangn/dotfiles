@@ -29,6 +29,7 @@ with pkgs;
   keybase-gui
   kubectl
   kubectx
+  kubernetes-helm
   lastpass-cli
   mcrypt
   mdl
