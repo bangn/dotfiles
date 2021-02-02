@@ -60,6 +60,16 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'neovim/nvim-lspconfig'
 
+""""""""""""""""""""
+" snippets
+""""""""""""""""""""
+Plug 'andys8/vscode-jest-snippets'
+Plug 'Chris56974/ruby-and-rails-snippets'
+Plug 'karuna/vscode-rspec-snippets'
+Plug 'leventebalogh/vscode-snippet-console-log'
+Plug 'magicwhite/ruby-snippet'
+Plug 'xabikos/vscode-javascript'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""
@@ -404,5 +414,12 @@ lua << EOF
     };
   });
 EOF
+
+""""""""""""""""""""""""""""""""""""""""
+" vim-vsnip
+""""""""""""""""""""""""""""""""""""""""
+let g:vsnip_snippet_dir = "~/dotfiles/nvim/vsnip"
+imap <expr> <C-j> vsnip#available(1) ? "<Plug>(vsnip-expand-or-jump)" : "<C-j>"
+imap <expr> <C-k> vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)"      : "<C-k>"
 
 " vi: ft=vim

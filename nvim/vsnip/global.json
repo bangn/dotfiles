@@ -1,0 +1,22 @@
+{
+  "today": {
+    "prefix": "today",
+    "body": [
+      "$CURRENT_DATE-$CURRENT_MONTH-$CURRENT_YEAR"
+    ]
+  },
+  "shippit dos": {
+    "prefix": "dos",
+    "body": [
+      "# $CURRENT_DATE-$CURRENT_MONTH-$CURRENT_YEAR",
+      "",
+      "## Journals",
+      "",
+      "### $1",
+      "",
+      "```ruby",
+      "$2",
+      "```"
+    ]
+  }
+}
