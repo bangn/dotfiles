@@ -55,10 +55,10 @@ Plug 'Yggdroot/indentLine'
 " nvim-lsp
 """"""""""""""""""""
 Plug 'anott03/nvim-lspinstall'
-Plug 'honza/vim-snippets'
 Plug 'hrsh7th/nvim-compe'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'neovim/nvim-lspconfig'
-Plug 'SirVer/ultisnips'
 
 call plug#end()
 
@@ -394,13 +394,13 @@ lua << EOF
     debug                = false;
     enabled              = true;
     min_length           = 1;
-    preselect            = 'always';
+    preselect            = 'disable';
 
     source = {
       buffer        = { enable = true };
       nvim_lsp      = { enable = true };
       path          = { enable = true };
-      ultisnips     = { enable = true };
+      vsnip         = { enable = true };
     };
   });
 EOF

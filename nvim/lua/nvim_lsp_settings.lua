@@ -26,10 +26,17 @@ local servers = {
   'dockerls',
 }
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  lspconfig[lsp].setup({
     on_attach = on_attach,
-  }
+    capabilities = capabilities,
+    init_options = {
+      usePlaceholders = true,
+    },
+  })
 end
 
 lspconfig.yamlls.setup {
