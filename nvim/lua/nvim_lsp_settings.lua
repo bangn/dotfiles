@@ -21,7 +21,6 @@ local servers = {
   'solargraph',
   'terraformls',
   'tsserver',
-  'yamlls',
   'html',
   'dockerls',
 }
@@ -38,24 +37,3 @@ for _, lsp in ipairs(servers) do
     },
   })
 end
-
-lspconfig.yamlls.setup {
-  settings = {
-    yaml = {
-      customTags = {
-        -- AWS CFN template
-        "!Equals scalar",
-        "!GetAtt scalar",
-        "!Join scalar",
-        "!Or scalar",
-        "!Ref scalar",
-        "!Sub scalar",
-      },
-      format = {
-        enable = true,
-        proseWrape = "always",
-        prrintWith = 120,
-      },
-    }
-  }
-}
