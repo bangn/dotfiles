@@ -9,6 +9,7 @@ with pkgs;
   bitwarden-cli
   buildkite-agent
   buildkite-cli
+  ccloud-cli
   ctags
   curlFull
   docker-compose
