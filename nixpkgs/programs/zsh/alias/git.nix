@@ -56,17 +56,12 @@
   gsh = "git show HEAD";
   gshn = "git show HEAD --name-only";
 
-  gsta = "git stash apply stash@{\"\${1:-0}\"}";
-  gstd = "git stash drop stash@{\"\${1:-0}\"}";
   gstl = "git stash list";
-  gstp = "git stash pop stash@{\"\${1:-0}\"}";
   gsts = "git stash save -u";
-  gstsh = "git stash show -p stash@{\"\${1:-0}\"}";
 
   gcb = "git checkout -b";
   gcis = "git ci-status";
   gcp = "git cherry-pick";
-  ge = "git edit"; # edit function in ~/.gitconfig;
   gr = "git reset";
   gs = "git status -sb";
 }

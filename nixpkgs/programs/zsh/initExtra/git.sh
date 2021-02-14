@@ -71,3 +71,16 @@ gbrpr() {
 
   git browse -- "$pr"
 }
+
+gsta() {
+  git stash apply "stash@{${1:-0}}"
+}
+gstd() {
+  git stash drop "stash@{${1:-0}}"
+}
+gstp() {
+  git stash pop "stash@{${1:-0}}"
+}
+gstsh() {
+  git stash show -p "stash@{${1:-0}}"
+}
