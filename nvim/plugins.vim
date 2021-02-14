@@ -59,6 +59,8 @@ Plug 'hrsh7th/nvim-compe'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig'
+Plug 'glepnir/lspsaga.nvim'
 
 """"""""""""""""""""
 " snippets
@@ -399,7 +401,7 @@ inoremap <silent><expr> <C-y>     compe#confirm('<C-y>')
 inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 
 lua << EOF
-  require'compe'.setup({
+  require('compe').setup({
     allow_prefix_unmatch = false;
     debug                = false;
     enabled              = true;
