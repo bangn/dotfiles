@@ -17,7 +17,6 @@
   ".irbrc".source = ./ruby/.irbrc;
   ".pryrc".source = ./ruby/.pryrc;
   ".rspec".source = ./ruby/.rspec;
-  ".eslintrc.yml".source = ./js/.eslintrc.yml;
 
   # asdf dotfiles
   ".asdfrc".source = ./asdf/.asdfrc;

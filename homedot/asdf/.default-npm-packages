@@ -1,12 +1,4 @@
 @captainsafia/legit
-babel-eslint
-eslint
-eslint-config-prettier
-eslint-plugin-babel
-eslint-plugin-import
-eslint-plugin-jsx-a11y
-eslint-plugin-prettier
-eslint-plugin-react
 jsonlint
 npm
 prettier
