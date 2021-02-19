@@ -14,6 +14,7 @@ call plug#begin('~/.config/nvim/bundle')
 Plug 'aklt/plantuml-syntax'
 Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'dln/avro-vim'
 Plug 'fatih/vim-go'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Vim in firefox textarea
 Plug 'godlygeek/tabular'
