@@ -35,6 +35,7 @@ with pkgs;
   mcrypt
   mdl
   mesa_drivers
+  minikube
   moreutils
   ncdu
   neuron-notes
