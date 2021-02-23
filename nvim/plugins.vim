@@ -403,17 +403,25 @@ inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 
 lua << EOF
   require('compe').setup({
-    allow_prefix_unmatch = false;
-    debug                = false;
-    enabled              = true;
-    min_length           = 1;
-    preselect            = 'disable';
+    enabled = true;
+    autocomplete = true;
+    debug = false;
+    min_length = 1;
+    preselect = 'disable';
+    throttle_time = 80;
+    source_timeout = 200;
+    incomplete_delay = 400;
+    max_abbr_width = 100;
+    max_kind_width = 100;
+    max_menu_width = 100;
+    documentation = true;
 
     source = {
-      buffer        = { enable = true };
-      nvim_lsp      = { enable = true };
-      path          = { enable = true };
-      vsnip         = { enable = true };
+      path = true;
+      buffer = true;
+      vsnip = true;
+      nvim_lsp = true;
+      nvim_lua = true;
     };
   });
 EOF
