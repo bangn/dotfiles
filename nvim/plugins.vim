@@ -187,7 +187,7 @@ function! FernInit() abort
   nmap <buffer> o <Plug>(fern-my-open-expand-collapse)
   nmap <buffer> m <Plug>(fern-action-mark:toggle)j
   nmap <buffer> n <Plug>(fern-action-new-file)
-  nmap <buffer> K <Plug>(fern-action-new-dir)
+  nmap <buffer> N <Plug>(fern-action-new-dir)
   nmap <buffer> D <Plug>(fern-action-remove)
   nmap <buffer> V <Plug>(fern-action-move)
   nmap <buffer> r <Plug>(fern-action-rename)
