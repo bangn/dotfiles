@@ -16,14 +16,7 @@
     size = 100000;
   };
 
-  initExtra =
-    let extra = import ./initExtra;
-    in
-    ''
-      autoload -U zmv
-    ''
-    + extra
-  ;
+  shellAliases = import ./alias;
 
   envExtra = "";
 
@@ -68,5 +61,12 @@
     }
   ];
 
-  shellAliases = import ./alias;
+  initExtra =
+    let extra = import ./initExtra;
+    in
+    ''
+      autoload -U zmv
+    ''
+    + extra
+  ;
 }
