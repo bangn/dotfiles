@@ -50,7 +50,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'wsdjeg/vim-fetch'
-Plug 'Yggdroot/indentLine'
 
 """"""""""""""""""""
 " nvim-lsp
@@ -318,17 +317,6 @@ nnoremap <leader>pu :w<CR> :silent make<CR>
 
 " define a sensible makeprg for plantuml files
 autocmd Filetype plantuml let &l:makeprg=s:makecommand
-
-""""""""""""""""""""""""""""""""""""""""
-" Yggdroot/indentLine
-""""""""""""""""""""""""""""""""""""""""
-let g:indentLine_faster     = 1
-let g:indentLine_setConceal = 0
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
 
 """"""""""""""""""""""""""""""""""""""""
 " glacambre/firenvim
