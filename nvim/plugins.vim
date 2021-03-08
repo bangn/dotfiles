@@ -61,6 +61,8 @@ Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'neovim/nvim-lspconfig'
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
 """"""""""""""""""""
 " snippets
@@ -379,6 +381,13 @@ EOF
 """"""""""""""""""""""""""""""""""""""""
 lua << EOF
   require('nvim_lsp_handler')
+EOF
+
+""""""""""""""""""""""""""""""""""""""""
+" nvim-treesitter
+""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+  require('nvim_treesitter_settings')
 EOF
 
 """"""""""""""""""""""""""""""""""""""""
