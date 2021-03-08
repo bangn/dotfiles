@@ -9,6 +9,7 @@ with pkgs;
   bitwarden-cli
   buildkite-agent
   buildkite-cli
+  caddy
   ccloud-cli
   ctags
   curlFull
@@ -36,6 +37,7 @@ with pkgs;
   mdl
   mesa_drivers
   minikube
+  mkcert
   moreutils
   ncdu
   neuron-notes
