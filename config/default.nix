@@ -8,4 +8,5 @@
   ".config/rofi/custom-nord.rasi".source = ./rofi/custom-nord.rasi;
   ".config/yamllint/config".source = ./yamllint/config;
   ".config/zathura/zathurarc".source = ./zathura/zathurarc;
+  ".config/starship.toml".source = ./starship/starship.toml;
 }

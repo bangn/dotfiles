@@ -63,6 +63,7 @@ with pkgs;
   slack-dark
   spotify
   ssm-session-manager-plugin
+  starship
   stow
   stylish-haskell
   sxiv

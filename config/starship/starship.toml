@@ -1,0 +1,53 @@
+add_newline = false
+
+format = """
+$username\
+$hostname\
+$kubernetes\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$docker_context\
+$package\
+$helm\
+$nodejs\
+$purescript\
+$ruby\
+$terraform\
+$vagrant\
+$nix_shell\
+$aws\
+$gcloud\
+$env_var\
+$custom\
+$cmd_duration\
+$line_break\
+$lua\
+$jobs\
+$time\
+$status\
+$character\
+"""
+
+[aws]
+format = '[$symbol$profile(\($region\))]($style) '
+style = "bold blue"
+symbol = "🅰 "
+[aws.region_aliases]
+ap-southeast-2 = "au"
+
+[nodejs]
+format = "[$symbol($version )]($style)"
+
+[ruby]
+format = "[$symbol($version )]($style)"
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+
+[directory]
+truncation_length = 3
+truncate_to_repo = false
+truncation_symbol = "…/"
