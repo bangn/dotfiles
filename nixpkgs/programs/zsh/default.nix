@@ -66,6 +66,7 @@
     in
     ''
       autoload -U zmv
+      setopt INC_APPEND_HISTORY
     ''
     + extra
   ;
