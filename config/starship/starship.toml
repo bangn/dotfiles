@@ -51,3 +51,7 @@ format = "[$symbol$branch]($style) "
 truncation_length = 3
 truncate_to_repo = false
 truncation_symbol = "…/"
+
+[character]
+success_symbol = "[\\$](bold green)"
+error_symbol = "[✗](bold red)"
