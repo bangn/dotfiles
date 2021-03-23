@@ -1,6 +1,5 @@
-@captainsafia/legit
 jsonlint
 npm
 prettier
 prettier-eslint-cli
-yarn
+neovim

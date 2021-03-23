@@ -1,5 +1,5 @@
 deno 1.6.3
 golang 1.15.2
-nodejs 12.18.4
+nodejs 14.16.0
 ruby 3.0.0-preview1
 rust 1.46.0
