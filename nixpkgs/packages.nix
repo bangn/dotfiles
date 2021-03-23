@@ -10,6 +10,7 @@ with pkgs;
   buildkite-agent
   buildkite-cli
   caddy
+  calibre
   ccloud-cli
   ctags
   curlFull
