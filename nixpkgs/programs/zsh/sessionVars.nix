@@ -97,4 +97,9 @@ in
     "lib/locale/locale-archive" [ pkgs.glibcLocales ];
   LOCALE_ARCHIVE = pkgs.lib.makeSearchPathOutput "lib"
     "lib/locale/locale-archive" [ pkgs.glibcLocales ];
+
+  ########################################
+  # Running keybase-ui without checking kbfsfuse
+  ########################################
+  NIX_SKIP_KEYBASE_CHECKS = 1;
 }
