@@ -253,7 +253,7 @@ vmap <leader>cc gcc
 " vim-fugitive mappings
 """"""""""""""""""""""""""""""""""""""""
 nnoremap <leader>gd :Gvdiff<CR>
-nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gps :!git push<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<CR>
