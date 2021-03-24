@@ -71,6 +71,7 @@ with pkgs;
   terraform
   trash-cli
   tree
+  tree-sitter
   xclip
   xcompmgr
   xorg.xinput
