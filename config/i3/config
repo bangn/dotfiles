@@ -258,7 +258,7 @@ exec synclient HorizScrollDelta=-114
 exec --no-startup-id nm-applet
 
 # Disable touchpad when typing
-exec syndaemon -i 0.5 -t -K -R -d
+exec --no-startup-id syndaemon -i 0.01 -K -R -d
 
 # Autolock screen
 # exec_always --no-startup-id xautolock -time 5  -locker "i3lock -c 272d2d && sleep 1" -detectsleep
