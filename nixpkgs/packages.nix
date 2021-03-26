@@ -77,5 +77,6 @@ with pkgs;
   xorg.xinput
   yaml-language-server
   yamllint
+  yarn
   yq
 ]
