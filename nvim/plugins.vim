@@ -24,7 +24,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'lambdalisue/fern.vim'
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
@@ -171,58 +172,6 @@ let g:ale_sign_warning          = '⚠'
 let g:ale_sql_sqlformat_options = '-r -k upper'
 nmap <silent> <leader>al :ALEToggle<CR>
 nmap <silent> <leader>af :ALEFix<CR>
-
-""""""""""""""""""""""""""""""""""""""""
-" fern
-""""""""""""""""""""""""""""""""""""""""
-let g:fern#disable_default_mappings   = 1
-let g:fern#disable_drawer_auto_quit   = 1
-let g:fern#disable_viewer_hide_cursor = 1
-
-noremap <silent> <leader>ft :Fern . -drawer -width=35 -toggle<CR><C-w>=
-noremap <silent> <leader>fr :Fern . -drawer -reveal=% -width=35<CR><C-w>=
-noremap <silent> <leader>. :Fern %:h -drawer -width=35<CR><C-w>=
-
-function! FernInit() abort
-  nmap <buffer><expr>
-        \ <Plug>(fern-my-open-expand-collapse)
-        \ fern#smart#leaf(
-        \   "\<Plug>(fern-action-open:select)",
-        \   "\<Plug>(fern-action-expand)",
-        \   "\<Plug>(fern-action-collapse)",
-        \ )
-  nmap <buffer> <CR> <Plug>(fern-my-open-expand-collapse)
-  nmap <buffer> o <Plug>(fern-my-open-expand-collapse)
-  nmap <buffer> m <Plug>(fern-action-mark:toggle)j
-  nmap <buffer> n <Plug>(fern-action-new-file)
-  nmap <buffer> N <Plug>(fern-action-new-dir)
-  nmap <buffer> D <Plug>(fern-action-remove)
-  nmap <buffer> V <Plug>(fern-action-move)
-  nmap <buffer> r <Plug>(fern-action-rename)
-  nmap <buffer> <C-x> <Plug>(fern-action-open:split)
-  nmap <buffer> <C-v> <Plug>(fern-action-open:vsplit)
-  nmap <buffer> R <Plug>(fern-action-reload)
-  nmap <buffer> <nowait> d <Plug>(fern-action-hidden:toggle)
-  nmap <buffer> <nowait> h <Plug>(fern-action-leave)
-  nmap <buffer> <nowait> l <Plug>(fern-action-enter)
-endfunction
-
-augroup FernEvents
-  autocmd!
-  autocmd FileType fern call FernInit()
-augroup END
-
-let g:fern#mark_symbol                       = '●'
-let g:fern#renderer#default#collapsed_symbol = '▷ '
-let g:fern#renderer#default#expanded_symbol  = '▼ '
-let g:fern#renderer#default#leading          = ' '
-let g:fern#renderer#default#leaf_symbol      = ' '
-let g:fern#renderer#default#root_symbol      = '~ '
-
-augroup FernTypeGroup
-    autocmd! * <buffer>
-    autocmd BufEnter <buffer> silent execute "normal \<Plug>(fern-action-reload)"
-augroup END
 
 """"""""""""""""""""""""""""""""""""""""
 " ESlint for react
