@@ -32,6 +32,7 @@ set colorcolumn=80
 set cursorcolumn
 set cursorline
 set dir=~/.config/nvim/swap
+set encoding=UTF-8
 set expandtab
 set foldmethod=indent
 set foldnestmax=10

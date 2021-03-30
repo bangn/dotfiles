@@ -25,15 +25,17 @@ Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'lambdalisue/fern.vim'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
-Plug 'majutsushi/tagbar'
 Plug 'mcchrish/nnn.vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'nvim-lua/plenary.nvim'
 Plug 'romainl/vim-cool'
+Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'szw/vim-maximizer'
@@ -55,12 +57,11 @@ Plug 'wsdjeg/vim-fetch'
 " nvim-lsp
 """"""""""""""""""""
 Plug 'anott03/nvim-lspinstall'
+Plug 'glepnir/lspsaga.nvim'
 Plug 'hrsh7th/nvim-compe'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'neovim/nvim-lspconfig'
-Plug 'neovim/nvim-lspconfig'
-Plug 'glepnir/lspsaga.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
@@ -344,12 +345,6 @@ if exists('g:started_by_firenvim')
 endif
 
 """"""""""""""""""""""""""""""""""""""""
-" tagbar
-""""""""""""""""""""""""""""""""""""""""
-nmap <leader>tt :TagbarToggle<CR>
-let g:tagbar_show_linenumbers=1
-
-""""""""""""""""""""""""""""""""""""""""
 " vim-maximizer
 """"""""""""""""""""""""""""""""""""""""
 nnoremap <leader>z :MaximizerToggle<CR>
@@ -376,64 +371,23 @@ let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 
 """"""""""""""""""""""""""""""""""""""""
-" nvim-lspconfig
-""""""""""""""""""""""""""""""""""""""""
-lua << EOF
-  require('nvim_lsp_settings')
-EOF
-
-""""""""""""""""""""""""""""""""""""""""
-" lsp-handler aka diagnostic-nvim
-""""""""""""""""""""""""""""""""""""""""
-lua << EOF
-  require('nvim_lsp_handler')
-EOF
-
-""""""""""""""""""""""""""""""""""""""""
-" nvim-treesitter
-""""""""""""""""""""""""""""""""""""""""
-lua << EOF
-  require('nvim_treesitter_settings')
-EOF
-
-""""""""""""""""""""""""""""""""""""""""
-" nvim-compe
-""""""""""""""""""""""""""""""""""""""""
-set completeopt+=menu,menuone,noselect
-inoremap <silent><expr> <C-Space> compe#complete()
-inoremap <silent><expr> <C-y>     compe#confirm('<C-y>')
-inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-
-lua << EOF
-  require('compe').setup({
-    enabled = true;
-    autocomplete = true;
-    debug = false;
-    min_length = 1;
-    preselect = 'disable';
-    throttle_time = 80;
-    source_timeout = 200;
-    incomplete_delay = 400;
-    max_abbr_width = 100;
-    max_kind_width = 100;
-    max_menu_width = 100;
-    documentation = true;
-
-    source = {
-      path = true;
-      buffer = true;
-      vsnip = true;
-      nvim_lsp = true;
-      nvim_lua = true;
-    };
-  });
-EOF
-
-""""""""""""""""""""""""""""""""""""""""
 " vim-vsnip
 """"""""""""""""""""""""""""""""""""""""
 let g:vsnip_snippet_dir = "~/dotfiles/nvim/vsnip"
 imap <expr> <C-j> vsnip#available(1) ? "<Plug>(vsnip-expand-or-jump)" : "<C-j>"
 imap <expr> <C-k> vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)"      : "<C-k>"
+
+""""""""""""""""""""""""""""""""""""""""
+" lua
+""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+  require('gitsigns_settings');
+  require('indent_blankline_settings');
+  require('nvim_compe_settings');
+  require('nvim_lsp_handler');
+  require('nvim_lsp_settings');
+  require('nvim_tree_settings');
+  require('nvim_treesitter_settings');
+EOF
 
 " vi: ft=vim
