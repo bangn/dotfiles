@@ -2,12 +2,15 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = {
     "css",
     "go",
+    "haskell",
     "html",
     "javascript",
     "json",
+    "jsonc",
     "nix",
     "ruby",
     "toml",
+    "tsx",
     "typescript",
   },
 
