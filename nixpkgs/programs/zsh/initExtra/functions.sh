@@ -178,3 +178,7 @@ fara() {
 today() {
   date +"%d-%m-%Y"
 }
+
+rubodiff() {
+  git status -sb | tail +2 | awk '{print $NF}' | grep "\.rb" | xargs -I {} rubocop {}
+}
