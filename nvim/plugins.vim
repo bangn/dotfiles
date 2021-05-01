@@ -95,6 +95,7 @@ let g:nord_uniform_status_lines = 1
 
 set background=dark
 colorscheme nord
+set termguicolors
 
 """""""""""""""""""""""""""""""""""""""""
 " Lightline
