@@ -8,7 +8,7 @@
   # Config
   ################################################################################
   set-option -g focus-events on
-  set-option -sa terminal-overrides ',screen-256color:RGB'
+  set-option -sa terminal-overrides ',xterm-256color:RGB'
 
   ########################################
   # Reload the config.
