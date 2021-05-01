@@ -13,7 +13,7 @@
   ########################################
   # Reload the config.
   ########################################
-  bind r source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf"
+  bind r source-file ~/.config/tmux/tmux.conf \; display "Reloaded .tmux.conf"
 
   ########################################
   # Saner splitting.
@@ -138,9 +138,19 @@
   run '~/.tmux/plugins/tpm/tpm'
 
   ################################################################################
+  # Patch color for tmux 3.2
+  # https://github.com/arcticicestudio/nord-tmux/pull/34/
+  ################################################################################
+  set -g status-style bg=black,fg=white
+  set -g message-style bg=brightblack,fg=cyan
+  set -g message-command-style bg=brightblack,fg=cyan
+
+  ################################################################################
   # Patch nord-tmux window-status
   ################################################################################
+  set -g status-right '''
+  set -g status-left "#[fg=black,bg=blue,bold] #S #[fg=blue,bg=black,nobold,noitalics,nounderscore]"
+  set -g window-status-separator '''
   set -g window-status-format '#[fg=black,bg=cyan,nobold,noitalics,nounderscore] #[fg=black,bg=cyan]#I  #(pwd="#{pane_current_path}"; echo ''${pwd####*/})#F #[fg=cyan,bg=black,nobold,noitalics,nounderscore]'
-
   set -g window-status-current-format '#[fg=black,bg=cyan,nobold,noitalics,nounderscore] #[fg=black,bg=cyan]#I  #(pwd="#{pane_current_path}"; echo ''${pwd####*/})#F #[fg=cyan,bg=black,nobold,noitalics,nounderscore]'
 ''
