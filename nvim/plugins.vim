@@ -39,6 +39,7 @@ Plug 'romainl/vim-cool'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
+Plug 'sindrets/diffview.nvim'
 Plug 'szw/vim-maximizer'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-bundler'
@@ -331,6 +332,7 @@ imap <expr> <C-k> vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)"      : "<C-k>"
 " lua
 """"""""""""""""""""""""""""""""""""""""
 lua << EOF
+  require('diffview_settings');
   require('gitsigns_settings');
   require('indent_blankline_settings');
   require('nvim_compe_settings');
