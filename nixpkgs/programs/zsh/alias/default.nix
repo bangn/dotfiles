@@ -37,6 +37,7 @@ in
     "--exclude-dir=.stack-work"
     "--exclude-dir=\"dist*\""
     "--exclude-dir=_build"
+    "--exclude-dir=build"
     "--exclude-dir=coverage"
     "--exclude-dir=deps"
     "--exclude-dir=log"
