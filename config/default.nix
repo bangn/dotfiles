@@ -9,4 +9,5 @@
   ".config/yamllint/config".source = ./yamllint/config;
   ".config/zathura/zathurarc".source = ./zathura/zathurarc;
   ".config/starship.toml".source = ./starship/starship.toml;
+  ".config/dunst/dunstrc".source = ./dunst/dunstrc;
 }
