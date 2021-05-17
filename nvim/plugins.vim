@@ -16,6 +16,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dln/avro-vim'
 Plug 'fatih/vim-go'
+Plug 'folke/zen-mode.nvim'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Vim in firefox textarea
 Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-terraform'
@@ -40,7 +41,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'sindrets/diffview.nvim'
-Plug 'szw/vim-maximizer'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
@@ -296,13 +296,6 @@ if exists('g:started_by_firenvim')
 endif
 
 """"""""""""""""""""""""""""""""""""""""
-" vim-maximizer
-""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>z :MaximizerToggle<CR>
-vnoremap <leader>z :MaximizerToggle<CR>gv
-nnoremap <C-W>o :MaximizerToggle<CR>
-
-""""""""""""""""""""""""""""""""""""""""
 " nnn.vim
 """"""""""""""""""""""""""""""""""""""""
 let g:nnn#set_default_mappings = 0
@@ -340,6 +333,7 @@ lua << EOF
   require('nvim_lsp_settings');
   require('nvim_tree_settings');
   require('nvim_treesitter_settings');
+  require('zen_mode_settings');
 EOF
 
 " vi: ft=vim
