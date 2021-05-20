@@ -2,6 +2,5 @@ bundler
 pry-byebug
 rubocop
 rubygems-bundler
-rufo
 solargraph
 neovim
