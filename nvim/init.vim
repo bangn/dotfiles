@@ -56,6 +56,7 @@ set ruler
 set scrolloff=3
 set shiftwidth=2
 set showcmd
+set signcolumn=yes:1
 set smartcase
 set smarttab
 set softtabstop=2
