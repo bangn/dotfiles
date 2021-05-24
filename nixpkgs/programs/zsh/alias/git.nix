@@ -41,6 +41,7 @@
   gprv = "gh pr view";
 
   gprom = "git pull --rebase origin master";
+  gpr = "git pull --rebase";
   gf = "git fetch -p";
   gpl = "git fetch -p && git rebase --rebase-merges";
 
