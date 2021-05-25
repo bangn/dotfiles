@@ -83,9 +83,11 @@ call plug#end()
 " FZF
 """"""""""""""""""""""""""""""""""""""""
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
-nnoremap <leader>bf :Buffers<CR>
-nnoremap <leader>rg :Rg
-noremap <c-p> :FZF<CR>
+nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>fc :Commits<CR>
+nnoremap <leader>fg :Rg<space>
+nnoremap <leader>fh :History<CR>
+noremap <c-p> :Files<CR>
 
 """"""""""""""""""""""""""""""""""""""""
 " Nord color
