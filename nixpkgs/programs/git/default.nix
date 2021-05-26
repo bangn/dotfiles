@@ -109,6 +109,7 @@ in
     "npm-debug.log"
     "tags"
     "tags.*"
+    "Session.vim"
 
     # Ignore directories
     "nvim/bakup"
