@@ -307,4 +307,4 @@ bindsym $mod+Shift+p move scratchpad
 # Show the first scratchpad window
 bindsym $mod+p scratchpad show
 
-# vi: ft=i3config
+# vi: ft=cfg
