@@ -59,7 +59,7 @@ Plug 'wsdjeg/vim-fetch'
 """"""""""""""""""""
 " nvim-lsp
 """"""""""""""""""""
-Plug 'anott03/nvim-lspinstall'
+Plug 'kabouzeid/nvim-lspinstall'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'hrsh7th/nvim-compe'
 Plug 'hrsh7th/vim-vsnip'
@@ -334,6 +334,7 @@ lua << EOF
   require('nvim_compe_settings');
   require('nvim_lsp_handler');
   require('nvim_lsp_settings');
+  require('nvim_lspinstall_settings');
   require('nvim_tree_settings');
   require('nvim_treesitter_settings');
   require('zen_mode_settings');
