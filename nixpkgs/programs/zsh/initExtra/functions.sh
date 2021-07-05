@@ -142,7 +142,21 @@ code_file_list() {
 }
 
 dbsize() {
-  psql -d postgres -c "SELECT pg_database.datname as dbname, pg_size_pretty(pg_database_size(pg_database.datname)) AS size FROM pg_database ORDER BY dbname DESC"
+  psql -d postgres -c "
+    SELECT pg_database.datname AS dbname,
+      pg_size_pretty(pg_database_size(pg_database.datname)) AS size
+    FROM pg_database ORDER BY dbname DESC;
+  "
+}
+
+db_tables_size() {
+  psql -d "$1" -c "
+    SELECT schemaname AS table_schema,
+           relname AS table_name,
+           pg_size_pretty(pg_relation_size(relid)) AS data_size
+    from pg_catalog.pg_statio_user_tables
+    ORDER BY pg_relation_size(relid) DESC;
+  "
 }
 
 # public ip address
