@@ -133,5 +133,8 @@ in
 
     # neuron dir
     ".neuron"
+
+    # terraform
+    ".terraform"
   ];
 }
