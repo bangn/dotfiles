@@ -26,9 +26,9 @@
   gdom = "git diff origin/master";
   gdw = "git diff --word-diff";
 
-  gic = "git issue create";
-  gils = "git issue";
-  gis = "git issue show";
+  gisc = "gh issue create";
+  gisl = "gh issue list";
+  gisv = "gh issue view";
 
   gl = "git log";
   glog = "git log --branches --remotes --graph --oneline --decorate";
