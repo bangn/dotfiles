@@ -27,7 +27,7 @@
   gdw = "git diff --word-diff";
 
   gisc = "gh issue create";
-  gisl = "gh issue list";
+  gisls = "gh issue list";
   gisv = "gh issue view";
 
   gl = "git log";
