@@ -154,14 +154,17 @@ let g:ale_pattern_options = {
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'haskell': ['brittany', 'floskell', 'stylish-haskell'],
+\   'html': ['prettier'],
 \   'javascript': ['prettier', 'eslint', 'prettier-eslint'],
 \   'javascriptreact': ['prettier', 'eslint', 'prettier-eslint'],
+\   'markdown': ['prettier'],
 \   'nix': ['nixpkgs-fmt'],
 \   'ruby': ['rufo', 'rubocop'],
 \   'sh': ['shfmt'],
 \   'sql': ['sqlformat'],
 \   'typescript': ['prettier', 'eslint'],
 \   'typescriptreact': ['prettier', 'eslint'],
+\   'yaml': ['prettier'],
 \}
 
 let g:ale_completion_enabled    = 0
