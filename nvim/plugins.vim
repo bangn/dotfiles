@@ -11,6 +11,14 @@ endif
 
 call plug#begin('~/.config/nvim/bundle')
 
+""""""""""""""""""""""""""""""""""""""""
+" lua settings
+""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+  -- vim-polyglot
+  vim.g.polyglot_disabled = { 'sensible', 'autoindent' }
+EOF
+
 Plug 'aklt/plantuml-syntax'
 Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -25,6 +33,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'kevinhwang91/nvim-bqf'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'lewis6991/gitsigns.nvim'
@@ -325,7 +334,7 @@ imap <expr> <C-j> vsnip#available(1) ? "<Plug>(vsnip-expand-or-jump)" : "<C-j>"
 imap <expr> <C-k> vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)"      : "<C-k>"
 
 """"""""""""""""""""""""""""""""""""""""
-" lua
+" lua settings
 """"""""""""""""""""""""""""""""""""""""
 lua << EOF
   require('diffview_settings');
