@@ -43,7 +43,7 @@ update_git_message_template() {
     echo "$PREFIX_MESSAGE" | awk -F'/' '{ print "[#"$2"]: " }' >"$HOME/.gitmessage"
   elif [[ $CURRENT_BRANCH =~ $COMMITIZEN_JIRA_PATTERN ]]; then
     echo "$CURRENT_BRANCH" | awk -F'/' '{ print ""$2" - "$1"(impact component) - " }' >"$HOME/.gitmessage"
-  elif [[ $CURRENT_BRANCH == master ]]; then
+  elif [[ $CURRENT_BRANCH == master ]] || [[ $CURRENT_BRANCH == main ]]; then
     cp "$HOME/.gitmessage.sample" "$HOME/.gitmessage"
   else
     echo "$CURRENT_BRANCH: " >"$HOME/.gitmessage"
