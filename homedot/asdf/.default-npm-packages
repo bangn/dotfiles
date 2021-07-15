@@ -3,3 +3,5 @@ npm
 prettier
 prettier-eslint-cli
 neovim
+vscode-langservers-extracted
+dockerfile-language-server-nodejs
