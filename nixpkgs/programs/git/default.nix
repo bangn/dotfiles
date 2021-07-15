@@ -59,6 +59,10 @@ in
       };
     };
 
+    init = {
+      defaultBranch = "main";
+    };
+
     diff = {
       algorithm = "patience";
     };
