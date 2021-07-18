@@ -66,6 +66,12 @@ Plug 'wellle/targets.vim'
 Plug 'wsdjeg/vim-fetch'
 
 """"""""""""""""""""
+" telescope.nvim
+""""""""""""""""""""
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
+""""""""""""""""""""
 " nvim-lsp
 """"""""""""""""""""
 Plug 'kabouzeid/nvim-lspinstall'
@@ -93,11 +99,8 @@ call plug#end()
 " FZF
 """"""""""""""""""""""""""""""""""""""""
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
-nnoremap <leader>fb :Buffers<CR>
-nnoremap <leader>fc :Commits<CR>
-nnoremap <leader>fg :Rg<space>
-nnoremap <leader>fh :History<CR>
-noremap <c-p> :Files<CR>
+nnoremap <leader>rg :Rg<space>
+noremap <C-p> :Files<CR>
 
 """"""""""""""""""""""""""""""""""""""""
 " Nord color
@@ -349,6 +352,7 @@ lua << EOF
   require('nvim_lspinstall_settings');
   require('nvim_tree_settings');
   require('nvim_treesitter_settings');
+  require('telescope_settings');
   require('zen_mode_settings');
 EOF
 
