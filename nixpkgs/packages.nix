@@ -68,7 +68,7 @@ with pkgs;
   stow
   stylish-haskell
   sxiv
-  terraform
+  terraform_0_13
   trash-cli
   tree
   tree-sitter
