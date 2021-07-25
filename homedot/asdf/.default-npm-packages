@@ -1,7 +1,9 @@
+dockerfile-language-server-nodejs
 jsonlint
+neovim
 npm
 prettier
 prettier-eslint-cli
-neovim
+typescript
+typescript-language-server
 vscode-langservers-extracted
-dockerfile-language-server-nodejs
