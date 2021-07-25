@@ -160,6 +160,7 @@ let g:ale_fixers = {
 \   'html': ['prettier'],
 \   'javascript': ['prettier', 'eslint', 'prettier-eslint'],
 \   'javascriptreact': ['prettier', 'eslint', 'prettier-eslint'],
+\   'json': ['prettier'],
 \   'markdown': ['prettier'],
 \   'nix': ['nixpkgs-fmt'],
 \   'ruby': ['rufo', 'rubocop'],
