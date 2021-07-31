@@ -7,12 +7,13 @@ require'nvim-treesitter.configs'.setup {
     "javascript",
     "json",
     "jsonc",
+    "lua",
     "nix",
     "ruby",
     "toml",
     "tsx",
     "typescript",
-    "yaml"
+    "yaml",
   },
 
   highlight = {
