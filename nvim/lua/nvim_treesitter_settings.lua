@@ -58,3 +58,9 @@ require'nvim-treesitter.configs'.setup {
     },
   },
 }
+
+-- https://github.com/nvim-treesitter/nvim-treesitter/issues/78
+-- Remove after upstream issue fixed
+require "nvim-treesitter.highlight"
+local hlmap = vim.treesitter.highlighter.hl_map
+hlmap.error = "Normal"
