@@ -92,6 +92,12 @@ Plug 'leventebalogh/vscode-snippet-console-log'
 Plug 'magicwhite/ruby-snippet'
 Plug 'xabikos/vscode-javascript'
 
+""""""""""""""""""""
+" wilder.nvim
+""""""""""""""""""""
+Plug 'gelguy/wilder.nvim', {'do': 'UpdateRemotePlugins'}
+Plug 'romgrk/fzy-lua-native'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""
@@ -338,6 +344,67 @@ let g:terraform_fmt_on_save=1
 let g:vsnip_snippet_dir = "~/dotfiles/nvim/vsnip"
 imap <expr> <C-j> vsnip#available(1) ? "<Plug>(vsnip-expand-or-jump)" : "<C-j>"
 imap <expr> <C-k> vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)"      : "<C-k>"
+
+""""""""""""""""""""""""""""""""""""""""
+" wilder.nvim
+""""""""""""""""""""""""""""""""""""""""
+call wilder#enable_cmdline_enter()
+set wildcharm=<Tab>
+cmap <expr> <C-n> wilder#in_context() ? wilder#next() : "\<Tab>"
+cmap <expr> <C-p> wilder#in_context() ? wilder#previous() : "\<S-Tab>"
+" only / and ? are enabled by default
+call wilder#set_option('modes', ['/', '?', ':'])
+
+call wilder#set_option('pipeline', [
+      \   wilder#branch(
+      \     [
+      \       wilder#check({_, x -> empty(x)}),
+      \       wilder#history(),
+      \       wilder#result({
+      \         'draw': [{_, x -> ' ' . x}],
+      \       }),
+      \     ],
+      \     wilder#python_file_finder_pipeline({
+      \       'file_command': {_, arg -> stridx(arg, '.') != -1 ? ['fd', '-tf', '-H'] : ['fd', '-tf']},
+      \       'dir_command': ['fdfind', '-td'],
+      \       'filters': ['fuzzy_filter', 'difflib_sorter'],
+      \       'cache_timestamp': {-> 1},
+      \     }),
+      \     wilder#cmdline_pipeline({
+      \       'language': 'python',
+      \       'fuzzy': 1,
+      \       'set_pcre2_pattern': 0,
+      \     }),
+      \     wilder#python_search_pipeline({
+      \       'pattern': wilder#python_fuzzy_pattern({
+      \         'start_at_boundary': 0,
+      \       }),
+      \       'sorter': wilder#python_difflib_sorter(),
+      \       'engine': 're',
+      \     }),
+      \   ),
+      \ ])
+
+let s:highlighters = [
+      \ wilder#pcre2_highlighter(),
+      \ wilder#lua_fzy_highlighter(),
+      \ ]
+
+call wilder#set_option('renderer', wilder#renderer_mux({
+      \ ':': wilder#popupmenu_renderer({
+      \   'highlighter': s:highlighters,
+      \   'left': [
+      \     wilder#popupmenu_devicons(),
+      \   ],
+      \   'right': [
+      \     ' ',
+      \     wilder#popupmenu_scrollbar(),
+      \   ],
+      \ }),
+      \ '/': wilder#wildmenu_renderer({
+      \   'highlighter': s:highlighters,
+      \ }),
+      \ }))
 
 """"""""""""""""""""""""""""""""""""""""
 " lua settings
