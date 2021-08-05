@@ -19,15 +19,12 @@ lua << EOF
   vim.g.polyglot_disabled = { 'sensible', 'autoindent' }
 EOF
 
-Plug 'aklt/plantuml-syntax'
 Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'dln/avro-vim'
 Plug 'fatih/vim-go'
 Plug 'folke/zen-mode.nvim'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Vim in firefox textarea
 Plug 'godlygeek/tabular'
-Plug 'hashivim/vim-terraform'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'itchyny/lightline.vim'
 Plug 'janko-m/vim-test'
@@ -44,7 +41,6 @@ Plug 'mzlogin/vim-markdown-toc'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'romainl/vim-cool'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
