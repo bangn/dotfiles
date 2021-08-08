@@ -17,6 +17,7 @@ with pkgs;
   docker-compose
   entr
   fd
+  firefox
   ghcid
   gitAndTools.delta
   gitAndTools.diff-so-fancy
