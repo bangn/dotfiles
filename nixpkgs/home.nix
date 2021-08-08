@@ -31,10 +31,9 @@ with pkgsUnstable;
   home.file =
     let
       configFiles = import ./config { inherit pkgs; };
-      desktop = import ./desktop { inherit pkgs; };
       homedot = import ./homedot { inherit pkgs; };
     in
-    homedot // configFiles // desktop;
+    homedot // configFiles;
 
   programs = import ./programs { pkgs = pkgsUnstable; };
   news.display = "silent";
