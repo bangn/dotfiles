@@ -35,7 +35,7 @@ fi
 ################################################################################
 # Use stow to populate dotfiles
 ################################################################################
-echo -e "Populating config files..."
+echo -e "Populating nixpkgs config files..."
 rm -rf "$HOME/.config/nixpkgs"
 ln -sfn "$PWD"/nixpkgs "$HOME/.config"
 
