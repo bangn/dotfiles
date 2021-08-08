@@ -3,14 +3,6 @@
 set -eu
 
 ################################################################################
-# Install brew (for macos)
-################################################################################
-if ! command -v brew && [[ $(uname) == "Darwin" ]]; then
-  echo "Installing brew..."
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
-
-################################################################################
 # home-manager
 ################################################################################
 # Install nix; home-manager
@@ -20,7 +12,7 @@ if ! command -v nix; then
 fi
 
 # Use unstable channel
-# shellcheck disable=SC1090
+# shellcheck disable=SC1091
 source "$HOME/.nix-profile/etc/profile.d/nix.sh"
 # shellcheck disable=SC2116
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable
