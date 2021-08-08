@@ -55,7 +55,6 @@ with pkgs;
   postgresql_12
   postman
   python38Packages.sqlparse
-  python38Packages.yamllint
   ripgrep
   rnix-lsp
   saml2aws
