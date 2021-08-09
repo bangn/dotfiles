@@ -67,6 +67,7 @@ with pkgs;
   starship
   stow
   stylish-haskell
+  stylua
   sxiv
   terraform_0_13
   trash-cli
