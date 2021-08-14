@@ -80,4 +80,5 @@ with pkgs;
   yamllint
   yarn
   yq
+  zoom-us
 ]

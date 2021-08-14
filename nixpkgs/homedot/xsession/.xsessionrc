@@ -1,4 +1,6 @@
 export NIX_PATH="nixpkgs=channel:nixpkgs-unstable"
-export PATH="$PATH:/home/bangn/.nix-profile/bin"
 export NIX_SKIP_KEYBASE_CHECKS=1
+export PATH="$PATH:/home/bangn/.nix-profile/bin"
+export QT_XCB_GL_INTEGRATION="none"
+
 # vi: ft=sh

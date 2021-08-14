@@ -102,4 +102,10 @@ in
   # Running keybase-ui without checking kbfsfuse
   ########################################
   NIX_SKIP_KEYBASE_CHECKS = 1;
+
+  ########################################
+  # Allow zoom-us to start.
+  # Not sure what will be the consequence of setting this
+  ########################################
+  QT_XCB_GL_INTEGRATION = "none";
 }
