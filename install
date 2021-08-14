@@ -35,21 +35,14 @@ echo -e "Setting up with home-manager"
 home-manager switch
 
 ################################################################################
-# Install vim Plug
-################################################################################
-echo -e "\\nInstalling vim Plug ..."
-curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-########################################
 # Install nnn plugins
-########################################
+################################################################################
 echo "Installing nnn plugins"
 curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 
-########################################
+################################################################################
 # tpm
-########################################
+################################################################################
 echo "Installing tpm"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 export PATH="$HOME/.nix-profile/bin:$PATH"
