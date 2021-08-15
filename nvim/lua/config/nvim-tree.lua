@@ -42,10 +42,7 @@ vim_g.nvim_tree_icons = {
 	},
 }
 
-vars.remap.fn("n", "<leader>nt", ":NvimTreeToggle<CR>", {
-	noremap = true,
-	silent = true,
-})
+vars.remap.fn("n", "<leader>nt", ":NvimTreeToggle<CR>", { noremap = true })
 
 local tree_cb = require("nvim-tree.config").nvim_tree_callback
 vim_g.nvim_tree_bindings = {

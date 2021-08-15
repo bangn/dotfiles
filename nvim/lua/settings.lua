@@ -1,5 +1,5 @@
-local vim_opt = vim.o
 local vim_cmd = vim.cmd
+local vim_opt = vim.o
 
 vim_opt.autoindent = true
 vim_opt.autoread = true
@@ -33,11 +33,11 @@ vim_opt.showmode = false
 vim_opt.signcolumn = "yes:1"
 vim_opt.smartcase = true
 vim_opt.smarttab = true
-vim_opt.softtabstop = 2
+vim_opt.softtabstop = 4
 vim_opt.splitbelow = true
 vim_opt.splitright = true
 vim_opt.synmaxcol = 120
-vim_opt.tabstop = 2
+vim_opt.tabstop = 4
 vim_opt.textwidth = 80
 vim_opt.ttyfast = true
 vim_opt.undodir = "/home/bangn/.config/nvim/undo"
