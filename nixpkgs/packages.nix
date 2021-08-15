@@ -35,6 +35,7 @@ with pkgs;
   kubectx
   kubernetes-helm
   lastpass-cli
+  luajitPackages.luacheck
   mcrypt
   mdl
   mesa_drivers
