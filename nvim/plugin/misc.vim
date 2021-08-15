@@ -1,8 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Settings have not been migrated yet
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set iskeyword+=-
-
 augroup autosave
   autocmd BufLeave,FocusLost * silent! wall " autosave.
 augroup END
