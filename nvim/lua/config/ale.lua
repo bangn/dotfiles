@@ -6,6 +6,7 @@ vim_g.ale_linters = {
 	ruby = { "rubocop", "rufo" },
 	elixir = { "credo" },
 	haskell = { "hlint" },
+	lua = { "luacheck" },
 }
 vim_g.ale_fixers = {
 	all = { "remove_trailing_lines", "trim_whitespace" },
