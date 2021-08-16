@@ -15,9 +15,7 @@ return packer.startup({
 		use("wbthomason/packer.nvim")
 
 		use("christoomey/vim-tmux-navigator")
-		use("glepnir/lspsaga.nvim")
 		use("godlygeek/tabular")
-		use("ludovicchabant/vim-gutentags")
 		use("michaeljsmith/vim-indent-object")
 		use("ntpeters/vim-better-whitespace")
 		use("tpope/vim-abolish")
@@ -52,6 +50,7 @@ return packer.startup({
 		use({ "tpope/vim-fugitive", config = [[require("config.vim-fugitive")]] })
 		use({ "w0rp/ale", config = [[require("config.ale")]] })
 		use({ "hashivim/vim-terraform", config = [[require("config.vim-terraform")]] })
+		use({ "glepnir/lspsaga.nvim", config = [[require("config.lspsaga")]] })
 
 		use({
 			"nvim-treesitter/nvim-treesitter",

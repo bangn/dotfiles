@@ -1,5 +1,8 @@
 local vim_cmd = vim.cmd
 local vim_opt = vim.o
+local vim_g = vim.g
+
+vim_g.python3_host_prog = "/usr/bin/python3"
 
 vim_opt.autoindent = true
 vim_opt.autoread = true
