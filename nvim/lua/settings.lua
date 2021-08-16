@@ -1,6 +1,10 @@
-local vim_cmd = vim.cmd
 local set = vim.o
+local vim_cmd = vim.cmd
 local vim_g = vim.g
+
+vim_cmd("au TermOpen * setlocal nonumber norelativenumber")
+vim_cmd([[filetype plugin indent on]])
+vim_cmd([[set iskeyword+=-]])
 
 vim_g.python3_host_prog = "/usr/bin/python3"
 
@@ -49,5 +53,3 @@ set.undolevels = 1000
 set.undoreload = 10000
 set.updatetime = 300
 set.wrap = false
-
-vim_cmd("au TermOpen * setlocal nonumber norelativenumber")

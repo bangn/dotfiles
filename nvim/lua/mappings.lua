@@ -1,5 +1,3 @@
-local vim_g = vim.g
-local vim_cmd = vim.cmd
 local vars = require("utils.vars")
 
 vars.remap.fn("n", "<leader><space>", "@q", { noremap = true })
@@ -25,7 +23,6 @@ vars.remap.fn("n", "<leader>y.", ":1,.y<CR>", { noremap = true })
 vars.remap.fn("n", "<leader>ya", ":1,$y<CR>", { noremap = true })
 vars.remap.fn("n", "<Space>", ":", { noremap = true })
 vars.remap.fn("n", "gs", ":set opfunc=SortLines<CR>g@", {})
-vars.remap.fn("n", "Y", "y$", { noremap = true })
 vars.remap.fn("v", "<", "<gv", {})
 vars.remap.fn("v", "<leader>jq", ":!jq<CR>", {})
 vars.remap.fn("v", "<Space>", ":", { noremap = true })
