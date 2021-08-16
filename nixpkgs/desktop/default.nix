@@ -5,5 +5,4 @@
   ".local/share/applications/sxiv.desktop".source = ./sxiv.desktop;
   ".local/share/applications/thunderbird.desktop".source = ./thunderbird.desktop;
   ".local/share/applications/zathura.desktop".source = ./zathura.desktop;
-  ".local/share/applications/Zoom.desktop".source = ./Zoom.desktop;
 }
