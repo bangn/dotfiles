@@ -1,7 +1,7 @@
-local vim_options = vim.o
+local set = vim.o
 local vars = require("utils.vars")
 
-vim_options.completeopt = "menu,menuone,noselect"
+set.completeopt = "menu,menuone,noselect"
 
 local opts = { expr = true }
 
@@ -26,7 +26,7 @@ require("compe").setup({
 		winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
 		max_width = 120,
 		min_width = 60,
-		max_height = math.floor(vim_options.lines * 0.3),
+		max_height = math.floor(set.lines * 0.3),
 		min_height = 1,
 	},
 
