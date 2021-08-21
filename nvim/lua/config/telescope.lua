@@ -48,7 +48,14 @@ vars.remap.fn(
 
 require("telescope").setup({
 	defaults = {
-		extensions = {},
+		extensions = {
+			fzf = {
+				fuzzy = true,
+				override_generic_sorter = false,
+				override_file_sorter = true,
+				case_mode = "smart_case",
+			},
+		},
 		vimgrep_arguments = {
 			"rg",
 			"--with-filename",

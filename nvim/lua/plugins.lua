@@ -51,6 +51,7 @@ return packer.startup({
 		use({ "w0rp/ale", config = [[require("config.ale")]] })
 		use({ "hashivim/vim-terraform", config = [[require("config.vim-terraform")]] })
 		use({ "glepnir/lspsaga.nvim", config = [[require("config.lspsaga")]] })
+		use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
 		use({
 			"nvim-treesitter/nvim-treesitter",
@@ -77,7 +78,7 @@ return packer.startup({
 			requires = {
 				{ "nvim-lua/popup.nvim" },
 				{ "nvim-lua/plenary.nvim" },
-				{ "nvim-telescope/telescope-fzy-native.nvim" },
+				{ "nvim-telescope/telescope-fzf-native.nvim" },
 			},
 			config = function()
 				require("config.telescope")
