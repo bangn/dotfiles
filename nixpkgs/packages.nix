@@ -1,7 +1,6 @@
 { pkgs, ... }:
 with pkgs;
 [
-  # neovim-nightly
   autojump
   awscli2
   awslogs
@@ -12,7 +11,6 @@ with pkgs;
   caddy
   calibre
   ccloud-cli
-  ctags
   curlFull
   docker-compose
   entr
