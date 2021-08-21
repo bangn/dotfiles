@@ -48,5 +48,5 @@ vim_g.javascript_plugin_flow = 1
 
 -- sqlformat options
 vim_g.ale_sql_sqlformat_options = "-r -k upper"
-vars.remap.fn("n", "<leader>al", ":ALEToggle<CR>", { silent = true })
-vars.remap.fn("n", "<leader>af", ":ALEFix<CR>", { silent = true })
+vars.remap.fn("n", "<leader>al", ":ALEToggle<CR>", {})
+vars.remap.fn("n", "<leader>af", ":ALEFix<CR>", {})
