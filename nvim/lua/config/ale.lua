@@ -9,7 +9,7 @@ vim_g.ale_linters = {
 	lua = { "luacheck" },
 }
 vim_g.ale_fixers = {
-	all = { "remove_trailing_lines", "trim_whitespace" },
+	["*"] = { "remove_trailing_lines", "trim_whitespace" },
 	haskell = { "brittany", "floskell", "stylish-haskell" },
 	html = { "prettier" },
 	javascript = { "prettier", "eslint", "prettier-eslint" },
