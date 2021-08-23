@@ -30,11 +30,15 @@ return packer.startup({
 		use("vuki656/package-info.nvim")
 		use("wellle/targets.vim")
 		use("wsdjeg/vim-fetch")
+
 		use({ "arcticicestudio/nord-vim", config = [[require("config.nord-vim")]] })
 		use({ "fatih/vim-go", config = [[require("config.vim-go")]] })
 		use({ "folke/zen-mode.nvim", config = [[require("config.zen-mode")]] })
 		use({ "gelguy/wilder.nvim", requires = { "romgrk/fzy-lua-native" } })
+		use({ "glepnir/lspsaga.nvim", config = [[require("config.lspsaga")]] })
+		use({ "hashivim/vim-terraform", config = [[require("config.vim-terraform")]] })
 		use({ "hrsh7th/nvim-compe", config = [[require("config.nvim-compe")]] })
+		use({ "ironhouzi/starlite-nvim", config = [[require("config.starlite-nvim")]] })
 		use({ "janko-m/vim-test", config = [[require("config.vim-test")]] })
 		use({ "junegunn/fzf", run = "cd ~/.fzf && ./install --all" })
 		use({ "junegunn/fzf.vim", config = [[require("config.fzf")]] })
@@ -42,6 +46,7 @@ return packer.startup({
 		use({ "mcchrish/nnn.vim", config = [[require("config.nnn")]] })
 		use({ "neovim/nvim-lspconfig", config = [[require("config.nvim-lspconfig")]] })
 		use({ "neovimhaskell/haskell-vim", config = [[require("config.vim-haskell")]] })
+		use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 		use({ "nvim-treesitter/nvim-treesitter-textobjects", requires = "nvim-treesitter/nvim-treesitter" })
 		use({ "sheerun/vim-polyglot", config = [[require("config.vim-polyglot")]] })
 		use({ "Shougo/vimproc.vim", run = "make" })
@@ -49,9 +54,6 @@ return packer.startup({
 		use({ "tpope/vim-commentary", config = [[require("config.vim-commentary")]] })
 		use({ "tpope/vim-fugitive", config = [[require("config.vim-fugitive")]] })
 		use({ "w0rp/ale", config = [[require("config.ale")]] })
-		use({ "hashivim/vim-terraform", config = [[require("config.vim-terraform")]] })
-		use({ "glepnir/lspsaga.nvim", config = [[require("config.lspsaga")]] })
-		use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
 		use({
 			"nvim-treesitter/nvim-treesitter",
