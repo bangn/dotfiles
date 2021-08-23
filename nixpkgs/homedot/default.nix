@@ -39,6 +39,9 @@
   ".mdlrc".source = ./mdl/.mdlrc;
   "mdl/style.rb".source = ./mdl/style.rb;
 
+  # rubocop
+  ".rubocop.yml".source = ./rubocop/.rubocop.yml;
+
   "dircolors.nord".source = pkgs.fetchFromGitHub
     {
       owner = "arcticicestudio";
