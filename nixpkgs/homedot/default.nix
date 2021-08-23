@@ -6,7 +6,6 @@
   ".inputrc".source = ./.inputrc;
   ".psqlrc".source = ./psql/.psqlrc;
   ".pylintrc".source = ./python/.pylintrc;
-  ".slate".source = ./slate/.slate;
   ".xsessionrc".source = ./xsession/.xsessionrc;
 
   # xinput
