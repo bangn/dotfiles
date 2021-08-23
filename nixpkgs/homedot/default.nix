@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-  ".ctags".source = ./ctags/.ctags;
   ".editrc".source = ./.editrc;
   ".gitmessage.sample".source = ./git/gitmessage.sample;
   ".inputrc".source = ./.inputrc;
