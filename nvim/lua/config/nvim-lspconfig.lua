@@ -1,13 +1,10 @@
+local coq = require("coq")
 local lspconfig = require("lspconfig")
 local vars = require("utils.vars")
 local vim_api = vim.api
 
 local on_attach = function(_, bufnr)
 	vim_api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-	local function buf_set_keymap(...)
-		vim_api.nvim_buf_set_keymap(bufnr, ...)
-	end
-
 	-- Mappings.
 	-- vars.remap.fn('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', vars.remap.opts)
 	-- vars.remap.fn('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', vars.remap.opts)
@@ -35,6 +32,7 @@ for _, lsp in ipairs(servers) do
 			usePlaceholders = true,
 		},
 	})
+	lspconfig[lsp].setup(coq.lsp_ensure_capabilities())
 end
 
 vim_api.nvim_call_function("sign_define", {
@@ -83,6 +81,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 	virtual_text = false,
 })
 
-vim.cmd([[ sign define LspDiagnosticsErrorSign text= texthl=LspDiagnosticsError linehl= numhl= ]])
+vim.cmd([[sign define LspDiagnosticsErrorSign text= texthl=LspDiagnosticsError linehl= numhl= ]])
 vim.cmd([[autocmd CursorHold * lua require("lspsaga.diagnostic").show_line_diagnostics()]])
 vim.cmd([[autocmd CursorHoldI * silent! lua require("lspsaga.signaturehelp").signature_help()]])

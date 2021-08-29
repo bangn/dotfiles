@@ -10,6 +10,8 @@ end
 
 local packer = require("packer")
 
+vim.g.coq_settings = { ["auto_start"] = true }
+
 return packer.startup({
 	function(use)
 		use("wbthomason/packer.nvim")
@@ -30,20 +32,20 @@ return packer.startup({
 		use("vuki656/package-info.nvim")
 		use("wellle/targets.vim")
 		use("wsdjeg/vim-fetch")
-
 		use({ "arcticicestudio/nord-vim", config = [[require("config.nord-vim")]] })
 		use({ "fatih/vim-go", config = [[require("config.vim-go")]] })
 		use({ "folke/zen-mode.nvim", config = [[require("config.zen-mode")]] })
 		use({ "gelguy/wilder.nvim", requires = { "romgrk/fzy-lua-native" } })
 		use({ "glepnir/lspsaga.nvim", config = [[require("config.lspsaga")]] })
 		use({ "hashivim/vim-terraform", config = [[require("config.vim-terraform")]] })
-		use({ "hrsh7th/nvim-compe", config = [[require("config.nvim-compe")]] })
 		use({ "ironhouzi/starlite-nvim", config = [[require("config.starlite-nvim")]] })
 		use({ "janko-m/vim-test", config = [[require("config.vim-test")]] })
 		use({ "junegunn/fzf", run = "cd ~/.fzf && ./install --all" })
 		use({ "junegunn/fzf.vim", config = [[require("config.fzf")]] })
 		use({ "lukas-reineke/indent-blankline.nvim", config = [[require("config.indent-blankline")]] })
 		use({ "mcchrish/nnn.vim", config = [[require("config.nnn")]] })
+		use({ "ms-jpq/coq.artifacts", branch = "artifacts" })
+		use({ "ms-jpq/coq_nvim", branch = "coq" })
 		use({ "neovim/nvim-lspconfig", config = [[require("config.nvim-lspconfig")]] })
 		use({ "neovimhaskell/haskell-vim", config = [[require("config.vim-haskell")]] })
 		use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
@@ -111,22 +113,6 @@ return packer.startup({
 			},
 			config = [[require("config.nvim-tree")]],
 		})
-
-		use({
-			"hrsh7th/vim-vsnip",
-			requires = { "hrsh7th/vim-vsnip-integ" },
-			config = [[require("config.vim-vsnip")]],
-		})
-
-		--------------------
-		-- snippets
-		--------------------
-		use("andys8/vscode-jest-snippets")
-		use("Chris56974/ruby-and-rails-snippets")
-		use("karuna/vscode-rspec-snippets")
-		use("leventebalogh/vscode-snippet-console-log")
-		use("magicwhite/ruby-snippet")
-		use("xabikos/vscode-javascript")
 	end,
 	config = {
 		profile = { enable = true },
