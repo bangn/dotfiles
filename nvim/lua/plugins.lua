@@ -10,7 +10,13 @@ end
 
 local packer = require("packer")
 
-vim.g.coq_settings = { ["auto_start"] = true }
+vim.g.coq_settings = {
+	auto_start = "shut-up",
+	keymap = {
+		recommended = true,
+		jump_to_mark = "<C-q>",
+	},
+}
 
 return packer.startup({
 	function(use)
