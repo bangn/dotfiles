@@ -2,53 +2,68 @@
 
 set -eu
 
-################################################################################
-# home-manager
-################################################################################
-# Install nix; home-manager
-if ! command -v nix; then
-  echo "Installing nix..."
-  curl -L https://nixos.org/nix/install | sh
-fi
+install_nix() {
+  if [[ "$(uname)" == "Linux" ]] && ! command -v nix; then
+    echo "Installing nix..."
+    curl -L https://nixos.org/nix/install | sh
+  fi
+}
 
-# Use unstable channel
-# shellcheck disable=SC1091
-source "$HOME/.nix-profile/etc/profile.d/nix.sh"
-# shellcheck disable=SC2116
-nix-channel --add https://nixos.org/channels/nixpkgs-unstable
-nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
-nix-channel --update
+install_home_manager() {
+  if [[ "$(uname)" == "Linux" ]] && ! command -v home-manager; then
+    echo "Installing home-manager..."
+    nix-shell '<home-manager>' -A install
+  fi
+}
 
-if ! command -v home-manager; then
-  echo "Installing home-manager..."
-  nix-shell '<home-manager>' -A install
-fi
+add_nix_channel() {
+  # shellcheck disable=SC1091
+  # shellcheck disable=SC2116
+  source "$HOME/.nix-profile/etc/profile.d/nix.sh" # Use unstable channel
+  nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+  nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
+  nix-channel --update
+}
 
-################################################################################
-# Use stow to populate dotfiles
-################################################################################
-echo -e "Populating nixpkgs config files..."
-rm -rf "$HOME/.config/nixpkgs"
-ln -sfn "$PWD"/nixpkgs "$HOME/.config"
+populate_nix_config() {
+  if [[ "$(uname)" == "Linux" ]]; then
+    echo -e "Populating nixpkgs config files..."
+    rm -rf "$HOME/.config/nixpkgs"
+    ln -sfn "$PWD"/nixpkgs "$HOME/.config"
 
-echo -e "Setting up with home-manager"
-home-manager switch
+    echo -e "Setting up with home-manager"
+    home-manager switch
+  fi
 
-################################################################################
-# Install nnn plugins
-################################################################################
-echo "Installing nnn plugins"
-curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
+  if [[ "$(uname)" == "Darwin" ]]; then
+    echo -e "Populating nixpkgs config files..."
+    rm -rf "$HOME/.nixpkgs"
+    ln -sfn "$PWD"/nixpkgs "$HOME/.nixpkgs"
 
-################################################################################
-# tpm
-################################################################################
-echo "Installing tpm"
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-export PATH="$HOME/.nix-profile/bin:$PATH"
-zsh -c "$HOME/.tmux/plugins/tpm/bindings/install_plugins"
+    echo -e "Setting up with darwin-rebuild"
+    darwin-rebuild switch
+  fi
+}
 
-################################################################################
-# DONE
-################################################################################
-echo -e "Done!"
+install_nnn() {
+  echo "Installing nnn plugins"
+  curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
+}
+
+install_tpm() {
+  echo "Installing tpm"
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  export PATH="$HOME/.nix-profile/bin:$PATH"
+  zsh -c "$HOME/.tmux/plugins/tpm/bindings/install_plugins"
+}
+
+main() {
+  install_nix
+  install_home_manager
+  add_nix_channel
+  populate_nix_config
+  install_nnn
+  install_tpm
+
+  echo -e "Done!"
+}
