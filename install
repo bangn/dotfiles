@@ -10,7 +10,7 @@ install_nix() {
 }
 
 install_home_manager() {
-  if [[ "$(uname)" == "Linux" ]] && ! command -v home-manager; then
+  if ! command -v home-manager; then
     echo "Installing home-manager..."
     nix-shell '<home-manager>' -A install
   fi
