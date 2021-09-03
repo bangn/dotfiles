@@ -45,11 +45,6 @@ populate_nix_config() {
   fi
 }
 
-install_nnn() {
-  echo "Installing nnn plugins"
-  curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
-}
-
 install_tpm() {
   echo "Installing tpm"
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -62,7 +57,6 @@ main() {
   install_home_manager
   add_nix_channel
   populate_nix_config
-  install_nnn
   install_tpm
 
   echo -e "Done!"
