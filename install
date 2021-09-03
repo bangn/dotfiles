@@ -67,3 +67,5 @@ main() {
 
   echo -e "Done!"
 }
+
+main
