@@ -3,6 +3,7 @@ let
   pkgsUnstable = import <nixpkgs> { };
   username = "bangn";
   homeDir = "/home/${username}";
+  isLinux = ! (isNull (match ".*linux.*" currentSystem));
 in
 with pkgsUnstable;
 {
@@ -48,10 +49,11 @@ with pkgsUnstable;
     };
   };
 
-  services = {
-    keybase = { enable = true; };
-    flameshot = { enable = true; };
-  };
+  services =
+    if isLinux then {
+      keybase = { enable = true; };
+      flameshot = { enable = true; };
+    } else { };
 
   xresources.extraConfig = builtins.readFile
     (
