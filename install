@@ -3,9 +3,16 @@
 set -eu
 
 install_nix() {
-  if [[ "$(uname)" == "Linux" ]] && ! command -v nix; then
+  if ! command -v nix; then
     echo "Installing nix..."
-    curl -L https://nixos.org/nix/install | sh
+
+    if [[ "$(uname)" == "Linux" ]] && 
+      curl -L https://nixos.org/nix/install | sh
+    fi
+
+    if [[ "$(uname)" == "Darwin" ]]; then
+      curl -L https://nixos.org/nix/install | sh -s -- --darwin-use-unencrypted-nix-store-volume
+    fi
   fi
 }
 
@@ -16,27 +23,41 @@ install_home_manager() {
   fi
 }
 
+install_nix_darwin() {
+  if ! command -v darwin-rebuild; then
+    echo "Installing nix-darwin..."
+    nix-shell '<darwin>' -A install
+    darwin-rebuild switch
+  fi
+}
+
 add_nix_channel() {
   # shellcheck disable=SC1091
   # shellcheck disable=SC2116
   source "$HOME/.nix-profile/etc/profile.d/nix.sh" # Use unstable channel
   nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+  nix-channel --add https://github.com/LnL7/nix-darwin/archive/master.tar.gz darwin
   nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
+
+  if [[ "$(uname)" == "Darwin" ]]; then
+    nix-channel --add https://github.com/LnL7/nix-darwin/archive/master.tar.gz darwin
+  fi
+
   nix-channel --update
 }
 
 populate_nix_config() {
-  if [[ "$(uname)" == "Linux" ]]; then
-    echo -e "Populating nixpkgs config files..."
-    rm -rf "$HOME/.config/nixpkgs"
-    ln -sfn "$PWD"/nixpkgs "$HOME/.config"
-
+  echo -e "Populating nixpkgs config files for home manager..."
+  rm -rf "$HOME/.config/nixpkgs"
+  ln -sfn "$PWD"/nixpkgs "$HOME/.config"
+  
+  if [[ "$(uname)" == "Darwin" ]]; then
     echo -e "Setting up with home-manager"
     home-manager switch
   fi
 
   if [[ "$(uname)" == "Darwin" ]]; then
-    echo -e "Populating nixpkgs config files..."
+    echo -e "Populating nixpkgs config files for nix-darwin..."
     rm -rf "$HOME/.nixpkgs"
     ln -sfn "$PWD"/nixpkgs "$HOME/.nixpkgs"
 
