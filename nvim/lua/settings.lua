@@ -1,6 +1,7 @@
 local set = vim.o
 local vim_cmd = vim.cmd
 local vim_g = vim.g
+local home = os.getenv("HOME")
 
 vim_cmd("au TermOpen * setlocal nonumber norelativenumber")
 vim_cmd([[filetype plugin indent on]])
@@ -16,7 +17,7 @@ set.clipboard = "unnamedplus"
 set.colorcolumn = "80"
 set.cursorcolumn = true
 set.cursorline = true
-set.dir = "/home/bangn/.config/nvim/swap"
+set.dir = home .. "/.config/nvim/swap"
 set.encoding = "UTF-8"
 set.expandtab = true
 set.foldenable = false
@@ -47,7 +48,7 @@ set.synmaxcol = 120
 set.tabstop = 4
 set.textwidth = 80
 set.ttyfast = true
-set.undodir = "/home/bangn/.config/nvim/undo"
+set.undodir = home .. "/.config/nvim/undo"
 set.undofile = true
 set.undolevels = 1000
 set.undoreload = 10000
