@@ -1,4 +1,5 @@
 { pkgs, config, ... }:
+with builtins;
 let
   pkgsUnstable = import <nixpkgs> { };
   username = "bangn";
