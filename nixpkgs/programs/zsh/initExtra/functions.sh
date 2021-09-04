@@ -50,7 +50,7 @@ resetsqdb() {
 
 # start simple server
 simser() {
-  python -m SimpleHTTPServer "${1:-3000}"
+  python3 -m http.server "${1:-3000}"
 }
 
 # export env var from .env file
