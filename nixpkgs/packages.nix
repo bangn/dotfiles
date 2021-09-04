@@ -1,6 +1,23 @@
 { pkgs, ... }:
 with pkgs;
 [
+  #  calibre
+  #  firefox
+  #  glibcLocales
+  #  google-chrome
+  #  kdiff3
+  #  keybase-gui
+  #  mesa_drivers
+  #  peek
+  #  pinta
+  #  postman
+  #  screenkey
+  #  slack-dark
+  #  spotify
+  #  sxiv
+  #  xcompmgr
+  #  xorg.xinput
+  asdf-vm
   autojump
   awscli2
   awslogs
@@ -10,6 +27,7 @@ with pkgs;
   buildkite-cli
   caddy
   ccloud-cli
+  coreutils-full
   curlFull
   docker-compose
   entr
@@ -34,6 +52,7 @@ with pkgs;
   mkcert
   moreutils
   ncdu
+  neovim
   neuron-notes
   nixpkgs-fmt
   nnn
@@ -63,20 +82,4 @@ with pkgs;
   yamllint
   yarn
   yq
-#  calibre
-#  firefox
-#  glibcLocales
-#  google-chrome
-#  kdiff3
-#  keybase-gui
-#  mesa_drivers
-#  peek
-#  pinta
-#  postman
-#  screenkey
-#  slack-dark
-#  spotify
-#  sxiv
-#  xcompmgr
-#  xorg.xinput
 ]

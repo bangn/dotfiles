@@ -6,11 +6,13 @@ install_nix() {
   if ! command -v nix; then
     echo "Installing nix..."
 
-    if [[ "$(uname)" == "Linux" ]] && 
+    if [[ "$(uname)" == "Linux" ]]; then
       curl -L https://nixos.org/nix/install | sh
     fi
 
     if [[ "$(uname)" == "Darwin" ]]; then
+      echo "Make sure you have created a nix store volume using disk utility"
+      echo "LABEL=nix-store /nix apfs rw,nobrowse" | sudo tee -a /private/etc/fstab
       curl -L https://nixos.org/nix/install | sh -s -- --darwin-use-unencrypted-nix-store-volume
     fi
   fi
@@ -50,7 +52,7 @@ populate_nix_config() {
   echo -e "Populating nixpkgs config files for home manager..."
   rm -rf "$HOME/.config/nixpkgs"
   ln -sfn "$PWD"/nixpkgs "$HOME/.config"
-  
+
   if [[ "$(uname)" == "Darwin" ]]; then
     echo -e "Setting up with home-manager"
     home-manager switch

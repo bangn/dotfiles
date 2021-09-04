@@ -1,5 +1,22 @@
-{ config, pkgs, lib, ... }:
+{ inputs, config, pkgs, ... }:
 {
-  imports = [ <home-manager/nix-darwin> ];
-  home-manager = import ./home.nix { pkgs = pkgs; config = config; };
+  environment = {
+    loginShell = pkgs.zsh;
+    pathsToLink = [ "/Applications" ];
+    systemPackages = [ ];
+  };
+
+  programs.zsh.enable = true;
+
+  nix.package = pkgs.nix;
+
+  imports = [
+    ./darwin/brew.nix
+    ./darwin/display-manager.nix
+    ./darwin/preferences.nix
+    <home-manager/nix-darwin>
+  ];
+
+  # $ darwin-rebuild changelog
+  system.stateVersion = 4;
 }

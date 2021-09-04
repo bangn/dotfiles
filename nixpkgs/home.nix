@@ -3,7 +3,7 @@ with builtins;
 let
   pkgsUnstable = import <nixpkgs> { };
   username = "bangn";
-  homeDir = "/home/${username}";
+  homeDir = if isLinux then "/home/${username}" else "/Users/${username}";
   isLinux = ! (isNull (match ".*linux.*" currentSystem));
 in
 with pkgsUnstable;

@@ -24,7 +24,7 @@ in
   l =
     let
       option = "--color=auto -Glah";
-      command = if isLinux then "ls" else "/usr/local/bin/gls";
+      command = "ls";
     in
     "${command} ${option}";
 
