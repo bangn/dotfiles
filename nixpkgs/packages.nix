@@ -9,26 +9,20 @@ with pkgs;
   buildkite-agent
   buildkite-cli
   caddy
-  calibre
   ccloud-cli
   curlFull
   docker-compose
   entr
   fd
-  firefox
   ghcid
   gitAndTools.delta
   gitAndTools.diff-so-fancy
   github-cli
-  glibcLocales
-  google-chrome
   google-cloud-sdk
   graphviz
   hlint
   htop
   jq
-  kdiff3
-  keybase-gui
   kubectl
   kubectx
   kubernetes-helm
@@ -36,7 +30,6 @@ with pkgs;
   luajitPackages.luacheck
   mcrypt
   mdl
-  mesa_drivers
   minikube
   mkcert
   moreutils
@@ -46,37 +39,44 @@ with pkgs;
   nnn
   pandoc
   pdftk
-  peek
-  pinta
   plantuml
   podman
   podman-compose
   postgresql_12
-  postman
   python38Packages.sqlparse
   ripgrep
   rnix-lsp
   saml2aws
-  screenkey
   shellcheck
   shfmt
-  slack-dark
-  spotify
   ssm-session-manager-plugin
   starship
   stow
   stylish-haskell
   stylua
-  sxiv
   terraform_0_13
   trash-cli
   tree
   tree-sitter
   xclip
-  xcompmgr
-  xorg.xinput
   yaml-language-server
   yamllint
   yarn
   yq
+#  calibre
+#  firefox
+#  glibcLocales
+#  google-chrome
+#  kdiff3
+#  keybase-gui
+#  mesa_drivers
+#  peek
+#  pinta
+#  postman
+#  screenkey
+#  slack-dark
+#  spotify
+#  sxiv
+#  xcompmgr
+#  xorg.xinput
 ]
