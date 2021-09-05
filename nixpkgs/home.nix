@@ -1,11 +1,12 @@
-{ pkgs, config, ... }:
-with builtins; with pkgsUnstable;
+{ inputs, pkgs, config, ... }:
+with builtins;
 let
   isLinux = ! (isNull (match ".*linux.*" currentSystem));
   pkgsUnstable = import <nixpkgs> { };
   username = "bangn";
   homeDir = if isLinux then "/home/${username}" else "/Users/${username}";
 in
+with pkgsUnstable;
 {
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, lib, ... }:
 {
   environment = {
     loginShell = pkgs.zsh;
@@ -13,6 +13,7 @@
   imports = [
     ./darwin/brew.nix
     ./darwin/display-manager.nix
+    ./darwin/networking.nix
     ./darwin/preferences.nix
     <home-manager/nix-darwin>
   ];
