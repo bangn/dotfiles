@@ -1,12 +1,11 @@
 { pkgs, config, ... }:
-with builtins;
+with builtins; with pkgsUnstable;
 let
+  isLinux = ! (isNull (match ".*linux.*" currentSystem));
   pkgsUnstable = import <nixpkgs> { };
   username = "bangn";
   homeDir = if isLinux then "/home/${username}" else "/Users/${username}";
-  isLinux = ! (isNull (match ".*linux.*" currentSystem));
 in
-with pkgsUnstable;
 {
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -19,14 +18,14 @@ with pkgsUnstable;
   home.stateVersion = "20.09";
   home.username = username;
   home.homeDirectory = homeDir;
-  home.packages = import ./packages.nix { pkgs = pkgsUnstable; };
+  home.packages = import ./packages { inherit pkgs; };
   home.sessionPath = [
-    "${config.home.homeDirectory}/.cabal/bin"
-    "${config.home.homeDirectory}/.cargo/bin"
-    "${config.home.homeDirectory}/.ghcup/bin"
-    "${config.home.homeDirectory}/.local/bin"
-    "${config.home.homeDirectory}/.talisman/bin"
-    "${config.home.homeDirectory}/dotfiles/tools/bin"
+    "${homeDir}/.cabal/bin"
+    "${homeDir}/.cargo/bin"
+    "${homeDir}/.ghcup/bin"
+    "${homeDir}/.local/bin"
+    "${homeDir}/.talisman/bin"
+    "${homeDir}/dotfiles/tools/bin"
     "/opt/ghc/bin"
     "/usr/local/bin"
   ];
