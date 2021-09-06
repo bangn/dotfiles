@@ -1,8 +1,8 @@
 { pkgs, ... }:
-with builtins; with pkgs;
+with builtins;
 let
   isLinux = ! (isNull (match ".*linux.*" currentSystem));
   commonPackages = import ./commonPackages.nix { inherit pkgs; };
-  linuxPackage = import ./linuxPackage.nix { inherit pkgs; };
+  linuxPackages = import ./linuxPackages.nix { inherit pkgs; };
 in
-if isLinux then commonPackages // linuxPackage else commonPackages
+if isLinux then (commonPackages ++ linuxPackages) else commonPackages

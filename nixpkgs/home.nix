@@ -19,7 +19,7 @@ with pkgsUnstable;
   home.stateVersion = "20.09";
   home.username = username;
   home.homeDirectory = homeDir;
-  home.packages = import ./packages { inherit pkgs; };
+  home.packages = import ./packages { pkgs = pkgsUnstable; };
   home.sessionPath = [
     "${config.home.homeDirectory}/.cabal/bin"
     "${config.home.homeDirectory}/.cargo/bin"
