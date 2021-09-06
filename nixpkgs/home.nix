@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, ... }:
+{ pkgs, config, ... }:
 with builtins;
 let
   isLinux = ! (isNull (match ".*linux.*" currentSystem));
@@ -21,12 +21,12 @@ with pkgsUnstable;
   home.homeDirectory = homeDir;
   home.packages = import ./packages { inherit pkgs; };
   home.sessionPath = [
-    "${homeDir}/.cabal/bin"
-    "${homeDir}/.cargo/bin"
-    "${homeDir}/.ghcup/bin"
-    "${homeDir}/.local/bin"
-    "${homeDir}/.talisman/bin"
-    "${homeDir}/dotfiles/tools/bin"
+    "${config.home.homeDirectory}/.cabal/bin"
+    "${config.home.homeDirectory}/.cargo/bin"
+    "${config.home.homeDirectory}/.ghcup/bin"
+    "${config.home.homeDirectory}/.local/bin"
+    "${config.home.homeDirectory}/.talisman/bin"
+    "${config.home.homeDirectory}/dotfiles/tools/bin"
     "/opt/ghc/bin"
     "/usr/local/bin"
   ];
@@ -44,7 +44,7 @@ with pkgsUnstable;
   xdg = {
     configFile = {
       nvim = {
-        source = ../nvim;
+        source = "${config.home.homeDirectory}/.config/nvim";
         recursive = true;
       };
     };

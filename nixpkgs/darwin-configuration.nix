@@ -1,4 +1,7 @@
 { inputs, config, pkgs, lib, ... }:
+let
+  username = "bangn";
+in
 {
   environment = {
     loginShell = pkgs.zsh;
@@ -7,7 +10,6 @@
   };
 
   programs.zsh.enable = true;
-
   nix.package = pkgs.nix;
 
   imports = [
@@ -17,6 +19,10 @@
     ./darwin/preferences.nix
     <home-manager/nix-darwin>
   ];
+
+  users.users.bangn.name = "${username}";
+  users.users.bangn.home = "/Users/${username}";
+  home-manager.users.bangn = (import ./home.nix);
 
   # $ darwin-rebuild changelog
   system.stateVersion = 4;

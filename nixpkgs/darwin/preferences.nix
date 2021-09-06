@@ -49,7 +49,7 @@
         AppleShowAllExtensions = true;
         AppleShowScrollBars = "Automatic";
         InitialKeyRepeat = 10;
-        KeyRepeat = 3;
+        KeyRepeat = 4;
       };
     };
 
