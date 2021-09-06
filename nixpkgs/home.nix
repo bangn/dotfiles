@@ -19,7 +19,6 @@ with pkgsUnstable;
   home.stateVersion = "20.09";
   home.username = username;
   home.homeDirectory = homeDir;
-  home.packages = import ./packages { pkgs = pkgsUnstable; };
   home.sessionPath = [
     "${config.home.homeDirectory}/.cabal/bin"
     "${config.home.homeDirectory}/.cargo/bin"
@@ -30,6 +29,14 @@ with pkgsUnstable;
     "/opt/ghc/bin"
     "/usr/local/bin"
   ];
+
+  nixpkgs.overlays = [
+    (import (builtins.fetchTarball {
+      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+    }))
+  ];
+  home.packages = import ./packages { inherit pkgs pkgsUnstable; };
+
   home.file =
     let
       configFiles = import ./config { inherit pkgs; };

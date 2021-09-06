@@ -1,5 +1,5 @@
-{ pkgs, ... }:
-with pkgs;
+{ pkgs, pkgsUnstable, ... }:
+with pkgsUnstable;
 [
   asdf-vm
   autojump
@@ -36,12 +36,12 @@ with pkgs;
   mkcert
   moreutils
   ncdu
-  neovim
   neuron-notes
   nixpkgs-fmt
   nnn
   pandoc
   pdftk
+  pkgs.neovim-nightly
   plantuml
   podman
   podman-compose

@@ -1,5 +1,5 @@
-{ pkgs, ... }:
-with pkgs;
+{ pkgs, pkgsUnstable, ... }:
+with pkgsUnstable;
 [
   calibre
   firefox
