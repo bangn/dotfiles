@@ -68,6 +68,16 @@
       autoload -U zmv
       setopt INC_APPEND_HISTORY
     ''
+    +
+    ''
+      source "${pkgs.autojump}/share/autojump/autojump.zsh"
+
+      source "${pkgs.asdf-vm}/share/asdf-vm/asdf.sh"
+      fpath=(${pkgs.asdf-vm}/completions $fpath)
+      # initialise completions with ZSH's compinit
+      autoload -Uz compinit
+      compinit
+    ''
     + extra
   ;
 }

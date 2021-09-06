@@ -18,16 +18,6 @@ if [[ ! "$PATH" == *$HOME/.nix-profile/bin* ]]; then
 fi
 
 ################################################################################
-# asdf
-################################################################################
-source "$HOME/.asdf/asdf.sh"
-# append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
-# initialise completions with ZSH's compinit
-autoload -Uz compinit
-compinit
-
-################################################################################
 # Add Golang path
 ################################################################################
 export ASDFROOT=$HOME/.asdf
@@ -42,10 +32,3 @@ export GOROOT_BOOTSTRAP=$GOROOT
 # fzf
 ################################################################################
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# source autojump
-if [[ "$(uname)" == "Darwin" ]]; then
-  source "/usr/local/share/autojump/autojump.zsh"
-else
-  source /usr/share/autojump/autojump.zsh
-fi
