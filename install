@@ -28,7 +28,7 @@ install_home_manager() {
 install_nix_darwin() {
   if ! command -v darwin-rebuild; then
     echo "Installing nix-darwin..."
-    nix-shell '<darwin>' -A install
+    nix-shell '<darwin>' -A installer
     darwin-rebuild switch
   fi
 }
