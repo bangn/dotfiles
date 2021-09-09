@@ -5,7 +5,7 @@ set -eu
 set_nix_store_volume() {
   fstab_file="/private/etc/fstab"
   volume_name="nix-store"
-  if grep -q "$volume_name" "$fstab_file"; then
+  if ! grep -q "$volume_name" "$fstab_file"; then
     echo "LABEL=$volume_name /nix apfs rw,nobrowse" | sudo tee -a "$fstab_file"
   fi
 }
