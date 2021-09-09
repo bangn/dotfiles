@@ -57,22 +57,17 @@ add_nix_channel() {
 }
 
 populate_nix_config() {
-  echo -e "Populating nixpkgs config files for home manager..."
-  rm -rf "$HOME/.config/nixpkgs"
-  ln -sfn "$PWD"/nixpkgs "$HOME/.config"
-
-  if [[ "$(uname)" == "Darwin" ]]; then
-    echo -e "Setting up with home-manager"
-    home-manager switch
+  if [[ "$(uname)" == "Linux" ]]; then
+    echo -e "Populating nixpkgs config files for home manager..."
+    rm -rf "$HOME/.config/nixpkgs"
+    ln -sfn "$PWD"/nixpkgs "$HOME/.config"
   fi
 
   if [[ "$(uname)" == "Darwin" ]]; then
     echo -e "Populating nixpkgs config files for nix-darwin..."
     rm -rf "$HOME/.nixpkgs"
     ln -sfn "$PWD"/nixpkgs "$HOME/.nixpkgs"
-
-    echo -e "Setting up with darwin-rebuild"
-    darwin-rebuild switch
+    ln -sfn "$PWD"/nvim "$HOME/.config/nvim"
   fi
 }
 
@@ -86,8 +81,14 @@ install_tpm() {
 main() {
   install_nix
   add_nix_channel
-  install_home_manager
   populate_nix_config
+
+  if [[ "$(uname)" == "Linux" ]]; then
+    install_home_manager
+  else
+    install_nix_darwin
+  fi
+
   install_tpm
 
   echo -e "Done!"
