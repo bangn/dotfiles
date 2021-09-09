@@ -34,16 +34,16 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start rofi
 bindsym Mod1+space exec --no-startup-id "rofi -show combi"
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+Ctrl+h focus left
+bindsym $mod+Ctrl+j focus down
+bindsym $mod+Ctrl+k focus up
+bindsym $mod+Ctrl+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -117,7 +117,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec i3-msg exit
 
 # Toggle border
-bindsym $mod+b border toggle
+bindsym Mod1+Shift+b border toggle
 
 # Default border style
 default_border none
@@ -132,7 +132,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 # Screen
 ################################################################################
 ## Enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym Mod1+f fullscreen toggle
 
 ## Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
