@@ -6,7 +6,7 @@
     package = pkgs.yabai;
     config = {
       mouse_follows_focus = "on";
-      focus_follows_mouse = "off";
+      focus_follows_mouse = "on";
       window_placement = "second_child";
       window_topmost = "off";
       window_opacity = "off";
