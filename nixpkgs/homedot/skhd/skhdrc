@@ -1,6 +1,5 @@
 # open terminal
-cmd + ctrl - t: /Applications/Alacritty.app/Contents/MacOS/alacritty
-
+cmd - 0x24: alacritty
 
 # focus window
 cmd + ctrl - h : yabai -m window --focus west
@@ -24,13 +23,13 @@ shift + cmd - l : yabai -m window --warp east
 shift + alt - 0 : yabai -m space --balance
 
 # make floating window fill screen
-shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
+shift + alt - up : yabai -m window --grid 1:1:0:0:1:1
 
 # make floating window fill left-half of screen
-shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
+shift + alt - left : yabai -m window --grid 1:2:0:0:1:1
 
 # make floating window fill right-half of screen
-shift + alt - right  : yabai -m window --grid 1:2:1:0:1:1
+shift + alt - right : yabai -m window --grid 1:2:1:0:1:1
 
 # fast focus desktop
 cmd + alt - x : yabai -m space --focus recent
@@ -63,20 +62,20 @@ shift + cmd - 9 : yabai -m window --space  9; yabai -m space --focus 9
 shift + cmd - 0 : yabai -m window --space 10; yabai -m space --focus 10
 
 # focus monitor
-ctrl + alt - x  : yabai -m display --focus recent
-ctrl + alt - z  : yabai -m display --focus prev
-ctrl + alt - c  : yabai -m display --focus next
-ctrl + alt - 1  : yabai -m display --focus 1
-ctrl + alt - 2  : yabai -m display --focus 2
-ctrl + alt - 3  : yabai -m display --focus 3
+ctrl + alt - x : yabai -m display --focus recent
+ctrl + alt - z : yabai -m display --focus prev
+ctrl + alt - c : yabai -m display --focus next
+ctrl + alt - 1 : yabai -m display --focus 1
+ctrl + alt - 2 : yabai -m display --focus 2
+ctrl + alt - 3 : yabai -m display --focus 3
 
 # send window to monitor and follow focus
-ctrl + cmd - x  : yabai -m window --display recent; yabai -m display --focus recent
-ctrl + cmd - z  : yabai -m window --display prev; yabai -m display --focus prev
-ctrl + cmd - c  : yabai -m window --display next; yabai -m display --focus next
-ctrl + cmd - 1  : yabai -m window --display 1; yabai -m display --focus 1
-ctrl + cmd - 2  : yabai -m window --display 2; yabai -m display --focus 2
-ctrl + cmd - 3  : yabai -m window --display 3; yabai -m display --focus 3
+ctrl + cmd - x : yabai -m window --display recent; yabai -m display --focus recent
+ctrl + cmd - z : yabai -m window --display prev; yabai -m display --focus prev
+ctrl + cmd - c : yabai -m window --display next; yabai -m display --focus next
+ctrl + cmd - 1 : yabai -m window --display 1; yabai -m display --focus 1
+ctrl + cmd - 2 : yabai -m window --display 2; yabai -m display --focus 2
+ctrl + cmd - 3 : yabai -m window --display 3; yabai -m display --focus 3
 
 # set insertion point in focused container
 ctrl + alt - h : yabai -m window --insert west
