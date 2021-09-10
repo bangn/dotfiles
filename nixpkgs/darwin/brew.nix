@@ -40,6 +40,7 @@ in
     casks = [
       "1password"
       "firefox-beta"
+      "flameshot"
       "font-hack-nerd-font"
       "keybase"
       "visual-studio-code"
