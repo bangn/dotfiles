@@ -30,8 +30,10 @@ require("gitsigns").setup({
 	watch_index = {
 		interval = 1000,
 	},
+	diff_opts = {
+		internal = true,
+	},
 	sign_priority = 6,
 	update_debounce = 100,
 	status_formatter = nil, -- Use default
-	use_internal_diff = true, -- If luajit is present
 })
