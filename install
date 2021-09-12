@@ -57,6 +57,8 @@ add_nix_channel() {
 }
 
 populate_nix_config() {
+  ln -sfn "$PWD"/nvim "$HOME/.config/nvim"
+
   if [[ "$(uname)" == "Linux" ]]; then
     echo -e "Populating nixpkgs config files for home manager..."
     rm -rf "$HOME/.config/nixpkgs"
@@ -67,7 +69,6 @@ populate_nix_config() {
     echo -e "Populating nixpkgs config files for nix-darwin..."
     rm -rf "$HOME/.nixpkgs"
     ln -sfn "$PWD"/nixpkgs "$HOME/.nixpkgs"
-    ln -sfn "$PWD"/nvim "$HOME/.config/nvim"
   fi
 }
 
