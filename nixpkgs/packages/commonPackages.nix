@@ -16,6 +16,7 @@ with pkgsUnstable;
   docker-compose
   entr
   fd
+  fzf
   ghcid
   gitAndTools.delta
   gitAndTools.diff-so-fancy
