@@ -2,6 +2,7 @@ local execute = vim.api.nvim_command
 local fn = vim.fn
 
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+local home = os.getenv("HOME")
 
 if fn.empty(fn.glob(install_path)) > 0 then
 	execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
@@ -46,7 +47,7 @@ return packer.startup({
 		use({ "hashivim/vim-terraform", config = [[require("config.vim-terraform")]] })
 		use({ "ironhouzi/starlite-nvim", config = [[require("config.starlite-nvim")]] })
 		use({ "janko-m/vim-test", config = [[require("config.vim-test")]] })
-		use({ "junegunn/fzf", run = "cd ~/.fzf && ./install --all" })
+		use({ "junegunn/fzf", run = "cd " .. home .. "/.fzf && ./install --all" })
 		use({ "junegunn/fzf.vim", config = [[require("config.fzf")]] })
 		use({ "lukas-reineke/indent-blankline.nvim", config = [[require("config.indent-blankline")]] })
 		use({ "mcchrish/nnn.vim", config = [[require("config.nnn")]] })
