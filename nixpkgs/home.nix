@@ -51,7 +51,7 @@ with pkgsUnstable;
   xdg = {
     configFile = {
       nvim = {
-        source = "${config.home.homeDirectory}/.config/nvim";
+        source = "${config.home.homeDirectory}/dotfiles/nvim";
         recursive = true;
       };
     };
