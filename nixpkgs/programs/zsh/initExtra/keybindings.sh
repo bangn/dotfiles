@@ -6,7 +6,6 @@ bindkey '^h' backward-delete-char
 bindkey '^k' kill-line
 bindkey '^N' down-history
 bindkey '^P' up-history
-bindkey '^r' history-incremental-search-backward
 bindkey '^w' backward-kill-word
 bindkey \^\[\^\[\[C emacs-forward-word
 bindkey \^\[\^\[\[D emacs-backward-word
