@@ -71,8 +71,9 @@
     +
     ''
       source "${pkgs.autojump}/share/autojump/autojump.zsh"
-
       source "${pkgs.asdf-vm}/share/asdf-vm/asdf.sh"
+      source "${pkgs.fzf}/share/fzf/completion.zsh"
+      source "${pkgs.fzf}/share/fzf/key-bindings.zsh"
       fpath=(${pkgs.asdf-vm}/completions $fpath)
       # initialise completions with ZSH's compinit
       autoload -Uz compinit
