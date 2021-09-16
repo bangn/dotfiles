@@ -7,6 +7,7 @@ vim_g.ale_linters = {
 	elixir = { "credo" },
 	haskell = { "hlint" },
 	lua = { "luacheck" },
+	json = { "jsonlint", "jq" },
 }
 vim_g.ale_fixers = {
 	["*"] = { "remove_trailing_lines", "trim_whitespace" },
