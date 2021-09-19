@@ -34,6 +34,11 @@
       window_shadow = "off";
       window_topmost = "off";
     };
+
+    extraConfig = ''
+      yabai -m rule --add app="^Firefox.*$" title="^Opening .*$" manage=off
+      yabai -m rule --add app='System Preferences' manage=off
+    '';
   };
 
   services.skhd = {
