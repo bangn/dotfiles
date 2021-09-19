@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, homeDirectory, ... }:
 
 {
   system = {
@@ -41,6 +41,14 @@
         showhidden = false;
         static-only = true;
         tilesize = 20;
+      };
+
+      spaces = {
+        spans-displays = false;
+      };
+
+      screencapture = {
+        location = "${homeDirectory}/Pictures";
       };
 
       NSGlobalDomain = {
