@@ -33,7 +33,6 @@
   # tmuxinantor
   ".tmuxinator/kowainik.yml".source = ./tmuxinator/kowainik.yml;
   ".tmuxinator/personal.yml".source = ./tmuxinator/personal.yml;
-  ".tmuxinator/shippit.yml".source = ./tmuxinator/shippit.yml;
 
   # mdl
   ".mdlrc".source = ./mdl/.mdlrc;

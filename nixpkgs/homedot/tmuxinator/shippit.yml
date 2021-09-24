@@ -1,9 +1,0 @@
-# /home/bangn/.tmuxinator/shippit.yml
-
-name: shippit
-root: ~/dev/shippit
-
-windows:
-  - notes: cd ~/dev/shippit/bangn-notes
-  - Shippit: cd ~/dev/shippit/Shippit
-  - editor: cd ~/dev/shippit
