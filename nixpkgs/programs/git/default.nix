@@ -97,6 +97,7 @@ in
 
     user = {
       login = username;
+      signingkey = "F06A6429E41ACFBC";
     };
   };
 
