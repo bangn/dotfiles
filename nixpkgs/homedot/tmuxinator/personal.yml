@@ -1,9 +1,0 @@
-# ~/.tmuxinator/personal.yml
-
-name: personal
-root: ~/dev/projects
-
-windows:
-  - home: cd
-  - projects: cd ~/dev/projects
-  - study: cd ~/study

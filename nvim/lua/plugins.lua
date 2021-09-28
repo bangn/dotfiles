@@ -11,6 +11,7 @@ end
 
 local packer = require("packer")
 
+vim.g.polyglot_disabled = { "sensible", "autoindent" }
 vim.g.coq_settings = {
 	auto_start = "shut-up",
 	keymap = {
@@ -27,6 +28,7 @@ return packer.startup({
 		use("godlygeek/tabular")
 		use("michaeljsmith/vim-indent-object")
 		use("ntpeters/vim-better-whitespace")
+		use("sheerun/vim-polyglot")
 		use("tpope/vim-abolish")
 		use("tpope/vim-bundler")
 		use("tpope/vim-endwise")
@@ -57,7 +59,6 @@ return packer.startup({
 		use({ "neovimhaskell/haskell-vim", config = [[require("config.vim-haskell")]] })
 		use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 		use({ "nvim-treesitter/nvim-treesitter-textobjects", requires = "nvim-treesitter/nvim-treesitter" })
-		use({ "sheerun/vim-polyglot", config = [[require("config.vim-polyglot")]] })
 		use({ "Shougo/vimproc.vim", run = "make" })
 		use({ "sindrets/diffview.nvim", config = [[require("config.diffview")]] })
 		use({ "tpope/vim-commentary", config = [[require("config.vim-commentary")]] })

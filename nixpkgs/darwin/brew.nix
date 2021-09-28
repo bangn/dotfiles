@@ -29,7 +29,6 @@ in
       "homebrew/core"
       "homebrew/services"
       "teamookla/speedtest"
-      "theseal/ssh-askpass"
     ];
 
     brews = [
@@ -48,14 +47,11 @@ in
     ];
 
     casks = [
-      "1password"
       "clipy"
       "firefox-beta"
       "flameshot"
       "font-hack-nerd-font"
-      "keybase"
       "visual-studio-code"
-      "zoom"
     ];
   };
 }
