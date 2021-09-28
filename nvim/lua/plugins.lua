@@ -11,7 +11,6 @@ end
 
 local packer = require("packer")
 
-vim.g.polyglot_disabled = { "sensible", "autoindent" }
 vim.g.coq_settings = {
 	auto_start = "shut-up",
 	keymap = {
