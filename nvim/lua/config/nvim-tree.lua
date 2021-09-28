@@ -1,51 +1,8 @@
 local vim_g = vim.g
 local vars = require("utils.vars")
 
-vim_g.nvim_tree_side = "left"
-vim_g.nvim_tree_width = 40
-vim_g.nvim_tree_ignore = { "node_modules", ".cache" }
-vim_g.nvim_tree_auto_open = 0
-vim_g.nvim_tree_auto_close = 1
-vim_g.nvim_tree_quit_on_open = 0
-vim_g.nvim_tree_follow = 1
-vim_g.nvim_tree_indent_markers = 1
-vim_g.nvim_tree_hide_dotfiles = 0
-vim_g.nvim_tree_git_hl = 1
-vim_g.nvim_tree_root_folder_modifier = ":~"
-vim_g.nvim_tree_tab_open = 0
-vim_g.nvim_tree_allow_resize = 1
-
-vim_g.nvim_tree_show_icons = {
-	git = 1,
-	folders = 1,
-	files = 1,
-}
-
-vim_g.nvim_tree_icons = {
-	default = "",
-	symlink = "",
-	git = {
-		unstaged = "✗",
-		staged = "✓",
-		unmerged = "",
-		renamed = "➜",
-		untracked = "★",
-	},
-
-	folder = {
-		default = "",
-		empty = "",
-		empty_open = "",
-		open = "",
-		symlink = "",
-		symlink_open = "",
-	},
-}
-
-vars.remap.fn("n", "<leader>nt", ":NvimTreeToggle<CR>", { noremap = true })
-
 local tree_cb = require("nvim-tree.config").nvim_tree_callback
-vim_g.nvim_tree_bindings = {
+local bindingsList = {
 	{ key = { "<CR>", "o", "<2-LeftMouse>" }, cb = tree_cb("edit") },
 	{ key = { "<2-RightMouse>", "<C-}>" }, cb = tree_cb("cd") },
 	{ key = "<C-v>", cb = tree_cb("vsplit") },
@@ -78,3 +35,70 @@ vim_g.nvim_tree_bindings = {
 	{ key = "q", cb = tree_cb("close") },
 	{ key = "g?", cb = tree_cb("toggle_help") },
 }
+
+require("nvim-tree").setup({
+	disable_netrw = true,
+	hijack_netrw = true,
+	open_on_setup = false,
+	ignore_ft_on_setup = {},
+	auto_close = true,
+	hijack_cursor = false,
+	update_cwd = false,
+	lsp_diagnostics = false,
+	update_focused_file = {
+		enable = true,
+		update_cwd = false,
+		ignore_list = {},
+	},
+	system_open = {
+		cmd = nil,
+		args = {},
+	},
+
+	view = {
+		width = 40,
+		side = "left",
+		auto_resize = true,
+		mappings = {
+			custom_only = false,
+			list = bindingsList,
+		},
+	},
+})
+
+vim_g.nvim_tree_ignore = { "node_modules", ".cache" }
+vim_g.nvim_tree_quit_on_open = 0
+vim_g.nvim_tree_indent_markers = 1
+vim_g.nvim_tree_hide_dotfiles = 0
+vim_g.nvim_tree_git_hl = 1
+vim_g.nvim_tree_root_folder_modifier = ":~"
+vim_g.nvim_tree_allow_resize = 1
+
+vim_g.nvim_tree_show_icons = {
+	git = 1,
+	folders = 1,
+	files = 1,
+}
+
+vim_g.nvim_tree_icons = {
+	default = "",
+	symlink = "",
+	git = {
+		unstaged = "✗",
+		staged = "✓",
+		unmerged = "",
+		renamed = "➜",
+		untracked = "★",
+	},
+
+	folder = {
+		default = "",
+		empty = "",
+		empty_open = "",
+		open = "",
+		symlink = "",
+		symlink_open = "",
+	},
+}
+
+vars.remap.fn("n", "<leader>nt", ":NvimTreeToggle<CR>", { noremap = true })
