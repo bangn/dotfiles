@@ -2,4 +2,5 @@
 with pkgsUnstable;
 [
   alacritty
+  gnupg
 ]
