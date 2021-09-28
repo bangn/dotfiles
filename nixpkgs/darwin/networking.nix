@@ -1,6 +1,6 @@
 { ... }:
 {
   networking = {
-    hostName = "macbookpro";
+    hostName = "bangn-ap-mbp";
   };
 }

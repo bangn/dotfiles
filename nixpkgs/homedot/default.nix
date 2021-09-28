@@ -22,17 +22,8 @@
   ".default-npm-packages".source = ./asdf/.default-npm-packages;
   ".tool-versions".source = ./asdf/tool-versions;
 
-  # haskell dotfiles
-  ".ghci".source = ./haskell/.ghci;
-  ".haskeline".source = ./haskell/.haskeline;
-  ".hindent.yaml".source = ./haskell/.hindent.yaml;
-  ".stylish-haskell.yaml".source = ./haskell/.stylish-haskell.yaml;
-  ".summoner.toml".source = ./haskell/.summoner.toml;
-  "floskell.json".source = ./haskell/floskell.json;
-
   # tmuxinantor
-  ".tmuxinator/kowainik.yml".source = ./tmuxinator/kowainik.yml;
-  ".tmuxinator/personal.yml".source = ./tmuxinator/personal.yml;
+  ".tmuxinator/afterpay.yml".source = ./tmuxinator/afterpay.yml;
 
   # mdl
   ".mdlrc".source = ./mdl/.mdlrc;

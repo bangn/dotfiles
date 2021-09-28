@@ -1,0 +1,6 @@
+name: afterpay
+root: ~/dev
+
+windows:
+  - money: cd ~/dev/money
+  - afterpay: cd ~/dev

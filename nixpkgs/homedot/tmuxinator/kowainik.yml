@@ -1,9 +1,0 @@
-# /home/bangn/.tmuxinator/kowainik.yml
-
-name: kowainik
-root: ~/dev/projects/kowainik
-
-windows:
-  - kowainik:
-      root: ~/dev/projects/haskell/kowainik
-      layout: main-vertical
