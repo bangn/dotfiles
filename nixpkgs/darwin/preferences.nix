@@ -56,8 +56,6 @@
         "com.apple.sound.beep.volume" = "0.000";
         AppleShowAllExtensions = true;
         AppleShowScrollBars = "Automatic";
-        InitialKeyRepeat = 10;
-        KeyRepeat = 5;
       };
     };
 
