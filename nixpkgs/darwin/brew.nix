@@ -33,6 +33,7 @@ in
     ];
 
     brews = [
+      "awscli"
       "beeftornado/rmtree/brew-rmtree"
       "mas"
       "teamookla/speedtest/speedtest"
@@ -52,6 +53,7 @@ in
       "firefox-beta"
       "flameshot"
       "font-hack-nerd-font"
+      "postman"
       "visual-studio-code"
     ];
   };
