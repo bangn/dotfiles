@@ -14,7 +14,7 @@ in
   homebrew = {
     enable = true;
     autoUpdate = true;
-    cleanup = "uninstall";
+    cleanup = "none";
     global = {
       brewfile = true;
       noLock = true;
@@ -33,19 +33,22 @@ in
     ];
 
     brews = [
-      "awscli"
-      "beeftornado/rmtree/brew-rmtree"
-      "mas"
-      "teamookla/speedtest/speedtest"
-      "theseal/ssh-askpass/ssh-askpass"
       "automake"
+      "awscli"
       "cmake"
       "gettext"
+      "imagemagick"
+      "jq"
       "libtool"
       "libxmlsec1"
+      "mas"
       "ninja"
       "pkg-config"
+      "platform-tools"
+      "postgresql@12"
       "shared-mime-info"
+      "teamookla/speedtest/speedtest"
+      "theseal/ssh-askpass/ssh-askpass"
     ];
 
     casks = [
