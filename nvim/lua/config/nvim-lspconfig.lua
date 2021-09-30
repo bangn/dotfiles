@@ -82,5 +82,4 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 })
 
 vim.cmd([[sign define LspDiagnosticsErrorSign text= texthl=LspDiagnosticsError linehl= numhl= ]])
-vim.cmd([[autocmd CursorHold * lua require("lspsaga.diagnostic").show_line_diagnostics()]])
 vim.cmd([[autocmd CursorHoldI * silent! lua require("lspsaga.signaturehelp").signature_help()]])
