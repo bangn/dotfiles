@@ -21,7 +21,6 @@ in
     };
 
     taps = [
-      "afterpaytouch/platform"
       "beeftornado/rmtree"
       "homebrew/bundle"
       "homebrew/cask"
