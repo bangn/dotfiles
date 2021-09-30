@@ -1,6 +1,6 @@
 export_path() {
   if [[ ! "$PATH" == *"$1"* ]]; then
-    export PATH="${PATH:+${PATH}:}$1"
+    export PATH="$1:${PATH}"
   fi
 }
 
@@ -20,10 +20,15 @@ fi
 ################################################################################
 # Add Golang path
 ################################################################################
-export ASDFROOT=$HOME/.asdf
-export ASDFINSTALLS=$HOME/.asdf/installs
-export GOPATH="$HOME/src/golang"
-GOVERSION=$(asdf current golang | sed 's/\s*(set by .*)//g' | awk '{print $2}')
-export GOROOT=$ASDFINSTALLS/golang/$GOVERSION/go/
-export_path "$GOPATH/bin"
-export GOROOT_BOOTSTRAP=$GOROOT
+# export ASDFROOT=$HOME/.asdf
+# export ASDFINSTALLS=$HOME/.asdf/installs
+# export GOPATH="$HOME/src/golang"
+# GOVERSION=$(asdf current golang | sed 's/\s*(set by .*)//g' | awk '{print $2}')
+# export GOROOT=$ASDFINSTALLS/golang/$GOVERSION/go/
+# export_path "$GOPATH/bin"
+# export GOROOT_BOOTSTRAP=$GOROOT
+
+################################################################################
+# rbenv
+################################################################################
+export_path "$HOME/.rbenv/shims/"
