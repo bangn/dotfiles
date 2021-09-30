@@ -12,18 +12,18 @@
 
   gco = "git checkout";
   gcoh = "git checkout HEAD --";
-  gcom = "git checkout master";
+  gcom = "git checkout main";
 
   gd = "git diff";
   gdc = "git diff --cached";
   gdcn = "git diff --cached  --name-only";
   gdcw = "git diff --cached --word-diff";
-  gdm = "git diff master";
+  gdm = "git diff main";
   gdmb = "git diff $(git show-branch --merge-base)..HEAD";
   gdmbn = "git diff $(git show-branch --merge-base)..HEAD --name-only";
-  gdmn = "git diff master --name-only";
+  gdmn = "git diff main --name-only";
   gdn = "git diff --name-only";
-  gdom = "git diff origin/master";
+  gdom = "git diff origin/main";
   gdw = "git diff --word-diff";
 
   gisc = "gh issue create";
@@ -40,7 +40,7 @@
   gprc = "gh pr create";
   gprv = "gh pr view";
 
-  gprom = "git pull --rebase origin master";
+  gprom = "git pull --rebase origin main";
   gprb = "git pull --rebase";
   gf = "git fetch -p";
   gpl = "git fetch -p && git rebase --rebase-merges";
@@ -53,7 +53,7 @@
   grb = "git rebase";
   grc = "git rebase --continue";
   gri = "git rebase -i";
-  grim = "git rebase -i master";
+  grim = "git rebase -i main";
 
   gsh = "git show HEAD";
   gshn = "git show HEAD --name-only";
