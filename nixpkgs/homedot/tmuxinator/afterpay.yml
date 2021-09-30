@@ -2,5 +2,5 @@ name: afterpay
 root: ~/dev
 
 windows:
-  - money: cd ~/dev/money
   - afterpay: cd ~/dev
+  - money: cd ~/dev/money
