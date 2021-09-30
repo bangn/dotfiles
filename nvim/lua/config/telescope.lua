@@ -10,7 +10,7 @@ vars.remap.fn("n", "<leader>flg", '<cmd>lua require("telescope.builtin").live_gr
 vars.remap.fn("n", "<leader>fm", '<cmd>lua require("telescope.builtin").keymaps()<cr>', vars.remap.opts)
 vars.remap.fn("n", "<leader>fsc", '<cmd>lua require("telescope.builtin").command_history()<cr>', vars.remap.opts)
 vars.remap.fn("n", "<leader>fsh", '<cmd>lua require("telescope.builtin").search_history()<cr>', vars.remap.opts)
-vars.remap.fn("n", "<leader>fsp", '<cmd>lua require("telescope.builtin").spell_suggest()<cr>', vars.remap.opts)
+vars.remap.fn("n", "z=", '<cmd>lua require("telescope.builtin").spell_suggest()<cr>', vars.remap.opts)
 vars.remap.fn("n", "gr", '<cmd>lua require("telescope.builtin").lsp_references()<cr>', vars.remap.opts)
 vars.remap.fn("n", "gd", '<cmd>lua require("telescope.builtin").lsp_definitions()<cr>', vars.remap.opts)
 vars.remap.fn("n", "gi", '<cmd>lua require("telescope.builtin").lsp_implementations()<cr>', vars.remap.opts)
