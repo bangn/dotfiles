@@ -76,8 +76,9 @@
       source "${pkgs.fzf}/share/fzf/key-bindings.zsh"
       fpath=(${pkgs.asdf-vm}/completions $fpath)
       # initialise completions with ZSH's compinit
-      autoload -Uz compinit
-      compinit
+      # CAUTION: It is very slow
+      # autoload -Uz compinit
+      # compinit
     ''
     + extra
   ;
