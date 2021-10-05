@@ -4,7 +4,6 @@ with pkgsUnstable;
   # pkgs.neovim-nightly
   asdf-vm
   autojump
-  # awscli2
   awslogs
   bat
   bitwarden-cli
