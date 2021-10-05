@@ -33,7 +33,7 @@
         show-recents = false;
         showhidden = false;
         static-only = true;
-        tilesize = 20;
+        tilesize = 25;
       };
 
       spaces = {
