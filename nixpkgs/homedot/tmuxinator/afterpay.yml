@@ -2,5 +2,5 @@ name: afterpay
 root: ~/dev
 
 windows:
-  - afterpay: cd ~/dev
+  - afterpay: cd ~/dev/bangn-ap-notes
   - money: cd ~/dev/money
