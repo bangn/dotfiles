@@ -59,6 +59,7 @@ with pkgsUnstable;
   stylish-haskell
   stylua
   terraform_0_13
+  tig
   trash-cli
   tree
   tree-sitter
