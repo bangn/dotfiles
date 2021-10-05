@@ -1,9 +1,9 @@
 { pkgs, pkgsUnstable, ... }:
 with pkgsUnstable;
 [
+  # awscli2
   asdf-vm
   autojump
-  awscli2
   awslogs
   bat
   bitwarden-cli
