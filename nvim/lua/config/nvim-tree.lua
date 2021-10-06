@@ -102,3 +102,4 @@ vim_g.nvim_tree_icons = {
 }
 
 vars.remap.fn("n", "<leader>nt", ":NvimTreeToggle<CR>", { noremap = true })
+require("nvim-tree.view").View.winopts.relativenumber = true
