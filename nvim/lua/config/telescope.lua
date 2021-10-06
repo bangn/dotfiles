@@ -4,16 +4,17 @@ vars.remap.fn("n", "<leader>fbc", '<cmd>lua require("telescope.builtin").git_bco
 vars.remap.fn("n", "<leader>ff", '<cmd>lua require("telescope.builtin").find_files()<cr>', vars.remap.opts)
 vars.remap.fn("n", "<leader>fgb", '<cmd>lua require("telescope.builtin").git_branches()<cr>', vars.remap.opts)
 vars.remap.fn("n", "<leader>fgc", '<cmd>lua require("telescope.builtin").git_commits()<cr>', vars.remap.opts)
+vars.remap.fn("n", "<leader>fgs", '<cmd>lua require("telescope.builtin").grep_string()<cr>', vars.remap.opts)
 vars.remap.fn("n", "<leader>fh", '<cmd>lua require("telescope.builtin").oldfiles()<cr>', vars.remap.opts)
 vars.remap.fn("n", "<leader>flca", '<cmd>lua require("telescope.builtin").lsp_code_actions()<cr>', vars.remap.opts)
 vars.remap.fn("n", "<leader>flg", '<cmd>lua require("telescope.builtin").live_grep()<cr>', vars.remap.opts)
 vars.remap.fn("n", "<leader>fm", '<cmd>lua require("telescope.builtin").keymaps()<cr>', vars.remap.opts)
 vars.remap.fn("n", "<leader>fsc", '<cmd>lua require("telescope.builtin").command_history()<cr>', vars.remap.opts)
 vars.remap.fn("n", "<leader>fsh", '<cmd>lua require("telescope.builtin").search_history()<cr>', vars.remap.opts)
-vars.remap.fn("n", "z=", '<cmd>lua require("telescope.builtin").spell_suggest()<cr>', vars.remap.opts)
-vars.remap.fn("n", "gr", '<cmd>lua require("telescope.builtin").lsp_references()<cr>', vars.remap.opts)
 vars.remap.fn("n", "gd", '<cmd>lua require("telescope.builtin").lsp_definitions()<cr>', vars.remap.opts)
 vars.remap.fn("n", "gi", '<cmd>lua require("telescope.builtin").lsp_implementations()<cr>', vars.remap.opts)
+vars.remap.fn("n", "gr", '<cmd>lua require("telescope.builtin").lsp_references()<cr>', vars.remap.opts)
+vars.remap.fn("n", "z=", '<cmd>lua require("telescope.builtin").spell_suggest()<cr>', vars.remap.opts)
 
 vars.remap.fn(
 	"n",
