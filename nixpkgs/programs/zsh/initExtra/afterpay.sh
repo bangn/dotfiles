@@ -1,44 +1,44 @@
 # shellcheck disable=SC2164
 
 ####################
-# niss
+# servers
 ####################
 
-# Theses functions is tightly couple with tmux
-# I dont care much about the coupling here as tmux is used daily in my workflow
-# nissup() {
-#   up_with="$1"
-#   session=niss
-#   ignore
+# Theses functions is tightly coupled with tmux window and pane name
+server() {
+  service_name="$1"
+  op="$2"
+  usage="Usage: server [api|stubby] [up|down]"
 
-#   if [ -z "$up_with" ] || [ "$up_with" = "ui" ]; then
-#     ignore="niss-admin"
-#   else
-#     ignore="niss-ui"
-#   fi
+  # shellcheck disable=SC3010
+  if ! [[ "$op" == "up" || "$op" == "down" || "$service_name" == "api" || "$service_name" == "stubby" ]]; then
+    echo "$usage"
+    return
+  fi
 
-#   for pane in $(tmux list-panes -t "$session" -F "#{pane_current_path}:#W.#P" | grep -v "$ignore"); do
-#     paneId=$(echo "$pane" | awk -F ":" '{print $2}')
-#     # shellcheck disable=SC3010
-#     if [[ "$pane" =~ "nailgun" ]]; then
-#       tmux send-keys -t "$paneId" "be rackup -p 8080" Enter
-#     else
-#       tmux send-keys -t "$paneId" "npm run start.dev" Enter
-#     fi
-#   done
+  window="money-servers"
 
-#   echo "niss servers are starting up"
-# }
+  for pane in $(tmux list-panes -t "$window" -F "#{pane_current_path}:#W.#P"); do
+    paneId=$(echo "$pane" | awk -F ":" '{print $2}')
+    # shellcheck disable=SC3010
+    # shellcheck disable=SC2076
+    if [[ "$pane" =~ "$service_name" ]]; then
+      if [[ "$op" == "up" ]]; then
+        echo "Starting $service_name ..."
+        tmux send-keys -t "$paneId" "be rails s" Enter
+        sleep 3
+        echo "$service_name server is up !!!"
+      fi
 
-# nissdown() {
-#   session=niss
-#   for pane in $(tmux list-panes -t "$session" -F "#{pane_current_path}:#W.#P"); do
-#     paneId=$(echo "$pane" | awk -F ":" '{print $2}')
-#     tmux send-keys -t "$paneId" C-C
-#   done
-
-#   echo "niss servers are down"
-# }
+      if [[ "$op" == "down" ]]; then
+        echo "Shutting down $service_name ..."
+        tmux send-keys -t "$paneId" C-C
+        sleep 3
+        echo "$service_name server is down !!!"
+      fi
+    fi
+  done
+}
 
 MONEY_DIR="$HOME/dev/money"
 updb() {
