@@ -42,7 +42,7 @@ with pkgsUnstable;
   nnn
   pandoc
   pdftk
-  pkgs.neovim-nightly
+  # pkgs.neovim-nightly
   plantuml
   podman
   podman-compose
