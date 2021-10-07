@@ -2,5 +2,9 @@ name: afterpay
 root: ~/dev
 
 windows:
-  - afterpay: cd ~/dev/bangn-ap-notes
+  - money-servers:
+      panes:
+        - api: cd ~/dev/money/api/
+        - stubby: cd ~/dev/money/stubby/
+  - notes: cd ~/dev/bangn-ap-notes
   - money: cd ~/dev/money
