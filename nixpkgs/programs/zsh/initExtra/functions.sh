@@ -186,7 +186,12 @@ mkcd() {
 
 # find and replace all
 fara() {
-  grep "$1" -rl "${3:-.}" | xargs -I file sed -i "s/$1/$2/g" file
+
+  if [[ "$(uname)" == "Darwin" ]]; then
+    grep "$1" -rl "${3:-.}" | xargs -I file sed -i "" "s/$1/$2/g" file
+  elif [[ "$(uname)" == "Linux" ]]; then
+    grep "$1" -rl "${3:-.}" | xargs -I file sed -i "s/$1/$2/g" file
+  fi
 }
 
 today() {
