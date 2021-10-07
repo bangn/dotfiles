@@ -37,6 +37,14 @@ in
       "mas"
       "teamookla/speedtest/speedtest"
       "theseal/ssh-askpass/ssh-askpass"
+      "automake"
+      "cmake"
+      "gettext"
+      "libtool"
+      "libxmlsec1"
+      "ninja"
+      "pkg-config"
+      "shared-mime-info"
     ];
 
     casks = [
