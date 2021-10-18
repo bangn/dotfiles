@@ -44,7 +44,9 @@ require("nvim-tree").setup({
 	auto_close = true,
 	hijack_cursor = false,
 	update_cwd = false,
-	lsp_diagnostics = false,
+	diagnostics = {
+		enable = false,
+	},
 	update_focused_file = {
 		enable = true,
 		update_cwd = false,
