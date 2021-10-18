@@ -12,7 +12,6 @@ env:
   # You can verify this by checking for the presence of `smso` and `sitm` in
   # `infocmp xterm-256color`.
   TERM: xterm-256color
-  WINIT_X11_SCALE_FACTOR: "1.0"
 
 # Window dimensions in character columns and lines
 # Falls back to size specified by window manager if set to 0x0.
