@@ -4,6 +4,7 @@ with pkgsUnstable;
   # pkgs.neovim-nightly
   asdf-vm
   autojump
+  awscli2
   awslogs
   bat
   bitwarden-cli
@@ -58,6 +59,7 @@ with pkgsUnstable;
   stow
   stylish-haskell
   stylua
+  terraform-ls
   terraform_0_13
   tig
   trash-cli
