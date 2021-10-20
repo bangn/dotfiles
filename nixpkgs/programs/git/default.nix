@@ -41,7 +41,7 @@ in
     };
 
     delta = {
-      features = "side-by-side line-numbers decorations";
+      features = "line-numbers decorations";
       syntax-theme = "Nord";
 
       decorations = {
