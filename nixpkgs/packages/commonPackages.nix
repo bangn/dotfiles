@@ -53,6 +53,7 @@ with pkgsUnstable;
   saml2aws
   shellcheck
   shfmt
+  sqlint
   ssm-session-manager-plugin
   starship
   stow
