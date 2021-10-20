@@ -2,7 +2,7 @@
 
 {
   services.yabai = {
-    enable = true;
+    enable = false;
     package = pkgs.yabai;
     config = {
       active_window_border_color = "0xff775759";
@@ -42,7 +42,7 @@
   };
 
   services.skhd = {
-    enable = true;
+    enable = false;
     package = pkgs.skhd;
     skhdConfig = builtins.readFile ../homedot/skhd/skhdrc;
   };
