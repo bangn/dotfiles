@@ -52,6 +52,7 @@ in
 
     casks = [
       "clipy"
+      "dbeaver-community"
       "firefox-beta"
       "flameshot"
       "font-hack-nerd-font"
