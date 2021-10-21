@@ -24,7 +24,7 @@
       };
 
       dock = {
-        autohide = false;
+        autohide = true;
         autohide-delay = "0.0";
         autohide-time-modifier = "1.0";
         mru-spaces = false;
