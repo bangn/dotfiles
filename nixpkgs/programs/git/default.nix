@@ -140,5 +140,8 @@ in
 
     # terraform
     ".terraform"
+
+    # macOS
+    ".DS_Store"
   ];
 }
