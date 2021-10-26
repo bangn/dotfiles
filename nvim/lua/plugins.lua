@@ -63,6 +63,7 @@ return packer.startup({
 		use({ "tpope/vim-commentary", config = [[require("config.vim-commentary")]] })
 		use({ "tpope/vim-fugitive", config = [[require("config.vim-fugitive")]] })
 		use({ "w0rp/ale", config = [[require("config.ale")]] })
+		use({ "dln/avro-vim" })
 
 		use({
 			"nvim-treesitter/nvim-treesitter",
