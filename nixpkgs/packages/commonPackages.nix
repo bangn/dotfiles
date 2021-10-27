@@ -22,9 +22,11 @@ with pkgsUnstable;
   gitAndTools.diff-so-fancy
   github-cli
   google-cloud-sdk
+  gradle_7
   graphviz
   hlint
   htop
+  jdk11
   jq
   kubectl
   kubectx
