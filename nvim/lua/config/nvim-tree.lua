@@ -37,12 +37,13 @@ local bindingsList = {
 }
 
 require("nvim-tree").setup({
-	disable_netrw = true,
-	hijack_netrw = true,
-	open_on_setup = false,
-	ignore_ft_on_setup = {},
 	auto_close = true,
+	disable_netrw = true,
+	hide_dotfiles = 0,
 	hijack_cursor = false,
+	hijack_netrw = true,
+	ignore_ft_on_setup = {},
+	open_on_setup = false,
 	update_cwd = false,
 	diagnostics = {
 		enable = false,
@@ -56,7 +57,6 @@ require("nvim-tree").setup({
 		cmd = nil,
 		args = {},
 	},
-
 	view = {
 		width = 40,
 		side = "left",
@@ -66,12 +66,14 @@ require("nvim-tree").setup({
 			list = bindingsList,
 		},
 	},
+	ignore = {
+		"node_modules",
+		".cache",
+	},
 })
 
-vim_g.nvim_tree_ignore = { "node_modules", ".cache" }
 vim_g.nvim_tree_quit_on_open = 0
 vim_g.nvim_tree_indent_markers = 1
-vim_g.nvim_tree_hide_dotfiles = 0
 vim_g.nvim_tree_git_hl = 1
 vim_g.nvim_tree_root_folder_modifier = ":~"
 vim_g.nvim_tree_allow_resize = 1
