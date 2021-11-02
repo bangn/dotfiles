@@ -21,6 +21,9 @@ require("lspsaga").init_lsp_saga({
 		scroll_up = "<C-p>",
 	},
 	code_action_icon = "💡",
+	code_action_prompt = {
+		enable = false,
+	},
 })
 
 vars.remap.fn("n", "<C-b>", '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(-1)<CR>', vars.remap.opts)
