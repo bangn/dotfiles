@@ -56,3 +56,23 @@ stopdb() {
   # shellcheck disable=SC3044
   popd
 }
+
+cop_api() {
+  # shellcheck disable=SC3044
+  pushd "$MONEY_DIR"/api
+  git diff origin/main --name-only |
+    sed 's/api\///' |
+    xargs -I {} bundle exec rubocop {}
+  # shellcheck disable=SC3044
+  popd
+}
+
+spec_api() {
+  # shellcheck disable=SC3044
+  pushd "$MONEY_DIR"/api
+  git diff origin/main --name-only |
+    sed 's/api\///' | grep spec |
+    xargs -I {} bundle exec rspec {}
+  # shellcheck disable=SC3044
+  popd
+}
