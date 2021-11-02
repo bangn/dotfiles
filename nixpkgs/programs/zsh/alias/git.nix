@@ -37,7 +37,7 @@
 
   gprco = "gh pr checkout";
   gprls = "gh pr list";
-  gprc = "gh pr create";
+  gprc = "gh pr create --web";
   gprv = "gh pr view";
 
   gprom = "git pull --rebase origin main";
