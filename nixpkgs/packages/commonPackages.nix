@@ -1,9 +1,10 @@
 { pkgs, pkgsUnstable, ... }:
 with pkgsUnstable;
 [
-  # awscli2
+  # pkgs.neovim-nightly
   asdf-vm
   autojump
+  awscli2
   awslogs
   bat
   bitwarden-cli
@@ -42,7 +43,6 @@ with pkgsUnstable;
   nnn
   pandoc
   pdftk
-  # pkgs.neovim-nightly
   plantuml
   podman
   podman-compose
