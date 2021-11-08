@@ -28,6 +28,7 @@ with pkgsUnstable;
   htop
   jdk11
   jq
+  k9s
   kubectl
   kubectx
   kubernetes-helm
