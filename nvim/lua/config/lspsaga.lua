@@ -26,8 +26,6 @@ require("lspsaga").init_lsp_saga({
 	},
 })
 
-vars.remap.fn("n", "<C-b>", '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(-1)<CR>', vars.remap.opts)
-vars.remap.fn("n", "<C-f>", '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(1)<CR>', vars.remap.opts)
 vars.remap.fn("n", "<leader>e", '<cmd>lua require("lspsaga.diagnostic").show_line_diagnostics()<CR>', vars.remap.opts)
 vars.remap.fn("n", "<leader>gr", '<cmd>lua require("lspsaga.rename").rename()<CR>', vars.remap.opts)
 vars.remap.fn("n", "<leader>pd", '<cmd>lua require"lspsaga.provider".preview_definition()<CR>', vars.remap.opts)
