@@ -1,13 +1,14 @@
 local vars = require("utils.vars")
 
-vars.remap.fn("n", "<leader>fbc", '<cmd>lua require("telescope.builtin").git_bcommits()<cr>', vars.remap.opts)
+vars.remap.fn("n", "<leader>bc", '<cmd>lua require("telescope.builtin").git_bcommits()<cr>', vars.remap.opts)
 vars.remap.fn("n", "<leader>ff", '<cmd>lua require("telescope.builtin").find_files()<cr>', vars.remap.opts)
 vars.remap.fn("n", "<leader>fgb", '<cmd>lua require("telescope.builtin").git_branches()<cr>', vars.remap.opts)
 vars.remap.fn("n", "<leader>fgc", '<cmd>lua require("telescope.builtin").git_commits()<cr>', vars.remap.opts)
 vars.remap.fn("n", "<leader>fgs", '<cmd>lua require("telescope.builtin").grep_string()<cr>', vars.remap.opts)
 vars.remap.fn("n", "<leader>fh", '<cmd>lua require("telescope.builtin").oldfiles()<cr>', vars.remap.opts)
 vars.remap.fn("n", "<leader>ca", '<cmd>lua require("telescope.builtin").lsp_code_actions()<cr>', vars.remap.opts)
-vars.remap.fn("n", "<leader>flg", '<cmd>lua require("telescope.builtin").live_grep()<cr>', vars.remap.opts)
+vars.remap.fn("v", "<leader>ca", '<cmd>lua require("telescope.builtin").lsp_range_code_actions()<cr>', vars.remap.opts)
+vars.remap.fn("n", "<leader>fl", '<cmd>lua require("telescope.builtin").live_grep()<cr>', vars.remap.opts)
 vars.remap.fn("n", "<leader>fm", '<cmd>lua require("telescope.builtin").keymaps()<cr>', vars.remap.opts)
 vars.remap.fn("n", "<leader>ch", '<cmd>lua require("telescope.builtin").command_history()<cr>', vars.remap.opts)
 vars.remap.fn("n", "<leader>sh", '<cmd>lua require("telescope.builtin").search_history()<cr>', vars.remap.opts)
@@ -18,32 +19,26 @@ vars.remap.fn("n", "z=", '<cmd>lua require("telescope.builtin").spell_suggest()<
 
 vars.remap.fn(
 	"n",
-	"<leader>flbd",
+	"<leader>dd",
 	'<cmd>lua require("telescope.builtin").lsp_document_diagnostics()<cr>',
 	vars.remap.opts
 )
 vars.remap.fn(
 	"n",
-	"<leader>flwd",
+	"<leader>wd",
 	'<cmd>lua require("telescope.builtin").lsp_workspace_diagnostics()<cr>',
 	vars.remap.opts
 )
 vars.remap.fn(
 	"n",
-	"<leader>fsb",
+	"<leader>sb",
 	'<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find()<cr>',
 	vars.remap.opts
 )
 vars.remap.fn(
 	"n",
-	"<leader>fso",
+	"<leader>so",
 	'<cmd>lua require("telescope.builtin").live_grep({grep_open_files = true})<cr>',
-	vars.remap.opts
-)
-vars.remap.fn(
-	"v",
-	"<leader>flca",
-	'<cmd>lua require("telescope.builtin").lsp_range_code_actions()<cr>',
 	vars.remap.opts
 )
 
