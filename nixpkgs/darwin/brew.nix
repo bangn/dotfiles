@@ -28,7 +28,6 @@ in
       "homebrew/cask-versions"
       "homebrew/core"
       "homebrew/services"
-      "teamookla/speedtest"
     ];
 
     brews = [
@@ -47,8 +46,6 @@ in
       "platform-tools"
       "postgresql@12"
       "shared-mime-info"
-      "teamookla/speedtest/speedtest"
-      "theseal/ssh-askpass/ssh-askpass"
     ];
 
     casks = [
