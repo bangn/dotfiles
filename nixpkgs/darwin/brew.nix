@@ -35,7 +35,6 @@ in
       "awscli"
       "cmake"
       "gettext"
-      "gradle"
       "imagemagick"
       "jq"
       "libtool"
