@@ -117,12 +117,6 @@ return packer.startup({
 			requires = { "kyazdani42/nvim-web-devicons" },
 			config = [[require("config.nvim-tree")]],
 		})
-
-		use({
-			"SmiteshP/nvim-gps",
-			requires = { "nvim-treesitter/nvim-treesitter" },
-			config = [[require("config.nvim-gps")]],
-		})
 	end,
 	config = {
 		profile = { enable = true },
