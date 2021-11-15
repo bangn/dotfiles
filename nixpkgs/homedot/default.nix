@@ -23,7 +23,7 @@
   ".tool-versions".source = ./asdf/tool-versions;
 
   # tmuxinantor
-  ".tmuxinator/afterpay.yml".source = ./tmuxinator/afterpay.yml;
+  ".tmuxinator/personal.yml".source = ./tmuxinator/personal.yml;
 
   # mdl
   ".mdlrc".source = ./mdl/.mdlrc;

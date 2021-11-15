@@ -1,0 +1,9 @@
+name: personal
+root: ~/dev
+
+windows:
+  - dotfiles:
+      panes:
+        - api: cd ~/dotfiles
+  - projects: cd ~/dev/projects
+  - study: cd ~/dev/study
