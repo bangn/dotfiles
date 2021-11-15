@@ -140,14 +140,17 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightnes
 
 ## Lock screen
 set $Locker i3lock -c 2e3440
-bindsym Mod1+l exec --no-startup-id $Locker, mode "default"
+bindsym Mod1+Shift+l exec --no-startup-id $Locker, mode "default"
 
 ## Manual management of external displays
 ### Set the shortcuts and what they do
-set $mode_display Ext Screen (h) HDMI1 ON, (H) HDMI1 OFF, (d) DP1 ON, (D) DP1 OFF
+set $mode_display Ext Screen (u) HDMI1 ON, (U) HDMI1 OFF, (d) DP1 ON, (D) DP1 OFF, (l) HDMI2 ON, (L) HDMI2 OFF
 mode "$mode_display" {
-    bindsym h exec --no-startup-id xrandr --output HDMI1 --auto --above eDP1, mode "default"
-    bindsym Shift+h exec --no-startup-id xrandr --output HDMI1 --auto --off, mode "default"
+    bindsym u exec --no-startup-id xrandr --output HDMI1 --auto --above eDP1, mode "default"
+    bindsym Shift+u exec --no-startup-id xrandr --output HDMI1 --auto --off, mode "default"
+
+    bindsym l exec --no-startup-id xrandr --output HDMI2 --auto --left-of eDP1, mode "default"
+    bindsym Shift+l exec --no-startup-id xrandr --output HDMI2 --auto --off, mode "default"
 
     bindsym d exec --no-startup-id xrandr --output DP1 --auto --above eDP1, mode "default"
     bindsym Shift+d exec --no-startup-id xrandr --output DP1 --auto --off, mode "default"
@@ -158,11 +161,15 @@ mode "$mode_display" {
 }
 
 ## Move workspace to above screen
-set $screen_up "HDMI1"
 set $screen_up "DP1"
+set $screen_up "HDMI1"
+set $screen_left "HDMI2"
 set $screen_primary "eDP1"
 bindsym Mod1+k move workspace to output $screen_up
 bindsym Mod1+j move workspace to output $screen_primary
+
+bindsym Mod1+h move workspace to output $screen_left
+bindsym Mod1+l move workspace to output $screen_primary
 
 # Declare here the shortcut to bring the display selection menu
 bindsym $mod+x mode "$mode_display"
@@ -248,7 +255,7 @@ bar {
 # AUTOSTART
 ################################################################################
 # Map CapsLock to Ctrl; Swap left Super and left Alt
-exec setxkbmap -option ctrl:nocaps,altwin:swap_lalt_lwin
+exec setxkbmap -option ctrl:swapcaps,altwin:swap_lalt_lwin
 
 # Set natural scrolling
 exec synclient VertScrollDelta=-114
