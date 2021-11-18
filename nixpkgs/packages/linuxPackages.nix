@@ -1,6 +1,7 @@
 { pkgs, pkgsUnstable, ... }:
 with pkgsUnstable;
 [
+  awscli2
   calibre
   firefox
   glibcLocales
