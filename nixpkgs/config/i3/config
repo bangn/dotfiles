@@ -256,7 +256,7 @@ bar {
 ################################################################################
 # Map CapsLock to Ctrl; Swap left Super and left Alt
 exec setxkbmap -option ctrl:swapcaps,altwin:swap_lalt_lwin
-bindsym $mod+Shift+s exec "setxkbmap -option ctrl:swapcaps,altwin:swap_lalt_lwin"
+bindsym $mod+Shift+s exec "setxkbmap -option ctrl:swapcaps"
 
 # Set natural scrolling
 exec synclient VertScrollDelta=-114
