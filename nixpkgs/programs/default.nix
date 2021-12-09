@@ -8,4 +8,5 @@
   git = import ./git { inherit pkgs; };
   tmux = import ./tmux { inherit pkgs; };
   zsh = import ./zsh { inherit pkgs; };
+  lazygit = import ./lazygit { inherit pkgs; };
 }
