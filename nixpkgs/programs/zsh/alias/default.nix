@@ -13,6 +13,7 @@ in
 
   cat = "bat";
   fix-stty = "stty sane";
+  lg = "lazygit";
   mmv = "noglob zmv -W";
   mux = "tmuxinator";
   n = "nnn -Hax";
