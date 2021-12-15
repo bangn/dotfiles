@@ -61,8 +61,9 @@ cop_api() {
   # shellcheck disable=SC3044
   pushd "$MONEY_DIR"/api
   git diff origin/main --name-only |
+    grep "\.rb" |
     sed 's/api\///' |
-    xargs -I {} bundle exec rubocop {}
+    xargs bundle exec rubocop
   # shellcheck disable=SC3044
   popd
 }
@@ -71,8 +72,10 @@ spec_api() {
   # shellcheck disable=SC3044
   pushd "$MONEY_DIR"/api
   git diff origin/main --name-only |
-    sed 's/api\///' | grep spec |
-    xargs -I {} bundle exec rspec {}
+    sed 's/api\///' |
+    grep "\.rb" |
+    grep spec |
+    xargs bundle exec rspec
   # shellcheck disable=SC3044
   popd
 }
