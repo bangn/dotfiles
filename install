@@ -2,27 +2,10 @@
 
 set -eu
 
-set_nix_store_volume() {
-  fstab_file="/private/etc/fstab"
-  volume_name="nix-store"
-  if ! grep -q "$volume_name" "$fstab_file"; then
-    echo "LABEL=$volume_name /nix apfs rw,nobrowse" | sudo tee -a "$fstab_file"
-  fi
-}
-
 install_nix() {
   if ! command -v nix; then
     echo "Installing nix..."
-
-    if [[ "$(uname)" == "Linux" ]]; then
-      curl -L https://nixos.org/nix/install | sh
-    fi
-
-    if [[ "$(uname)" == "Darwin" ]]; then
-      echo "Make sure you have created a nix store volume using disk utility"
-      set_nix_store_volume
-      curl -L https://nixos.org/nix/install | sh -s -- --darwin-use-unencrypted-nix-store-volume
-    fi
+    curl -L https://nixos.org/nix/install | sh
   fi
 }
 
