@@ -74,7 +74,7 @@ spec_api() {
   git diff origin/main --name-only |
     sed 's/api\///' |
     grep "\.rb" |
-    grep spec |
+    grep _spec |
     xargs bundle exec rspec
   # shellcheck disable=SC3044
   popd
