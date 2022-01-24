@@ -3,7 +3,7 @@ local vars = require("utils.vars")
 
 vim_g.ale_linters = {
 	sh = { "shellcheck" },
-	ruby = { "rubocop", "rufo" },
+	ruby = { "rufo", "rubocop" },
 	elixir = { "credo" },
 	haskell = { "hlint" },
 	lua = { "luacheck" },
