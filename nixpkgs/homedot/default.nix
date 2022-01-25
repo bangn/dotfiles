@@ -15,6 +15,8 @@
   ".irbrc".source = ./ruby/.irbrc;
   ".pryrc".source = ./ruby/.pryrc;
   ".rspec".source = ./ruby/.rspec;
+  ".rubocop.yml".source = ./rubocop/.rubocop.yml;
+  ".rufo".source = ./rufo/.rufo;
 
   # asdf dotfiles
   ".asdfrc".source = ./asdf/.asdfrc;
@@ -28,9 +30,6 @@
   # mdl
   ".mdlrc".source = ./mdl/.mdlrc;
   "mdl/style.rb".source = ./mdl/style.rb;
-
-  # rubocop
-  ".rubocop.yml".source = ./rubocop/.rubocop.yml;
 
   "dircolors.nord".source = pkgs.fetchFromGitHub
     {
