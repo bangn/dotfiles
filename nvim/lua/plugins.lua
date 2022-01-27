@@ -44,7 +44,6 @@ return packer.startup({
 		use({ "fatih/vim-go", config = [[require("config.vim-go")]] })
 		use({ "folke/zen-mode.nvim", config = [[require("config.zen-mode")]] })
 		use({ "gelguy/wilder.nvim", requires = { "romgrk/fzy-lua-native" }, run = ":UpdateRemotePlugins" })
-		use({ "glepnir/lspsaga.nvim", config = [[require("config.lspsaga")]] })
 		use({ "hashivim/vim-terraform", config = [[require("config.vim-terraform")]] })
 		use({ "ironhouzi/starlite-nvim", config = [[require("config.starlite-nvim")]] })
 		use({ "janko-m/vim-test", config = [[require("config.vim-test")]] })
