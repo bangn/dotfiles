@@ -45,6 +45,9 @@ in
     "--exclude-dir=node_modules"
     "--exclude-dir=out"
     "--exclude-dir=tmp"
+    "--exclude-dir=rspec_tracer_report"
+    "--exclude-dir=rspec_tracer_cache"
+    "--exclude-dir=rspec_tracer_coverage"
     "--exclude=tags"
   ];
 } // dockerAliases // bundlerAliases // gitAliases // neuronAliases //
