@@ -144,5 +144,10 @@ in
 
     # macOS
     ".DS_Store"
+
+    # rspec tracer cache files
+    "*/rspec_tracer_cache/"
+    "*/rspec_tracer_coverage/"
+    "*/rspec_tracer_report/"
   ];
 }
