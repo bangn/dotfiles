@@ -70,6 +70,7 @@ with pkgsUnstable;
   xclip
   yaml-language-server
   yamllint
+  yapf
   yarn
   yq
 ]
