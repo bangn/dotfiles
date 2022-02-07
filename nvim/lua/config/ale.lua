@@ -19,6 +19,7 @@ vim_g.ale_fixers = {
 	lua = { "stylua" },
 	markdown = { "prettier" },
 	nix = { "nixpkgs-fmt" },
+	python = { "yapf" },
 	ruby = { "rufo", "rubocop" },
 	sh = { "shfmt" },
 	sql = { "sqlformat" },
