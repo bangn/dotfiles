@@ -159,6 +159,20 @@ db_tables_size() {
   "
 }
 
+backupdb() {
+  usage="Usage: backupdb database_name"
+
+  if [ -e "$1" ]; then
+    datetime=$(date +"%G_%m_%d_%H_%M_%S")
+    psql -d "$1" -c "
+      CREATE DATABASE $1_$datetime
+      WITH TEMPLATE $1
+    "
+  else
+    echo "$usage"
+  fi
+}
+
 # public ip address
 public_ip() {
   dig +short myip.opendns.com @resolver1.opendns.com.
