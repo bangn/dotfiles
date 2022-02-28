@@ -33,6 +33,7 @@ in
     "grep"
     "--color=auto --exclude-dir=\"*snapshots*\""
     "--exclude-dir=.git"
+    "--exclude-dir=.idea"
     "--exclude-dir=.next"
     "--exclude-dir=.stack"
     "--exclude-dir=.stack-work"
@@ -44,10 +45,11 @@ in
     "--exclude-dir=log"
     "--exclude-dir=node_modules"
     "--exclude-dir=out"
-    "--exclude-dir=tmp"
-    "--exclude-dir=rspec_tracer_report"
+    "--exclude-dir=postgres"
     "--exclude-dir=rspec_tracer_cache"
     "--exclude-dir=rspec_tracer_coverage"
+    "--exclude-dir=rspec_tracer_report"
+    "--exclude-dir=tmp"
     "--exclude=tags"
   ];
 } // dockerAliases // bundlerAliases // gitAliases // neuronAliases //
