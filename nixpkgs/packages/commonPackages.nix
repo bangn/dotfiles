@@ -46,8 +46,6 @@ with pkgsUnstable;
   pandoc
   pdftk
   plantuml
-  podman
-  podman-compose
   postgresql_12
   python38Packages.sqlparse
   ripgrep
