@@ -7,6 +7,9 @@ with pkgsUnstable; [
   buildkite-agent
   buildkite-cli
   caddy
+  cmake
+  coreutils-full
+  curlFull
   docker-compose
   entr
   fd
