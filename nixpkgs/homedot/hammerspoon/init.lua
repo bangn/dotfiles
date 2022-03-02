@@ -1,10 +1,18 @@
-metaKey = { "cmd", "alt", "ctrl" }
+metaKey = { "cmd", "ctrl" }
+hs.application.enableSpotlightForNameSearches(true)
 
 --------------------------------------------------------------------------------
 -- Hot reload Hammerspon
 --------------------------------------------------------------------------------
 hs.hotkey.bind(metaKey, "R", function()
 	hs.reload()
+end)
+
+--------------------------------------------------------------------------------
+-- Open alacritty
+--------------------------------------------------------------------------------
+hs.hotkey.bind(metaKey, hs.keycodes.map["return"], function()
+	hs.application.launchOrFocus("alacritty")
 end)
 
 --------------------------------------------------------------------------------
