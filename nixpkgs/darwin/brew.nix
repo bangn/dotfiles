@@ -49,10 +49,11 @@ in
 
     casks = [
       "clipy"
-      "dbeaver-community"
       "firefox-beta"
       "flameshot"
       "font-hack-nerd-font"
+      "hammerspoon"
+      "kdiff3"
       "postman"
       "visual-studio-code"
     ];
