@@ -38,4 +38,10 @@
       rev = "master";
       sha256 = "1c9fa6dip266z6hfqd5nan5v6qjp6dg074lvk4rxisirm26djlzz";
     } + "/src/dir_colors";
+
+  # Hammerspoon
+  ".hammerspoon/init.lua".source = ./hammerspoon/init.lua;
+
+  # Slate: Deprecated, use Hammerspoon
+  # ".slate".source = ./slate/.slate;
 }
