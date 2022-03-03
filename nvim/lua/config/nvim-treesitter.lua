@@ -1,12 +1,36 @@
 require("nvim-treesitter.configs").setup({
 	ensure_installed = "maintained",
+	ignore_install = { "" }, -- List of parsers to ignore installing
 
-	highlight = {
+	autopairs = {
 		enable = true,
-		use_languagetree = true,
 	},
 
-	indent = { enable = false },
+	autotag = {
+		enable = true,
+	},
+
+	context_commentstring = {
+		enable = true,
+		enable_autocmd = false,
+	},
+
+	highlight = {
+		enable = true, -- false will disable the whole extension
+		disable = { "" }, -- list of language that will be disabled
+		use_languagetree = true,
+		additional_vim_regex_highlighting = true,
+	},
+
+	indent = {
+		enable = true,
+		disable = { "" },
+	},
+
+	rainbow = {
+		enable = true,
+		extended_mode = true,
+	},
 
 	textobjects = {
 		select = {
