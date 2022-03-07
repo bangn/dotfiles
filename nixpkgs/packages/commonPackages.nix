@@ -53,7 +53,6 @@ with pkgsUnstable; [
   shfmt
   sqlint
   ssm-session-manager-plugin
-  starship
   stow
   stylish-haskell
   stylua
