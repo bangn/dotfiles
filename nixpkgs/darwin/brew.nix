@@ -44,7 +44,6 @@ in
       "mas"
       "ninja"
       "pkg-config"
-      "platform-tools"
       "postgresql@12"
       "teamookla/speedtest/speedtest"
       "theseal/ssh-askpass/ssh-askpass"
