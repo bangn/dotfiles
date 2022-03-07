@@ -17,6 +17,7 @@ with pkgsUnstable; [
   screenkey
   slack-dark
   spotify
+  starship
   sxiv
   xcompmgr
   xorg.xinput
