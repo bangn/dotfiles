@@ -13,7 +13,7 @@ with pkgsUnstable;
   ccloud-cli
   coreutils-full
   curlFull
-  # docker-compose
+  docker-compose
   entr
   fd
   fzf
