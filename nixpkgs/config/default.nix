@@ -10,4 +10,5 @@
   ".config/zathura/zathurarc".source = ./zathura/zathurarc;
   ".config/starship.toml".source = ./starship/starship.toml;
   ".config/dunst/dunstrc".source = ./dunst/dunstrc;
+  ".config/nix/nix.conf".source = ./nix/nix.conf;
 }
