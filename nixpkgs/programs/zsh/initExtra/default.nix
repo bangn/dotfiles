@@ -8,5 +8,5 @@ in
 functions +
 git +
 keybindings +
-prompt +
-zshrc
+zshrc +
+prompt
