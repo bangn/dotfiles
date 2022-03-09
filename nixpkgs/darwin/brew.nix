@@ -40,6 +40,7 @@ in
       "jq"
       "libtool"
       "libxmlsec1"
+      "llvm@12"
       "mas"
       "ninja"
       "pkg-config"
