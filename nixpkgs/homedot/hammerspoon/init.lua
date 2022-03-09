@@ -97,22 +97,3 @@ hs.hotkey.bind(metaKey, "p", function()
 
 	win:moveToScreen(previousScreen)
 end)
-
---------------------------------------------------------------------------------
--- Move mouse to focus window
---------------------------------------------------------------------------------
-function applicationWatcher(_appName, eventType, appObject)
-	if eventType == hs.application.watcher.activated then
-		local win = hs.window.focusedWindow()
-
-		-- move mouse pointer if it is located on different screen
-		if win:screen():id() ~= hs.mouse.getCurrentScreen():id() then
-			local f = win:frame()
-			center_x = f.x + f.w / 2 + f.w * 0.2
-			center_y = f.y + f.h / 2 + f.h * 0.2
-			hs.mouse.setAbsolutePosition(hs.geometry.point(center_x, center_y))
-		end
-	end
-end
-appWatcher = hs.application.watcher.new(applicationWatcher)
-appWatcher:start()
