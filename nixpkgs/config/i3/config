@@ -293,8 +293,8 @@ exec --no-startup-id i3-msg 'workspace 3; exec slack'
 assign [class="Slack"] workspace 3
 
 # Start thunderbird in workspace 4.
-exec --no-startup-id i3-msg 'workspace 4; exec thunderbird'
-assign [class="Mail"] workspace 4
+# exec --no-startup-id i3-msg 'workspace 4; exec thunderbird'
+# assign [class="Mail"] workspace 4
 
 exec --no-startup-id xfce4-clipman &
 bindsym $mod+Shift+v exec xfce4-popup-clipman
