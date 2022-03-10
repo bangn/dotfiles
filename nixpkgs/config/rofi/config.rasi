@@ -11,5 +11,6 @@ configuration {
   show-match: true;
   terminal: "alacritty";
   width: 30;
-  theme: "./custom-nord.rasi";
 }
+
+@theme "./custom-nord.rasi"
