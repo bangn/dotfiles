@@ -24,6 +24,15 @@
 
   plugins = [
     {
+      name = "fzf-tab";
+      src = pkgs.fetchFromGitHub {
+        owner = "Aloxaf";
+        repo = "fzf-tab";
+        rev = "master";
+        sha256 = "1a3cj5bqply9prr123nnprxmw4g9cm081gcd80h7adk2y0zxgzc7";
+      };
+    }
+    {
       name = "zsh-autosuggestions";
       src = pkgs.fetchFromGitHub {
         owner = "zsh-users";
