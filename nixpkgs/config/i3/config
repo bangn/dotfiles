@@ -10,7 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # Alt
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -37,7 +37,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # start rofi
-bindsym Mod1+space exec --no-startup-id "rofi -show combi"
+bindsym $mod+space exec --no-startup-id "rofi -show combi"
 
 # change focus
 bindsym $mod+Ctrl+h focus left
@@ -78,7 +78,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym Mod4+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -117,7 +117,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec i3-msg exit
 
 # Toggle border
-bindsym Mod1+Shift+b border toggle
+bindsym $mod+Shift+b border toggle
 
 # Default border style
 default_border none
@@ -132,7 +132,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 # Screen
 ################################################################################
 ## Enter fullscreen mode for the focused container
-bindsym Mod1+f fullscreen toggle
+bindsym $mod+f fullscreen toggle
 
 ## Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
@@ -140,7 +140,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightnes
 
 ## Lock screen
 set $Locker i3lock -c 2e3440
-bindsym Mod1+Shift+l exec --no-startup-id $Locker, mode "default"
+bindsym Mod4+Shift+l exec --no-startup-id $Locker, mode "default"
 
 ## Manual management of external displays
 ### Set the shortcuts and what they do
@@ -165,26 +165,26 @@ set $screen_up "DP1"
 set $screen_up "HDMI1"
 set $screen_left "HDMI2"
 set $screen_primary "eDP1"
-bindsym Mod1+k move workspace to output $screen_up
-bindsym Mod1+j move workspace to output $screen_primary
+bindsym Mod4+k move workspace to output $screen_up
+bindsym Mod4+j move workspace to output $screen_primary
 
-bindsym Mod1+h move workspace to output $screen_left
-bindsym Mod1+l move workspace to output $screen_primary
+bindsym Mod4+h move workspace to output $screen_left
+bindsym Mod4+l move workspace to output $screen_primary
 
 # Declare here the shortcut to bring the display selection menu
 bindsym $mod+x mode "$mode_display"
 
 # Suspend
-bindsym Mod1+Shift+x exec --no-startup-id $Locker && systemctl suspend, mode "default"
+bindsym Mod4+Shift+x exec --no-startup-id $Locker && systemctl suspend, mode "default"
 
 # Hibernate
-bindsym Mod1+Shift+h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+bindsym Mod4+Shift+h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
 
 # Shutdown
-bindsym Mod1+Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+bindsym Mod4+Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
 # Reboot
-bindsym Mod1+Shift+r exec --no-startup-id ~/dotfiles/tools/bin/i3exit reboot, mode "default"
+bindsym Mod4+Shift+r exec --no-startup-id ~/dotfiles/tools/bin/i3exit reboot, mode "default"
 
 ################################################################################
 # resize window (you can also use the mouse for that)
@@ -234,12 +234,12 @@ for_window [window_type="menu"] floating enable
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bindsym Mod1+n bar mode toggle
+bindsym $mod+n bar mode toggle
 bar {
   position bottom
   status_command i3status
   tray_output primary
-  modifier Mod1
+  modifier $mod
   colors {
     background #2e3440
     statusline #839496
