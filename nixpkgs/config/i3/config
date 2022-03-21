@@ -280,6 +280,9 @@ exec --no-startup-id ibus-daemon
 # start fcitx
 exec --no-startup-id fcitx
 
+# start blueman-applet
+exec --no-startup-id blueman-applet
+
 # Start terminal in workspace 1.
 exec --no-startup-id i3-msg 'workspace 1; exec alacritty'
 assign [class="Alacritty"] workspace 1
