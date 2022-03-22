@@ -200,7 +200,6 @@ mkcd() {
 
 # find and replace all
 fara() {
-
   if [[ "$(uname)" == "Darwin" ]]; then
     grep "$1" -rl "${3:-.}" | xargs -I file sed -i "" "s/$1/$2/g" file
   elif [[ "$(uname)" == "Linux" ]]; then
@@ -214,4 +213,12 @@ today() {
 
 rubodiff() {
   git status -sb | tail +2 | awk '{print $NF}' | grep "\.rb" | xargs -I {} rubocop {}
+}
+
+rebuild-system() {
+  if [[ "$(uname)" == "Darwin" ]]; then
+    darwin-rebuild switch "$@"
+  elif [[ "$(uname)" == "Linux" ]]; then
+    home-manager switch "$@"
+  fi
 }
