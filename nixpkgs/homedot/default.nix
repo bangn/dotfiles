@@ -44,4 +44,7 @@
 
   # Slate: Deprecated, use Hammerspoon
   # ".slate".source = ./slate/.slate;
+
+  # curl
+  ".curlrc".source = ./curl/curlrc;
 }
