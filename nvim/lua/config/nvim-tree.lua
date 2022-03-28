@@ -37,7 +37,6 @@ local bindingsList = {
 }
 
 require("nvim-tree").setup({
-	auto_close = true,
 	disable_netrw = true,
 	hide_dotfiles = 0,
 	hijack_cursor = false,
