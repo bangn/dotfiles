@@ -1,6 +1,6 @@
 require("nvim-treesitter.configs").setup({
-	ensure_installed = "maintained",
-	ignore_install = { "" }, -- List of parsers to ignore installing
+	ensure_installed = "all",
+	ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
 
 	autopairs = {
 		enable = true,
