@@ -1,16 +1,13 @@
 { pkgs, pkgsUnstable, ... }:
 with pkgsUnstable;
 [
-  # pkgs.neovim-nightly
   asdf-vm
   autojump
-  awslogs
   bat
   bitwarden-cli
   buildkite-agent
   buildkite-cli
   caddy
-  ccloud-cli
   coreutils-full
   curlFull
   docker-compose
