@@ -46,6 +46,8 @@
       "ninja"
       "pkg-config"
       "shared-mime-info"
+      "starship"
+      "watch"
     ];
 
     casks = [
