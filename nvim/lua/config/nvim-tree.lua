@@ -38,10 +38,8 @@ local bindingsList = {
 }
 
 require("nvim-tree").setup({
-	hide_dotfiles = false,
 	auto_reload_on_write = true,
 	disable_netrw = false,
-	hide_root_folder = false,
 	hijack_cursor = false,
 	hijack_netrw = true,
 	hijack_unnamed_buffer_when_opening = false,
@@ -63,6 +61,7 @@ require("nvim-tree").setup({
 			custom_only = false,
 			list = bindingsList,
 		},
+		hide_root_folder = false,
 	},
 	renderer = {
 		indent_markers = {
