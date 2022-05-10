@@ -149,5 +149,12 @@ in
     "*/rspec_tracer_cache/"
     "*/rspec_tracer_coverage/"
     "*/rspec_tracer_report/"
+
+    # text editor / IDE
+    "*.iml"
+    "*.swp"
+    "*.swo"
+    ".idea"
+    ".rbx"
   ];
 }
