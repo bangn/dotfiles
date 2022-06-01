@@ -40,10 +40,10 @@ bindsym $mod+q kill
 bindsym $mod+space exec --no-startup-id "rofi -show combi"
 
 # change focus
-bindsym $mod+Ctrl+h focus left
-bindsym $mod+Ctrl+j focus down
-bindsym $mod+Ctrl+k focus up
-bindsym $mod+Ctrl+l focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
