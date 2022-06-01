@@ -9,4 +9,10 @@
   tmux = import ./tmux { inherit pkgs; };
   zsh = import ./zsh { inherit pkgs; };
   lazygit = import ./lazygit { inherit pkgs; };
+  z-lua = {
+    enable = true;
+    enableAliases = true;
+    enableZshIntegration = true;
+    options = [ "enhanced" "once" "fzf" ];
+  };
 }
