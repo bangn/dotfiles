@@ -165,11 +165,11 @@ set $screen_up "DP1"
 set $screen_up "HDMI1"
 set $screen_left "HDMI2"
 set $screen_primary "eDP1"
-bindsym Mod4+k move workspace to output $screen_up
-bindsym Mod4+j move workspace to output $screen_primary
+bindsym Mod4+k move workspace to output up
+bindsym Mod4+j move workspace to output down
 
-bindsym Mod4+h move workspace to output $screen_left
-bindsym Mod4+l move workspace to output $screen_primary
+bindsym Mod4+h move workspace to output left
+bindsym Mod4+l move workspace to output right
 
 # Declare here the shortcut to bring the display selection menu
 bindsym $mod+x mode "$mode_display"
