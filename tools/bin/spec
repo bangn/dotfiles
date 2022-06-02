@@ -1,0 +1,15 @@
+#! /usr/bin/env ruby
+
+# frozen_string_literal: true
+
+against_branch = ARGV[0]
+
+command = <<~COMMAND
+  git diff #{against_branch} --name-only \
+    | sed 's/api\\///' \
+    | grep '\\.rb' \
+    | grep _spec \
+    | xargs bundle exec rspec
+COMMAND
+
+system(command)
