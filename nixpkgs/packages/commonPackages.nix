@@ -2,7 +2,6 @@
 with pkgsUnstable;
 [
   asdf-vm
-  autojump
   bat
   bitwarden-cli
   buildkite-agent

@@ -54,7 +54,7 @@ in
   # make it same as bash output.
   ########################################
   NNN_BMS = "d:~/dev;D:~/Downloads/";
-  NNN_PLUG = "j:autojump;f:fzcd;o:fzopen;p:preview-tui";
+  NNN_PLUG = "f:fzcd;o:fzopen;p:preview-tui";
   NNN_TRASH = 1;
 
   ########################################
