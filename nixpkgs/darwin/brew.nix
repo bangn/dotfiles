@@ -5,7 +5,7 @@
   homebrew = {
     enable = true;
     autoUpdate = true;
-    cleanup = "none";
+    cleanup = "uninstall";
     global = {
       brewfile = true;
       noLock = true;
@@ -23,31 +23,28 @@
 
     brews = [
       "automake"
-      "awscli"
+      "bash-completion@2"
       "cmake"
+      "coreutils"
       "gettext"
-      "gradle"
-      "imagemagick"
-      "jq"
+      "libtermkey"
       "libtool"
+      "libusb"
+      "libuv"
       "libxmlsec1"
+      "libyaml"
       "llvm@12"
+      "luajit-openresty"
       "mas"
+      "msgpack"
       "ninja"
-      "pkg-config"
-      "postgresql@12"
-      "teamookla/speedtest/speedtest"
-      "theseal/ssh-askpass/ssh-askpass"
-      "automake"
-      "cmake"
-      "gettext"
-      "libtool"
-      "libxmlsec1"
       "ninja"
       "pkg-config"
       "shared-mime-info"
       "starship"
       "watch"
+      "zlib"
+      "zstd"
     ];
 
     casks = [
