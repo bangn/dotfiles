@@ -25,6 +25,7 @@
 
     brews = [
       "automake"
+      "awscli"
       "bash-completion@2"
       "cmake"
       "coreutils"
@@ -44,7 +45,7 @@
       "ninja"
       "pam-reattach"
       "pkg-config"
-      "shared-mime-info"
+      "pkg-config"
       "starship"
       "tree-sitter"
       "watch"
