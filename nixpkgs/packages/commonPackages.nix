@@ -4,6 +4,7 @@ with pkgsUnstable;
   asdf-vm
   bat
   bitwarden-cli
+  buf
   buildkite-agent
   buildkite-cli
   caddy
