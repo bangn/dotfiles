@@ -2,12 +2,12 @@ local vim_g = vim.g
 local vars = require("utils.vars")
 
 vim_g.ale_linters = {
-	sh = { "shellcheck" },
-	ruby = { "rufo", "rubocop" },
 	elixir = { "credo" },
 	haskell = { "hlint" },
-	lua = { "luacheck" },
 	json = { "jsonlint", "jq" },
+	lua = { "luacheck" },
+	ruby = { "rufo", "rubocop" },
+	sh = { "shellcheck" },
 }
 vim_g.ale_fixers = {
 	["*"] = { "remove_trailing_lines", "trim_whitespace" },
@@ -19,6 +19,7 @@ vim_g.ale_fixers = {
 	lua = { "stylua" },
 	markdown = { "prettier" },
 	nix = { "nixpkgs-fmt" },
+	proto = { "buf-format" },
 	python = { "yapf" },
 	ruby = { "rufo", "rubocop" },
 	sh = { "shfmt" },
