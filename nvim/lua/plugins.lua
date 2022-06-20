@@ -66,6 +66,12 @@ return packer.startup({
 		use({ "wsdjeg/vim-fetch" })
 
 		use({
+			"kevinhwang91/nvim-ufo",
+			requires = "kevinhwang91/promise-async",
+			config = [[require("config.ufo")]],
+		})
+
+		use({
 			"nvim-treesitter/nvim-treesitter",
 			run = ":TSUpdate",
 			config = [[require("config.nvim-treesitter")]],
