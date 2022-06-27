@@ -59,6 +59,7 @@ with pkgsUnstable;
   terraform-ls
   terraform_0_13
   tig
+  tldr
   trash-cli
   tree
   tree-sitter
