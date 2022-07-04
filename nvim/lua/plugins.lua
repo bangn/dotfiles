@@ -23,7 +23,7 @@ return packer.startup({
 	function(use)
 		use({ "wbthomason/packer.nvim" })
 
-		use({ "arcticicestudio/nord-vim", config = [[require("config.nord-vim")]] })
+		use({ "arcticicestudio/nord-vim", branch = "main", config = [[require("config.nord-vim")]] })
 		use({ "christoomey/vim-tmux-navigator" })
 		use({ "danilamihailov/beacon.nvim" })
 		use({ "dln/avro-vim" })
@@ -113,7 +113,7 @@ return packer.startup({
 		})
 		use({
 			"iamcco/markdown-preview.nvim",
-			run = [[sh -c 'cd app && rm yarn.lock && yarn install']],
+			run = "cd app && git checkout app/yarn.lock && yarn install",
 			ft = { "markdown" },
 			config = [[require("config.markdown-preview")]],
 		})
