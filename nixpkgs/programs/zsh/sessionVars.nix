@@ -42,6 +42,7 @@ in
   ########################################
   PGUSER = "postgres";
   PGHOST = "localhost";
+  PGPASSWORD = "password";
 
   ########################################
   # Change output of `time` command format
