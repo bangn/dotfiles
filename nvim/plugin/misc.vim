@@ -72,7 +72,7 @@ call wilder#set_option('pipeline', [
       \     ],
       \     wilder#python_file_finder_pipeline({
       \       'file_command': {_, arg -> stridx(arg, '.') != -1 ? ['fd', '-tf', '-H'] : ['fd', '-tf']},
-      \       'dir_command': ['fdfind', '-td'],
+      \       'dir_command': ['fd', '-td'],
       \       'filters': ['fuzzy_filter', 'difflib_sorter'],
       \       'cache_timestamp': {-> 1},
       \     }),
