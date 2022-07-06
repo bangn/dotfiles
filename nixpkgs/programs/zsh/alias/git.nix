@@ -5,6 +5,7 @@
 
   gb = "git branch";
   gba = "git branch -a";
+  gbc = "git clean-branches -f";
   gbd = "git branch -d";
 
   gca = "git commit --amend";
