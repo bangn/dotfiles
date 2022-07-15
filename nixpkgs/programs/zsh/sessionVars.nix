@@ -33,7 +33,7 @@ in
   # Editor
   ########################################
   EDITOR = "nvim";
-  MANPAGER = "nvim +'set ft=man' -";
+  MANPAGER = "nvim +Man!";
   SUDO_ASKPASS = "/usr/bin/ssh-askpass";
   VISUAL = "nvim";
 
