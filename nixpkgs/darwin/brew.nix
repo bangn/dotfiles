@@ -43,6 +43,7 @@
       "mas"
       "msgpack"
       "ninja"
+      "overmind"
       "pam-reattach"
       "pkg-config"
       "pkg-config"
