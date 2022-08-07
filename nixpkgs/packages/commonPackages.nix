@@ -58,7 +58,7 @@ with pkgsUnstable;
   stylish-haskell
   stylua
   terraform-ls
-  terraform_0_13
+  terraform
   tig
   tldr
   trash-cli
