@@ -21,7 +21,6 @@ with pkgsUnstable;
   github-cli
   google-cloud-sdk
   gopls
-  gradle_7
   graphviz
   hlint
   htop
