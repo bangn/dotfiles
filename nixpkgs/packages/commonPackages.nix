@@ -59,7 +59,6 @@ with pkgsUnstable;
   stylua
   terraform
   terraform-ls
-  terraform
   tig
   tldr
   trash-cli
