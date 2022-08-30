@@ -29,7 +29,6 @@ return packer.startup({
 		use({ "dln/avro-vim" })
 		use({ "fatih/vim-go", config = [[require("config.vim-go")]] })
 		use({ "folke/zen-mode.nvim", config = [[require("config.zen-mode")]] })
-		use({ "gelguy/wilder.nvim", requires = { "romgrk/fzy-lua-native" }, run = ":UpdateRemotePlugins" })
 		use({ "godlygeek/tabular" })
 		use({ "hashivim/vim-terraform", config = [[require("config.vim-terraform")]] })
 		use({ "ironhouzi/starlite-nvim", config = [[require("config.starlite-nvim")]] })
@@ -62,6 +61,13 @@ return packer.startup({
 		use({ "w0rp/ale", config = [[require("config.ale")]] })
 		use({ "wellle/targets.vim" })
 		use({ "wsdjeg/vim-fetch" })
+
+		use({
+			"gelguy/wilder.nvim",
+			requires = { "romgrk/fzy-lua-native" },
+			run = ":UpdateRemotePlugins",
+			config = [[require("config.wilder")]],
+		})
 
 		use({
 			"kevinhwang91/nvim-ufo",
