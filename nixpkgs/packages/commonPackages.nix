@@ -20,7 +20,7 @@ with pkgsUnstable;
   gitAndTools.diff-so-fancy
   github-cli
   google-cloud-sdk
-  gradle_7
+  gopls
   graphviz
   hlint
   htop
@@ -57,8 +57,8 @@ with pkgsUnstable;
   stow
   stylish-haskell
   stylua
+  terraform
   terraform-ls
-  terraform_0_13
   tig
   tldr
   trash-cli
