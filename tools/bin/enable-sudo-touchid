@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+
+# shellcheck disable=SC2143
+if [[ "$(uname)" == 'Darwin' ]] && [[ "$(uname -a | grep arm)" ]] && ! grep 'pam_tid.so' /etc/pam.d/sudo --silent; then
+  echo "Enable TouchId for terminal and tmux"
+  sudo sed -i -e '1s;^;auth       sufficient     pam_tid.so\n;' /etc/pam.d/sudo
+
+  PAM_REATTACH="/opt/homebrew/lib/pam/pam_reattach.so"
+  if test -f "$PAM_REATTACH"; then
+    sudo sed -i -e "1s;^;auth       optional       $PAM_REATTACH\n;" /etc/pam.d/sudo
+  fi
+fi

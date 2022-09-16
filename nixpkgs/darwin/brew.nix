@@ -40,7 +40,7 @@
       "mas"
       "msgpack"
       "ninja"
-      "overmind"
+      "pam-reattach"
       "pkg-config"
       "shared-mime-info"
       "starship"
