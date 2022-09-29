@@ -1,7 +1,7 @@
 local vim_wo = vim.wo
 
 vim_wo.foldcolumn = "1"
-vim_wo.foldlevel = 10
+vim_wo.foldlevel = 15
 vim_wo.foldenable = true
 
 local ftMap = {
