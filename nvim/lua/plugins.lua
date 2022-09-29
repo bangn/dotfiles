@@ -45,6 +45,7 @@ return packer.startup({
 		use({ "ntpeters/vim-better-whitespace" })
 		use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 		use({ "nvim-treesitter/nvim-treesitter-textobjects", requires = "nvim-treesitter/nvim-treesitter" })
+		use({ "pantharshit00/vim-prisma" })
 		use({ "sheerun/vim-polyglot" })
 		use({ "Shougo/vimproc.vim", run = "make" })
 		use({ "sindrets/diffview.nvim", config = [[require("config.diffview")]] })
