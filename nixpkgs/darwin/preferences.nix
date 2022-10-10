@@ -25,8 +25,8 @@
 
       dock = {
         autohide = true;
-        autohide-delay = "0.0";
-        autohide-time-modifier = "1.0";
+        autohide-delay = 0.0;
+        autohide-time-modifier = 1.0;
         mru-spaces = false;
         orientation = "bottom";
         show-process-indicators = true;
@@ -46,7 +46,7 @@
 
       NSGlobalDomain = {
         "com.apple.sound.beep.feedback" = 0;
-        "com.apple.sound.beep.volume" = "0.000";
+        "com.apple.sound.beep.volume" = 0.000;
         AppleShowAllExtensions = true;
         AppleShowScrollBars = "Automatic";
       };
