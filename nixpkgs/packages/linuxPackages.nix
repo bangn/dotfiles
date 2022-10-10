@@ -8,7 +8,7 @@ with pkgsUnstable;
   google-chrome
   kdiff3
   keybase-gui
-  mesa_drivers
+  mesa.drivers
   peek
   pinta
   postman

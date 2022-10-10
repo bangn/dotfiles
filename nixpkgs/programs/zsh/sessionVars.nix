@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  drivers = [ pkgs.mesa_drivers ];
+  drivers = [ pkgs.mesa.drivers ];
   fdOptions = builtins.concatStringsSep " " [
     "--ignore-case"
     "--hidden"
