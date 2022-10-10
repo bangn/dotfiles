@@ -4,11 +4,14 @@
 
   homebrew = {
     enable = true;
-    autoUpdate = true;
-    cleanup = "uninstall";
+    onActivation = {
+      cleanup = "uninstall";
+      autoUpdate = true;
+      upgrade = true;
+    };
     global = {
       brewfile = true;
-      noLock = true;
+      lockfiles = true;
     };
 
     taps = [
