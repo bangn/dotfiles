@@ -80,6 +80,20 @@ hs.hotkey.bind(metaKey, "j", function()
 	win:setFrame(f)
 end)
 
+-- Middle of screen
+hs.hotkey.bind(metaKey, "m", function()
+	local win = hs.window.focusedWindow()
+	local f = win:frame()
+	local screen = win:screen()
+	local max = screen:frame()
+
+	f.x = max.x
+	f.y = max.y + (max.h / 5)
+	f.w = max.w
+	f.h = max.h * 2 / 3
+	win:setFrame(f)
+end)
+
 -- Move to next screen
 hs.hotkey.bind(metaKey, "n", function()
 	local win = hs.window.focusedWindow()
