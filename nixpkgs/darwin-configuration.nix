@@ -1,12 +1,12 @@
 { inputs, config, pkgs, lib, ... }:
 let
-  username = "bang.nguyen";
+  username = "bangn";
   homeDirectory = "/Users/${username}";
 in
 {
-  users.users."bang.nguyen".name = "${username}";
-  users.users."bang.nguyen".home = homeDirectory;
-  home-manager.users."bang.nguyen" = (import ./home.nix);
+  users.users."${username}".name = "${username}";
+  users.users."${username}".home = homeDirectory;
+  home-manager.users."${username}" = (import ./home.nix);
 
   environment = {
     loginShell = pkgs.zsh;
