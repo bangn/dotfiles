@@ -1,4 +1,5 @@
 metaKey = { "cmd", "ctrl" }
+movementDistance = 30
 hs.application.enableSpotlightForNameSearches(true)
 
 --------------------------------------------------------------------------------
@@ -110,4 +111,36 @@ hs.hotkey.bind(metaKey, "p", function()
 	local previousScreen = screen:previous()
 
 	win:moveToScreen(previousScreen)
+end)
+
+hs.hotkey.bind(metaKey, "Up", function()
+	local win = hs.window.focusedWindow()
+	local f = win:frame()
+
+	f.y = f.y - movementDistance
+	win:setFrame(f)
+end)
+
+hs.hotkey.bind(metaKey, "Down", function()
+	local win = hs.window.focusedWindow()
+	local f = win:frame()
+
+	f.y = f.y + movementDistance
+	win:setFrame(f)
+end)
+
+hs.hotkey.bind(metaKey, "Left", function()
+	local win = hs.window.focusedWindow()
+	local f = win:frame()
+
+	f.x = f.x - movementDistance
+	win:setFrame(f)
+end)
+
+hs.hotkey.bind(metaKey, "Right", function()
+	local win = hs.window.focusedWindow()
+	local f = win:frame()
+
+	f.x = f.x + movementDistance
+	win:setFrame(f)
 end)
