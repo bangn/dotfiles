@@ -43,3 +43,20 @@ vars.remap.fn("t", "<leader>x", "<C-\\><C-n>:q!<CR>", vars.remap.opts)
 -- CTRL-U, CTRL-W in insert mode deletes a lot. Put an undo-point before it.
 vars.remap.fn("i", "<C-u>", "<C-g>u<C-u>", vars.remap.opts)
 vars.remap.fn("i", "<C-w>", "<C-g>u<C-w>", vars.remap.opts)
+
+-- tabs
+vars.remap.fn("n", "<C-t>", ":tabnew<CR>", { noremap = true })
+vars.remap.fn("n", "<C-w>", ":tabclose<CR>", { noremap = true })
+vars.remap.fn("n", "tl", "gt", { noremap = true })
+vars.remap.fn("n", "th", "gT", { noremap = true })
+
+vars.remap.fn("n", "t1", " 1gt", { noremap = true })
+vars.remap.fn("n", "t2", " 2gt", { noremap = true })
+vars.remap.fn("n", "t3", " 3gt", { noremap = true })
+vars.remap.fn("n", "t4", " 4gt", { noremap = true })
+vars.remap.fn("n", "t5", " 5gt", { noremap = true })
+vars.remap.fn("n", "t6", " 6gt", { noremap = true })
+vars.remap.fn("n", "t7", " 7gt", { noremap = true })
+vars.remap.fn("n", "t8", " 8gt", { noremap = true })
+vars.remap.fn("n", "t9", " 9gt", { noremap = true })
+vars.remap.fn("n", "t0", " 10gt", { noremap = true })
