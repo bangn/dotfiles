@@ -15,7 +15,6 @@ in
   };
 
   services.nix-daemon.enable = true;
-  programs.zsh.enable = true;
   nix.package = pkgs.nix;
 
   imports = [
