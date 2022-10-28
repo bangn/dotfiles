@@ -21,6 +21,7 @@ with pkgsUnstable; [
   google-cloud-sdk
   gopls
   graphviz
+  hadolint
   hlint
   htop
   jdk11
