@@ -16,7 +16,10 @@ in
 
   services.nix-daemon.enable = true;
   nix.package = pkgs.nix;
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    promptInit = "autoload -U promptinit && promptinit";
+  };
 
   imports = [
     (import ./darwin/preferences.nix { inherit config pkgs homeDirectory; })
