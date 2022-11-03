@@ -7,7 +7,9 @@ export_path() {
 ################################################################################
 # Use nord for terminal color
 ################################################################################
-test "$HOME/dircolors.nord" && eval $(dircolors "$HOME/dircolors.nord")
+if [[ uname == "Linux" ]]; then
+  test "$HOME/dircolors.nord" && eval $(dircolors "$HOME/dircolors.nord")
+fi
 
 ################################################################################
 # nix
