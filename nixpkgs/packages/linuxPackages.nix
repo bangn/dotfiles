@@ -3,6 +3,9 @@ with pkgsUnstable;
 [
   awscli2
   calibre
+  cmake
+  coreutils-full
+  curlFull
   firefox
   glibcLocales
   google-chrome
