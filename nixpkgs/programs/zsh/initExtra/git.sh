@@ -84,3 +84,13 @@ gstp() {
 gstsh() {
   git stash show -p "stash@{${1:-0}}"
 }
+
+branchme() {
+  branch_name="$(whoami)/$(date -u +%Y-%m-%d-T%H-%M-%S)"
+
+  if ! [[ $# == 0 ]]; then
+    branch_name="$branch_name-$1"
+  fi
+
+  git checkout -b "$branch_name"
+}
