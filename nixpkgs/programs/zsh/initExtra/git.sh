@@ -86,7 +86,7 @@ gstsh() {
 }
 
 branchme() {
-  branch_name="$(whoami)/$(date -u +%Y-%m-%d-T%H-%M-%S)"
+  branch_name="$(whoami)/$(date -u +%Y-%m-%d)"
 
   if ! [[ $# == 0 ]]; then
     branch_name="$branch_name-$1"
