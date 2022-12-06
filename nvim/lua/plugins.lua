@@ -48,7 +48,6 @@ return packer.startup({
 		use({ "pantharshit00/vim-prisma" })
 		use({ "sheerun/vim-polyglot" })
 		use({ "Shougo/vimproc.vim", run = "make" })
-		use({ "sindrets/diffview.nvim", config = [[require("config.diffview")]] })
 		use({ "tpope/vim-abolish" })
 		use({ "tpope/vim-bundler" })
 		use({ "tpope/vim-commentary", config = [[require("config.vim-commentary")]] })
@@ -108,7 +107,7 @@ return packer.startup({
 
 		use({
 			"hoob3rt/lualine.nvim",
-			requires = { "kyazdani42/nvim-web-devicons", opt = true },
+			requires = { "nvim-tree/nvim-web-devicons", opt = true },
 			config = [[require("config.lualine")]],
 		})
 
@@ -124,9 +123,15 @@ return packer.startup({
 		})
 
 		use({
-			"kyazdani42/nvim-tree.lua",
-			requires = { "kyazdani42/nvim-web-devicons" },
+			"nvim-tree/nvim-tree.lua",
+			requires = { "nvim-tree/nvim-web-devicons" },
 			config = [[require("config.nvim-tree")]],
+		})
+
+		use({
+			"sindrets/diffview.nvim",
+			requires = { "nvim-tree/nvim-web-devicons" },
+			config = [[require("config.diffview")]],
 		})
 	end,
 	config = {
