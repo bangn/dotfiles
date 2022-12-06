@@ -44,6 +44,7 @@ return packer.startup({
 		use({ "neovimhaskell/haskell-vim", config = [[require("config.vim-haskell")]] })
 		use({ "ntpeters/vim-better-whitespace" })
 		use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+		use({ "nvim-tree/nvim-web-devicons" })
 		use({ "nvim-treesitter/nvim-treesitter-textobjects", requires = "nvim-treesitter/nvim-treesitter" })
 		use({ "pantharshit00/vim-prisma" })
 		use({ "sheerun/vim-polyglot" })
