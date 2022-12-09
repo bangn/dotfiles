@@ -4,8 +4,10 @@ let
   homeDirectory = "/Users/${username}";
 in
 {
-  users.users."${username}".name = "${username}";
-  users.users."${username}".home = homeDirectory;
+  users.users."${username}" = {
+    name = "${username}";
+    home = homeDirectory;
+  };
   home-manager.users."${username}" = (import ./home.nix);
 
   environment = {
