@@ -94,7 +94,7 @@ font:
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
   # false.
-  use_thin_strokes: true
+  # use_thin_strokes: true
 
 debug:
   # Should display the render timer
@@ -122,7 +122,7 @@ colors:
     matches:
       foreground: CellBackground
       background: "#88c0d0"
-    bar:
+    footer_bar:
       background: "#434c5e"
       foreground: "#d8dee9"
   normal:
