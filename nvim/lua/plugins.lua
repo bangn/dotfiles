@@ -47,6 +47,7 @@ return packer.startup({
 		use({ "nvim-tree/nvim-web-devicons" })
 		use({ "nvim-treesitter/nvim-treesitter-textobjects", requires = "nvim-treesitter/nvim-treesitter" })
 		use({ "pantharshit00/vim-prisma" })
+		use({ "ruanyl/vim-gh-line" })
 		use({ "sheerun/vim-polyglot" })
 		use({ "Shougo/vimproc.vim", run = "make" })
 		use({ "tpope/vim-abolish" })
