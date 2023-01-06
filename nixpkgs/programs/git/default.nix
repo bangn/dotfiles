@@ -81,71 +81,67 @@ in {
       "https://github.com" = { insteadOf = "git://github.com"; };
       "git@github.com:" = { insteadOf = "https://github.com"; };
 
-      "ssh://org-49461806@github.com/squareup/" = {
-        insteadOf = "https://github.com/squareup/";
-      };
-
       user = {
         login = username;
         signingkey = "F06A6429E41ACFBC";
       };
     };
-
-    ignores = [
-      # Ignored files
-      "*.beam"
-      "*.tags"
-      "*.vimfuzzyfinder"
-      ".env"
-      ".envrc"
-      ".smithrc"
-      ".talismanrc"
-      ".uuid"
-      "npm-debug.log"
-      "tags"
-      "tags.*"
-      "Session.vim*"
-
-      # Ignore directories
-      "nvim/bakup"
-      "nvim/swap"
-      "nvim/undo"
-      "nvim/autoload/"
-      ".netrwhist"
-      "bundle"
-      "node_modules"
-      "tmp"
-
-      # Ignore asdf local package version
-      ".tool-versions"
-
-      # Haskell/stack compiler output
-      ".stack-work"
-      ".stack"
-
-      # bakup directory
-      "bakup"
-
-      # neuron dir
-      ".neuron"
-
-      # terraform
-      ".terraform"
-
-      # macOS
-      ".DS_Store"
-
-      # rspec tracer cache files
-      "*/rspec_tracer_cache/"
-      "*/rspec_tracer_coverage/"
-      "*/rspec_tracer_report/"
-
-      # text editor / IDE
-      "*.iml"
-      "*.swp"
-      "*.swo"
-      ".idea"
-      ".rbx"
-    ];
   };
+
+  ignores = [
+    # Ignored files
+    "*.beam"
+    "*.tags"
+    "*.vimfuzzyfinder"
+    ".env"
+    ".envrc"
+    ".smithrc"
+    ".talismanrc"
+    ".uuid"
+    "npm-debug.log"
+    "tags"
+    "tags.*"
+    "Session.vim*"
+
+    # Ignore directories
+    "nvim/bakup"
+    "nvim/swap"
+    "nvim/undo"
+    "nvim/autoload/"
+    ".netrwhist"
+    "bundle"
+    "node_modules"
+    "tmp"
+
+    # Ignore asdf local package version
+    ".tool-versions"
+
+    # Haskell/stack compiler output
+    ".stack-work"
+    ".stack"
+
+    # bakup directory
+    "bakup"
+
+    # neuron dir
+    ".neuron"
+
+    # terraform
+    ".terraform"
+
+    # macOS
+    ".DS_Store"
+
+    # rspec tracer cache files
+    "*/rspec_tracer_cache/"
+    "*/rspec_tracer_coverage/"
+    "*/rspec_tracer_report/"
+
+    # text editor / IDE
+    "*.iml"
+    "*.swp"
+    "*.swo"
+    ".idea"
+    ".rbx"
+  ];
 }
