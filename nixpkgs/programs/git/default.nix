@@ -77,14 +77,11 @@ in {
 
     status = { showUntrackedFiles = "all"; };
 
-    url = {
-      "https://github.com" = { insteadOf = "git://github.com"; };
-      "git@github.com:" = { insteadOf = "https://github.com"; };
+    url = { "git@github.com:" = { insteadOf = "https://github.com"; }; };
 
-      user = {
-        login = username;
-        signingkey = "F06A6429E41ACFBC";
-      };
+    user = {
+      login = username;
+      signingkey = "F06A6429E41ACFBC";
     };
   };
 
