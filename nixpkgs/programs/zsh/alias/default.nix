@@ -5,9 +5,8 @@ let
   gitAliases = import ./git.nix;
   neuronAliases = import ./neuron.nix;
   k8sAliases = import ./k8s.nix;
-  isLinux = ! (isNull (match ".*linux.*" currentSystem));
-in
-{
+  isLinux = !(isNull (match ".*linux.*" currentSystem));
+in {
   # TODO: Dynamically get dotDir
   ssp = "source ~/.config/zsh/.zshrc";
 
@@ -23,22 +22,20 @@ in
   tf = "terraform";
   vim = "nvim";
 
-  l =
-    let
-      option = "--color=auto -Glah";
-      command = "ls";
-    in
-    "${command} ${option}";
+  l = let
+    option = "--color=auto -Glah";
+    command = "ls";
+  in "${command} ${option}";
 
   grep = builtins.concatStringsSep " " [
     "grep"
-    "--color=auto --exclude-dir=\"*snapshots*\""
+    ''--color=auto --exclude-dir="*snapshots*"''
     "--exclude-dir=.git"
     "--exclude-dir=.idea"
     "--exclude-dir=.next"
     "--exclude-dir=.stack"
     "--exclude-dir=.stack-work"
-    "--exclude-dir=\"dist*\""
+    ''--exclude-dir="dist*"''
     "--exclude-dir=_build"
     "--exclude-dir=build"
     "--exclude-dir=coverage"
@@ -53,5 +50,5 @@ in
     "--exclude-dir=tmp"
     "--exclude=tags"
   ];
-} // dockerAliases // bundlerAliases // gitAliases // neuronAliases //
-k8sAliases
+} // dockerAliases // bundlerAliases // gitAliases // neuronAliases
+// k8sAliases

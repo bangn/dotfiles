@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, homeDir, ... }:
 
 {
   # Let Home Manager install and manage itself.
@@ -7,7 +7,10 @@
   direnv = import ./direnv { inherit pkgs; };
   git = import ./git { inherit pkgs; };
   tmux = import ./tmux { inherit pkgs; };
-  zsh = import ./zsh { inherit pkgs; };
+  zsh = import ./zsh {
+    inherit pkgs;
+    homeDir = homeDir;
+  };
   lazygit = import ./lazygit { inherit pkgs; };
   z-lua = {
     enable = true;

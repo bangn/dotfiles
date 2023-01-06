@@ -70,20 +70,14 @@
     }
   ];
 
-  initExtra =
-    let extra = import ./initExtra;
-    in
-    ''
-      autoload -U zmv
-      setopt INC_APPEND_HISTORY
-    ''
-    +
-    ''
-      source "${pkgs.asdf-vm}/share/asdf-vm/asdf.sh"
-      source "${pkgs.fzf}/share/fzf/completion.zsh"
-      source "${pkgs.fzf}/share/fzf/key-bindings.zsh"
-      fpath=(${pkgs.asdf-vm}/completions $fpath)
-    ''
-    + extra
-  ;
+  initExtra = let extra = import ./initExtra;
+  in ''
+    autoload -U zmv
+    setopt INC_APPEND_HISTORY
+  '' + ''
+    source "${pkgs.asdf-vm}/share/asdf-vm/asdf.sh"
+    source "${pkgs.fzf}/share/fzf/completion.zsh"
+    source "${pkgs.fzf}/share/fzf/key-bindings.zsh"
+    fpath=(${pkgs.asdf-vm}/completions $fpath)
+  '' + extra;
 }

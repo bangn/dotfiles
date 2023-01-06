@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   ".editrc".source = ./.editrc;
   ".gitmessage.sample".source = ./git/gitmessage.sample;
   ".inputrc".source = ./.inputrc;
@@ -31,13 +30,12 @@
   ".mdlrc".source = ./mdl/.mdlrc;
   "mdl/style.rb".source = ./mdl/style.rb;
 
-  "dircolors.nord".source = pkgs.fetchFromGitHub
-    {
-      owner = "arcticicestudio";
-      repo = "nord-dircolors";
-      rev = "master";
-      sha256 = "1c9fa6dip266z6hfqd5nan5v6qjp6dg074lvk4rxisirm26djlzz";
-    } + "/src/dir_colors";
+  "dircolors.nord".source = pkgs.fetchFromGitHub {
+    owner = "arcticicestudio";
+    repo = "nord-dircolors";
+    rev = "master";
+    sha256 = "1c9fa6dip266z6hfqd5nan5v6qjp6dg074lvk4rxisirm26djlzz";
+  } + "/src/dir_colors";
 
   # Hammerspoon
   ".hammerspoon/init.lua".source = ./hammerspoon/init.lua;
