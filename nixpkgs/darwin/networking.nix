@@ -1,4 +1,1 @@
-{ ... }:
-{
-  networking = { };
-}
+{ ... }: { networking = { }; }

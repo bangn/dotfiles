@@ -1,13 +1,11 @@
 { pkgs, config, ... }:
 with builtins;
 let
-  isLinux = ! (isNull (match ".*linux.*" currentSystem));
+  isLinux = !(isNull (match ".*linux.*" currentSystem));
   pkgsUnstable = import <nixpkgs> { };
   username = "bangn";
   homeDir = if isLinux then "/home/${username}" else "/Users/${username}";
-in
-with pkgsUnstable;
-{
+in with pkgsUnstable; {
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
@@ -32,20 +30,25 @@ with pkgsUnstable;
 
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {
-      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+      url =
+        "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
     }))
   ];
   home.packages = import ./packages { inherit pkgs pkgsUnstable; };
 
-  home.file =
-    let
-      configFiles = import ./config { inherit pkgs; };
-      desktop = import ./desktop { inherit pkgs; };
-      homedot = import ./homedot { inherit pkgs; };
-    in
-    homedot // configFiles // desktop;
+  home.file = let
+    configFiles = import ./config {
+      inherit pkgs;
+      isLinux = isLinux;
+    };
+    desktop = import ./desktop { inherit pkgs; };
+    homedot = import ./homedot { inherit pkgs; };
+  in homedot // configFiles // desktop;
 
-  programs = import ./programs { pkgs = pkgsUnstable; };
+  programs = import ./programs {
+    pkgs = pkgsUnstable;
+    homeDir = homeDir;
+  };
   news.display = "silent";
 
   xdg = {
@@ -57,20 +60,16 @@ with pkgsUnstable;
     };
   };
 
-  services =
-    if isLinux then {
-      keybase = { enable = true; };
-      flameshot = { enable = true; };
-    } else { };
+  services = if isLinux then {
+    keybase = { enable = true; };
+    flameshot = { enable = true; };
+  } else
+    { };
 
-  xresources.extraConfig = builtins.readFile
-    (
-      pkgs.fetchFromGitHub
-        {
-          owner = "arcticicestudio";
-          repo = "nord-xresources";
-          rev = "36fadf13c00ac08913ee8f297f038fa2733fd5ed";
-          sha256 = "1bhlhlk5axiqpm6l2qaij0cz4a53i9hcfsvc3hw9ayn75034xr93";
-        } + "/src/nord"
-    );
+  xresources.extraConfig = builtins.readFile (pkgs.fetchFromGitHub {
+    owner = "arcticicestudio";
+    repo = "nord-xresources";
+    rev = "36fadf13c00ac08913ee8f297f038fa2733fd5ed";
+    sha256 = "1bhlhlk5axiqpm6l2qaij0cz4a53i9hcfsvc3hw9ayn75034xr93";
+  } + "/src/nord");
 }

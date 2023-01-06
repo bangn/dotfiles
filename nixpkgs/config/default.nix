@@ -1,6 +1,8 @@
-{ pkgs, ... }:
-{
-  ".config/alacritty/alacritty.yml".source = ./alacritty/alacritty.yml;
+{ pkgs, isLinux, ... }: {
+  ".config/alacritty/alacritty.yml".source = if isLinux then
+    ./alacritty/alacritty.yml
+  else
+    ./alacritty/alacritty-macos.yml;
   ".config/brittany/brittany.yml".source = ./brittany/config.yaml;
   ".config/i3/config".source = ./i3/config;
   ".config/i3status/config".source = ./i3status/config;

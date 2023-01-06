@@ -36,17 +36,13 @@
         tilesize = 25;
       };
 
-      spaces = {
-        spans-displays = false;
-      };
+      spaces = { spans-displays = false; };
 
-      screencapture = {
-        location = "${homeDirectory}/Pictures";
-      };
+      screencapture = { location = "${homeDirectory}/Pictures"; };
 
       NSGlobalDomain = {
         "com.apple.sound.beep.feedback" = 0;
-        "com.apple.sound.beep.volume" = 0.000;
+        "com.apple.sound.beep.volume" = 0.0;
         AppleShowAllExtensions = true;
         AppleShowScrollBars = "Automatic";
       };

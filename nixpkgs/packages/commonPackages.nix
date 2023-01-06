@@ -1,6 +1,5 @@
 { pkgs, pkgsUnstable, ... }:
-with pkgsUnstable;
-[
+with pkgsUnstable; [
   asdf-vm
   bat
   bitwarden-cli
@@ -36,6 +35,7 @@ with pkgsUnstable;
   moreutils
   ncdu
   neuron-notes
+  nixfmt
   nixpkgs-fmt
   nnn
   pandoc

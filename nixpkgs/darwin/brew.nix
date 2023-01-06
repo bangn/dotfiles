@@ -1,5 +1,4 @@
-{ inputs, config, pkgs, ... }:
-{
+{ inputs, config, pkgs, ... }: {
   environment = { };
 
   homebrew = {
