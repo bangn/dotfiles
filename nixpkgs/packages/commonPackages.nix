@@ -61,6 +61,7 @@ with pkgsUnstable; [
   trash-cli
   tree
   tree-sitter
+  wget
   xclip
   yaml-language-server
   yamllint
