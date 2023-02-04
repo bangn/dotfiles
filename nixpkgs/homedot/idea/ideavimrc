@@ -20,4 +20,8 @@ noremap <leader>x :x<CR>
 
 map <C-p> <Action>(GotoFile)
 map <C-a> <Action>(GotoAction)
+map <C-0> <Action>(EditorResetFontSize)
+map <C-=> <Action>(EditorIncreaseFontSize)
+map <C--> <Action>(EditorDecreaseFontSize)
+map <C-t> <Action>(ActivateTerminalToolWindow)
 map <leader>gh <Action>(Github.Open.In.Browser)
