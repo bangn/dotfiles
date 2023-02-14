@@ -18,10 +18,11 @@ noremap <leader>sv :source ~/.ideavimrc<CR>
 noremap <leader>vs <C-w>v
 noremap <leader>x :x<CR>
 
-map <C-p> <Action>(GotoFile)
-map <C-a> <Action>(GotoAction)
+map <C--> <Action>(EditorDecreaseFontSize)
 map <C-0> <Action>(EditorResetFontSize)
 map <C-=> <Action>(EditorIncreaseFontSize)
-map <C--> <Action>(EditorDecreaseFontSize)
+map <C-a> <Action>(GotoAction)
+map <C-p> <Action>(GotoFile)
 map <C-t> <Action>(ActivateTerminalToolWindow)
+map <leader>gb <Action>(Annotate)
 map <leader>gh <Action>(Github.Open.In.Browser)
