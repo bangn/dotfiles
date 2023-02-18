@@ -9,6 +9,7 @@ let
     "--exclude _build"
     "--exclude node_modules"
   ];
+
   fzfDefaultCommand =
     builtins.concatStringsSep " " [ "fd" "--type f" fdOptions ];
 
@@ -16,6 +17,7 @@ let
     "--preview"
     "'bat --style=numbers --color=always --line-range :500 {}'"
   ];
+
 in {
   # home-manager
   NIX_PATH = "$HOME/.nix-defexpr/channels\${NIX_PATH:+:}$NIX_PATH";
@@ -68,6 +70,7 @@ in {
   ########################################
   KEYTIMEOUT = 1;
   LSCOLORS = "Gxfxcxdxbxegedabagacad";
+
   ########################################
   # fzf
   ########################################
