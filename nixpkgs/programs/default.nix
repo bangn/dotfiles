@@ -31,12 +31,7 @@
     ];
   };
 
-  z-lua = {
-    enable = true;
-    enableAliases = true;
-    enableZshIntegration = true;
-    options = [ "enhanced" "once" "fzf" ];
-  };
+  zoxide = { enable = true; };
 
   zsh = import ./zsh {
     inherit pkgs;
