@@ -23,6 +23,14 @@
   ".default-npm-packages".source = ./asdf/.default-npm-packages;
   ".tool-versions".source = ./asdf/tool-versions;
 
+  # haskell dotfiles
+  ".ghci".source = ./haskell/.ghci;
+  ".haskeline".source = ./haskell/.haskeline;
+  ".hindent.yaml".source = ./haskell/.hindent.yaml;
+  ".stylish-haskell.yaml".source = ./haskell/.stylish-haskell.yaml;
+  ".summoner.toml".source = ./haskell/.summoner.toml;
+  "floskell.json".source = ./haskell/floskell.json;
+
   # tmuxinantor
   ".tmuxinator/personal.yml".source = ./tmuxinator/personal.yml;
 
