@@ -94,3 +94,55 @@ branchme() {
 
   git checkout -b "$branch_name"
 }
+
+isGitDefaultBranchMaster() {
+  git branch | grep -q master -
+}
+
+gprom() {
+  if isGitDefaultBranchMaster; then
+    git pull --rebase origin master
+  else
+    git pull --rebase origin main
+  fi
+}
+
+gcom() {
+  if isGitDefaultBranchMaster; then
+    git checkout master
+  else
+    git checkout main
+  fi
+}
+
+gdm() {
+  if isGitDefaultBranchMaster; then
+    git diff master
+  else
+    git diff main
+  fi
+}
+
+gdmn() {
+  if isGitDefaultBranchMaster; then
+    git diff master --name-only
+  else
+    git diff main --name-only
+  fi
+}
+
+gdom() {
+  if isGitDefaultBranchMaster; then
+    git diff origin/master
+  else
+    git diff origin/main
+  fi
+}
+
+grim() {
+  if isGitDefaultBranchMaster; then
+    git rebase -i master
+  else
+    git rebase -i main
+  fi
+}
