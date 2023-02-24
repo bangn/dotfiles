@@ -101,48 +101,48 @@ isGitDefaultBranchMaster() {
 
 gprom() {
   if isGitDefaultBranchMaster; then
-    git pull --rebase origin master
+    git pull --rebase origin master "$@"
   else
-    git pull --rebase origin main
+    git pull --rebase origin main "$@"
   fi
 }
 
 gcom() {
   if isGitDefaultBranchMaster; then
-    git checkout master
+    git checkout master "$@"
   else
-    git checkout main
+    git checkout main "$@"
   fi
 }
 
 gdm() {
   if isGitDefaultBranchMaster; then
-    git diff master
+    git diff master "$@"
   else
-    git diff main
+    git diff main "$@"
   fi
 }
 
 gdmn() {
   if isGitDefaultBranchMaster; then
-    git diff master --name-only
+    git diff master --name-only "$@"
   else
-    git diff main --name-only
+    git diff main --name-only "$@"
   fi
 }
 
 gdom() {
   if isGitDefaultBranchMaster; then
-    git diff origin/master
+    git diff origin/master "$@"
   else
-    git diff origin/main
+    git diff origin/main "$@"
   fi
 }
 
 grim() {
   if isGitDefaultBranchMaster; then
-    git rebase -i master
+    git rebase -i master "$@"
   else
-    git rebase -i main
+    git rebase -i main "$@"
   fi
 }
