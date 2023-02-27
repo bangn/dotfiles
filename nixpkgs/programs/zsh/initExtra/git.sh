@@ -146,3 +146,7 @@ grim() {
     git rebase -i main "$@"
   fi
 }
+
+githead() {
+  git rev-parse HEAD
+}
