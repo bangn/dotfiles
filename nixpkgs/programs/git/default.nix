@@ -64,7 +64,6 @@ in {
     diff = { algorithm = "patience"; };
 
     merge = {
-      ff = "only";
       defaultToUpstream = true;
       tool = "kdiff3";
     };
