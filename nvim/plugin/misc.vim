@@ -51,4 +51,11 @@ let s:makecommand=g:plantuml_executable_script." %"
 autocmd Filetype plantuml let &l:makeprg=s:makecommand
 nnoremap <leader>pu :w<CR> :silent make<CR>
 
+
+""""""""""""""""""""""""""""""""""""""""
+" vim-gh-line
+""""""""""""""""""""""""""""""""""""""""
+let g:gh_line_map_default = 1
+let g:gh_line_blame_map_default = 0
+
 " vi: ft=vim
