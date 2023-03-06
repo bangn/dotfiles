@@ -30,8 +30,6 @@
       "cmake"
       "coreutils"
       "gettext"
-      "imagemagick"
-      "jq"
       "libtermkey"
       "libtool"
       "libusb"
