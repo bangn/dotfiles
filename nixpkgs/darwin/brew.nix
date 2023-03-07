@@ -51,6 +51,7 @@
     ];
 
     casks = [
+      "basictex"
       "clipy"
       "firefox-beta"
       "font-hack-nerd-font"
