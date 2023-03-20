@@ -1,1 +1,1 @@
-{ ... }: { networking = { hostName = "macbookpro"; }; }
+{ ... }: { networking = { hostName = "macbookpro-bangn"; }; }
