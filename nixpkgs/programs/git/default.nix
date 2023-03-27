@@ -38,6 +38,7 @@ in {
       editor = "nvim -f";
       commentChar = ",";
       pager = "delta";
+      untrackedCache = true;
     };
 
     delta = {
