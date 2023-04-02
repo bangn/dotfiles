@@ -39,7 +39,6 @@
       "mas"
       "msgpack"
       "ninja"
-      "overmind"
       "pam-reattach"
       "pkg-config"
       "ruby-build"
