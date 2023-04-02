@@ -25,7 +25,6 @@
 
     brews = [
       "automake"
-      "awscli"
       "bash-completion@2"
       "cmake"
       "coreutils"
@@ -45,7 +44,6 @@
       "pkg-config"
       "starship"
       "tree-sitter"
-      "watch"
       "zlib"
       "zstd"
     ];
