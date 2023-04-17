@@ -1,6 +1,9 @@
 local vim_g = vim.g
 local vars = require("utils.vars")
 
+vim_g.loaded_netrw = 1
+vim_g.loaded_netrwPlugin = 1
+
 local tree_cb = require("nvim-tree.config").nvim_tree_callback
 local bindingsList = {
 	{ key = "-", cb = tree_cb("dir_up") },
@@ -43,9 +46,6 @@ require("nvim-tree").setup({
 	hijack_cursor = false,
 	hijack_netrw = true,
 	hijack_unnamed_buffer_when_opening = false,
-	ignore_buffer_on_setup = false,
-	open_on_setup = false,
-	open_on_setup_file = false,
 	open_on_tab = false,
 	sort_by = "name",
 	update_cwd = false,
@@ -95,7 +95,6 @@ require("nvim-tree").setup({
 		update_cwd = false,
 		ignore_list = {},
 	},
-	ignore_ft_on_setup = {},
 	system_open = {
 		cmd = nil,
 		args = {},
