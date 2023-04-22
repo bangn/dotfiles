@@ -52,6 +52,7 @@
       "basictex"
       "clipy"
       "firefox-beta"
+      "flameshot"
       "font-hack-nerd-font"
       "hammerspoon"
       "intellij-idea-ce"
