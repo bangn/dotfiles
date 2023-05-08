@@ -9,3 +9,4 @@ exclude_rule 'MD033' # No inline html
 exclude_rule 'MD041' # First line should be header - Ignore it for neuron
 
 rule 'MD024', allow_different_nesting: true # Multiple headers with the same content
+rule 'MD007', indent: 2
