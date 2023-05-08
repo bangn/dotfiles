@@ -35,7 +35,6 @@ with pkgsUnstable; [
   mkcert
   moreutils
   ncdu
-  neuron-notes
   nixfmt
   nixpkgs-fmt
   nnn
