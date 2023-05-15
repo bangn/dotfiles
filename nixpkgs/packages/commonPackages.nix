@@ -35,6 +35,7 @@ with pkgsUnstable; [
   mkcert
   moreutils
   ncdu
+  ngrok
   nixfmt
   nixpkgs-fmt
   nnn
