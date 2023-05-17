@@ -39,6 +39,7 @@ with pkgsUnstable; [
   nixfmt
   nixpkgs-fmt
   nnn
+  nushell
   pandoc
   pdftk
   plantuml
