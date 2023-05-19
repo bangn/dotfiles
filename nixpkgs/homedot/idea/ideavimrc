@@ -26,6 +26,7 @@ map <C-a> <Action>(GotoAction)
 map <C-p> <Action>(GotoFile)
 map <C-t> <Action>(ActivateTerminalToolWindow)
 
+map <leader>co <Action>(CloseAllEditorsButActive)
 map <leader>d <Action>(DebugClass)
 map <leader>f <Action>(ReformatCode)
 map <leader>gb <Action>(Annotate)
