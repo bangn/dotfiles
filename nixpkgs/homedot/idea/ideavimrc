@@ -38,3 +38,8 @@ map <leader>gw <Action>(Git.Add)
 map <leader>ha <Action>(HideActiveWindow)
 map <leader>oi <Action>(OptimizeImports)
 map <leader>t <Action>(RunClass)
+
+map crc <Action>(StringManipulation.ToCamelCase)
+map crs <Action>(StringManipulation.ToSnakeCase)
+map crm <Action>(StringManipulation.ToPascalCase)
+map crk <Action>(StringManipulation.ToKebabCase)
