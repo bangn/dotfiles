@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, isLinux, ... }:
 let
   drivers = [ pkgs.mesa.drivers ];
   fdOptions = builtins.concatStringsSep " " [
@@ -73,8 +73,11 @@ in {
   ########################################
   # Fix glx issue in nix-shell
   ########################################
-  LIBGL_DRIVERS_PATH = pkgs.lib.makeSearchPathOutput "lib" "lib/dri" drivers;
-  LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath drivers;
+  LIBGL_DRIVERS_PATH = if isLinux then
+    pkgs.lib.makeSearchPathOutput "lib" "lib/dri" drivers
+  else
+    "";
+  LD_LIBRARY_PATH = if isLinux then pkgs.lib.makeLibraryPath drivers else "";
 
   ########################################
   # Fix locale
