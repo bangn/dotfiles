@@ -48,6 +48,7 @@ in with pkgsUnstable; {
   programs = import ./programs {
     pkgs = pkgsUnstable;
     homeDir = homeDir;
+    isLinux = isLinux;
   };
   news.display = "silent";
 

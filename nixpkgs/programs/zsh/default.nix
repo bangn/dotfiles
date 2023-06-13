@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{ pkgs, isLinux, ... }: {
   enable = true;
 
   autocd = true;
@@ -20,7 +18,10 @@
 
   envExtra = "";
 
-  sessionVariables = import ./sessionVars.nix { inherit pkgs; };
+  sessionVariables = import ./sessionVars.nix {
+    inherit pkgs;
+    isLinux = isLinux;
+  };
 
   plugins = [
     {

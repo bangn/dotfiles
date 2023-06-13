@@ -1,4 +1,4 @@
-{ pkgs, homeDir, ... }:
+{ pkgs, homeDir, isLinux, ... }:
 
 {
   # Let Home Manager install and manage itself.
@@ -36,5 +36,6 @@
   zsh = import ./zsh {
     inherit pkgs;
     homeDir = homeDir;
+    isLinux = isLinux;
   };
 }
