@@ -53,4 +53,16 @@
 
   # curl
   ".curlrc".source = ./curl/curlrc;
+
+  # gradle
+  ".gradle/gradle.properties".source = ./gradle/gradle.properties;
+
+  # ideavimrc
+  ".ideavimrc".source = ./idea/ideavimrc;
+
+  # ruby-version
+  ".ruby-version".source = ./ruby-version/.ruby-version;
+
+  # detekt
+  "detekt.yaml".source = ./detekt/detekt.yaml;
 }
