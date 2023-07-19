@@ -8,6 +8,7 @@ with pkgsUnstable; [
   buildkite-agent
   buildkite-cli
   caddy
+  detekt
   docker-compose
   entr
   fd
