@@ -1,0 +1,39 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+puts 'Running detekt check...'
+
+branch = ARGV[0]
+file_array = case branch
+             when 'main', 'master'
+               `git diff origin/#{branch} --name-only`
+             when 'cached'
+               `git diff --cached --name-only`
+             else
+               `git diff --name-only`
+             end
+
+if file_array.empty?
+  puts 'No file changes'
+  exit 0
+end
+
+detekt_input = file_array.split("\n").select { |f| f.end_with? '.kt' }.join(',')
+if detekt_input.empty?
+  puts 'No Kotlin files changed'
+  exit 0
+end
+
+puts "Kotlin files changed: #{detekt_input}"
+output = `detekt --config ~/detekt.yaml --input #{detekt_input} 2>&1`
+EXIT_CODE = $CHILD_STATUS
+
+if EXIT_CODE != 0
+  puts '***********************************************'
+  puts output
+  puts '***********************************************'
+  puts '                 detekt failed                 '
+  puts ' Please fix the above issues before committing '
+  puts '***********************************************'
+  exit 1
+end
