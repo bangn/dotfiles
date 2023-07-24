@@ -1,39 +1,57 @@
-#!/usr/bin/env ruby
-# frozen_string_literal: true
+#!/usr/bin/env bash
 
-puts 'Running detekt check...'
+echo 'Running detekt check...'
 
-branch = ARGV[0]
-file_array = case branch
-             when 'main', 'master'
-               `git diff origin/#{branch} --name-only`
-             when 'cached'
-               `git diff --cached --name-only`
-             else
-               `git diff --name-only`
-             end
+# Get file changes
+branch="$1"
+case "$branch" in
+  main | master)
+    file_array=$(git diff "origin/$branch" --name-only)
+    ;;
+  cached)
+    file_array=$(git diff --cached --name-only)
+    ;;
+  *)
+    file_array=$(git diff --name-only)
+    ;;
+esac
 
-if file_array.empty?
-  puts 'No file changes'
+if [ -z "$file_array" ]; then
+  echo 'No file changes'
   exit 0
-end
+fi
 
-detekt_input = file_array.split("\n").select { |f| f.end_with? '.kt' }.join(',')
-if detekt_input.empty?
-  puts 'No Kotlin files changed'
+# Build detekt input
+detekt_input=""
+IFS=$'\n'
+for file in $file_array; do
+  if [[ "$file" == *.kt ]]; then
+    detekt_input+="$file,"
+  fi
+done
+IFS=''
+
+if [ -z "$detekt_input" ]; then
+  echo 'No Kotlin files changed'
   exit 0
-end
+fi
+detekt_input=${detekt_input%?} # Remove the trailing comma
 
-puts "Kotlin files changed: #{detekt_input}"
-output = `detekt --config ~/detekt.yaml --input #{detekt_input} 2>&1`
-EXIT_CODE = $CHILD_STATUS
+# Run detekt with config from ~/detekt.yaml
+echo "Kotlin files changed: $detekt_input"
+output=$(detekt --config ~/detekt.yaml --input "$detekt_input" 2>&1)
+EXIT_CODE=$?
 
-if EXIT_CODE != 0
-  puts '***********************************************'
-  puts output
-  puts '***********************************************'
-  puts '                 detekt failed                 '
-  puts ' Please fix the above issues before committing '
-  puts '***********************************************'
+if [ $EXIT_CODE -ne 0 ]; then
+  echo '*************************************************'
+  echo "$output"
+  echo '*************************************************'
+  echo '*                 detekt FAILED                 *'
+  echo '* Please fix the above issues before committing *'
+  echo '*************************************************'
   exit 1
-end
+else
+  echo '*************************************************'
+  echo '*                detekt ALL GOOD                *'
+  echo '*************************************************'
+fi
