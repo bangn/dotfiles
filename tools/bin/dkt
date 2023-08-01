@@ -6,13 +6,13 @@ echo 'Running detekt check...'
 branch="$1"
 case "$branch" in
   main | master)
-    file_array=$(git diff "origin/$branch" --name-only)
+    file_array=$(git diff "origin/$branch" --name-only --diff-filter=d)
     ;;
   cached)
-    file_array=$(git diff --cached --name-only)
+    file_array=$(git diff --cached --name-only --diff-filter=d)
     ;;
   *)
-    file_array=$(git diff --name-only)
+    file_array=$(git diff --name-only --diff-filter=d)
     ;;
 esac
 
