@@ -22,6 +22,7 @@ with pkgsUnstable; [
   hadolint
   hlint
   htop
+  hub
   jdk11
   jq
   k9s
