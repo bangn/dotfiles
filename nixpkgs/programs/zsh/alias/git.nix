@@ -1,4 +1,6 @@
 {
+  git = "hub";
+
   ga = "git add --all";
   gap = "git add --all -p";
   gau = "git add -u";
