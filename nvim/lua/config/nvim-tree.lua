@@ -4,7 +4,6 @@ local vars = require("utils.vars")
 vim_g.loaded_netrw = 1
 vim_g.loaded_netrwPlugin = 1
 
-local tree_cb = require("nvim-tree.config").nvim_tree_callback
 local function on_attach(bufnr)
 	local api = require("nvim-tree.api")
 	local function opts(desc)
