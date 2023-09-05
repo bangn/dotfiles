@@ -150,3 +150,7 @@ grim() {
 githead() {
   git rev-parse HEAD
 }
+
+ghrv() {
+  gh repo view --web --branch "$(git rev-parse --abbrev-ref HEAD)"
+}
