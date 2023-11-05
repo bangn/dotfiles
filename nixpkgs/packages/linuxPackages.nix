@@ -11,6 +11,7 @@ with pkgsUnstable; [
   kdiff3
   keybase-gui
   mesa.drivers
+  neovim
   peek
   pinta
   screenkey
