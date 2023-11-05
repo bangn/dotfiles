@@ -16,7 +16,6 @@ with pkgsUnstable; [
   gitAndTools.delta
   gitAndTools.diff-so-fancy
   github-cli
-  google-cloud-sdk
   gopls
   graphviz
   hadolint
@@ -40,7 +39,6 @@ with pkgsUnstable; [
   ngrok
   nixfmt
   nixpkgs-fmt
-  nnn
   nushell
   pandoc
   pdftk
@@ -52,7 +50,7 @@ with pkgsUnstable; [
   saml2aws
   shellcheck
   shfmt
-  sqlint
+  # sqlint
   ssm-session-manager-plugin
   stow
   stylish-haskell

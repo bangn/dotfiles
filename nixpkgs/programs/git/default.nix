@@ -1,6 +1,7 @@
 { pkgs, ... }:
 let username = "bangn";
-in {
+in
+{
   enable = true;
   package = pkgs.gitAndTools.gitFull;
 
@@ -119,9 +120,6 @@ in {
 
     # bakup directory
     "bakup"
-
-    # neuron dir
-    ".neuron"
 
     # terraform
     ".terraform"

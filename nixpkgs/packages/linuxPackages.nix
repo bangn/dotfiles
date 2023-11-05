@@ -13,7 +13,6 @@ with pkgsUnstable; [
   mesa.drivers
   peek
   pinta
-  postman
   screenkey
   slack-dark
   spotify
