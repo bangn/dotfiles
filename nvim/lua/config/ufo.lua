@@ -9,6 +9,8 @@ local ftMap = {
 	git = "",
 }
 
+local bakup = jit
+jit = nil
 require("ufo").setup({
 	provider_selector = function(bufnr, filetype)
 		-- return a string type use internal providers
@@ -18,3 +20,4 @@ require("ufo").setup({
 		return ftMap[filetype]
 	end,
 })
+jit = bakup
