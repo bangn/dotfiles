@@ -7,7 +7,7 @@ in {
     name = "${username}";
     home = homeDirectory;
   };
-  home-manager.users."${username}" = (import ./home.nix);
+  home-manager.users."${username}" = (import ../home-manager/home.nix);
 
   environment = {
     loginShell = pkgs.zsh;
