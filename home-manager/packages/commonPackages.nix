@@ -50,7 +50,7 @@ with pkgsUnstable; [
   saml2aws
   shellcheck
   shfmt
-  # sqlint
+  sqlint
   ssm-session-manager-plugin
   stow
   stylish-haskell
