@@ -94,4 +94,9 @@ in {
   # Running keybase-ui without checking kbfsfuse
   ########################################
   NIX_SKIP_KEYBASE_CHECKS = 1;
+
+  ########################################
+  # asdf
+  ########################################
+  ASDF_GOLANG_MOD_VERSION_ENABLED = false;
 }
