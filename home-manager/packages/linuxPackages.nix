@@ -7,6 +7,7 @@ with pkgsUnstable; [
   firefox
   glibcLocales
   google-chrome
+  mcrypt
   kdiff3
   keybase-gui
   mesa.drivers
