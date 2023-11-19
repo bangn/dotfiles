@@ -1,7 +1,6 @@
 { pkgs, pkgsUnstable, ... }:
 with pkgsUnstable; [
   asdf-vm
-  awscli2
   bat
   bitwarden-cli
   buf
