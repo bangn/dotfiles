@@ -29,7 +29,6 @@ with pkgsUnstable; [
   kubernetes-helm
   lastpass-cli
   luajitPackages.luacheck
-  mcrypt
   mdl
   minikube
   mkcert
