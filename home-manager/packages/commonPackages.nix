@@ -16,6 +16,7 @@ with pkgsUnstable; [
   gitAndTools.diff-so-fancy
   github-cli
   gopls
+  gradle_7
   graphviz
   hadolint
   hlint
