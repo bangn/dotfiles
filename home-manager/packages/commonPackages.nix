@@ -28,7 +28,6 @@ with pkgsUnstable; [
   kubectl
   kubectx
   kubernetes-helm
-  lastpass-cli
   luajitPackages.luacheck
   mdl
   minikube
@@ -46,19 +45,15 @@ with pkgsUnstable; [
   python38Packages.sqlparse
   ripgrep
   rnix-lsp
-  saml2aws
   shellcheck
   shfmt
   sqlint
-  ssm-session-manager-plugin
   stow
   stylish-haskell
   stylua
-  terraform
   terraform-ls
   tig
   tldr
-  trash-cli
   tree
   tree-sitter
   watch
