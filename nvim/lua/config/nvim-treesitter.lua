@@ -1,6 +1,6 @@
 require("nvim-treesitter.configs").setup({
 	ensure_installed = "all",
-	ignore_install = { "" }, -- List of parsers to ignore installing
+	ignore_install = { "yaml" }, -- List of parsers to ignore installing
 
 	autopairs = {
 		enable = true,
