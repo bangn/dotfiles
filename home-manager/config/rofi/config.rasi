@@ -1,5 +1,5 @@
 configuration {
-  location: 1;
+  location: 2;
   disable-history: true;
   font: "hack 9";
   hide-scrollbar: true;
