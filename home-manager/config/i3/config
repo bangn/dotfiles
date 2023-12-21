@@ -143,7 +143,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightnes
 
 ## Lock screen
 set $Locker i3lock -c 2e3440
-bindsym Mod1+Shift+q exec --no-startup-id $Locker, mode "default"
+bindsym Mod1+Ctrl+q exec --no-startup-id $Locker, mode "default"
 
 ## Manual management of external displays
 ### Set the shortcuts and what they do
