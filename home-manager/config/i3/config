@@ -268,6 +268,8 @@ bindsym $mod+Shift+s exec "setxkbmap -option ctrl:swapcaps"
 # Set natural scrolling
 exec synclient VertScrollDelta=-114
 exec synclient HorizScrollDelta=-114
+# Use xinput --list to see what is the device ID
+exec --no-startup-id xinput set-prop 13 "libinput Natural Scrolling Enabled" 1
 
 # Start Network Manager
 exec --no-startup-id nm-applet
