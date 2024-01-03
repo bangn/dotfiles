@@ -262,14 +262,17 @@ bar {
 # AUTOSTART
 ################################################################################
 # Map CapsLock to Ctrl; Swap left Super and left Alt
-exec setxkbmap -option ctrl:swapcaps
-bindsym $mod+Shift+s exec "setxkbmap -option ctrl:swapcaps"
+exec --no-startup-id setxkbmap -option ctrl:swapcaps
+
+## binding to swap Ctrl-CapsLock; and set natural scroling for MX Anywhere
+bindsym $mod+Shift+s exec "setxkbmap -option ctrl:swapcaps; xinput set-prop \\"pointer:Logitech MX Anywhere 2S\\" \\"libinput Natural Scrolling Enabled\\" 1"
 
 # Set natural scrolling
 exec synclient VertScrollDelta=-114
 exec synclient HorizScrollDelta=-114
 # Use xinput --list to see what is the device ID
 exec --no-startup-id xinput set-prop "pointer:Logitech MX Anywhere 2S" "libinput Natural Scrolling Enabled" 1
+bindsym $mod+Shift+n exec xinput set-prop "pointer:Logitech MX Anywhere 2S" "libinput Natural Scrolling Enabled" 1
 
 # Start Network Manager
 exec --no-startup-id nm-applet
