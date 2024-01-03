@@ -269,7 +269,7 @@ bindsym $mod+Shift+s exec "setxkbmap -option ctrl:swapcaps"
 exec synclient VertScrollDelta=-114
 exec synclient HorizScrollDelta=-114
 # Use xinput --list to see what is the device ID
-exec --no-startup-id xinput set-prop 10 "libinput Natural Scrolling Enabled" 1
+exec --no-startup-id xinput set-prop "pointer:Logitech MX Anywhere 2S" "libinput Natural Scrolling Enabled" 1
 
 # Start Network Manager
 exec --no-startup-id nm-applet
