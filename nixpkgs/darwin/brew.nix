@@ -18,7 +18,6 @@
       "homebrew/bundle"
       "homebrew/cask-fonts"
       "homebrew/cask-versions"
-      "homebrew/core"
       "homebrew/services"
     ];
 
