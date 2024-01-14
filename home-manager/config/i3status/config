@@ -53,14 +53,6 @@ disk "/" {
   format = " / %avail "
 }
 
-disk "/home" {
-  format = " /home %avail "
-}
-
-disk "/media/media" {
-  format = " %avail:m "
-}
-
 wireless wlp58s0
 {
   format_up = " %essid %ip "
