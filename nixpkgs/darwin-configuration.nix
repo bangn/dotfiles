@@ -22,6 +22,9 @@ in {
     promptInit = "autoload -U promptinit && promptinit";
   };
 
+  # Add ability to used TouchID for sudo authentication
+  security.pam.enableSudoTouchIdAuth = true;
+
   imports = [
     (import ./darwin/preferences.nix { inherit config pkgs homeDirectory; })
     ./darwin/brew.nix
