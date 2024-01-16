@@ -119,7 +119,7 @@ return packer.startup({
 		})
 		use({
 			"iamcco/markdown-preview.nvim",
-			run = "cd app && git checkout app/yarn.lock && yarn install",
+			run = "cd app && git checkout . && yarn install",
 			ft = { "markdown" },
 			config = [[require("config.markdown-preview")]],
 		})
