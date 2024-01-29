@@ -1,5 +1,25 @@
 require("nvim-treesitter.configs").setup({
-	ensure_installed = "all",
+	ensure_installed = {
+		"bash",
+		"csv",
+		"dhall",
+		"diff",
+		"dockerfile",
+		"elixir",
+		"fish",
+		"go",
+		"haskell",
+		"html",
+		"java",
+		"javascript",
+		"json",
+		"lua",
+		"nix",
+		"ruby",
+		"rust",
+		"sql",
+		"typescript",
+	},
 	ignore_install = { "yaml" }, -- List of parsers to ignore installing
 
 	autopairs = {
