@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'pry-byebug'
+
 Pry.commands.alias_command 'e', 'edit'
 Pry.commands.alias_command 'q', 'quit'
 Pry.commands.alias_command 'w', 'whereami'
