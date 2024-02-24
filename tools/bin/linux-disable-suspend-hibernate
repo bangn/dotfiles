@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+
+# To revert: replace "mask" by "unmask"
+sudo systemctl mask \
+  sleep.target \
+  suspend.target \
+  hibernate.target \
+  hybrid-sleep.target
