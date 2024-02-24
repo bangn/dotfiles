@@ -123,8 +123,8 @@ bindsym $mod+Shift+e exec i3-msg exit
 bindsym $mod+Shift+b border toggle
 
 # Default border style
-default_border none
-default_floating_border none
+default_border pixel 1
+default_floating_border pixel 1
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
