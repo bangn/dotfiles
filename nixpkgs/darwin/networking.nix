@@ -1,1 +1,1 @@
-{ ... }: { networking = { hostName = "macbookpro-bangn"; }; }
+{ userDetails, ... }: { networking = { hostName = userDetails.hostName; }; }

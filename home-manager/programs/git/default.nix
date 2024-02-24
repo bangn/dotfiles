@@ -1,12 +1,11 @@
-{ pkgs, ... }:
-let username = "bangn";
-in
-{
+{ pkgs, gitDetails, ... }:
+let username = gitDetails.username;
+in {
   enable = true;
   package = pkgs.gitAndTools.gitFull;
 
   userName = username;
-  userEmail = "thebangnguyen@gmail.com";
+  userEmail = gitDetails.email;
 
   aliases = {
     dds = "diff --stat";

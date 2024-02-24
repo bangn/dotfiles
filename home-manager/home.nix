@@ -3,7 +3,8 @@ with builtins;
 let
   isLinux = !(isNull (match ".*linux.*" currentSystem));
   pkgsUnstable = import <nixpkgs> { };
-  username = "bangn";
+  userDetails = import ../nixpkgs/userDetails.nix;
+  username = userDetails.username;
   homeDir = if isLinux then "/home/${username}" else "/Users/${username}";
 in with pkgsUnstable; {
   # This value determines the Home Manager release that your
@@ -49,6 +50,7 @@ in with pkgsUnstable; {
     pkgs = pkgsUnstable;
     homeDir = homeDir;
     isLinux = isLinux;
+    userDetails = userDetails;
   };
   news.display = "silent";
 

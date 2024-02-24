@@ -1,6 +1,7 @@
 { inputs, config, pkgs, lib, ... }:
 let
-  username = "bangn";
+  userDetails = import ./userDetails.nix;
+  username = userDetails.username;
   homeDirectory = "/Users/${username}";
 in {
   users.users."${username}" = {
@@ -28,7 +29,7 @@ in {
   imports = [
     (import ./darwin/preferences.nix { inherit config pkgs homeDirectory; })
     ./darwin/brew.nix
-    ./darwin/networking.nix
+    (import ./darwin/networking.nix { inherit userDetails; })
     <home-manager/nix-darwin>
   ];
 
