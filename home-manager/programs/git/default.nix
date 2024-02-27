@@ -28,6 +28,7 @@ in {
     branch = {
       autosetupmerge = true;
       autosetuprebase = "remote";
+      sort = "-committerdate";
     };
 
     credential = { helper = "store"; };
@@ -62,10 +63,11 @@ in {
 
     init = { defaultBranch = "main"; };
 
-    diff = { algorithm = "patience"; };
+    diff = { algorithm = "histogram"; };
 
     merge = {
       defaultToUpstream = true;
+      conflictstyle = "zdiff3";
       tool = "kdiff3";
     };
 
@@ -78,6 +80,13 @@ in {
     status = { showUntrackedFiles = "all"; };
 
     url = { "git@github.com:" = { insteadOf = "https://github.com"; }; };
+
+    transfer = { fsckobjects = true; };
+    fetch = {
+      fsckobjects = true;
+      prune = true;
+    };
+    receive = { fsckobjects = true; };
 
     user = {
       login = username;
