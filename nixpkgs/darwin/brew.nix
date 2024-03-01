@@ -42,6 +42,7 @@
       "ninja"
       "pam-reattach"
       "pkg-config"
+      "ruby-build"
       "starship"
       "tree-sitter"
       "zlib"
