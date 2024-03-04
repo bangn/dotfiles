@@ -40,7 +40,6 @@ add_nix_channel() {
     source "$HOME/.nix-profile/etc/profile.d/nix.sh" # Use unstable channel
   fi
   nix-channel --add https://nixos.org/channels/nixpkgs-unstable
-  nix-channel --add https://github.com/LnL7/nix-darwin/archive/master.tar.gz darwin
   nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
 
   if [[ "$(uname)" == "Darwin" ]]; then
