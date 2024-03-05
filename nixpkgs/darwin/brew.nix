@@ -16,7 +16,6 @@
     taps = [
       "beeftornado/rmtree"
       "homebrew/bundle"
-      "homebrew/cask"
       "homebrew/cask-fonts"
       "homebrew/cask-versions"
       "homebrew/core"
