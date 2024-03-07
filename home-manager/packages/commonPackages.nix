@@ -42,7 +42,7 @@ with pkgsUnstable; [
   pdftk
   plantuml
   postgresql_12
-  python38Packages.sqlparse
+  python312Packages.sqlparse
   ripgrep
   rnix-lsp
   shellcheck
