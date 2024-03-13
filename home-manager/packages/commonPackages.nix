@@ -44,7 +44,6 @@ with pkgsUnstable; [
   postgresql_12
   python312Packages.sqlparse
   ripgrep
-  rnix-lsp
   shellcheck
   shfmt
   sqlint
