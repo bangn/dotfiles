@@ -28,7 +28,6 @@ local servers = {
 	"dockerls",
 	"html",
 	"jsonls",
-	"rnix",
 	"solargraph",
 	"terraformls",
 	"tsserver",
