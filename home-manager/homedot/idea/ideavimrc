@@ -38,6 +38,7 @@ map <leader>gw <Action>(Git.Add)
 map <leader>ha <Action>(HideActiveWindow)
 map <leader>oi <Action>(OptimizeImports)
 map <leader>t <Action>(RunClass)
+map <leader>z <Action>(MaximizeEditorInSplit)
 
 map crc <Action>(StringManipulation.ToCamelCase)
 map crs <Action>(StringManipulation.ToSnakeCase)
