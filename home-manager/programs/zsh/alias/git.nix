@@ -6,7 +6,7 @@
   gau = "git add -u";
 
   gb = "git branch";
-  gba = "git branch -a";
+  gba = ''git branch -a --format "%(committerdate:short)%09%(refname:short)"'';
   gbc = "git clean-branches -f";
   gbd = "git branch -d";
 
