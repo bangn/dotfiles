@@ -4,7 +4,6 @@
   autocd = true;
   defaultKeymap = "viins";
   dotDir = ".config/zsh";
-  enableAutosuggestions = true;
   enableCompletion = true;
 
   history = {
@@ -13,6 +12,8 @@
     save = 10000000;
     size = 100000;
   };
+
+  autosuggestion = { enable = true; };
 
   shellAliases = import ./alias;
 
