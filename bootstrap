@@ -59,7 +59,9 @@ populate_nix_config() {
   if [[ "$(uname)" == "Darwin" ]]; then
     echo -e "Populating nixpkgs config files for nix-darwin..."
     rm -rf "$HOME/.nixpkgs"
+    rm -rf "$HOME/home-manager"
     ln -sfn "$PWD"/nixpkgs "$HOME/.nixpkgs"
+    ln -sfn "$PWD"/home-manager "$HOME/home-manager"
   fi
 }
 
