@@ -599,7 +599,7 @@ key = "F12"
 mods = "Super"
 
 [mouse]
-hide_when_typing = true
+hide_when_typing = false
 
 [[mouse.bindings]]
 action = "PasteSelection"
