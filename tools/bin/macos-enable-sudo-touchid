@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # shellcheck disable=SC2143
-if [[ "$(uname)" == 'Darwin' ]] && [[ "$(uname -a | grep arm)" ]] && ! grep 'pam_tid.so' /etc/pam.d/sudo --silent; then
+if [[ "$(uname)" == 'Darwin' ]] && [[ "$(uname -a | grep arm)" ]] && ! grep 'pam_reattach.so' /etc/pam.d/sudo --silent; then
   echo "Enable TouchId for terminal and tmux"
   PAM_REATTACH="/opt/homebrew/lib/pam/pam_reattach.so"
   if test -f "$PAM_REATTACH"; then
