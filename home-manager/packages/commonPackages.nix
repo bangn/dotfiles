@@ -12,6 +12,7 @@ with pkgsUnstable; [
   docker-compose
   entr
   fd
+  gh-copilot
   ghcid
   gitAndTools.delta
   gitAndTools.diff-so-fancy
