@@ -601,7 +601,7 @@ mods = "Super"
 [mouse]
 hide_when_typing = true
 
-[[mouse.bindngs]]
+[[mouse.bindings]]
 action = "PasteSelection"
 mouse = "Middle"
 
