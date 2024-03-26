@@ -1,5 +1,6 @@
 { pkgs, pkgsUnstable, ... }:
 with pkgsUnstable; [
+  alacritty
   asdf-vm
   bat
   bitwarden-cli
