@@ -46,7 +46,6 @@ vars.remap.fn("i", "<C-w>", "<C-g>u<C-w>", vars.remap.opts)
 
 -- tabs
 vars.remap.fn("n", "<C-t>", ":tabnew<CR>", { noremap = true })
-vars.remap.fn("n", "<C-w>", ":tabclose<CR>", { noremap = true })
 vars.remap.fn("n", "gl", "gt", { noremap = true })
 vars.remap.fn("n", "gh", "gT", { noremap = true })
 
