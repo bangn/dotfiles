@@ -3,7 +3,11 @@ with builtins;
 let
   isLinux = !(isNull (match ".*linux.*" currentSystem));
   pkgsUnstable = import <nixpkgs> { };
-  userDetails = import ../.nixpkgs/userDetails.nix;
+  # This one is very couple with bootstrap script
+  userDetails = if isLinux then
+    import ../nixpkgs/userDetails.nix
+  else
+    import ../.nixpkgs/userDetails.nix;
   username = userDetails.username;
   homeDir = if isLinux then "/home/${username}" else "/Users/${username}";
 in with pkgsUnstable; {

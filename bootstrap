@@ -38,6 +38,8 @@ add_nix_channel() {
 
   if [[ "$(uname)" == "Linux" ]]; then
     source "$HOME/.nix-profile/etc/profile.d/nix.sh" # Use unstable channel
+  else
+    export PATH="$PATH:/run/current-system/sw/bin"
   fi
   nix-channel --add https://nixos.org/channels/nixpkgs-unstable
   nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
