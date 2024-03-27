@@ -1,4 +1,5 @@
 {
+  cores = 0;
   allowBroken = true;
   allowUnsupportedSystem = true;
   allowUnfree = true;
