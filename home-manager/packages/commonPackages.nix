@@ -36,6 +36,7 @@ with pkgsUnstable; [
   mkcert
   moreutils
   ncdu
+  neovim
   ngrok
   nixfmt
   nixpkgs-fmt
