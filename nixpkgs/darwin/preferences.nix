@@ -12,7 +12,9 @@
         _FXShowPosixPathInTitle = true;
         AppleShowAllExtensions = true;
         FXEnableExtensionChangeWarning = true;
+        FXPreferredViewStyle = "Nlsv";
         QuitMenuItem = true;
+        ShowPathbar = true;
       };
 
       trackpad = {
@@ -34,6 +36,10 @@
         showhidden = false;
         static-only = true;
         tilesize = 25;
+        wvous-bl-corner = 1;
+        wvous-br-corner = 1;
+        wvous-tl-corner = 1;
+        wvous-tr-corner = 1;
       };
 
       spaces = { spans-displays = false; };
@@ -43,9 +49,12 @@
       NSGlobalDomain = {
         "com.apple.sound.beep.feedback" = 0;
         "com.apple.sound.beep.volume" = 0.0;
+        _HIHideMenuBar = false;
         AppleShowAllExtensions = true;
         AppleShowScrollBars = "Automatic";
       };
+
+      menuExtraClock = { Show24Hour = true; };
     };
 
     keyboard = {
