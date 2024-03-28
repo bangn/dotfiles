@@ -613,7 +613,6 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 [window]
 opacity = 1.0
 startup_mode = "Maximized"
-use_thin_strokes = true
 
 [window.dimensions]
 columns = 80
