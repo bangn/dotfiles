@@ -20,6 +20,7 @@ require("nvim-treesitter.configs").setup({
 		"rust",
 		"sql",
 		"typescript",
+		"vimdoc",
 	},
 	ignore_install = { "yaml" }, -- List of parsers to ignore installing
 
