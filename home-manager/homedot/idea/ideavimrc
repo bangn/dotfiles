@@ -20,7 +20,7 @@ noremap <leader>x :x<CR>
 noremap Y y$
 
 map <C--> <Action>(EditorDecreaseFontSizeGlobal)
-map <C-0> <Action>(EditorResetFontSize)
+map <C-0> <Action>(EditorResetFontSizeGlobal)
 map <C-=> <Action>(EditorIncreaseFontSizeGlobal)
 map <C-a> <Action>(GotoAction)
 map <C-p> <Action>(GotoFile)
