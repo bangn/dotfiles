@@ -34,6 +34,11 @@
     ];
   };
 
+  neovim = {
+    enable = true;
+    plugins = [ pkgs.vimPlugins.nvim-treesitter.withAllGrammars ];
+  };
+
   zoxide = { enable = true; };
 
   zsh = import ./zsh {
