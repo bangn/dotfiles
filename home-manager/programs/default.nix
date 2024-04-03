@@ -36,7 +36,10 @@
 
   neovim = {
     enable = true;
-    plugins = [ pkgs.vimPlugins.nvim-treesitter.withAllGrammars ];
+    plugins = [
+      pkgs.vimPlugins.nvim-treesitter
+      pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+    ];
   };
 
   zoxide = { enable = true; };
