@@ -45,3 +45,7 @@ map crs <Action>(StringManipulation.ToSnakeCase)
 map crm <Action>(StringManipulation.ToPascalCase)
 map crk <Action>(StringManipulation.ToKebabCase)
 map X <Action>(ReopenClosedTab)
+
+# Plugins
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
