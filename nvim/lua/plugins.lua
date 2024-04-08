@@ -26,7 +26,6 @@ return packer.startup({
 		use({ "arcticicestudio/nord-vim", branch = "main", config = [[require("config.nord-vim")]] })
 		use({ "christoomey/vim-tmux-navigator" })
 		use({ "danilamihailov/beacon.nvim" })
-		use({ "dln/avro-vim" })
 		use({ "fatih/vim-go", config = [[require("config.vim-go")]] })
 		use({ "folke/zen-mode.nvim", config = [[require("config.zen-mode")]] })
 		use({ "godlygeek/tabular" })
