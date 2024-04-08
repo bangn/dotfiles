@@ -36,6 +36,7 @@
 
   neovim = {
     enable = true;
+    defaultEditor = true;
     plugins = [
       pkgs.vimPlugins.nvim-treesitter
       pkgs.vimPlugins.nvim-treesitter.withAllGrammars
