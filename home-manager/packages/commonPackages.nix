@@ -37,7 +37,7 @@ with pkgsUnstable; [
   moreutils
   ncdu
   ngrok
-  nixfmt
+  nixfmt-classic
   nixpkgs-fmt
   nushell
   pandoc
