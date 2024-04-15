@@ -49,9 +49,6 @@
   # Hammerspoon
   ".hammerspoon/init.lua".source = ./hammerspoon/init.lua;
 
-  # Slate: Deprecated, use Hammerspoon
-  # ".slate".source = ./slate/.slate;
-
   # curl
   ".curlrc".source = ./curl/curlrc;
 
