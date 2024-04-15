@@ -27,7 +27,6 @@
       "cmake"
       "coreutils"
       "gettext"
-      "jq"
       "libtermkey"
       "libtool"
       "libusb"

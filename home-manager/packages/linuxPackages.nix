@@ -1,7 +1,6 @@
 { pkgs, pkgsUnstable, ... }:
 with pkgsUnstable; [
   calibre
-  cmake
   coreutils-full
   curlFull
   firefox
