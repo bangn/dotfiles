@@ -1,1 +1,1 @@
-{ pkgs, pkgsUnstable, ... }: with pkgsUnstable; [ gnupg ]
+{ pkgs, pkgsUnstable, ... }: with pkgsUnstable; [ ]

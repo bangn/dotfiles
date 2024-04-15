@@ -17,6 +17,7 @@ with pkgsUnstable; [
   gitAndTools.delta
   gitAndTools.diff-so-fancy
   github-cli
+  gnupg
   gopls
   gradle
   graphviz
