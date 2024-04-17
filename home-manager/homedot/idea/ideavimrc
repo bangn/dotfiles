@@ -17,6 +17,8 @@ noremap <leader>sp <C-w>s
 noremap <leader>sv :source ~/.ideavimrc<CR>
 noremap <leader>vs <C-w>v
 noremap <leader>x :x<CR>
+noremap <leader>cc gcc
+vnoremap <leader>cc gc
 noremap Y y$
 
 map <C--> <Action>(EditorDecreaseFontSizeGlobal)
