@@ -5,8 +5,7 @@ let
   gitAliases = import ./git.nix;
   k8sAliases = import ./k8s.nix;
   isLinux = !(isNull (match ".*linux.*" currentSystem));
-in
-{
+in {
   # TODO: Dynamically get dotDir
   ssp = "source ~/.config/zsh/.zshrc";
 
@@ -21,22 +20,21 @@ in
   tf = "terraform";
   vim = "nvim";
 
-  l =
-    let
-      option = "--color=auto -Glah";
-      command = "ls";
-    in
-    "${command} ${option}";
+  l = let
+    option = "--color=auto -Glah";
+    command = "ls";
+  in "${command} ${option}";
 
   grep = builtins.concatStringsSep " " [
     "grep"
     ''--color=auto --exclude-dir="*snapshots*"''
+
     "--exclude-dir=.git"
+    "--exclude-dir=.gradle"
     "--exclude-dir=.idea"
     "--exclude-dir=.next"
     "--exclude-dir=.stack"
     "--exclude-dir=.stack-work"
-    ''--exclude-dir="dist*"''
     "--exclude-dir=_build"
     "--exclude-dir=build"
     "--exclude-dir=coverage"
@@ -50,5 +48,6 @@ in
     "--exclude-dir=rspec_tracer_report"
     "--exclude-dir=tmp"
     "--exclude=tags"
+    ''--exclude-dir="dist*"''
   ];
 } // dockerAliases // bundlerAliases // gitAliases // k8sAliases
