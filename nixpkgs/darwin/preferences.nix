@@ -54,6 +54,7 @@
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
         AppleShowScrollBars = "Automatic";
+        NSAutomaticCapitalizationEnabled = false;
       };
 
       menuExtraClock = { Show24Hour = true; };
