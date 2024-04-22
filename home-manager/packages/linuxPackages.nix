@@ -1,6 +1,5 @@
 { pkgs, pkgsUnstable, ... }:
 with pkgsUnstable; [
-  calibre
   coreutils-full
   curlFull
   firefox
