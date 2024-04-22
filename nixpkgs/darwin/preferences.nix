@@ -11,6 +11,7 @@
       finder = {
         _FXShowPosixPathInTitle = true;
         AppleShowAllExtensions = true;
+        AppleShowAllFiles = true;
         FXEnableExtensionChangeWarning = true;
         FXPreferredViewStyle = "Nlsv";
         QuitMenuItem = true;
@@ -51,6 +52,7 @@
         "com.apple.sound.beep.volume" = 0.0;
         _HIHideMenuBar = false;
         AppleShowAllExtensions = true;
+        AppleShowAllFiles = true;
         AppleShowScrollBars = "Automatic";
       };
 
