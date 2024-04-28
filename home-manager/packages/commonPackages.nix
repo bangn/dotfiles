@@ -27,6 +27,7 @@ with pkgsUnstable; [
   jdk11
   jq
   k9s
+  kdiff3
   kubectl
   kubectx
   kubernetes-helm

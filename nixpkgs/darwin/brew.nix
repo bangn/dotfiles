@@ -55,7 +55,6 @@
       "font-hack-nerd-font"
       "hammerspoon"
       "intellij-idea-ce"
-      "kdiff3"
       "obsidian"
       "postman"
       "visual-studio-code"
