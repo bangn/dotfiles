@@ -1,3 +1,7 @@
+if vim.g.vscode then
+	return
+end
+
 local vim_cmd = vim.cmd
 local wilder = require("wilder")
 
