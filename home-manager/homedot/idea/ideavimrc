@@ -1,10 +1,23 @@
 let mapleader=","
 
+" Plugins
+set surround
+set commentary
+
+" IdeaVim options
+" Smart join for <C-J>
+set ideajoin
+" Map vim marks to IDEA global marks
+set ideamarks
+
+" Configuration
 set clipboard+=unnamed
 set ignorecase
 set incsearch
 set relativenumber
 set smartcase
+
+" Mappings
 
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
@@ -29,7 +42,7 @@ map <C-p> <Action>(GotoFile)
 map <C-t> <Action>(ActivateTerminalToolWindow)
 
 map <leader>co <Action>(CloseAllEditorsButActive)
-map <leader>d <Action>(DebugClass)
+map <leader>d <Action>(Debug)
 map <leader>f <Action>(ReformatCode)
 map <leader>gb <Action>(Annotate)
 map <leader>gd <Action>(Compare.SameVersion)
@@ -38,7 +51,9 @@ map <leader>grn <Action>(RenameElement)
 map <leader>gtd <Action>(GotoDeclaration)
 map <leader>gw <Action>(Git.Add)
 map <leader>ha <Action>(HideActiveWindow)
+map <leader>l <Action>(RerunFailedTests)
 map <leader>oi <Action>(OptimizeImports)
+map <leader>rf <Action>(ReformatCode)
 map <leader>t <Action>(RunClass)
 map <leader>z <Action>(MaximizeEditorInSplit)
 
@@ -48,6 +63,13 @@ map crm <Action>(StringManipulation.ToPascalCase)
 map crk <Action>(StringManipulation.ToKebabCase)
 map X <Action>(ReopenClosedTab)
 
-# Plugins
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
+nmap <leader>ch <Action>(CallHierarchy)
+nmap [[ <Action>(MethodUp)
+nmap ]] <Action>(MethodDown)
+
+nmap ]c <Action>(VcsShowNextChangeMarker)
+nmap [c <Action>(VcsShowPrevChangeMarker)
+nmap =c <Action>(VcsShowCurrentChangeMarker)
+
+nmap ]e <Action>(GotoNextError)
+nmap [e <Action>(GotoPreviousError)
