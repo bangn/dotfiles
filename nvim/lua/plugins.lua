@@ -51,7 +51,6 @@ return packer.startup({
 		use({ "Shougo/vimproc.vim", run = "make" })
 		use({ "tpope/vim-abolish" })
 		use({ "tpope/vim-bundler" })
-		use({ "tpope/vim-commentary", config = [[require("config.vim-commentary")]] })
 		use({ "tpope/vim-endwise" })
 		use({ "tpope/vim-eunuch" })
 		use({ "tpope/vim-fugitive", config = [[require("config.vim-fugitive")]] })
