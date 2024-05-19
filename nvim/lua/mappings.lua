@@ -59,3 +59,7 @@ vars.remap.fn("n", "g7", " 7gt", { noremap = true })
 vars.remap.fn("n", "g8", " 8gt", { noremap = true })
 vars.remap.fn("n", "g9", " 9gt", { noremap = true })
 vars.remap.fn("n", "g0", " 10gt", { noremap = true })
+
+-- commenting
+vars.remap.fn("n", "<leader>cc", "gcc", {})
+vars.remap.fn("v", "<leader>cc", "gcc", {})
