@@ -35,7 +35,6 @@ with pkgsUnstable; [
   minikube
   mkcert
   moreutils
-  ncdu
   ngrok
   nixfmt-classic
   nixpkgs-fmt
