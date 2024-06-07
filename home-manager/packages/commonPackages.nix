@@ -23,6 +23,7 @@ with pkgsUnstable; [
   hlint
   htop
   hub
+  hugo
   jdk11
   jq
   k9s
