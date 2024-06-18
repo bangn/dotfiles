@@ -35,6 +35,7 @@ in {
     "--exclude-dir=.next"
     "--exclude-dir=.stack"
     "--exclude-dir=.stack-work"
+    "--exclude-dir=.venv"
     "--exclude-dir=_build"
     "--exclude-dir=build"
     "--exclude-dir=coverage"
