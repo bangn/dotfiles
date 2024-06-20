@@ -25,6 +25,7 @@ in {
   };
 
   extraConfig = {
+    advice = { skippedCherryPicks = false; };
     branch = {
       autosetupmerge = true;
       autosetuprebase = "remote";
