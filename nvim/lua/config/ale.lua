@@ -6,6 +6,7 @@ vim_g.ale_linters = {
 	haskell = { "hlint" },
 	json = { "jsonlint", "jq" },
 	lua = { "luacheck" },
+	python = { "pylint" },
 	ruby = { "rufo", "rubocop" },
 	sh = { "shellcheck" },
 }
@@ -20,7 +21,7 @@ vim_g.ale_fixers = {
 	markdown = { "prettier" },
 	nix = { "nixpkgs-fmt", "nixfmt" },
 	proto = { "buf-format" },
-	python = { "yapf" },
+	python = { "black" },
 	ruby = { "rufo", "rubocop" },
 	sh = { "shfmt" },
 	sql = { "sqlformat" },
