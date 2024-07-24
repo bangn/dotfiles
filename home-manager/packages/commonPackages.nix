@@ -44,6 +44,7 @@ with pkgsUnstable; [
   pandoc
   pdftk
   plantuml
+  poetry
   postgresql_12
   pylint
   python312Packages.sqlparse
