@@ -1,17 +1,4 @@
 require("nvim-treesitter.configs").setup({
-	autopairs = {
-		enable = true,
-	},
-
-	autotag = {
-		enable = true,
-	},
-
-	context_commentstring = {
-		enable = true,
-		enable_autocmd = false,
-	},
-
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		disable = { "" }, -- list of language that will be disabled
@@ -24,12 +11,8 @@ require("nvim-treesitter.configs").setup({
 		disable = { "" },
 	},
 
-	rainbow = {
-		enable = true,
-		extended_mode = true,
-	},
-
 	textobjects = {
+		enable = true,
 		select = {
 			enable = true,
 
