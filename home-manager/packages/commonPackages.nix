@@ -43,6 +43,7 @@ with pkgsUnstable; [
   nushell
   pandoc
   pdftk
+  pipx
   plantuml
   poetry
   postgresql_12
