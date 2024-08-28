@@ -2,7 +2,6 @@
 with pkgsUnstable; [
   asdf-vm
   bat
-  black
   buf
   buildkite-agent
   buildkite-cli
@@ -27,6 +26,7 @@ with pkgsUnstable; [
   hugo
   jdk11
   jq
+  just
   k9s
   kdiff3
   kubectl
@@ -50,6 +50,7 @@ with pkgsUnstable; [
   pylint
   python312Packages.sqlparse
   ripgrep
+  ruff
   shellcheck
   shfmt
   sqlint
@@ -61,6 +62,7 @@ with pkgsUnstable; [
   tldr
   tree
   tree-sitter
+  uv
   watch
   wget
   xclip

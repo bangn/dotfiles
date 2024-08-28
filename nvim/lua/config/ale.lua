@@ -1,3 +1,4 @@
+-- luacheck: ignore 113
 local vim_g = vim.g
 local vars = require("utils.vars")
 
@@ -6,7 +7,7 @@ vim_g.ale_linters = {
 	haskell = { "hlint" },
 	json = { "jsonlint", "jq" },
 	lua = { "luacheck" },
-	python = { "pylint" },
+	python = { "ruff" },
 	ruby = { "rufo", "rubocop" },
 	sh = { "shellcheck" },
 }
@@ -21,7 +22,7 @@ vim_g.ale_fixers = {
 	markdown = { "prettier" },
 	nix = { "nixpkgs-fmt", "nixfmt" },
 	proto = { "buf-format" },
-	python = { "black" },
+	python = { "ruff_format" },
 	ruby = { "rufo", "rubocop" },
 	sh = { "shfmt" },
 	sql = { "sqlformat" },
