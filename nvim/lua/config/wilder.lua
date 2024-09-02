@@ -1,3 +1,5 @@
+-- luacheck: ignore 113
+
 if vim.g.vscode then
 	return
 end
