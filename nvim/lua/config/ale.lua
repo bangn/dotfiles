@@ -1,4 +1,9 @@
 -- luacheck: ignore 113
+--
+if vim.g.vscode then
+	return
+end
+
 local vim_g = vim.g
 local vars = require("utils.vars")
 
