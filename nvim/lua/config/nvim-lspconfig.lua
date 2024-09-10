@@ -30,7 +30,7 @@ local servers = {
 	"jsonls",
 	"solargraph",
 	"terraformls",
-	"tsserver",
+	"ts_ls",
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
