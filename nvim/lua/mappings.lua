@@ -1,5 +1,11 @@
 local vars = require("utils.vars")
 
+if not vim.g.vscode then
+    vars.remap.fn("n", "<leader>vs", "<C-w>v", { noremap = true })
+    vars.remap.fn("n", "<leader>sp", "<C-w>s", { noremap = true })
+    vars.remap.fn("n", "<leader>x", ":x<CR>", { noremap = true })
+end
+
 vars.remap.fn("n", "<leader><space>", "@q", { noremap = true })
 vars.remap.fn("n", "<leader>co", "<C-w><C-o>", { noremap = true })
 vars.remap.fn("n", "<leader>ct", ":!ctags -R .<CR>", { noremap = true })
@@ -11,14 +17,11 @@ vars.remap.fn("n", "<leader>q", "<C-w>q", vars.remap.opts)
 vars.remap.fn("n", "<leader>rd", ":syntax sync fromstart<CR>:redraw!<CR>", { noremap = true })
 vars.remap.fn("n", "<leader>rn", ":set relativenumber!<CR>", { noremap = true })
 vars.remap.fn("n", "<leader>rt", ':!ripper-tags -R .<CR> " generate ripper tags.', vars.remap.opts)
-vars.remap.fn("n", "<leader>sp", "<C-w>s", { noremap = true })
 vars.remap.fn("n", "<leader>st", ":sp<CR>:term<CR>A", { noremap = true })
 vars.remap.fn("n", "<leader>sv", ":source $MYVIMRC<CR>", { noremap = true })
 vars.remap.fn("n", "<leader>ts", ":%s/s+$//<CR>", { noremap = true })
-vars.remap.fn("n", "<leader>vs", "<C-w>v", { noremap = true })
 vars.remap.fn("n", "<leader>vt", ":vs<CR>:term<CR>A", { noremap = true })
 vars.remap.fn("n", "<leader>w", ":set nowrap!<CR>", { noremap = true })
-vars.remap.fn("n", "<leader>x", ":x<CR>", { noremap = true })
 vars.remap.fn("n", "<leader>y.", ":1,.y<CR>", { noremap = true })
 vars.remap.fn("n", "<leader>ya", ":1,$y<CR>", { noremap = true })
 vars.remap.fn("n", "<Space>", ":", { noremap = true })

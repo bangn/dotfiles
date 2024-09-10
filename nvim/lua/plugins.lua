@@ -1,3 +1,5 @@
+-- luacheck: ignore 112 113
+--
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
