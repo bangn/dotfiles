@@ -24,7 +24,7 @@ with pkgsUnstable; [
   htop
   hub
   hugo
-  jdk11
+  jd-diff-patch
   jq
   just
   k9s
