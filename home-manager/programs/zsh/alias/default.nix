@@ -15,6 +15,7 @@ in {
   lg = "lazygit";
   mmv = "noglob zmv -W";
   mux = "tmuxinator";
+  ola = "ollama";
   pbcopy = if isLinux then "xclip -selection clipboard" else "pbcopy";
   pbpaste = if isLinux then "xclip -selection clipboard -o" else "pbpaste";
   tf = "terraform";
