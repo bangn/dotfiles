@@ -1,6 +1,5 @@
 { pkgs, isLinux, ... }:
 let
-  drivers = [ pkgs.mesa.drivers ];
   fdOptions = builtins.concatStringsSep " " [
     "--ignore-case"
     "--hidden"
@@ -69,15 +68,6 @@ in {
   FZF_ALT_C_COMMAND =
     builtins.concatStringsSep " " [ "fd" "--type d" fdOptions ];
   FZF_ALT_C_OPTS = "";
-
-  ########################################
-  # Fix glx issue in nix-shell
-  ########################################
-  LIBGL_DRIVERS_PATH = if isLinux then
-    pkgs.lib.makeSearchPathOutput "lib" "lib/dri" drivers
-  else
-    "";
-  LD_LIBRARY_PATH = if isLinux then pkgs.lib.makeLibraryPath drivers else "";
 
   ########################################
   # Fix locale

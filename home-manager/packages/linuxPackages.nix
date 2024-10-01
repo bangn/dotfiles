@@ -9,7 +9,6 @@ with pkgsUnstable; [
   mcrypt
   keybase-gui
   mcrypt
-  mesa.drivers
   peek
   pinta
   screenkey
