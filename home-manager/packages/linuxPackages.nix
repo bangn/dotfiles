@@ -1,6 +1,5 @@
 { pkgs, pkgsUnstable, ... }:
 with pkgsUnstable; [
-  alacritty
   coreutils-full
   curlFull
   firefox
