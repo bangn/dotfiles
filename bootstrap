@@ -2,6 +2,18 @@
 
 set -eu
 
+check_required_application() {
+  if ! command -v curl; then
+    echo "Please install curl before start"
+    exit 1
+  fi
+
+  if ! command -v zsh; then
+    echo "Please install zsh before start"
+    exit 1
+  fi
+}
+
 install_nix() {
   if ! command -v nix; then
     echo "Installing nix..."
@@ -17,6 +29,9 @@ install_nix() {
 }
 
 install_home_manager() {
+  # shellcheck disable=SC1090
+  source ~/.nix-profile/etc/profile.d/nix.sh
+
   if ! command -v home-manager; then
     echo "Installing home-manager..."
     export NIX_PATH="$HOME/.nix-defexpr/channels"
@@ -55,7 +70,9 @@ populate_nix_config() {
   if [[ "$(uname)" == "Linux" ]]; then
     echo -e "Populating nixpkgs config files for home manager..."
     rm -rf "$HOME/.config/nixpkgs"
+    rm -rf "$HOME/.config/home-manager"
     ln -sfn "$PWD"/nixpkgs "$HOME/.config"
+    ln -sfn "$PWD/home-manager" "$HOME/.config/home-manager"
   fi
 
   if [[ "$(uname)" == "Darwin" ]]; then
@@ -69,6 +86,9 @@ populate_nix_config() {
 
 install_tpm() {
   echo "Installing tpm"
+  if [ -d ~/.tmux/plugins/tpm ]; then
+    rm -rf ~/.tmux/plugins/tpm
+  fi
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   export PATH="$HOME/.nix-profile/bin:$PATH"
   zsh -c "$HOME/.tmux/plugins/tpm/bindings/install_plugins"

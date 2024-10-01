@@ -1,5 +1,6 @@
 { pkgs, pkgsUnstable, ... }:
 with pkgsUnstable; [
+  alacritty
   coreutils-full
   curlFull
   firefox
@@ -7,6 +8,7 @@ with pkgsUnstable; [
   google-chrome
   mcrypt
   keybase-gui
+  mcrypt
   mesa.drivers
   peek
   pinta
@@ -15,6 +17,4 @@ with pkgsUnstable; [
   spotify
   starship
   sxiv
-  xcompmgr
-  xorg.xinput
 ]
