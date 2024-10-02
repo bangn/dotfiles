@@ -1,0 +1,19 @@
+[Desktop Entry]
+Type=Application
+TryExec=/usr/local/bin/cursorAI
+Exec=/usr/local/bin/cursorAI
+Icon=cursorAI
+Terminal=false
+Categories=System;TerminalEmulator;
+
+Name=CursorAI
+GenericName=Cursor AI
+Comment=A cross-platform, GPU enhanced cursor AI emulator
+StartupWMClass=CursorAI
+Actions=New;
+
+X-Desktop-File-Install-Version=0.26
+
+[Desktop Action New]
+Name=New Cursor AI Session
+Exec=/usr/local/bin/cursorAI

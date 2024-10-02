@@ -3,3 +3,4 @@ nvim/undo/*
 nvim/bakup/*
 nvim/swap/*
 nvim/plugin/packer_compiled.lua
+.aider*
