@@ -80,8 +80,6 @@ in {
 
     status = { showUntrackedFiles = "all"; };
 
-    url = { "git@github.com:" = { insteadOf = "https://github.com"; }; };
-
     transfer = { fsckobjects = true; };
     fetch = {
       fsckobjects = true;
