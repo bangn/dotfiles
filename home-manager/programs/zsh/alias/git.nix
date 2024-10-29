@@ -29,7 +29,7 @@
   gisls = "gh issue list";
   gisv = "gh issue view";
 
-  gl = "git log";
+  gl = "git log --ext-diff";
   glog = "git log --branches --remotes --graph --oneline --decorate";
   gls = "git ls";
   glsa = "git lsa";
@@ -52,7 +52,7 @@
   grc = "git rebase --continue";
   gri = "git rebase -i";
 
-  gsh = "git show HEAD";
+  gsh = "git show --ext-diff";
   gshn = "git show HEAD --name-only";
 
   gstl = "git stash list";
