@@ -39,7 +39,8 @@ in {
     core = {
       editor = "nvim -f";
       commentChar = ",";
-      pager = "delta";
+      hookPath =
+        "${homeDir}/Development/config_files/dot-files/git_template/hooks";
       untrackedCache = true;
     };
 
@@ -64,7 +65,25 @@ in {
 
     init = { defaultBranch = "main"; };
 
-    diff = { algorithm = "histogram"; };
+    diff = {
+      algorithm = "histogram";
+
+      # use difftastic
+      external = "difft --color=always";
+      tool = "difftastic";
+    };
+
+    pager = { difftool = true; };
+
+    difftool = {
+      difftastic = {
+        cmd = ''
+          difft "$MERGED" "$LOCAL" "abcdef1" "100644" "$REMOTE" "abcdef2" "100644"
+        '';
+      };
+
+      prompt = false;
+    };
 
     merge = {
       defaultToUpstream = true;

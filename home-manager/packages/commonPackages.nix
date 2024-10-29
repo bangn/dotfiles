@@ -7,6 +7,7 @@ with pkgsUnstable; [
   buildkite-cli
   caddy
   detekt
+  difftastic
   docker-compose
   entr
   fd
