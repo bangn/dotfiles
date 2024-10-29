@@ -39,8 +39,6 @@ in {
     core = {
       editor = "nvim -f";
       commentChar = ",";
-      hookPath =
-        "${homeDir}/Development/config_files/dot-files/git_template/hooks";
       untrackedCache = true;
     };
 
