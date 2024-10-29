@@ -18,7 +18,7 @@
 
   gd = "git diff";
   gdc = "git diff --cached";
-  gdcn = "git diff --cached  --name-only";
+  gdcn = "git diff --cached --name-only";
   gdcw = "git diff --cached --word-diff";
   gdmb = "git diff $(git show-branch --merge-base)..HEAD";
   gdmbn = "git diff $(git show-branch --merge-base)..HEAD --name-only";
@@ -59,8 +59,6 @@
   gsts = "git stash save -u";
 
   gcb = "git checkout -b";
-  gcis = "git ci-status";
   gcp = "git cherry-pick";
-  gr = "git reset";
   gs = "git status -sb";
 }
