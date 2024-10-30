@@ -4,4 +4,5 @@ let
   keybindings = builtins.readFile ./keybindings.sh;
   zshrc = builtins.readFile ./zshrc.sh;
   prompt = builtins.readFile ./prompt.sh;
-in functions + git + keybindings + zshrc + prompt
+  mise = builtins.readFile ./mise.sh;
+in functions + git + keybindings + zshrc + prompt + mise

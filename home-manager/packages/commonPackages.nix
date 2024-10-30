@@ -36,6 +36,7 @@ with pkgsUnstable; [
   luajitPackages.luacheck
   mdl
   minikube
+  mise
   mkcert
   moreutils
   ngrok
