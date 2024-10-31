@@ -18,11 +18,10 @@
   ".rufo".source = ./rufo/rufo;
   ".ruby-version".source = ./ruby/ruby-version;
 
-  # asdf dotfiles
-  ".asdfrc".source = ./asdf/asdfrc;
+  # mise default packages file
   ".default-gems".source = ./asdf/default-gems;
   ".default-npm-packages".source = ./asdf/default-npm-packages;
-  ".tool-versions".source = ./asdf/tool-versions;
+  ".python-default-packages.txt".source = ./python/default-packages.txt;
 
   # haskell dotfiles
   ".ghci".source = ./haskell/ghci;
@@ -72,7 +71,4 @@
 
   # continue.dev
   ".continue/config.json".source = ./continue.dev/config.json;
-
-  # mise python default packages
-  ".python-default-packages.txt".source = ./python/default-packages.txt;
 }

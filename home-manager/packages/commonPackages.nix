@@ -1,6 +1,5 @@
 { pkgs, pkgsUnstable, ... }:
 with pkgsUnstable; [
-  asdf-vm
   bat
   buf
   buildkite-agent
