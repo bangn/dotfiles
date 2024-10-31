@@ -63,6 +63,7 @@ with pkgsUnstable; [
   tldr
   tree
   tree-sitter
+  usage
   uv
   watch
   wget
