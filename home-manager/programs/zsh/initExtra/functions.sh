@@ -178,15 +178,6 @@ public_ip() {
   dig +short myip.opendns.com @resolver1.opendns.com.
 }
 
-# asdf reshim plugin
-asdf_reshim() {
-  if [[ -n "$1" ]]; then
-    asdf reshim "$1"
-  else
-    asdf plugin-list | xargs -Ip asdf reshim p
-  fi
-}
-
 # Remove node_modules recursively
 rm_node_modules() {
   dir="${1:-.}"

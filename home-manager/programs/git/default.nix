@@ -139,9 +139,6 @@ in {
     ".venv"
     "__pycache__"
 
-    # Ignore asdf local package version
-    ".tool-versions"
-
     # Haskell/stack compiler output
     ".stack-work"
     ".stack"
