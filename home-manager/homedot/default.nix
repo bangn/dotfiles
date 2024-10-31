@@ -60,4 +60,19 @@
 
   # detekt
   "detekt.yaml".source = ./detekt/detekt.yaml;
+
+  # yarn
+  ".yarnrc".source = ./yarn/yarnrc;
+
+  # gem
+  ".gemrc".source = ./gem/gemrc;
+
+  # bundler
+  ".bundle/config".source = ./bundler/config;
+
+  # continue.dev
+  ".continue/config.json".source = ./continue.dev/config.json;
+
+  # mise python default packages
+  ".python-default-packages.txt".source = ./python/default-packages.txt;
 }
