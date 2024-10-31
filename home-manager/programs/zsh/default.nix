@@ -79,5 +79,6 @@
   '' + ''
     source "${pkgs.fzf}/share/fzf/completion.zsh"
     source "${pkgs.fzf}/share/fzf/key-bindings.zsh"
+    source "${pkgs.mise}/share/zsh/site-functions/_mise"
   '' + extra;
 }
