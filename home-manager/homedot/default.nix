@@ -19,8 +19,8 @@
   ".ruby-version".source = ./ruby/ruby-version;
 
   # mise default packages file
-  ".default-gems".source = ./asdf/default-gems;
-  ".default-npm-packages".source = ./asdf/default-npm-packages;
+  ".default-gems".source = ./mise/default-gems;
+  ".default-npm-packages".source = ./mise/default-npm-packages;
   ".python-default-packages.txt".source = ./python/default-packages.txt;
 
   # haskell dotfiles
