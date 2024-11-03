@@ -3,9 +3,9 @@ experimental = true
 python_default_packages_file = "$HOME/.python-default-packages.txt"
 
 [tools]
-golang = "1.22.4"
-nodejs = "21.7.3"
-ruby = "3.3.0"
-rust = "1.79.0"
-python = "3.10.0"
+golang = "latest"
+nodejs = "latest"
+ruby = "3.3.4"
+rust = "latest"
+python = "3.10"
 uv = "latest"
