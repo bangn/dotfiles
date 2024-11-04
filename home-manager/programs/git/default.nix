@@ -163,5 +163,8 @@ in {
     "*.swo"
     ".idea"
     ".rbx"
+
+    # mise config
+    ".mise.toml"
   ];
 }
