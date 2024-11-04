@@ -11,7 +11,7 @@ with pkgsUnstable; [
   peek
   pinta
   screenkey
-  slack-dark
+  slack
   spotify
   starship
   sxiv
