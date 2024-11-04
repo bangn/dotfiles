@@ -11,7 +11,6 @@ in {
   home-manager.users."${username}" = (import ../home-manager/home.nix);
 
   environment = {
-    loginShell = pkgs.zsh;
     pathsToLink = [ "/Applications" ];
     systemPackages = [ ];
   };
