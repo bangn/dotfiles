@@ -47,7 +47,7 @@ with pkgsUnstable; [
   pipx
   plantuml
   poetry
-  postgresql_12
+  postgresql_17
   pylint
   python312Packages.sqlparse
   ripgrep
