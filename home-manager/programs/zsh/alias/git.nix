@@ -9,6 +9,7 @@
   gba = ''git branch -a --format "%(committerdate:short)%09%(refname:short)"'';
   gbc = "git clean-branches -f";
   gbd = "git branch -d";
+  gclb = "git clean-branches";
 
   gca = "git commit --amend";
   gcm = "git commit -m";
