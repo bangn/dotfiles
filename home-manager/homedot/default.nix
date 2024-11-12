@@ -59,7 +59,4 @@
 
   # detekt
   "detekt.yaml".source = ./detekt/detekt.yaml;
-
-  # continue.dev
-  ".continue/config.json".source = ./continue.dev/config.json;
 }
