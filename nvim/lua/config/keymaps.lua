@@ -1,6 +1,7 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
+<<<<<<< HEAD
 
 ----------------------------------------
 -- Macro
@@ -26,3 +27,6 @@ vim.keymap.set("n", "<C-p>", "<Cmd>Telescope find_files<CR>", {})
 ----------------------------------------
 vim.keymap.del({ "n", "x", "o" }, "s")
 vim.keymap.del({ "n", "x", "o" }, "S")
+||||||| parent of ebf9337 (nvim: Use lazyvim config)
+=======
+>>>>>>> ebf9337 (nvim: Use lazyvim config)
