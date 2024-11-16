@@ -33,6 +33,7 @@ with pkgsUnstable; [
   kubectx
   kubernetes-helm
   luajitPackages.luacheck
+  luarocks
   mdl
   minikube
   mise
