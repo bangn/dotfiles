@@ -3,4 +3,6 @@ nvim/undo/*
 nvim/bakup/*
 nvim/swap/*
 nvim/plugin/packer_compiled.lua
+nvim/lazy-lock.json
+nvim/lazyvim.json
 .aider*

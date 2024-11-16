@@ -1,5 +1,10 @@
-{ pkgs, pkgsUnstable, ... }:
+{
+  pkgs,
+  pkgsUnstable,
+  ...
+}:
 with pkgsUnstable; [
+  alejandra
   bat
   buf
   buildkite-agent
@@ -33,6 +38,9 @@ with pkgsUnstable; [
   kubectx
   kubernetes-helm
   luajitPackages.luacheck
+  luarocks
+  markdownlint-cli
+  markdownlint-cli2
   mdl
   minikube
   mise
