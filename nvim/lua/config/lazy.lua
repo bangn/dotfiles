@@ -6,6 +6,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
 <<<<<<< HEAD
+<<<<<<< HEAD
       { out, "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
@@ -47,6 +48,11 @@ require("lazy").setup({
 ||||||| parent of ebf9337 (nvim: Use lazyvim config)
 =======
       { out, "WarningMsg" },
+||||||| parent of 47a5d2e (nvim: Update lazyvim config)
+      { out, "WarningMsg" },
+=======
+      { out,                            "WarningMsg" },
+>>>>>>> 47a5d2e (nvim: Update lazyvim config)
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -58,8 +64,15 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { "LazyVim/LazyVim",                                import = "lazyvim.plugins" },
     -- import/override with your plugins
+
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.lang.json" },
+    { import = "lazyvim.plugins.extras.lang.markdown" },
+    { import = "lazyvim.plugins.extras.lang.toml" },
+    { import = "lazyvim.plugins.extras.vscode" },
+
     { import = "plugins" },
   },
   defaults = {
@@ -75,8 +88,14 @@ require("lazy").setup({
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
+<<<<<<< HEAD
   }, -- automatically check for plugin updates
 >>>>>>> ebf9337 (nvim: Use lazyvim config)
+||||||| parent of 47a5d2e (nvim: Update lazyvim config)
+  }, -- automatically check for plugin updates
+=======
+  },                -- automatically check for plugin updates
+>>>>>>> 47a5d2e (nvim: Update lazyvim config)
   performance = {
     rtp = {
       -- disable some rtp plugins
