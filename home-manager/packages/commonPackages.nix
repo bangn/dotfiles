@@ -34,6 +34,8 @@ with pkgsUnstable; [
   kubernetes-helm
   luajitPackages.luacheck
   luarocks
+  markdownlint-cli
+  markdownlint-cli2
   mdl
   minikube
   mise
