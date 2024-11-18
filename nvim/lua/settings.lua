@@ -47,12 +47,3 @@ set.undolevels = 1000
 set.undoreload = 10000
 set.updatetime = 300
 set.wrap = false
-
--- COQ settings
-vim.g.coq_settings = {
-  auto_start = "shut-up",
-  keymap = {
-    recommended = true,
-    jump_to_mark = "<C-f>",
-  },
-}
