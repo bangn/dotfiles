@@ -22,9 +22,7 @@ vim.keymap.set("n", "<C-l>", "<Cmd>TmuxNavigateRight<CR>", {})
 vim.keymap.set("n", "<C-p>", "<Cmd>Telescope find_files<CR>", {})
 
 ----------------------------------------
--- misc
+-- Use default 's' and 'S' in normal, visual, and operator-pending modes
 ----------------------------------------
-if not vim.g.vscode then
-  vim.keymap.set("n", "<leader>vs", "<C-w>v", { noremap = true })
-  vim.keymap.set("n", "<leader>sp", "<C-w>s", { noremap = true })
-end
+vim.keymap.del({ 'n', 'x', 'o' }, 's')
+vim.keymap.del({ 'n', 'x', 'o' }, 'S')
