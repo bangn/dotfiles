@@ -1,6 +1,6 @@
-<<<<<<< HEAD
 call_parentheses = "Always"
 collapse_simple_statement = "Never"
+column_width = 120
 column_width = 120
 indent_type = "Spaces"
 indent_width = 2
@@ -9,9 +9,3 @@ quote_style = "AutoPreferDouble"
 
 [sort_requires]
 enabled = true
-||||||| parent of db92a91 (nvim: Add stylua config)
-=======
-indent_type = "Spaces"
-indent_width = 2
-column_width = 120
->>>>>>> db92a91 (nvim: Add stylua config)
