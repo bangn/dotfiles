@@ -1,146 +1,76 @@
-metaKey = { "cmd", "ctrl" }
-movementDistance = 30
+-- luacheck: ignore 113
+
+local metaKey = { "cmd", "ctrl" }
 hs.application.enableSpotlightForNameSearches(true)
 
 --------------------------------------------------------------------------------
 -- Hot reload Hammerspon
 --------------------------------------------------------------------------------
 hs.hotkey.bind(metaKey, "R", function()
-	hs.reload()
-end)
+  hs.reload()
+end, nil, "Reload Hammerspoon")
 
 --------------------------------------------------------------------------------
 -- Open alacritty
 --------------------------------------------------------------------------------
 hs.hotkey.bind(metaKey, hs.keycodes.map["return"], function()
-	hs.application.launchOrFocus("alacritty")
+  hs.application.launchOrFocus("alacritty")
 end)
 
 --------------------------------------------------------------------------------
 -- Moving window
 --------------------------------------------------------------------------------
--- Fullscreen
-hs.hotkey.bind(metaKey, "f", function()
-	local win = hs.window.focusedWindow()
-	win:maximize()
-end)
+local moveWindow = function(xFactor, yFactor, wFactor, hFactor)
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
 
--- Half left
-hs.hotkey.bind(metaKey, "h", function()
-	local win = hs.window.focusedWindow()
-	local f = win:frame()
-	local screen = win:screen()
-	local max = screen:frame()
+  f.x = max.x + (max.w * xFactor)
+  f.y = max.y + (max.h * yFactor)
+  f.w = max.w * wFactor
+  f.h = max.h * hFactor
+  win:setFrame(f)
+end
 
-	f.x = max.x
-	f.y = max.y
-	f.w = max.w / 2
-	f.h = max.h
-	win:setFrame(f)
-end)
+local fullScreen = function()
+  local win = hs.window.focusedWindow()
+  win:maximize()
+end
 
--- Half right
-hs.hotkey.bind(metaKey, "l", function()
-	local win = hs.window.focusedWindow()
-	local f = win:frame()
-	local screen = win:screen()
-	local max = screen:frame()
+local leftHalf = function()
+  moveWindow(0, 0, 0.5, 1)
+end
 
-	f.x = max.x + (max.w / 2)
-	f.y = max.y
-	f.w = max.w / 2
-	f.h = max.h
-	win:setFrame(f)
-end)
+local rightHalf = function()
+  moveWindow(0.5, 0, 0.5, 1)
+end
+local topHalf = function()
+  moveWindow(0, 0, 1, 0.5)
+end
+local bottomHalf = function()
+  moveWindow(0, 0.5, 1, 0.5)
+end
 
--- Top half
-hs.hotkey.bind(metaKey, "k", function()
-	local win = hs.window.focusedWindow()
-	local f = win:frame()
-	local screen = win:screen()
-	local max = screen:frame()
+hs.hotkey.bind(metaKey, "up", fullScreen)
+hs.hotkey.bind(metaKey, "left", leftHalf)
+hs.hotkey.bind(metaKey, "right", rightHalf)
+hs.hotkey.bind(metaKey, "k", topHalf)
+hs.hotkey.bind(metaKey, "j", bottomHalf)
 
-	f.x = max.x
-	f.y = max.y / 2
-	f.w = max.w
-	f.h = max.h / 2
-	win:setFrame(f)
-end)
+--------------------------------------------------------------------------------
+-- Moving screen
+--------------------------------------------------------------------------------
+local moveToScreen = function(direction)
+  local win = hs.window.focusedWindow()
+  local screen = win:screen()
+  local targetScreen = direction == "next" and screen:next() or screen:previous()
+  win:moveToScreen(targetScreen)
+end
 
--- Bottom half
-hs.hotkey.bind(metaKey, "j", function()
-	local win = hs.window.focusedWindow()
-	local f = win:frame()
-	local screen = win:screen()
-	local max = screen:frame()
-
-	f.x = max.x
-	f.y = max.y + (max.h / 2)
-	f.w = max.w
-	f.h = max.h / 2
-	win:setFrame(f)
-end)
-
--- Middle of screen
-hs.hotkey.bind(metaKey, "m", function()
-	local win = hs.window.focusedWindow()
-	local f = win:frame()
-	local screen = win:screen()
-	local max = screen:frame()
-
-	f.x = max.x
-	f.y = max.y + (max.h / 5)
-	f.w = max.w
-	f.h = max.h * 2 / 3
-	win:setFrame(f)
-end)
-
--- Move to next screen
 hs.hotkey.bind(metaKey, "n", function()
-	local win = hs.window.focusedWindow()
-	local screen = win:screen()
-	local nextScreen = screen:next()
-
-	win:moveToScreen(nextScreen)
+  moveToScreen("next")
 end)
-
--- Move to previous screen
 hs.hotkey.bind(metaKey, "p", function()
-	local win = hs.window.focusedWindow()
-	local screen = win:screen()
-	local previousScreen = screen:previous()
-
-	win:moveToScreen(previousScreen)
-end)
-
-hs.hotkey.bind(metaKey, "Up", function()
-	local win = hs.window.focusedWindow()
-	local f = win:frame()
-
-	f.y = f.y - movementDistance
-	win:setFrame(f)
-end)
-
-hs.hotkey.bind(metaKey, "Down", function()
-	local win = hs.window.focusedWindow()
-	local f = win:frame()
-
-	f.y = f.y + movementDistance
-	win:setFrame(f)
-end)
-
-hs.hotkey.bind(metaKey, "Left", function()
-	local win = hs.window.focusedWindow()
-	local f = win:frame()
-
-	f.x = f.x - movementDistance
-	win:setFrame(f)
-end)
-
-hs.hotkey.bind(metaKey, "Right", function()
-	local win = hs.window.focusedWindow()
-	local f = win:frame()
-
-	f.x = f.x + movementDistance
-	win:setFrame(f)
+  moveToScreen("previous")
 end)
