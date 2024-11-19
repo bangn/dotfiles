@@ -14,6 +14,7 @@ set.backspace = "indent,eol,start"
 set.backup = false
 set.clipboard = "unnamedplus"
 set.colorcolumn = "80"
+set.conceallevel = 0
 set.cursorcolumn = true
 set.dir = home .. "/swap"
 set.encoding = "UTF-8"
