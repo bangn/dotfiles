@@ -7,7 +7,7 @@ local autocmd = vim.api.nvim_create_autocmd
 ----------------------------------------
 --- Auto save
 ----------------------------------------
-autocmd({ "InsertLeave" }, {
+autocmd({ "BufLeave", "FocusLost" }, {
   pattern = { "*" },
   command = "silent! wall",
   nested = true,
