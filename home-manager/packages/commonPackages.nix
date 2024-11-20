@@ -35,18 +35,8 @@ with pkgsUnstable; [
   lua
   luajitPackages.luacheck
   luarocks
-<<<<<<< HEAD
-<<<<<<< HEAD
   markdownlint-cli
   markdownlint-cli2
-||||||| parent of 47a5d2e (nvim: Update lazyvim config)
-=======
->>>>>>> 47a5d2e (nvim: Update lazyvim config)
-||||||| parent of 0e88b7c (nvim: Add markdown cli)
-=======
-  markdownlint-cli
-  markdownlint-cli2
->>>>>>> 0e88b7c (nvim: Add markdown cli)
   mdl
   minikube
   mise
