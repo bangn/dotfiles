@@ -24,6 +24,7 @@ return {
       },
       -- Define your formatters here
       formatters_by_ft = {
+        ["*"] = { "trim_whitespace" },
         css = { { "prettierd", "prettier" } },
         go = { "gofmt" },
         html = { { "prettierd", "prettier" } },
@@ -36,6 +37,7 @@ return {
         ruby = { "rubocop" },
         rust = { "rustfmt" },
         scss = { { "prettierd", "prettier" } },
+        sh = { "shfmt" },
         typescript = { { "prettierd", "prettier" } },
         typescriptreact = { { "prettierd", "prettier" } },
         yaml = { { "prettierd", "prettier" } },
