@@ -1,5 +1,10 @@
-{ pkgs, pkgsUnstable, ... }:
+{
+  pkgs,
+  pkgsUnstable,
+  ...
+}:
 with pkgsUnstable; [
+  alejandra
   bat
   buf
   buildkite-agent

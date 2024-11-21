@@ -6,7 +6,12 @@ return {
       ensure_installed = {
         "prettier",
         "prettierd",
+<<<<<<< HEAD
         "vale"
+||||||| 7332600
+=======
+        "vale",
+>>>>>>> upstream/main
       },
     },
   },
