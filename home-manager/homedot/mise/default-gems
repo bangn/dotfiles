@@ -1,6 +1,8 @@
 bundler
+neovim
 pry-byebug
 rubocop
+ruby-lsp
+ruby-lsp-rails
 rubygems-bundler
 solargraph
-neovim
