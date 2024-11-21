@@ -6,10 +6,7 @@ return {
       ensure_installed = {
         "prettier",
         "prettierd",
-        "ruff",
-        "shellcheck",
-        "shfmt",
-        "stylua",
+        "vale"
       },
     },
   },
