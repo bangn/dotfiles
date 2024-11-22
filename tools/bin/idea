@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ "$(uname)" == "Darwin" ]]; then
+  open -na "IntelliJ IDEA CE.app" --args "$@"
+else
+  /opt/idea/bin/idea.sh
+fi
