@@ -24,5 +24,5 @@ vim.keymap.set("n", "<C-p>", "<Cmd>Telescope find_files<CR>", {})
 ----------------------------------------
 -- Use default 's' and 'S' in normal, visual, and operator-pending modes
 ----------------------------------------
-vim.keymap.del({ 'n', 'x', 'o' }, 's')
-vim.keymap.del({ 'n', 'x', 'o' }, 'S')
+vim.keymap.del({ "n", "x", "o" }, "s")
+vim.keymap.del({ "n", "x", "o" }, "S")
