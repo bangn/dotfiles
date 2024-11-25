@@ -5,5 +5,5 @@ return {
     opts = {
       enable_autocmd = false,
     },
-  }
+  },
 }

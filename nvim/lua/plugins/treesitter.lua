@@ -22,7 +22,7 @@ return {
           goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer", ["[A"] = "@parameter.inner" },
         },
       },
-    }
+    },
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
@@ -31,5 +31,5 @@ return {
   {
     "windwp/nvim-ts-autotag",
     opts = {},
-  }
-};
+  },
+}
