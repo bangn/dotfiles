@@ -38,6 +38,7 @@ return {
           ["*"] = { "trim_whitespace" },
           css = { "prettierd", "prettier" },
           go = { "gofmt" },
+          haskell = { "stylish-haskell", "ormolu" },
           html = { "prettierd", "prettier" },
           javascript = { "prettierd", "prettier" },
           javascriptreact = { "prettierd", "prettier" },
