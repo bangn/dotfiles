@@ -1,8 +1,4 @@
-{
-  pkgs,
-  pkgsUnstable,
-  ...
-}:
+{ pkgs, pkgsUnstable, ... }:
 with pkgsUnstable; [
   alejandra
   bat
@@ -50,6 +46,7 @@ with pkgsUnstable; [
   nixfmt-classic
   nixpkgs-fmt
   nushell
+  ormolu
   pandoc
   pdftk
   pipx
