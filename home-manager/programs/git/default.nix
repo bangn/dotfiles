@@ -37,13 +37,16 @@ in {
     commit = { template = "~/.gitmessage"; };
 
     core = {
-      editor = "nvim -f";
       commentChar = ",";
+      editor = "nvim -f";
+      pager = "delta";
       untrackedCache = true;
     };
 
     delta = {
       features = "line-numbers decorations";
+      navigate = true;
+      side-by-side = true;
       syntax-theme = "Nord";
 
       decorations = {
@@ -62,26 +65,27 @@ in {
     };
 
     init = { defaultBranch = "main"; };
+    interactive = { diffFilter = "delta --color-only"; };
 
     diff = {
       algorithm = "histogram";
 
       # use difftastic
-      external = "difft --color=always";
-      tool = "difftastic";
+      # external = "difft --color=always";
+      # tool = "difftastic";
     };
 
-    pager = { difftool = true; };
-
-    difftool = {
-      difftastic = {
-        cmd = ''
-          difft "$MERGED" "$LOCAL" "abcdef1" "100644" "$REMOTE" "abcdef2" "100644"
-        '';
-      };
-
-      prompt = false;
-    };
+    # use difftastic
+    # pager = { difftool = true; };
+    # difftool = {
+    #   difftastic = {
+    #     cmd = ''
+    #       difft "$MERGED" "$LOCAL" "abcdef1" "100644" "$REMOTE" "abcdef2" "100644"
+    #     '';
+    #   };
+    #
+    #   prompt = false;
+    # };
 
     merge = {
       defaultToUpstream = true;
