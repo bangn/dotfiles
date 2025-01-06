@@ -1,12 +1,8 @@
-{
-  pkgs,
-  isLinux,
-  ...
-}: {
-  ".config/alacritty/alacritty.toml".source =
-    if isLinux
-    then ./alacritty/alacritty.toml
-    else ./alacritty/alacritty-macos.toml;
+{ pkgs, isLinux, ... }: {
+  ".config/alacritty/alacritty.toml".source = if isLinux then
+    ./alacritty/alacritty.toml
+  else
+    ./alacritty/alacritty-macos.toml;
   ".config/brittany/brittany.yml".source = ./brittany/config.yaml;
   ".config/dunst/dunstrc".source = ./dunst/dunstrc;
   ".config/i3/config".source = ./i3/config;
@@ -19,6 +15,5 @@
   ".config/yamllint/config".source = ./yamllint/config;
   ".config/zathura/zathurarc".source = ./zathura/zathurarc;
   ".config/mise/config.toml".source = ./mise/config.toml;
-  ".config/pypoetry/config.toml".source = ./pypoetry/config.toml;
   ".config/ghostty/config".source = ./ghostty/config;
 }
