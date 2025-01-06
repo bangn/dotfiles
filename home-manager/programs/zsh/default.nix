@@ -1,4 +1,8 @@
-{ pkgs, isLinux, ... }: {
+{
+  pkgs,
+  isLinux,
+  ...
+}: {
   enable = true;
 
   autocd = true;
@@ -13,7 +17,7 @@
     size = 100000;
   };
 
-  autosuggestion = { enable = true; };
+  autosuggestion = {enable = true;};
 
   shellAliases = import ./alias;
 
@@ -72,13 +76,17 @@
     }
   ];
 
-  initExtra = let extra = import ./initExtra;
-  in ''
-    autoload -U zmv
-    setopt INC_APPEND_HISTORY
-  '' + ''
-    source "${pkgs.fzf}/share/fzf/completion.zsh"
-    source "${pkgs.fzf}/share/fzf/key-bindings.zsh"
-    source "${pkgs.mise}/share/zsh/site-functions/_mise"
-  '' + extra;
+  initExtra = let
+    extra = import ./initExtra;
+  in
+    ''
+      autoload -U zmv
+      setopt INC_APPEND_HISTORY
+    ''
+    + ''
+      source "${pkgs.fzf}/share/fzf/completion.zsh"
+      source "${pkgs.fzf}/share/fzf/key-bindings.zsh"
+      source "${pkgs.mise}/share/zsh/site-functions/_mise"
+    ''
+    + extra;
 }

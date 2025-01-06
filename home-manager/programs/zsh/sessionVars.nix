@@ -1,5 +1,8 @@
-{ pkgs, isLinux, ... }:
-let
+{
+  pkgs,
+  isLinux,
+  ...
+}: let
   fdOptions = builtins.concatStringsSep " " [
     "--ignore-case"
     "--hidden"
@@ -8,7 +11,6 @@ let
     "--exclude _build"
     "--exclude node_modules"
   ];
-
 in {
   # home-manager
   NIX_PATH = "$HOME/.nix-defexpr/channels\${NIX_PATH:+:}$NIX_PATH";
@@ -66,7 +68,7 @@ in {
   # fzf
   ########################################
   FZF_ALT_C_COMMAND =
-    builtins.concatStringsSep " " [ "fd" "--type d" fdOptions ];
+    builtins.concatStringsSep " " ["fd" "--type d" fdOptions];
   FZF_ALT_C_OPTS = "";
 
   ########################################
@@ -75,10 +77,10 @@ in {
   ########################################
   LOCALE_ARCHIVE_2_27 =
     pkgs.lib.makeSearchPathOutput "lib" "lib/locale/locale-archive"
-    [ pkgs.glibcLocales ];
+    [pkgs.glibcLocales];
   LOCALE_ARCHIVE =
     pkgs.lib.makeSearchPathOutput "lib" "lib/locale/locale-archive"
-    [ pkgs.glibcLocales ];
+    [pkgs.glibcLocales];
 
   ########################################
   # Running keybase-ui without checking kbfsfuse

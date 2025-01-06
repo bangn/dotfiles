@@ -5,4 +5,5 @@ let
   zshrc = builtins.readFile ./zshrc.sh;
   prompt = builtins.readFile ./prompt.sh;
   mise = builtins.readFile ./mise.sh;
-in functions + git + keybindings + zshrc + prompt + mise
+in
+  functions + git + keybindings + zshrc + prompt + mise

@@ -1,6 +1,9 @@
-{ config, pkgs, homeDirectory, ... }:
-
 {
+  config,
+  pkgs,
+  homeDirectory,
+  ...
+}: {
   system = {
     defaults = {
       loginwindow = {
@@ -43,9 +46,9 @@
         wvous-tr-corner = 1;
       };
 
-      spaces = { spans-displays = false; };
+      spaces = {spans-displays = false;};
 
-      screencapture = { location = "${homeDirectory}/Pictures"; };
+      screencapture = {location = "${homeDirectory}/Pictures";};
 
       NSGlobalDomain = {
         "com.apple.sound.beep.feedback" = 0;
@@ -57,7 +60,7 @@
         NSAutomaticCapitalizationEnabled = false;
       };
 
-      menuExtraClock = { Show24Hour = true; };
+      menuExtraClock = {Show24Hour = true;};
     };
 
     keyboard = {

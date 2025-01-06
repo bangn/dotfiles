@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   enable = true;
   shortcut = "a";
 
@@ -12,7 +10,7 @@
   sensibleOnTop = false;
   terminal = "screen-256color";
 
-  tmuxinator = { enable = true; };
+  tmuxinator = {enable = true;};
 
   extraConfig = import ./extraConfig.nix;
 }
