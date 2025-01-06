@@ -5,7 +5,6 @@ with pkgsUnstable; [
   firefox
   glibcLocales
   google-chrome
-  mcrypt
   keybase-gui
   mcrypt
   peek
