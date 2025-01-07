@@ -1,5 +1,10 @@
-{ inputs, config, pkgs, ... }: {
-  environment = { };
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}: {
+  environment = {};
 
   homebrew = {
     enable = true;

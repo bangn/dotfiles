@@ -1,1 +1,1 @@
-{ userDetails, ... }: { networking = { hostName = userDetails.hostName; }; }
+{userDetails, ...}: {networking = {hostName = userDetails.hostName;};}

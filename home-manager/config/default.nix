@@ -15,6 +15,5 @@
   ".config/yamllint/config".source = ./yamllint/config;
   ".config/zathura/zathurarc".source = ./zathura/zathurarc;
   ".config/mise/config.toml".source = ./mise/config.toml;
-  ".config/pypoetry/config.toml".source = ./pypoetry/config.toml;
   ".config/ghostty/config".source = ./ghostty/config;
 }

@@ -1,5 +1,9 @@
-{ pkgs, gitDetails, ... }:
-let username = gitDetails.username;
+{
+  pkgs,
+  gitDetails,
+  ...
+}: let
+  username = gitDetails.username;
 in {
   enable = true;
   package = pkgs.gitAndTools.gitFull;
@@ -9,32 +13,26 @@ in {
 
   aliases = {
     dds = "diff --stat";
-    depgraph =
-      "!git madge image --basedir . --style solarized-dark src > depgraph.png";
-    edit =
-      "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; $EDITOR `f`";
-    ls =
-      "log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset'";
-    lsa =
-      "log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset' --all";
+    depgraph = "!git madge image --basedir . --style solarized-dark src > depgraph.png";
+    edit = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; $EDITOR `f`";
+    ls = "log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset'";
+    lsa = "log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset' --all";
     root = "!pwd";
-    squash-all =
-      "!f(){ git reset $(git commit-tree HEAD^{tree} -m \${1:-Initial commit});};f";
-    tree =
-      "log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all";
+    squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \${1:-Initial commit});};f";
+    tree = "log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all";
   };
 
   extraConfig = {
-    advice = { skippedCherryPicks = false; };
+    advice = {skippedCherryPicks = false;};
     branch = {
       autosetupmerge = true;
       autosetuprebase = "remote";
       sort = "-committerdate";
     };
 
-    credential = { helper = "store"; };
+    credential = {helper = "store";};
 
-    commit = { template = "~/.gitmessage"; };
+    commit = {template = "~/.gitmessage";};
 
     core = {
       commentChar = ",";
@@ -64,8 +62,8 @@ in {
       };
     };
 
-    init = { defaultBranch = "main"; };
-    interactive = { diffFilter = "delta --color-only"; };
+    init = {defaultBranch = "main";};
+    interactive = {diffFilter = "delta --color-only";};
 
     diff = {
       algorithm = "histogram";
@@ -93,20 +91,20 @@ in {
       tool = "kdiff3";
     };
 
-    pull = { rebase = true; };
+    pull = {rebase = true;};
 
-    push = { default = "current"; };
+    push = {default = "current";};
 
-    rerere = { enable = true; };
+    rerere = {enable = true;};
 
-    status = { showUntrackedFiles = "all"; };
+    status = {showUntrackedFiles = "all";};
 
-    transfer = { fsckobjects = true; };
+    transfer = {fsckobjects = true;};
     fetch = {
       fsckobjects = true;
       prune = true;
     };
-    receive = { fsckobjects = true; };
+    receive = {fsckobjects = true;};
 
     user = {
       login = username;

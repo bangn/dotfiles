@@ -6,4 +6,3 @@
     email = "thebangnguyen@gmail.com";
   };
 }
-

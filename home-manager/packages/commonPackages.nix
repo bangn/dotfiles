@@ -1,4 +1,8 @@
-{ pkgs, pkgsUnstable, ... }:
+{
+  pkgs,
+  pkgsUnstable,
+  ...
+}:
 with pkgsUnstable; [
   alejandra
   bat

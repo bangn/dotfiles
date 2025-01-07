@@ -1,5 +1,10 @@
-{ inputs, config, pkgs, lib, ... }:
-let
+{
+  inputs,
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
   userDetails = import ./userDetails.nix;
   username = userDetails.username;
   homeDirectory = "/Users/${username}";
@@ -8,11 +13,11 @@ in {
     name = "${username}";
     home = homeDirectory;
   };
-  home-manager.users."${username}" = (import ../home-manager/home.nix);
+  home-manager.users."${username}" = import ../home-manager/home.nix;
 
   environment = {
-    pathsToLink = [ "/Applications" ];
-    systemPackages = [ ];
+    pathsToLink = ["/Applications"];
+    systemPackages = [];
   };
 
   services.nix-daemon.enable = true;
@@ -26,9 +31,9 @@ in {
   security.pam.enableSudoTouchIdAuth = true;
 
   imports = [
-    (import ./darwin/preferences.nix { inherit config pkgs homeDirectory; })
+    (import ./darwin/preferences.nix {inherit config pkgs homeDirectory;})
     ./darwin/brew.nix
-    (import ./darwin/networking.nix { inherit userDetails; })
+    (import ./darwin/networking.nix {inherit userDetails;})
     <home-manager/nix-darwin>
   ];
 

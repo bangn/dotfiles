@@ -45,7 +45,7 @@ return {
           json = { "prettierd", "prettier" },
           lua = { "stylua" },
           markdown = { "vale", "markdownlint-cli2" },
-          nix = { "alejandra", "nixfmt" },
+          nix = { "alejandra" },
           python = { "ruff" },
           ruby = { "rubocop" },
           rust = { "rustfmt" },
