@@ -31,7 +31,6 @@ with pkgsUnstable; [
   hugo
   jd-diff-patch
   jq
-  jujutsu
   just
   k9s
   kdiff3
