@@ -10,7 +10,6 @@ with pkgsUnstable; [
   glibcLocales
   google-chrome
   keybase-gui
-  mcrypt
   peek
   pinta
   screenkey
