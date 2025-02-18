@@ -11,10 +11,10 @@ hs.hotkey.bind(metaKey, "R", function()
 end, nil, "Reload Hammerspoon")
 
 --------------------------------------------------------------------------------
--- Open alacritty
+-- Open Ghostty
 --------------------------------------------------------------------------------
 hs.hotkey.bind(metaKey, hs.keycodes.map["return"], function()
-  hs.application.launchOrFocus("alacritty")
+  hs.application.launchOrFocus("ghostty")
 end)
 
 --------------------------------------------------------------------------------
