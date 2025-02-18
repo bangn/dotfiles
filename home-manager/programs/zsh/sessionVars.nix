@@ -1,8 +1,4 @@
-{
-  pkgs,
-  isLinux,
-  ...
-}: let
+{pkgs, ...}: let
   fdOptions = builtins.concatStringsSep " " [
     "--ignore-case"
     "--hidden"

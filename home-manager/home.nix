@@ -49,7 +49,7 @@ in
 
     home.file = let
       configFiles = import ./config {
-        inherit pkgs;
+        inherit pkgs config;
         isLinux = isLinux;
       };
       desktop = import ./desktop {inherit pkgs;};
