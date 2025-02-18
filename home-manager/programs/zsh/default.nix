@@ -1,8 +1,4 @@
-{
-  pkgs,
-  isLinux,
-  ...
-}: {
+{pkgs, ...}: {
   enable = true;
 
   autocd = true;
@@ -25,7 +21,6 @@
 
   sessionVariables = import ./sessionVars.nix {
     inherit pkgs;
-    isLinux = isLinux;
   };
 
   plugins = [

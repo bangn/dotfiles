@@ -1,7 +1,6 @@
 {
   pkgs,
   homeDir,
-  isLinux,
   userDetails,
   ...
 }: {
@@ -9,11 +8,19 @@
   home-manager.enable = true;
 
   direnv = import ./direnv {inherit pkgs;};
+
   git = import ./git {
     inherit pkgs;
     gitDetails = userDetails.gitDetails;
   };
+
+  jujutsu = import ./jujutsu {
+    inherit pkgs;
+    gitDetails = userDetails.gitDetails;
+  };
+
   lazygit = import ./lazygit {inherit pkgs;};
+
   tmux = import ./tmux {inherit pkgs;};
 
   fzf = {
@@ -53,6 +60,5 @@
   zsh = import ./zsh {
     inherit pkgs;
     homeDir = homeDir;
-    isLinux = isLinux;
   };
 }

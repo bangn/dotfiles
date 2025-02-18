@@ -1,8 +1,12 @@
-{ pkgs, isLinux, ... }: {
-  ".config/alacritty/alacritty.toml".source = if isLinux then
-    ./alacritty/alacritty.toml
-  else
-    ./alacritty/alacritty-macos.toml;
+{
+  pkgs,
+  isLinux,
+  ...
+}: {
+  ".config/alacritty/alacritty.toml".source =
+    if isLinux
+    then ./alacritty/alacritty.toml
+    else ./alacritty/alacritty-macos.toml;
   ".config/brittany/brittany.yml".source = ./brittany/config.yaml;
   ".config/dunst/dunstrc".source = ./dunst/dunstrc;
   ".config/i3/config".source = ./i3/config;
