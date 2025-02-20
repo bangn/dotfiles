@@ -1,9 +1,8 @@
-with builtins; let
+{pkgs, ...}: let
   bundlerAliases = import ./bundler.nix;
   dockerAliases = import ./docker.nix;
   gitAliases = import ./git.nix;
   k8sAliases = import ./k8s.nix;
-  isLinux = !(isNull (match ".*linux.*" currentSystem));
 in
   {
     # TODO: Dynamically get dotDir
@@ -17,11 +16,11 @@ in
     mux = "tmuxinator";
     ola = "ollama";
     pbcopy =
-      if isLinux
+      if pkgs.stdenv.isLinux
       then "xclip -selection clipboard"
       else "pbcopy";
     pbpaste =
-      if isLinux
+      if pkgs.stdenv.isLinux
       then "xclip -selection clipboard -o"
       else "pbpaste";
     tf = "terraform";

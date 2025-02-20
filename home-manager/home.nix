@@ -4,11 +4,10 @@
   ...
 }:
 with builtins; let
-  isLinux = !(isNull (match ".*linux.*" currentSystem));
   pkgsUnstable = import <nixpkgs> {};
   # This one is very couple with bootstrap script
   userDetails =
-    if isLinux
+    if pkgs.stdenv.isLinux
     then import ../nixpkgs/userDetails.nix
     else import ../.nixpkgs/userDetails.nix;
   username = userDetails.username;
@@ -50,7 +49,6 @@ in
     home.file = let
       configFiles = import ./config {
         inherit pkgs config;
-        isLinux = isLinux;
       };
       desktop = import ./desktop {inherit pkgs;};
       homedot = import ./homedot {inherit pkgs;};
@@ -60,7 +58,6 @@ in
     programs = import ./programs {
       pkgs = pkgsUnstable;
       homeDir = homeDir;
-      isLinux = isLinux;
       userDetails = userDetails;
     };
     news.display = "silent";
@@ -75,7 +72,7 @@ in
     };
 
     services =
-      if isLinux
+      if pkgs.stdenv.isLinux
       then {
         keybase = {enable = true;};
         flameshot = {enable = true;};
