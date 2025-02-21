@@ -10,7 +10,6 @@ in
 
     cat = "bat";
     fix-stty = "stty sane";
-    j = "z";
     lg = "lazygit";
     mmv = "noglob zmv -W";
     mux = "tmuxinator";
