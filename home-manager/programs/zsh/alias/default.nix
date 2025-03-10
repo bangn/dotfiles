@@ -1,9 +1,8 @@
-with builtins; let
+{pkgs, ...}: let
   bundlerAliases = import ./bundler.nix;
   dockerAliases = import ./docker.nix;
   gitAliases = import ./git.nix;
   k8sAliases = import ./k8s.nix;
-  isLinux = !(isNull (match ".*linux.*" currentSystem));
 in
   {
     # TODO: Dynamically get dotDir
@@ -11,17 +10,16 @@ in
 
     cat = "bat";
     fix-stty = "stty sane";
-    j = "z";
     lg = "lazygit";
     mmv = "noglob zmv -W";
     mux = "tmuxinator";
     ola = "ollama";
     pbcopy =
-      if isLinux
+      if pkgs.stdenv.isLinux
       then "xclip -selection clipboard"
       else "pbcopy";
     pbpaste =
-      if isLinux
+      if pkgs.stdenv.isLinux
       then "xclip -selection clipboard -o"
       else "pbpaste";
     tf = "terraform";
@@ -39,6 +37,7 @@ in
       "--exclude-dir=.git"
       "--exclude-dir=.gradle"
       "--exclude-dir=.idea"
+      "--exclude-dir=.jj"
       "--exclude-dir=.next"
       "--exclude-dir=.stack"
       "--exclude-dir=.stack-work"

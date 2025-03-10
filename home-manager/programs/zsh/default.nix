@@ -15,7 +15,7 @@
 
   autosuggestion = {enable = true;};
 
-  shellAliases = import ./alias;
+  shellAliases = import ./alias {inherit pkgs;};
 
   envExtra = "";
 

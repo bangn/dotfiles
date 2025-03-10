@@ -1,10 +1,10 @@
 {
   pkgs,
-  isLinux,
+  config,
   ...
 }: {
   ".config/alacritty/alacritty.toml".source =
-    if isLinux
+    if pkgs.stdenv.isLinux
     then ./alacritty/alacritty.toml
     else ./alacritty/alacritty-macos.toml;
   ".config/brittany/brittany.yml".source = ./brittany/config.yaml;
