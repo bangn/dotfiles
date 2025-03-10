@@ -37,6 +37,7 @@ in
       "--exclude-dir=.git"
       "--exclude-dir=.gradle"
       "--exclude-dir=.idea"
+      "--exclude-dir=.jj"
       "--exclude-dir=.next"
       "--exclude-dir=.stack"
       "--exclude-dir=.stack-work"
