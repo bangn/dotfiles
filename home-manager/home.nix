@@ -12,7 +12,7 @@ with builtins; let
     else import ../.nixpkgs/userDetails.nix;
   username = userDetails.username;
   homeDir =
-    if isLinux
+    if pkgs.stdenv.isLinux
     then "/home/${username}"
     else "/Users/${username}";
 in
