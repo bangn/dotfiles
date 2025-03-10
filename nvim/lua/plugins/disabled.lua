@@ -1,5 +1,7 @@
 return {
-  { "MeanderingProgrammer/render-markdown.nvim", enabled = false },
-  { "hrsh7th/nvim-cmp", enabled = false },
+  { "render-markdown.nvim", enabled = false },
+  { "nvim-cmp", enabled = false },
   { "nvim-autopairs", enabled = false },
+  { "friendly-snippets", enabled = false },
+  { "blink.cmp", enabled = false },
 }
