@@ -42,7 +42,7 @@ return {
           html = { "prettierd", "prettier" },
           javascript = { "prettierd", "prettier" },
           javascriptreact = { "prettierd", "prettier" },
-          json = { "prettierd", "prettier" },
+          json = { "jq" },
           lua = { "stylua" },
           markdown = { "vale", "markdownlint-cli2" },
           nix = { "alejandra" },
