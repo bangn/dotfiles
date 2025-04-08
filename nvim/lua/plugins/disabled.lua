@@ -1,5 +1,6 @@
 return {
-  { "render-markdown.nvim", enabled = false },
+  { "blink.cmp", enabled = false },
+  { "coq_nvim", enabled = true },
   { "nvim-cmp", enabled = false },
-  { "coq_nvim", enabled = false },
+  { "render-markdown.nvim", enabled = false },
 }
