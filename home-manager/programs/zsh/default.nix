@@ -71,8 +71,8 @@
     }
   ];
 
-  initExtra = let
-    extra = import ./initExtra;
+  initContent = let
+    extra = import ./initContent;
   in
     ''
       autoload -U zmv
