@@ -7,15 +7,11 @@ with pkgsUnstable; [
   alejandra
   bat
   buf
-  buildkite-agent
-  buildkite-cli
-  caddy
   detekt
   difftastic
   docker-compose
   entr
   fd
-  gh-copilot
   ghcid
   gitAndTools.delta
   gitAndTools.diff-so-fancy
@@ -33,7 +29,6 @@ with pkgsUnstable; [
   jq
   just
   k9s
-  kdiff3
   kubectl
   kubectx
   kubernetes-helm
@@ -46,7 +41,6 @@ with pkgsUnstable; [
   mise
   mkcert
   moreutils
-  ngrok
   nixfmt-classic
   nixpkgs-fmt
   nushell
@@ -64,11 +58,9 @@ with pkgsUnstable; [
   shellcheck
   shfmt
   sqlint
-  stow
   stylish-haskell
   stylua
   terraform-ls
-  tig
   tldr
   tree
   tree-sitter
