@@ -5,6 +5,7 @@
 }:
 with pkgsUnstable; [
   alejandra
+  awscli2
   bat
   buf
   detekt
