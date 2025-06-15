@@ -4,4 +4,4 @@ copy-on-select = clipboard
 
 confirm-close-surface = false
 
-keybind = ctrl+v=paste_from_clipboard
+keybind = alt+v=paste_from_clipboard
