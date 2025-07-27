@@ -13,7 +13,6 @@ with pkgsUnstable; [
   docker-compose
   entr
   fd
-  gemini-cli
   ghcid
   gitAndTools.delta
   gitAndTools.diff-so-fancy
