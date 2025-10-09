@@ -1,9 +1,9 @@
 return {
   {
-    "echasnovski/mini.nvim",
+    "nvim-mini/mini.nvim",
   },
   {
-    "echasnovski/mini.comment",
+    "nvim-mini/mini.comment",
     event = "VeryLazy",
     opts = {
       options = {
