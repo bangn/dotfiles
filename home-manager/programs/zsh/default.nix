@@ -3,7 +3,6 @@
 
   autocd = true;
   defaultKeymap = "viins";
-  dotDir = ".config/zsh";
   enableCompletion = true;
 
   history = {
