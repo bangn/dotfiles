@@ -152,5 +152,6 @@ githead() {
 }
 
 ghrv() {
-  gh repo view --web --branch "$(git rev-parse --abbrev-ref HEAD)"
+  branch="${1:-$(git symbolic-ref --short -q HEAD || git rev-parse HEAD)}"
+  gh repo view --web --branch "$branch"
 }
