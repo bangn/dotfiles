@@ -78,6 +78,11 @@
   bind -n WheelDownPane select-pane -t= \; send-keys -M
 
   ########################################
+  # Toggle pane synchronization with Prefix + Shift+S
+  ########################################
+  bind S setw synchronize-panes \; display-message "synchronize-panes: #{?pane_synchronized,on,off}"
+
+  ########################################
   # Useful stuff
   ########################################
 
