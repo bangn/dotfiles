@@ -63,6 +63,7 @@
       "obsidian"
       "postman"
       "visual-studio-code"
+      "gcloud-cli"
     ];
   };
 }
