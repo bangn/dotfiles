@@ -7,14 +7,14 @@ with pkgsUnstable; [
   alejandra
   bat
   buf
+  delta
   detekt
+  diff-so-fancy
   difftastic
   docker-compose
   entr
   fd
   ghcid
-  gitAndTools.delta
-  gitAndTools.diff-so-fancy
   github-cli
   gnupg
   gopls
