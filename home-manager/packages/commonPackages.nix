@@ -32,6 +32,7 @@ with pkgsUnstable; [
   kubectl
   kubectx
   kubernetes-helm
+  lua
   luajitPackages.luacheck
   luarocks
   markdownlint-cli

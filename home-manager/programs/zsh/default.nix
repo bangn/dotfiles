@@ -1,6 +1,9 @@
 {pkgs, ...}: {
   enable = true;
 
+  # Do NOT generate ~/.zshrc
+  dotDir = ".config/zsh";
+
   autocd = true;
   defaultKeymap = "viins";
   enableCompletion = true;
