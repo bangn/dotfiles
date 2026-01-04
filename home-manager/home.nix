@@ -59,6 +59,7 @@ in
       pkgs = pkgsUnstable;
       homeDir = homeDir;
       userDetails = userDetails;
+      inherit config;
     };
     news.display = "silent";
 
