@@ -1,9 +1,5 @@
-{
-  pkgs,
-  pkgsUnstable,
-  ...
-}:
-with pkgsUnstable; [
+{pkgs, ...}:
+with pkgs; [
   coreutils-full
   curlFull
   firefox

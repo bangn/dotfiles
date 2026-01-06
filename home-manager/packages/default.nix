@@ -1,12 +1,8 @@
-{
-  pkgs,
-  pkgsUnstable,
-  ...
-}:
+{pkgs, ...}:
 with builtins; let
-  commonPackages = import ./commonPackages.nix {inherit pkgs pkgsUnstable;};
-  macosPackages = import ./macosPackages.nix {inherit pkgs pkgsUnstable;};
-  linuxPackages = import ./linuxPackages.nix {inherit pkgs pkgsUnstable;};
+  commonPackages = import ./commonPackages.nix {inherit pkgs;};
+  macosPackages = import ./macosPackages.nix {inherit pkgs;};
+  linuxPackages = import ./linuxPackages.nix {inherit pkgs;};
 in
   commonPackages
   ++ (

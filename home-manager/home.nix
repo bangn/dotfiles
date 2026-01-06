@@ -4,7 +4,7 @@
   ...
 }:
 with builtins; let
-  pkgsUnstable = import <nixpkgs> {};
+  pkgsUnstable = import <nixpkgs> {system = pkgs.stdenv.hostPlatform.system;};
   # This one is very couple with bootstrap script
   userDetails =
     if pkgs.stdenv.isLinux
@@ -44,11 +44,15 @@ in
         url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
       }))
     ];
-    home.packages = import ./packages {inherit pkgs pkgsUnstable;};
+
+    home.packages = import ./packages {
+      pkgs = pkgsUnstable;
+    };
 
     home.file = let
       configFiles = import ./config {
-        inherit pkgs config;
+        pkgs = pkgsUnstable;
+        inherit config;
       };
       desktop = import ./desktop {inherit pkgs;};
       homedot = import ./homedot {inherit pkgs;};

@@ -1,9 +1,5 @@
-{
-  pkgs,
-  pkgsUnstable,
-  ...
-}:
-with pkgsUnstable; [
+{pkgs, ...}:
+with pkgs; [
   alejandra
   bat
   buf
