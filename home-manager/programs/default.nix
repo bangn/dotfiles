@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   homeDir,
   userDetails,
   ...
@@ -58,7 +59,7 @@
   zoxide = {enable = true;};
 
   zsh = import ./zsh {
-    inherit pkgs;
+    inherit pkgs config;
     homeDir = homeDir;
   };
 }

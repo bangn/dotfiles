@@ -1,6 +1,2 @@
-{
-  pkgs,
-  pkgsUnstable,
-  ...
-}:
-with pkgsUnstable; [alacritty]
+{pkgs, ...}:
+with pkgs; [alacritty]

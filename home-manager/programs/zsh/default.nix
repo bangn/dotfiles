@@ -1,8 +1,12 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   enable = true;
 
   # Do NOT generate ~/.zshrc
-  dotDir = ".config/zsh";
+  dotDir = "${config.home.homeDirectory}/.config/zsh";
 
   autocd = true;
   defaultKeymap = "viins";
