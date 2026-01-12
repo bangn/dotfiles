@@ -26,3 +26,8 @@ vim.keymap.set("n", "<C-p>", "<Cmd>Telescope find_files<CR>", {})
 ----------------------------------------
 vim.keymap.del({ "n", "x", "o" }, "s")
 vim.keymap.del({ "n", "x", "o" }, "S")
+
+----------------------------------------
+-- CodeDiff
+----------------------------------------
+vim.keymap.set("n", "<leader>dv", ":CodeDiff<CR>")
