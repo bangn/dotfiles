@@ -11,6 +11,9 @@ return {
       { "<leader>mdp", "<Cmd>MarkdownPreview<CR>", desc = "Preview markdown" },
 
       { "<leader>rn", ":set relativenumber!<CR>", desc = "Toggle relativenumber" },
+
+      -- CodeDiff plugin
+      { "<leader>cd", ":CodeDiff<CR>", desc = "Toggle CodeDiff" },
     })
     wk.setup(opts)
   end,
