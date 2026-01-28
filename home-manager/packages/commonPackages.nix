@@ -38,7 +38,7 @@ with pkgs; [
   mise
   mkcert
   moreutils
-  nixfmt-classic
+  nixfmt
   nixpkgs-fmt
   nushell
   ormolu
@@ -65,6 +65,7 @@ with pkgs; [
   uv
   watch
   wget
+  witr
   xclip
   yaml-language-server
   yamllint
