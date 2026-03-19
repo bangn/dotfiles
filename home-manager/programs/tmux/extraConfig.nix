@@ -158,4 +158,21 @@
   set -g window-status-separator '''
   set -g window-status-format '#[fg=black,bg=cyan,nobold,noitalics,nounderscore] #[fg=black,bg=cyan]#I  #(pwd="#{pane_current_path}"; echo ''${pwd####*/})#F #[fg=cyan,bg=black,nobold,noitalics,nounderscore]'
   set -g window-status-current-format '#[fg=black,bg=cyan,nobold,noitalics,nounderscore] #[fg=black,bg=cyan]#I  #(pwd="#{pane_current_path}"; echo ''${pwd####*/})#F #[fg=cyan,bg=black,nobold,noitalics,nounderscore]'
+
+  ################################################################################
+  # tmux-file-picker
+  ################################################################################
+  bind C-f display-popup -E "tmux-file-picker"
+  # Use -g flag to show paths relative to git root
+  bind C-g display-popup -E "tmux-file-picker -g"
+  # Use --directories to select directories instead of files
+  bind C-d display-popup -E "tmux-file-picker --directories"
+  # Use --zoxide to select from your frecent directories first
+  bind C-z display-popup -E "tmux-file-picker --zoxide"
+  # Use --zoxide with --dir-only to just insert the directory path
+  bind C-v display-popup -E "tmux-file-picker --zoxide --dir-only"
+  # Combine --zoxide with --git-root
+  bind C-x display-popup -E "tmux-file-picker --zoxide --git-root"
+  # Popup dimensions can be configured like this:
+  # bind C-f display-popup -h 60% -w 60% -E "tmux-file-picker"
 ''
