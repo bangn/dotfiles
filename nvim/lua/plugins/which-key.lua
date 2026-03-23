@@ -7,8 +7,7 @@ return {
     wk.add({
       { "<leader>a", group = "Apply macro" },
 
-      { "<leader>md", group = "markdown" },
-      { "<leader>mdp", "<Cmd>MarkdownPreview<CR>", desc = "Preview markdown" },
+      { "<leader>pt", "<Cmd>Preview toggle<CR>", desc = "toggle preview" },
 
       { "<leader>rn", ":set relativenumber!<CR>", desc = "Toggle relativenumber" },
 

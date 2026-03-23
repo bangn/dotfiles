@@ -38,7 +38,7 @@ with pkgs; [
   mise
   mkcert
   moreutils
-  nixfmt-classic
+  nixfmt
   nixpkgs-fmt
   nushell
   ormolu
@@ -46,7 +46,7 @@ with pkgs; [
   pdftk
   pipx
   plantuml
-  poetry
+  # poetry
   postgresql_17
   pylint
   python312Packages.sqlparse
@@ -65,6 +65,7 @@ with pkgs; [
   uv
   watch
   wget
+  witr
   xclip
   yaml-language-server
   yamllint

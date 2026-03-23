@@ -6,3 +6,5 @@ nvim/plugin/packer_compiled.lua
 nvim/lazy-lock.json
 nvim/lazyvim.json
 .aider*
+
+README.html

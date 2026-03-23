@@ -20,6 +20,17 @@ in {
     systemPackages = [];
   };
 
+  nix.gc = {
+    automatic = true;
+    interval = {
+      Hour = 10;
+      Minute = 0;
+    }; # every day
+    options = "--delete-older-than 1d";
+  };
+
+  nix.settings.auto-optimise-store = true;
+
   nix.enable = true;
   nix.package = pkgs.nix;
   programs.zsh = {
