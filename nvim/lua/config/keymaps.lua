@@ -31,3 +31,8 @@ vim.keymap.del({ "n", "x", "o" }, "S")
 -- CodeDiff
 ----------------------------------------
 vim.keymap.set("n", "<leader>dv", ":CodeDiff<CR>")
+
+----------------------------------------
+-- Format JSON with jq
+----------------------------------------
+vim.keymap.set("n", "<leader>jq", ":%!jq .<CR>", { desc = "Format JSON with jq" })
