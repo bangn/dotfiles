@@ -13,6 +13,11 @@ return {
 
       -- CodeDiff plugin
       { "<leader>cd", ":CodeDiff<CR>", desc = "Toggle CodeDiff" },
+
+      ----------------------------------------
+      -- Format JSON with jq
+      ----------------------------------------
+      vim.keymap.set("n", "<leader>jq", ":%!jq .<CR>", { desc = "Format JSON with jq" }),
     })
     wk.setup(opts)
   end,
