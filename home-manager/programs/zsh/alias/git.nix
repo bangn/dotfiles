@@ -45,7 +45,7 @@
   gpl = "git fetch -p && git rebase --rebase-merges";
 
   gps = "git push";
-  gpsf = "git push --force-with-lease";
+  gpsf = "git push --force-with-lease --atomic";
   gpsu = ''git push -u origin "$(git rev-parse --abbrev-ref HEAD)" "$@"'';
 
   gra = "git rebase --abort";
