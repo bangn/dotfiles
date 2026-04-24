@@ -40,13 +40,13 @@ with pkgs; [
   moreutils
   nixfmt
   nixpkgs-fmt
-  nushell
+  # nushell
   ormolu
   pandoc
   pdftk
   pipx
   plantuml
-  # poetry
+  poetry
   postgresql_17
   pylint
   python312Packages.sqlparse
@@ -66,6 +66,7 @@ with pkgs; [
   watch
   wget
   witr
+  worktrunk
   xclip
   yaml-language-server
   yamllint
