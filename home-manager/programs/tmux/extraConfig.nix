@@ -45,6 +45,12 @@
   set -g visual-activity off
 
   ########################################
+  # Shift+Enter
+  ########################################
+  set -g extended-keys always
+  set -as terminal-features 'xterm*:extkeys'
+
+  ########################################
   # Copy/paste interop
   ########################################
   bind-key -T copy-mode-vi 'v' send -X begin-selection
