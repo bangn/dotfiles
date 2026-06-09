@@ -50,6 +50,8 @@
   neovim = {
     enable = true;
     defaultEditor = true;
+    withRuby = true;
+    withPython3 = true;
     plugins = [
       pkgs.vimPlugins.nvim-treesitter
       pkgs.vimPlugins.nvim-treesitter.withAllGrammars
