@@ -12,6 +12,7 @@
       autoUpdate = true;
       cleanup = "uninstall";
       upgrade = true;
+      extraFlags = ["--force-cleanup"];
     };
     global = {
       brewfile = true;
