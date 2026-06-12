@@ -14,7 +14,6 @@ with pkgs; [
   github-cli
   gnupg
   gopls
-  gradle
   graphviz
   hadolint
   hlint
