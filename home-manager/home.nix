@@ -4,7 +4,25 @@
   ...
 }:
 with builtins; let
-  pkgsUnstable = import <nixpkgs> {system = pkgs.stdenv.hostPlatform.system;};
+  pkgsUnstable = import <nixpkgs> {
+    system = pkgs.stdenv.hostPlatform.system;
+    overlays = [
+      # nixpkgs only skips mise's setuid-bit OCI test on Linux, but the darwin
+      # nix sandbox also strips setuid bits, so the test fails the check phase
+      # on macOS. Override here so every pkgsUnstable.mise reference (package
+      # list and zsh completion) uses the patched build.
+      # Drop this overlay once nixpkgs gates the skip on darwin too.
+      (final: prev: {
+        mise = prev.mise.overrideAttrs (old: {
+          checkFlags =
+            (old.checkFlags or [])
+            ++ prev.lib.optionals prev.stdenv.hostPlatform.isDarwin [
+              "--skip=oci::layer::tests::preserve_metadata_dir_layer_keeps_special_permission_bits"
+            ];
+        });
+      })
+    ];
+  };
   # This one is very couple with bootstrap script
   userDetails =
     if pkgs.stdenv.isLinux
