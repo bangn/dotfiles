@@ -27,7 +27,7 @@
   fzf = {
     enable = true;
 
-    changeDirWidgetCommand = let
+    changeDirWidget.command = let
       fdOptions = builtins.concatStringsSep " " [
         "--ignore-case"
         "--hidden"
