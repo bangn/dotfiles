@@ -31,6 +31,13 @@ in {
 
   nix.settings.auto-optimise-store = true;
 
+  # HTML manual build is broken by nixpkgs-unstable's nixos-render-docs
+  # dropping --toc-depth; re-enable once nix-darwin#1819 is merged.
+  # The uninstaller evaluates its own system with docs enabled, so it
+  # must be disabled as well.
+  documentation.doc.enable = false;
+  system.tools.darwin-uninstaller.enable = false;
+
   nix.enable = true;
   nix.package = pkgs.nix;
   programs.zsh = {
