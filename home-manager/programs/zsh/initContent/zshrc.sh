@@ -15,8 +15,13 @@ fi
 # nix
 ################################################################################
 # Source nix package manager and fix perl locale warning
+# Multi-user installs (darwin) use nix-daemon.sh; single-user (linux) uses nix.sh
 if [[ ! "$PATH" == *$HOME/.nix-profile/bin* ]]; then
-  source "$HOME/.nix-profile/etc/profile.d/nix.sh"
+  if [[ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
+    source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+  elif [[ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]]; then
+    source "$HOME/.nix-profile/etc/profile.d/nix.sh"
+  fi
 fi
 
 ################################################################################

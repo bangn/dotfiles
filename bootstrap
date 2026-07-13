@@ -39,6 +39,11 @@ install_home_manager() {
   fi
 }
 
+# A macOS upgrade deletes the nix-darwin managed /etc shell files
+# (/etc/zshrc, /etc/zprofile, /etc/bashrc), which breaks the shell
+# environment. Restore with (absolute path, sudo's PATH lacks
+# /run/current-system/sw/bin):
+#   sudo /run/current-system/sw/bin/darwin-rebuild switch
 install_nix_darwin() {
   if ! command -v darwin-rebuild; then
     echo "Installing nix-darwin..."
