@@ -23,17 +23,12 @@ with pkgs; [
   jd-diff-patch
   jq
   just
-  k9s
-  kubectl
-  kubectx
-  kubernetes-helm
   lua
   luajitPackages.luacheck
   luarocks
   markdownlint-cli
   markdownlint-cli2
   mdl
-  minikube
   mise
   mkcert
   moreutils

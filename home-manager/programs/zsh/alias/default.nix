@@ -2,7 +2,6 @@
   bundlerAliases = import ./bundler.nix;
   dockerAliases = import ./docker.nix;
   gitAliases = import ./git.nix;
-  k8sAliases = import ./k8s.nix;
 in
   {
     # TODO: Dynamically get dotDir
@@ -60,4 +59,3 @@ in
   // dockerAliases
   // bundlerAliases
   // gitAliases
-  // k8sAliases
