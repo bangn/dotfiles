@@ -26,3 +26,12 @@ vim.keymap.set("n", "<C-p>", "<Cmd>Telescope find_files<CR>", {})
 ----------------------------------------
 vim.keymap.del({ "n", "x", "o" }, "s")
 vim.keymap.del({ "n", "x", "o" }, "S")
+
+----------------------------------------
+-- Snippets (coq v2 uses built-in vim.snippet)
+----------------------------------------
+vim.keymap.set({ "i", "s" }, "<C-f>", function()
+  if vim.snippet.active({ direction = 1 }) then
+    vim.snippet.jump(1)
+  end
+end, { desc = "Jump to next snippet tabstop" })
