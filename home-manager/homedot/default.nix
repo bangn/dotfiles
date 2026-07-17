@@ -21,7 +21,6 @@
   # mise default packages file
   ".default-gems".source = ./mise/default-gems;
   ".default-npm-packages".source = ./mise/default-npm-packages;
-  ".python-default-packages.txt".source = ./python/default-packages.txt;
 
   # haskell dotfiles
   ".ghci".source = ./haskell/ghci;
