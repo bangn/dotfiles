@@ -20,7 +20,7 @@ in {
   # Editor
   ########################################
   EDITOR = "nvim";
-  MANPAGER = "nvim +Man!";
+  MANPAGER = "sh -c 'if [ -t 1 ]; then exec nvim +Man!; else exec cat; fi'";
   SUDO_ASKPASS = "/usr/bin/ssh-askpass";
   VISUAL = "nvim";
 
