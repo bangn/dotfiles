@@ -7,9 +7,10 @@
   ################################################################################
   # Config
   ################################################################################
-  set-option -g focus-events on
+  set -g extended-keys-format csi-u
   set -g pane-border-status top
   set -g pane-border-format '''
+  set-option -g focus-events on
   set-option -sa terminal-overrides ',xterm-256color:RGB'
 
   ########################################
@@ -51,6 +52,11 @@
   ########################################
   set -g extended-keys always
   set -as terminal-features 'xterm*:extkeys'
+
+  # OSC 8 hyperlinks: pass link escape sequences through to Ghostty so terminal
+  # apps (e.g. pi) can render clickable URLs. Applied live via `tmux set-option`
+  # until the next home-manager rebuild picks this up.
+  set -as terminal-features 'xterm-ghostty:hyperlinks'
 
   ########################################
   # Copy/paste interop
@@ -103,10 +109,10 @@
   # Vim style pane selection
   ####################
   is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
-      | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|\.?n?vim?x?(-wrapped)?)(diff)?$'"
+      | grep -iqE '^[^TXZ ]*\\+ +(\\S+\\/)?g?(view|\.?n?vim?x?(-wrapped)?)(diff)?$'"
 
   is_fzf="ps -o state= -o comm= -t '#{pane_tty}' \
-    | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?fzf$'"
+    | grep -iqE '^[^TXZ ]*\\+ +(\\S+\\/)?fzf$'"
 
   bind -n C-h run "($is_vim && tmux send-keys C-h) || \
                    tmux select-pane -L"

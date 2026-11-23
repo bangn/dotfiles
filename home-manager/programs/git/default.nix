@@ -16,6 +16,8 @@ in {
       dds = "diff --stat";
       depgraph = "!git madge image --basedir . --style solarized-dark src > depgraph.png";
       edit = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; $EDITOR `f`";
+      # Rebuild stale untracked cache when git status warns "could not open directory"
+      fix-untracked-cache = "!git update-index --no-untracked-cache && git fsmonitor--daemon stop; git update-index --untracked-cache";
       ls = "log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset'";
       lsa = "log --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset %C(white)<%an>%Creset' --all";
       root = "!pwd";
