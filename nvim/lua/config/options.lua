@@ -3,6 +3,7 @@
 -- Add any additional options here
 
 -- COQ settings
+vim.g.coq_v1 = true
 vim.g.coq_settings = {
   keymap = {
     recommended = true,
