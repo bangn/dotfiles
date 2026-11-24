@@ -7,4 +7,4 @@ let
   worktrunk = builtins.readFile ./worktrunk.sh;
   zshrc = builtins.readFile ./zshrc.sh;
 in
-in zshrc + functions + git + keybindings + mise + prompt + worktrunk
+  zshrc + functions + git + keybindings + mise + prompt + worktrunk
